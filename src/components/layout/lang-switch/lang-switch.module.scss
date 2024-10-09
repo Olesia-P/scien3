@@ -1,0 +1,66 @@
+@import "../../../styles/main";
+
+.container {
+    @include dfcc;
+    height: 4rem;
+    width: 6rem;
+
+    .bodyWrap {
+        @include dfc;
+        cursor: pointer;
+
+        .body {
+            background-color: $white;
+            width: 5rem;
+            height: 2.5rem;
+            border-radius: 20px;
+            box-shadow: $shadow-white-in;
+            display: flex;
+            align-items: center;
+
+            .switch {
+                background-color: $white;
+                height: 2.2rem;
+                width: 2.2rem;
+                border-radius: 50%;
+                transform: translateX(0.2rem);
+                transition: all 0.3s ease-in;
+                z-index: 1;
+                @include dfc;
+                box-shadow:
+                    rgba(0, 0, 0, 0.4) 0px 2px 3px,
+                    // rgba(0, 0, 0, 0.3) 0px 3px 7px -2px,
+                    rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+
+                img {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+
+                &.right {
+                    transform: translateX(2.5rem);
+                }
+            }
+        }
+
+        .background {
+            background-color: transparent;
+            width: 4.3rem;
+            height: 1.9rem;
+            position: absolute;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            filter: grayscale(90%);
+        }
+    }
+
+    .captions {
+        @include dfc;
+        font-family: $font-family-main;
+        font-weight: 600;
+        gap: 0.8rem;
+        font-size: 18px;
+    }
+}

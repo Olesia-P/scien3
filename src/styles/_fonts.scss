@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Geist';
+    src: url('../../public/fonts/GeistVF.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../../public/fonts/GeistMonoVF.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Teko Medium';
+    src:
+        url('../../public/fonts/Teko Medium.woff') format('woff'),
+
+}
+
+@font-face {
+    font-family: 'Onest Medium';
+
+    src: url('../../public/fonts/Onest-Medium.ttf') format('truetype'),
+
+}
+
+
+//fonts
+$font-family-main: "Geist", sans-serif;
+$font-family-mono: "Geist Mono", sans-serif;
+$font-family-logo: "Teko Medium", sans-serif;
+$font-family-heading: "Onest Medium", sans-serif;
+
+//font sizes
+$font-main: 16px;
+$font-main-smaller: 14px;
+$font-header-l: 24px;
+$font-header-m: 20px;
+$font-header-s: 18px;

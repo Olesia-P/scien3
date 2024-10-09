@@ -1,0 +1,93 @@
+@import "../../../styles/main";
+
+.container {
+    background-color: $white;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: $shadow-white-out;
+    position: fixed;
+    width: 100%;
+
+    .logoWrap {
+        margin-left: 1rem;
+        height: 3.5rem;
+        text-decoration: none;
+        color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 14rem;
+
+        .logo {
+            height: 5rem;
+            // width: 2.7rem;
+        }
+
+        .name {
+            font-family: $font-family-logo;
+            font-size: $font-header-l;
+            line-height: 1;
+        }
+    }
+
+    .linksWrap {
+        @include dfc;
+        justify-content: space-around;
+        gap: 4rem;
+        flex-grow: 1;
+        // margin: 0 0 0 auto;
+
+        .navlink {
+            text-decoration: none;
+            color: $black;
+            font-size: $font-header-m;
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            border-radius: 5px;
+            transition: color 0.2s ease-in;
+            box-shadow: $shadow-white-out;
+            font-family: $font-family-heading;
+
+            &:hover {
+                color: $orange;
+            }
+
+            &.selected {
+                outline: 1px solid $black;
+            }
+        }
+    }
+}
+
+
+
+
+// &.hoverable {
+// &::after,
+// &::before {
+//     content: "";
+//     position: absolute;
+//     bottom: 0rem;
+//     width: 0%;
+//     border-bottom: 1px solid $black;
+//     transition: width 0.3s ease-in;
+//     z-index: 3;
+// }
+
+// &::after {
+//     left: 50%;
+// }
+
+// &::before {
+//     right: 50%;
+// }
+
+// &:hover {
+
+// &::after,
+// &::before {
+//     width: 45%;
+// }
+// }
+// }
