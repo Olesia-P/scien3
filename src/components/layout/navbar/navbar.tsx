@@ -16,8 +16,12 @@ export default function Navbar() {
       link: '/services',
     },
     {
-      name: 'наші роботи',
+      name: 'роботи',
       link: '/works',
+    },
+    {
+      name: 'FQA',
+      link: '/fqa',
     },
     {
       name: 'контакти',
@@ -32,16 +36,13 @@ export default function Navbar() {
 
   return (
     <nav className={css.container}>
-      <Link href="/" className={css.logoWrap}>
-        {' '}
-        <img
-          src="scien3-3D-05.png"
-          alt="logo transparent"
-          className={css.logo}
-        />
-        <div className={css.name}>Scien3 Cast Creations</div>
+      <Link href="/">
+        <img src="logo-3d.png" alt="logo transparent" className={css.logo} />
       </Link>
-
+      <div className={css.name}>Scien3 Cast Creations</div>
+      <a className={css.phoneNumber} href="tel:+380681250102">
+        +380681250102
+      </a>
       <div className={css.linksWrap}>
         {navlinks.map((element) => (
           <Link
