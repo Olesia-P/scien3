@@ -20,16 +20,18 @@ export default function SectionIntro() {
         <h1>Scien3 Cast Creations</h1>
         <p className={css.caption}>{textSection1.caption}</p>
       </hgroup>
-      <img
-        src="intro-image.png"
-        alt="abstract illustration of plastic casting"
-        className={css.backphoto1}
-      />
-      <ul className={css.listBox}>
-        {textSection1.list.map((element) => (
-          <li key={element}>{element}</li>
-        ))}
-      </ul>
+      <div className={css.imgWrap}>
+        <img
+          src="intro-image.png"
+          alt="abstract illustration of plastic casting"
+          className={css.backgroundImage}
+        />
+        <ul className={css.listBox}>
+          {textSection1.list.map((element) => (
+            <li key={element}>{element}</li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
