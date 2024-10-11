@@ -4,30 +4,33 @@ $grey: #3a4750;
 $blue: #00adb5;
 $white: #eeeeee;
 
-// box-shadow
-// $shadow-white-out: -3px -3px 4px 0 rgb(255, 255, 255, 0.8),
-//     3px 3px 4px 0 rgba(100, 75, 50, 0.1);
-// $shadow-white-in: inset -4px -4px 5px 0 rgb(255, 255, 255),
-//     inset 3px 3px 4px 0 rgba(100, 75, 50, 0.2);
 
+// box-shadow
 $shadow-white-out: -3px -3px 4px 0 rgba(255, 255, 255, 0.7),
     3px 3px 4px 0 rgba(80, 80, 80, 0.1);
 $shadow-white-in: inset -3px -3px 4px 0 rgba(255, 255, 255, 0.7),
     inset 3px 3px 4px 0 rgba(80, 80, 80, 0.1);
 $shadow-white-in-strong: inset -3px -3px 4px 0 rgba(255, 255, 255),
     inset 3px 3px 4px 0 rgba(80, 80, 80, 0.4);
-
 $shadow-blue-out: -3px -3px 4px 0 rgba(255, 255, 255, 0.5), // Softer white highlight to complement the bright teal
     3px 3px 4px 0 rgba(0, 70, 75, 0.2); // Darkened teal shadow for subtle depth
 
-//border
+
+//text-shadow
+$text-shadow-1: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+$text-shadow-2: -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    2px 2px 0 black;
 
 
 
 
 
-
-
-
-//   -3px -3px 4px 0 rgb(255, 255, 255, 0.8),
-//   3px 3px 4px 0 rgba(100, 75, 50, 0.1);
+// $shadow-white-out: -3px -3px 4px 0 rgb(255, 255, 255, 0.8),
+//     3px 3px 4px 0 rgba(100, 75, 50, 0.1);
+// $shadow-white-in: inset -4px -4px 5px 0 rgb(255, 255, 255),
+//     inset 3px 3px 4px 0 rgba(100, 75, 50, 0.2);

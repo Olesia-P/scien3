@@ -9,34 +9,26 @@ export default function LangSwitch() {
     setIsSwitched((prevState) => !prevState);
   };
   return (
-    <div className={css.container}>
-      <div className={css.bodyWrap}>
-        <div className={css.body}>
-          <div
-            className={cx(css.switch, isSwitched && css.right)}
-            onClick={toSwitch}
-          >
-            <img src={img} alt={img} />
-          </div>
-        </div>
-        <div className={css.background} onClick={toSwitch}>
-          <img
-            src="ukraine.png"
-            alt="ua-lang"
-            className={cx(isSwitched && css.noColor)}
-          />
-          <img
-            src="united-kingdom.png"
-            alt="en-lang"
-            className={cx(!isSwitched && css.noColor)}
-          />
+    // <div className={css.container}>
+    <div className={css.bodyWrap}>
+      <div className={css.body}>
+        <div
+          className={cx(css.switch, isSwitched && css.right)}
+          onClick={toSwitch}
+        >
+          <img src={img} alt={img} />
         </div>
       </div>
+      <div className={css.background} onClick={toSwitch}>
+        <img src="ukraine.png" alt="ua-lang" />
+        <img src="united-kingdom.png" alt="en-lang" />
+      </div>
+      {/* </div> */}
 
-      <div className={css.captions}>
+      {/* <div className={css.captions}>
         <div>ua</div>
         <div>en</div>
-      </div>
+      </div> */}
     </div>
   );
 }

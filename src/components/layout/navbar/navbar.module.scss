@@ -20,7 +20,9 @@
         font-size: 36px;
         line-height: 1;
         color: black;
-        margin-left: 1rem
+        margin-left: 1rem;
+        margin-top: 0.2rem;
+        text-decoration: none;
     }
 
     .phoneNumber {
@@ -37,12 +39,12 @@
         @include dfc;
         justify-content: space-around;
         gap: 4rem;
-        margin: 0 1rem 0 auto;
+        margin: 0 1.5rem 0 auto;
 
         .navlink {
             text-decoration: none;
             color: black;
-            font-size: $font-header-m;
+            font-size: $font-size-header-m;
             font-weight: 600;
             padding: 0.5rem 1rem;
             border-radius: 5px;

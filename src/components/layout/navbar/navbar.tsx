@@ -30,16 +30,20 @@ export default function Navbar() {
   ];
 
   const router = useRouter();
-  //   const currentPath = router.pathname;
-
-  //   console.log(router.pathname);
 
   return (
     <nav className={css.container}>
       <Link href="/">
-        <img src="logo-3d.png" alt="logo transparent" className={css.logo} />
+        <img
+          src="logo-3d-small.png"
+          alt="scien3 logo 3D"
+          className={css.logo}
+        />
       </Link>
-      <div className={css.name}>Scien3 Cast Creations</div>
+      <Link href="/" className={css.name}>
+        Scien3 Cast Creations
+      </Link>
+
       <a className={css.phoneNumber} href="tel:+380681250102">
         +380681250102
       </a>
@@ -49,7 +53,6 @@ export default function Navbar() {
             className={cx(
               css.navlink,
               router.pathname === element.link && css.selected,
-              // : css.hoverable,
             )}
             href={element.link}
             key={element.name}
