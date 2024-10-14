@@ -1,16 +1,44 @@
 import React from 'react';
+import Link from 'next/link';
+import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './section-categories.module.scss';
 
 export default function SectionCategories() {
+  const textSectionCategories = {
+    header: 'Виготовленні виробів із пластмас будь-якої складності!',
+    links: [
+      { name: '3D моделювання', link: '/', img: '3d-modeling.jpeg' },
+      { name: 'Серійне лиття', link: '/', img: 'mass-production.jpeg' },
+      { name: '3D друк', link: '/', img: '3d-printer.jpeg' },
+      { name: 'Форми для лиття', link: '/', img: 'silicon-form.jpeg' },
+    ],
+  };
+
   return (
     <section className={css.container}>
-      {/* <img src="pngwing.com (25).png" className={css.backgroundImg} alt="ghg" /> */}
-      <header className={css.header}>
-        <h2>
-          Виготовленні виробів із пластмас будь-якої складності, від вашої
-          креативної ідеї до її повного втілення та виробництва.
-        </h2>
-      </header>
+      <h2>
+        <span className={css.accent}>[</span>
+        {textSectionCategories.header}
+        <span className={css.accent}>]</span>
+      </h2>
+      <div className={css.cardBorder}>
+        <article className={css.card}>
+          {textSectionCategories.links.map((element) => (
+            <Link href={element.link} className={css.link} key={element.name}>
+              <img
+                src={element.img}
+                className={css.linkImg}
+                alt={element.img}
+              />
+              <h3 className={css.name}>
+                {element.name} <FaArrowRightLong />
+              </h3>
+            </Link>
+          ))}
+          <div className={css.horizontalSeparator} />
+          <div className={css.verticalSeparator} />
+        </article>
+      </div>
     </section>
   );
 }
