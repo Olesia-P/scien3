@@ -1,0 +1,55 @@
+@mixin floatingAnimationClockwise {
+    @keyframes floatClockwise {
+        0% {
+            transform: translate(0.7rem, 0);
+        }
+
+        25% {
+            transform: translate(0, 0.7rem);
+        }
+
+        50% {
+            transform: translate(-0.7rem, 0);
+        }
+
+        75% {
+            transform: translate(0, -0.7rem);
+        }
+
+        100% {
+            transform: translate(0.7rem, 0);
+        }
+
+        ;
+    }
+
+    animation: floatClockwise 18s infinite linear;
+}
+
+@mixin floatingAnimationCounterClockwise {
+    @keyframes floatCounterClockwise {
+        0% {
+            transform: translate(0.7rem, 0);
+        }
+
+        25% {
+            transform: translate(0, -0.7rem);
+        }
+
+        50% {
+            transform: translate(-0.7rem, 0);
+        }
+
+        75% {
+            transform: translate(0, 0.7rem);
+        }
+
+        100% {
+            transform: translate(0.7rem, 0);
+        }
+
+        ;
+    }
+
+    animation: floatCounterClockwise 18s infinite linear;
+}

@@ -7,10 +7,18 @@ export default function SectionCategories() {
   const textSectionCategories = {
     header: 'Виготовленні виробів із пластмас будь-якої складності!',
     links: [
-      { name: '3D моделювання', link: '/', img: '3d-modeling.jpeg' },
-      { name: 'Серійне лиття', link: '/', img: 'mass-production.jpeg' },
-      { name: '3D друк', link: '/', img: '3d-printer.jpeg' },
-      { name: 'Форми для лиття', link: '/', img: 'silicon-form.jpeg' },
+      { name: '3D моделювання', link: '/', img: 'categories/3d-modeling.jpeg' },
+      {
+        name: 'Серійне лиття',
+        link: '/',
+        img: 'categories/mass-production.jpeg',
+      },
+      { name: '3D друк', link: '/', img: 'categories/3d-printer.jpeg' },
+      {
+        name: 'Форми для лиття',
+        link: '/',
+        img: 'categories/silicon-form.jpeg',
+      },
     ],
   };
 

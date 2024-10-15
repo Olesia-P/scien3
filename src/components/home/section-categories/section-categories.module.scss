@@ -2,7 +2,7 @@
 
 .container {
     background-color: $white;
-    background-image: url("/horizontal-blue-wave.png");
+    background-image: url("/categories/horizontal-blue-wave.png");
     background-size: cover;
     height: 72rem;
 
@@ -52,10 +52,6 @@
                     height: 85%;
                     filter: grayscale(100%);
                     transition: filter 0.3s ease-in;
-
-                    &:hover {
-                        filter: grayscale(0%);
-                    }
                 }
 
                 .name {
@@ -63,9 +59,16 @@
                     font-weight: 900;
                     margin: 0.7rem 0 0 0;
                     @include dfc;
+                    text-decoration: underline;
 
                     svg {
                         margin-left: 0.5rem;
+                    }
+                }
+
+                &:hover {
+                    .linkImg {
+                        filter: grayscale(0%);
                     }
                 }
             }
