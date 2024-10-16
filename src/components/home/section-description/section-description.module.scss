@@ -1,0 +1,42 @@
+@import "../../../styles/main";
+
+.container {
+    background-color: $white;
+
+    h2 {
+        font-size: $font-size-header-l;
+        font-family: $font-family-mono;
+        margin: 0 auto;
+        padding: 3rem 0;
+        width: fit-content;
+        font-weight: 900;
+
+        .accent {
+            color: $blue;
+            margin: 0 1rem;
+            font-size: 34px;
+        }
+    }
+
+    ul {
+        margin: 0 auto;
+        padding: 0;
+        @include dfc;
+        flex-wrap: wrap;
+        width: 80%;
+
+        li {
+            font-size: $font-size-header-m;
+            list-style: none;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            width: 50%;
+
+            .icon {
+                width: 2rem;
+                margin-right: 1rem;
+            }
+        }
+    }
+}

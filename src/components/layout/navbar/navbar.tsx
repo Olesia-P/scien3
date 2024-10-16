@@ -44,8 +44,8 @@ export default function Navbar() {
         Scien3 Cast Creations
       </Link>
 
-      <a className={css.phoneNumber} href="tel:+380681250102">
-        +380681250102
+      <a className={css.phoneNumber} href="tel:+380689873600">
+        +38(068)-987-36-00
       </a>
       <div className={css.linksWrap}>
         {navlinks.map((element) => (

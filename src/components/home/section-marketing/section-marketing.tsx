@@ -27,7 +27,7 @@ export default function SectionMarketing() {
             та вкластися <span> у термін кількох днів</span>.
           </>
         ),
-        img: 'marketing/multiple.png',
+        img: 'marketing/multiple-details.png',
         position: 'left',
       },
       {
@@ -38,7 +38,7 @@ export default function SectionMarketing() {
           </>
         ),
 
-        img: 'marketing/replacement.png',
+        img: 'marketing/detail-replacement.png',
         position: 'right',
       },
       {
@@ -46,8 +46,8 @@ export default function SectionMarketing() {
         answer: () => (
           <>
             У нас ви знайдете{' '}
-            <span> широкий вибір матеріалів та кольорів </span> для художнього
-            лиття або 3D-друку з <span> високою деталізацією</span>.
+            <span> широкий вибір матеріалів та кольорів </span> для лиття або
+            3D-друку з <span> високою деталізацією</span>.
           </>
         ),
         img: 'marketing/leprechaun.png',

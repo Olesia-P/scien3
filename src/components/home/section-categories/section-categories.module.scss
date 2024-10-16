@@ -6,31 +6,13 @@
     background-size: cover;
     height: 72rem;
 
-    h2 {
-        font-size: $font-size-header-l;
-        font-family: $font-family-mono;
-        margin: 3rem auto;
-        width: 60%;
-        text-align: center;
-        font-weight: 900;
-        box-shadow: $shadow-white-in;
-        padding: 1rem 0;
-        border-radius: 15px;
-
-        .accent {
-            color: $blue;
-            margin: 0 1rem;
-            font-size: 34px;
-        }
-    }
-
     .cardBorder {
         background-color: $white;
         width: 55rem;
         height: 55rem;
         border: 1px solid $blue;
         padding: 3rem;
-        margin: 0 auto;
+        margin: 5rem auto;
 
         .card {
             width: 100%;

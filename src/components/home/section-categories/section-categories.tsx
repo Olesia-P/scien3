@@ -5,7 +5,6 @@ import css from './section-categories.module.scss';
 
 export default function SectionCategories() {
   const textSectionCategories = {
-    header: 'Виготовленні виробів із пластмас будь-якої складності!',
     links: [
       { name: '3D моделювання', link: '/', img: 'categories/3d-modeling.jpeg' },
       {
@@ -24,11 +23,6 @@ export default function SectionCategories() {
 
   return (
     <section className={css.container}>
-      <h2>
-        <span className={css.accent}>[</span>
-        {textSectionCategories.header}
-        <span className={css.accent}>]</span>
-      </h2>
       <div className={css.cardBorder}>
         <article className={css.card}>
           {textSectionCategories.links.map((element) => (

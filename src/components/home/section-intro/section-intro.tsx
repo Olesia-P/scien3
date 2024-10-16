@@ -22,7 +22,7 @@ export default function SectionIntro() {
       </hgroup>
       <div className={css.imgWrap}>
         <img
-          src="intro-image.png"
+          src="intro/intro-image.png"
           alt="abstract illustration of plastic casting"
           className={css.backgroundImage}
         />
