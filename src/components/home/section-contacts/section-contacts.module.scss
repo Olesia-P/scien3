@@ -2,7 +2,7 @@
 
 
 .container {
-    padding: 3rem 0;
+    padding: 3rem 0 1rem 0;
     width: $content-width;
     max-width: 100%;
     margin: 0 auto;
@@ -27,9 +27,12 @@
 
     .contentWrap {
         display: grid;
-        grid-template-columns: repeat((2, 1fr));
-        margin: 3rem auto;
+        // grid-template-columns: repeat((2, 1fr));
+        grid-template-columns: 55% 45%;
+        margin: 4rem auto;
         position: relative;
+        max-width: 85%;
+        gap: 3rem;
 
         .illustration {
             width: 100%;
@@ -41,7 +44,6 @@
             align-self: center;
             box-shadow: $shadow-white-out;
             border-radius: 10px;
-            margin-left: 5rem;
 
             .contactsList {
                 font-size: $font-size-22 ;
@@ -83,7 +85,7 @@
 
                 iframe {
                     width: 100%;
-                    height: 30rem;
+                    height: 26rem;
                     border: none;
                     padding: 1rem;
                 }
@@ -93,9 +95,9 @@
         .bubbleWrap {
             @include dfc;
             position: absolute;
-            width: 12rem;
-            top: -6rem;
-            left: -2.5rem;
+            width: 10rem;
+            top: -4.5rem;
+            left: -1.5rem;
 
             img {
                 width: 100%;
@@ -103,11 +105,11 @@
             }
 
             p {
-                font-size: $font-size-20;
+                font-size: $font-size-18;
                 text-align: center;
                 z-index: 1;
                 position: absolute;
-                top: 3.5rem;
+                top: 2.8rem;
                 width: 60%;
                 font-family: $font-family-fancy;
                 color: $grey;
