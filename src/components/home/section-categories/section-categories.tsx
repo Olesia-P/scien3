@@ -6,17 +6,29 @@ import css from './section-categories.module.scss';
 export default function SectionCategories() {
   const textSectionCategories = {
     links: [
-      { name: '3D моделювання', link: '/', img: 'categories/3d-modeling.jpeg' },
+      {
+        name: '3D моделювання',
+        link: '/',
+        img: 'categories/3d-modeling.jpg',
+        alt: 'ілюстрація 3Д-моделювання',
+      },
       {
         name: 'Серійне лиття',
         link: '/',
-        img: 'categories/mass-production.jpeg',
+        img: 'categories/mass-production.jpg',
+        alt: 'ілюстрація серійного лиття пластикових продуктів',
       },
-      { name: '3D друк', link: '/', img: 'categories/3d-printer.jpeg' },
+      {
+        name: '3D друк',
+        link: '/',
+        img: 'categories/3d-printer.jpg',
+        alt: '3Д-принтер',
+      },
       {
         name: 'Форми для лиття',
         link: '/',
-        img: 'categories/silicon-form.jpeg',
+        img: 'categories/silicon-form.jpg',
+        alt: 'силіконова форма',
       },
     ],
   };
@@ -24,22 +36,18 @@ export default function SectionCategories() {
   return (
     <section className={css.container}>
       <div className={css.cardBorder}>
-        <article className={css.card}>
+        <nav className={css.servicesNavigation}>
           {textSectionCategories.links.map((element) => (
             <Link href={element.link} className={css.link} key={element.name}>
-              <img
-                src={element.img}
-                className={css.linkImg}
-                alt={element.img}
-              />
-              <h3 className={css.name}>
+              <img src={element.img} alt={element.alt} />
+              <h3>
                 {element.name} <FaArrowRightLong />
               </h3>
             </Link>
           ))}
           <div className={css.horizontalSeparator} />
           <div className={css.verticalSeparator} />
-        </article>
+        </nav>
       </div>
     </section>
   );

@@ -2,72 +2,116 @@
 
 
 .container {
-    background-color: $white;
+    padding: 3rem 0;
+    width: $content-width;
+    max-width: 100%;
+    margin: 0 auto;
 
-    // width: 100%;
-
-    // gap: 3rem;
-    header {
-        box-shadow: $shadow-white-in;
-        margin: 4rem auto;
-        padding: 2rem;
+    .contactsHeader {
+        margin: 0 auto;
         width: fit-content;
-        border-radius: 15px;
 
-        h4 {
-            font-size: 36px;
+        h3 {
+            font-size: $font-size-32 ;
             text-align: center;
-
-            // font-family: $font-family-mono;
             font-weight: 900;
-            // border-bottom: 2px solid $blue;
-
-            // line-height: 1.5;
-            margin: 0 auto;
             color: $blue;
-            // text-shadow: $text-shadow-1;
-
         }
 
         p {
-            font-size: 30px;
-            margin: 1rem 0 0 0;
+            font-size: $font-size-24;
+            margin-top: 0.5rem;
+            font-weight: 600;
         }
-
     }
 
-
-    .contactsWrap {
-        @include dfc;
-        // width: 100%;
-        gap: 3rem;
+    .contentWrap {
+        display: grid;
+        grid-template-columns: repeat((2, 1fr));
+        margin: 3rem auto;
+        position: relative;
 
         .illustration {
-            width: 50%;
-
-            // margin: 7rem 0;
+            width: 100%;
+            align-self: center;
         }
 
         .contactsCard {
-            width: 35%;
-
+            padding: 3rem;
+            align-self: center;
             box-shadow: $shadow-white-out;
-            padding: 2rem;
+            border-radius: 10px;
+            margin-left: 5rem;
+
+            .contactsList {
+                font-size: $font-size-22 ;
+
+                .singleContactWrap {
+                    margin: 0 0 2rem 4rem;
+                    display: block;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+
+
+                    &::before {
+                        content: ' ';
+                        background-image: var(--icon-url);
+                        position: absolute;
+                        height: 1.5em;
+                        width: 1.5em;
+                        left: -3.5rem;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+
+                    .contactTitle {
+                        font-weight: 700;
+                        margin-right: 0.5rem;
+                    }
+
+                    .phoneNumber {
+                        border-bottom: 2px solid $blue;
+                    }
+                }
+            }
 
             .map {
-                // width: 400px;
-                // height: 400px;
-                width: 100%;
-                height: 20rem;
-                // background-color: $white;
-                border: 1px solid $blue;
-                padding: 1rem;
-                // box-shadow: $shadow-white-in;
+                box-shadow: $shadow-white-in;
+                margin-top: 2rem;
+                border-radius: 10px;
+
+                iframe {
+                    width: 100%;
+                    height: 30rem;
+                    border: none;
+                    padding: 1rem;
+                }
             }
         }
 
+        .bubbleWrap {
+            @include dfc;
+            position: absolute;
+            width: 12rem;
+            top: -6rem;
+            left: -2.5rem;
 
+            img {
+                width: 100%;
+                filter: opacity(70%);
+            }
+
+            p {
+                font-size: $font-size-20;
+                text-align: center;
+                z-index: 1;
+                position: absolute;
+                top: 3.5rem;
+                width: 60%;
+                font-family: $font-family-fancy;
+                color: $grey;
+            }
+        }
     }
-
-
 }

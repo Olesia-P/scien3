@@ -4,42 +4,38 @@
     background-color: $white;
     background-image: url("/categories/horizontal-blue-wave.png");
     background-size: cover;
-    height: 72rem;
+    padding: 2rem 0 5rem 0;
 
     .cardBorder {
         background-color: $white;
-        width: 55rem;
-        height: 55rem;
+        width: 45rem;
+        max-width: 90%;
         border: 1px solid $blue;
-        padding: 3rem;
-        margin: 5rem auto;
+        padding: 2em;
+        margin: 0 auto;
 
-        .card {
-            width: 100%;
-            height: 100%;
+        .servicesNavigation {
             box-shadow: $shadow-white-out;
             position: relative;
             border-radius: 15px;
-            @include dfc;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
             .link {
-                width: 50%;
-                height: 50%;
-                padding: 1.5rem;
+                padding: 1.5em;
                 @include dfcc;
                 color: $blue;
 
-                .linkImg {
+                img {
+                    width: 85%;
                     height: 85%;
                     filter: grayscale(100%);
                     transition: filter 0.3s ease-in;
                 }
 
-                .name {
-                    font-size: $font-size-header-m;
-                    font-weight: 900;
-                    margin: 0.7rem 0 0 0;
+                h3 {
+                    font-size: $font-size-18;
+                    margin-top: 0.7rem;
                     @include dfc;
                     text-decoration: underline;
 
@@ -49,7 +45,7 @@
                 }
 
                 &:hover {
-                    .linkImg {
+                    img {
                         filter: grayscale(0%);
                     }
                 }

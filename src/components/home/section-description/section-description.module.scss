@@ -2,40 +2,47 @@
 
 .container {
     background-color: $white;
+    max-width: $content-width;
+    margin: 2rem auto;
 
-    h2 {
-        font-size: $font-size-header-l;
+    .mainHeader {
+        font-size: $font-size-24;
         font-family: $font-family-mono;
-        margin: 0 auto;
-        padding: 3rem 0;
+        margin: 3rem auto;
         width: fit-content;
         font-weight: 900;
 
-        .accent {
+        span {
             color: $blue;
             margin: 0 1rem;
-            font-size: 34px;
         }
     }
 
-    ul {
+    .descriptionList {
         margin: 0 auto;
         padding: 0;
-        @include dfc;
-        flex-wrap: wrap;
         width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+        gap: 1.5rem;
 
         li {
-            font-size: $font-size-header-m;
+            font-size: $font-size-16;
             list-style: none;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            width: 50%;
+            align-self: center;
+            position: relative;
+            margin-left: 2rem;
 
-            .icon {
-                width: 2rem;
-                margin-right: 1rem;
+            &::before {
+                content: ' ';
+                background-image: var(--icon-url);
+                position: absolute;
+                height: 1.5em;
+                width: 1.5em;
+                left: -2.5rem;
+                top: 0.1rem;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         }
     }

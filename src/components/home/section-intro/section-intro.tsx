@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import css from './section-intro.module.scss';
+import useIntersectionObserver from '@/components/hooks/useIntersectionObserver';
 
 export default function SectionIntro() {
+  const [isObserved, setIsObserved] = useState(false);
+  const handleIntersection = () => {
+    setIsObserved(true);
+  };
+  const introSectionRef = useIntersectionObserver(
+    handleIntersection,
+    undefined,
+    0,
+  );
+
   const textSectionIntro = {
-    caption: '3D-ДРУК ТА ДРІБНОСЕРІЙНЕ ЛИТТЯ З ПЛАСТИКУ У ВАКУУМІ',
+    caption: 'ДРІБНОСЕРІЙНЕ ЛИТТЯ З ПЛАСТИКУ У ВАКУУМІ ТА 3D-ДРУК',
     list: [
       'Серійне виробництво виробів із пластику',
       'Промисловий дизайн',
@@ -12,26 +24,30 @@ export default function SectionIntro() {
       '3D-друк',
       'Виготовлення силіконових форм на замовлення',
     ],
+    illustrationAlt: 'абстрактна ілюстрація лиття пластику',
   };
 
   return (
-    <section className={css.container}>
-      <hgroup className={css.brand}>
-        <h1>Scien3 Cast Creations</h1>
-        <p className={css.caption}>{textSectionIntro.caption}</p>
+    <section className={css.container} ref={introSectionRef}>
+      <hgroup className={css.mainHeader}>
+        <div className={css.contentLimit}>
+          <h1>Scien3 Cast Creations</h1>
+          <p>{textSectionIntro.caption}</p>
+        </div>
       </hgroup>
-      <div className={css.imgWrap}>
-        <img
-          src="intro/intro-image.png"
-          alt="abstract illustration of plastic casting"
-          className={css.backgroundImage}
-        />
-        <ul className={css.listBox}>
+      <div className={css.contentLimit}>
+        <ul className={cx(css.introList, isObserved && css.animated)}>
           {textSectionIntro.list.map((element) => (
             <li key={element}>{element}</li>
           ))}
         </ul>
       </div>
+      <img
+        src="intro/intro-scene.jpg"
+        alt={textSectionIntro.illustrationAlt}
+        aria-hidden="true"
+        className={css.illustration}
+      />
     </section>
   );
 }

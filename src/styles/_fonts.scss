@@ -1,9 +1,4 @@
 @font-face {
-    font-family: 'Geist';
-    src: url('../../public/fonts/GeistVF.woff') format('woff');
-}
-
-@font-face {
     font-family: 'Geist Mono';
     src: url('../../public/fonts/GeistMonoVF.woff') format('woff');
 }
@@ -22,17 +17,35 @@
 
 }
 
+@font-face {
+    font-family: 'Pricedown BI';
+    src: url('../../public/fonts/PricedownBl-Regular.ttf') format('truetype');
+
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-2212;
+}
 
 //fonts
-// $font-family-main: "Geist", sans-serif;
+
 $font-family-main: "Onest Medium", sans-serif;
 $font-family-mono: "Geist Mono", sans-serif;
 $font-family-logo: "Teko Medium", sans-serif;
-// $font-family-heading: "Onest Medium", sans-serif;
+$font-family-fancy: 'Pricedown BI', sans-serif;
+
 
 //font sizes
-$font-size-main: 18px;
-$font-size-main-smaller: 16px;
-$font-size-header-l: 28px;
-$font-size-header-m: 24px;
-$font-size-header-s: 20px;
+$font-size-10: 0.625rem;
+$font-size-12: 0.75rem;
+$font-size-14: 0.875rem;
+$font-size-16: 1rem;
+$font-size-18: 1.125rem;
+$font-size-20: 1.25rem;
+$font-size-22: 1.375rem;
+$font-size-24: 1.5rem;
+$font-size-26: 1.625rem;
+$font-size-28: 1.75rem;
+$font-size-32: 2rem;
+$font-size-36: 2.25rem;
+$font-size-70: 4.375rem;

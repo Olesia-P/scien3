@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import cx from 'classnames';
 import css from './section-marketing.module.scss';
 
 export default function SectionMarketing() {
@@ -10,79 +9,79 @@ export default function SectionMarketing() {
         question: 'Ви маєте ідею, але не знаєте, з чого почати?',
         answer: () => (
           <>
-            Ми допоможемо із <span> розробкою з нуля </span> або{' '}
-            <span>виготовимо виріб за ескізом</span>.
+            Ми допоможемо із <mark> розробкою з нуля </mark> або{' '}
+            <mark>виготовимо виріб за ескізом</mark>.
           </>
         ),
 
         img: 'marketing/sketch.png',
-        position: 'right',
+        alt: 'зарис пластикової деталі',
       },
       {
         question: 'Вам треба дрібносерійна партія деталей *ще на вчора*? ',
         answer: () => (
           <>
             Виробимо у кількості 1-1000 штук, що дозволить вам{' '}
-            <span> зекономити бюджет </span>
-            та вкластися <span> у термін кількох днів</span>.
+            <mark> зекономити бюджет </mark>
+            та вкластися <mark> у термін кількох днів</mark>.
           </>
         ),
         img: 'marketing/multiple-details.png',
-        position: 'left',
+        alt: 'кілька однакових чохлів для телефона',
       },
       {
         question: 'Маєте зношену або поламану деталь?',
         answer: () => (
           <>
-            Ми зробимо її <span> точну копію</span>. Або навіть краще.
+            Ми зробимо її <mark> точну копію</mark>. Або навіть краще.
           </>
         ),
 
         img: 'marketing/detail-replacement.png',
-        position: 'right',
+        alt: 'зламана деталь поряд із ідентичною цілою деталлю',
       },
       {
         question: 'Вашій колекції не вистачає фігурки леприкона?',
         answer: () => (
           <>
             У нас ви знайдете{' '}
-            <span> широкий вибір матеріалів та кольорів </span> для лиття або
-            3D-друку з <span> високою деталізацією</span>.
+            <mark> широкий вибір матеріалів та кольорів </mark> для лиття або
+            3D-друку з <mark> високою деталізацією</mark>.
           </>
         ),
         img: 'marketing/leprechaun.png',
-        position: 'left',
+        alt: 'пластиова фігурка леприкона',
       },
       {
         question: 'Власноруч робите мило або шоколадки?',
         answer: () => (
           <>
-            Виготовимо <span>унікальні силіконові форми</span>, яких не буде ні
+            Виготовимо <mark>унікальні силіконові форми</mark>, яких не буде ні
             у кого, крім вас,
           </>
         ),
 
         img: 'marketing/soap-silicone-form.png',
-        position: 'right',
+        alt: 'силіконова форма для мила у формі Маріо',
       },
     ],
   };
   return (
     <section className={css.container}>
-      <div className={css.background} />
-      <ul className={css.card}>
+      <ul className={css.statementsList}>
         {textSectionMarketing.statements.map((element) => (
-          <li
-            key={element.question}
-            className={cx(
-              css.listPoint,
-              element.position === 'right' ? css.right : css.left,
-            )}
-          >
-            <img src={element.img} alt={element.img} className={css.img} />
-            <h3 className={css.question}>&#128269; {element.question}</h3>
-            <p className={css.answer}>{element.answer()}</p>
-          </li>
+          <article className={css.statementCard} key={element.question}>
+            <li className={css.statement}>
+              <img
+                src={element.img}
+                alt={element.alt}
+                className={css.statementIllustration}
+                aria-hidden="true"
+              />
+              <h3 className={css.question}>&#128269; {element.question}</h3>
+              <p className={css.answer}>{element.answer()}</p>
+            </li>
+          </article>
         ))}
       </ul>
     </section>
