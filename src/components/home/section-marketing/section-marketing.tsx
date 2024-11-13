@@ -70,18 +70,16 @@ export default function SectionMarketing() {
     <section className={css.container}>
       <ul className={css.statementsList}>
         {textSectionMarketing.statements.map((element) => (
-          <article className={css.statementCard} key={element.question}>
-            <li className={css.statement}>
-              <img
-                src={element.img}
-                alt={element.alt}
-                className={css.statementIllustration}
-                aria-hidden="true"
-              />
-              <h3 className={css.question}>&#128269; {element.question}</h3>
-              <p className={css.answer}>{element.answer()}</p>
-            </li>
-          </article>
+          <li className={css.statementCard} key={element.question}>
+            <img
+              src={element.img}
+              alt={element.alt}
+              className={css.statementIllustration}
+              aria-hidden="true"
+            />
+            <h3 className={css.question}>&#128269; {element.question}</h3>
+            <p className={css.answer}>{element.answer()}</p>
+          </li>
         ))}
       </ul>
     </section>

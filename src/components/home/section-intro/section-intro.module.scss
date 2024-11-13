@@ -49,14 +49,13 @@
         top: 2rem;
         left: 13%;
         padding: 1.5em;
-        border: 1px solid $white;
-        border-radius: 10px;
+        border-right: 1px solid $white;
+        border-left: 1px solid $white;
         font-size: $font-size-18;
         display: flex;
         flex-direction: column;
         gap: 1em;
         transform: translateX(-40%);
-        // left: 4rem;
         transition: transform 0.5s ease-in-out;
 
         li {
@@ -72,7 +71,7 @@
                 height: 1em;
                 width: 1em;
                 left: 0rem;
-                top: 0.3rem;
+                top: 0.2rem;
                 background-size: contain;
             }
         }

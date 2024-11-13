@@ -1,10 +1,12 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
 // import { IoMenu } from 'react-icons/io5';
 import css from './navbar.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
+import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
+import useClickOutsideClose from '@/components/hooks/useOutsideClickClose';
 // import MobileMenu from '../mobile-menu/mobile-menu';
 
 export default function Navbar() {
@@ -15,7 +17,8 @@ export default function Navbar() {
     },
     {
       name: 'послуги',
-      link: '/services',
+      link: '/',
+      hasDropdown: true,
     },
     {
       name: 'роботи',
@@ -31,12 +34,49 @@ export default function Navbar() {
     },
   ];
 
+  const servicesDropdownLinks = [
+    {
+      name: '3D моделювання',
+      link: '/',
+    },
+    {
+      name: 'Серійне лиття',
+      link: '/',
+    },
+    {
+      name: '3D друк',
+      link: '/',
+    },
+    {
+      name: 'Форми для лиття',
+      link: '/',
+    },
+  ];
+
   // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const router = useRouter();
 
+  const handleServicesButtonClick = () => {
+    setIsServicesMenuOpen((prevState) => !prevState);
+  };
   // const handleHamburgerClick = () => {
   //   setIsMobileMenuOpen((prevState) => !prevState);
   // };
+
+  // useEffect(() => {
+  //   if (router.asPath === '/#services-description') {
+  //     // Scroll to the section when this path is matched
+  //     const section = document.getElementById('services-description');
+  //     if (section) {
+  //       section.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   }
+  // }, [router.asPath]);
+  const refServicesMenu = useClickOutsideClose(
+    setIsServicesMenuOpen,
+    isServicesMenuOpen,
+  );
 
   return (
     <header>
@@ -50,18 +90,39 @@ export default function Navbar() {
           +38(068)-987-36-00
         </a>
 
-        {navlinks.map((element) => (
-          <Link
-            className={cx(
-              css.navlink,
-              router.pathname === element.link && css.selected,
-            )}
-            href={element.link}
-            key={element.name}
-          >
-            {element.name}
-          </Link>
-        ))}
+        <ul className={css.navlinksWrap}>
+          {navlinks.map((element) => (
+            <li key={element.name}>
+              {element.hasDropdown ? (
+                <div ref={refServicesMenu}>
+                  <button
+                    type="button"
+                    className={css.navlink}
+                    onClick={handleServicesButtonClick}
+                  >
+                    {element.name}
+                  </button>
+                  {isServicesMenuOpen && (
+                    <div className={css.dropdownWrap}>
+                      <DropdownMenu items={servicesDropdownLinks} />
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  className={cx(
+                    css.navlink,
+                    router.pathname === element.link && css.selected,
+                  )}
+                  href={element.link}
+                  key={element.name}
+                >
+                  {element.name}
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
 
         <div className={css.switch}>
           <LangSwitch />

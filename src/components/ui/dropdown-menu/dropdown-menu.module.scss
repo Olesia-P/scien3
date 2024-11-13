@@ -1,0 +1,45 @@
+@import "../../../styles/main";
+
+.container {
+    background-color: $white;
+    padding: 0.3em;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .linksWrap {
+        padding: 1em;
+        box-shadow: $shadow-white-out;
+        border-radius: 5px;
+
+        li {
+            cursor: pointer;
+
+
+            &+li {
+                margin-top: 2em;
+            }
+
+            &+li:before {
+                content: " ";
+                @include horizontalSeparator;
+                position: absolute;
+                width: 100%;
+                top: -1em;
+            }
+
+            &:hover {
+                color: $blue;
+
+            }
+
+            .link {
+
+                font-weight: 600;
+                position: relative;
+
+
+            }
+        }
+    }
+
+}

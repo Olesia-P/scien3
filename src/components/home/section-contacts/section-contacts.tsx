@@ -5,7 +5,8 @@ import css from './section-contacts.module.scss';
 export default function SectionContacts() {
   const textSectionContacts = {
     mainHeader: 'Дзвоніть та замовляйте!',
-    mainHeaderCaption: 'Ми проконсультуємо та допоможемо з підбором матеріалів',
+    mainHeaderCaption:
+      'Ми проконсультуємо та допоможемо з підбором матеріалів.',
     speechBubble: {
       caption: 'Ваші ідеї буде втілено!',
       alt: 'спіч бабл',
@@ -17,6 +18,11 @@ export default function SectionContacts() {
     },
     otherContacts: [
       {
+        title: 'Email:',
+        text: ' ',
+        icon: '/icons/email-icon.png',
+      },
+      {
         title: 'Робочі години:',
         text: 'Пн-Пт 9:00-18:00',
         icon: '/icons/timetable-icon.png',
@@ -25,6 +31,14 @@ export default function SectionContacts() {
         title: 'Наш офіс:',
         text: 'Київ, вул. Вінстона Черчилля, 42А, офіс 7',
         icon: '/icons/location-icon.png',
+      },
+    ],
+    socialMediaHeader: 'Ми в соціальних мережах:',
+    socialMedia: [
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/3d_scien3_ua?igsh=dDQ1OWxia29jaXpu',
+        icon: 'icons/instagram-icon.svg',
       },
     ],
   };
@@ -98,6 +112,27 @@ export default function SectionContacts() {
               title="map"
             />
           </div>
+
+          <p className={css.socialMediaHeader}>
+            {textSectionContacts.socialMediaHeader}
+          </p>
+          <ul className={css.socialMediaList}>
+            {textSectionContacts.socialMedia.map((element) => (
+              <a
+                key={element.name}
+                href={element.link}
+                className={css.socialMediaLink}
+              >
+                <img
+                  src={element.icon}
+                  className={css.instaIcon}
+                  aria-hidden="true"
+                  alt="instagram icon"
+                />
+                {element.name}
+              </a>
+            ))}
+          </ul>
         </article>
       </div>
     </section>

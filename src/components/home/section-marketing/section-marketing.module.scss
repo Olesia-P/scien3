@@ -1,25 +1,31 @@
 @import "../../../styles/main";
 
 .container {
-    background-color: $blue-black;
+    // background-color: #495964;
+    background-color: $grey;
     color: $white;
     padding: 1rem 0;
     position: relative;
-    background-image: url("/marketing/white-grid.png");
+    background-image: url("/marketing/blue-grid.png");
     background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
     isolation: isolate;
+    padding: 8rem 0;
+
+
 
     //background opacity overlay
     &::after {
         content: " ";
-        filter: opacity(90%);
+        filter: opacity(85%);
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         z-index: -1;
-        background: $black;
+        background: $grey;
     }
 
     .statementsList {
@@ -28,62 +34,57 @@
         max-width: $content-width;
 
         .statementCard {
+            background-color: $black;
+            padding: 1.5rem 3rem;
+            border: 3px solid $blue;
+            border-radius: 70px;
             margin: 0 auto;
             width: 45rem;
             max-width: 100%;
+            position: relative;
 
+            .statementIllustration {
+                height: 8em;
+                position: absolute;
+                top: -0.5rem;
+            }
 
-            .statement {
-                background-color: $grey;
-                padding: 1.5rem 3rem;
-                border: 3px solid $blue;
-                border-radius: 70px;
-                margin: 4rem 0;
+            .question {
+                font-weight: 900;
+                margin: 0 0 1rem 0;
+                font-family: $font-family-mono;
+                font-size: $font-size-18;
+            }
 
-                .statementIllustration {
-                    height: 8em;
-                    position: absolute;
-                    top: -0.5rem;
+            .answer {
+                font-size: $font-size-16;
+
+                mark {
+                    color: $blue;
+                    background-color: transparent;
                 }
-
-                .question {
-                    font-weight: 900;
-                    margin: 0 0 1rem 0;
-                    font-family: $font-family-mono;
-                    font-size: $font-size-18;
-                }
-
-                .answer {
-                    font-size: $font-size-16;
-
-                    mark {
-                        color: $blue;
-                        background-color: transparent;
-                    }
-                }
-
             }
 
             &:nth-child(odd) {
                 transform: translateX(-15%);
 
-                li {
-                    img {
-                        right: -22%;
-                        @include floatingAnimationCounterClockwise
-                    }
+                img {
+                    right: -22%;
+                    @include floatingAnimationCounterClockwise
                 }
             }
 
             &:nth-child(even) {
                 transform: translateX(15%);
 
-                li {
-                    img {
-                        left: -22%;
-                        @include floatingAnimationClockwise
-                    }
+                img {
+                    left: -22%;
+                    @include floatingAnimationClockwise
                 }
+            }
+
+            &+.statementCard {
+                margin-top: 3rem;
             }
         }
     }

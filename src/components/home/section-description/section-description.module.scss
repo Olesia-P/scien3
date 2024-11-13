@@ -3,7 +3,7 @@
 .container {
     background-color: $white;
     max-width: $content-width;
-    margin: 2rem auto;
+    margin: 4rem auto 2rem auto;
 
     .mainHeader {
         font-size: $font-size-24;
@@ -32,6 +32,8 @@
             align-self: center;
             position: relative;
             margin-left: 2rem;
+            display: flex;
+            align-items: center;
 
             &::before {
                 content: ' ';
@@ -40,7 +42,6 @@
                 height: 1.5em;
                 width: 1.5em;
                 left: -2.5rem;
-                top: 0.1rem;
                 background-size: contain;
                 background-repeat: no-repeat;
             }

@@ -1,0 +1,73 @@
+@import "../_main.scss";
+
+.container {
+    padding-top: 3.5rem;
+    // height: 120vh;
+    background-color: $black;
+    overflow-x: hidden;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    // .illustrationsWrap {
+    //     width: fit-content;
+    //     @include dfc;
+
+    .illustrationLeft,
+    .illustrationRight {
+        opacity: 0.8;
+        // max-height: calc(100vh - 4rem);
+        // height: 100%;
+        border: 3px solid $white;
+        // border-left: 3px solid $white;
+        // transform: translateX(0);
+        transition: opacity 1.5s ease-in-out;
+
+        // &.isBetween {
+        //     opacity: 70%;
+        //     transform: translateX(-15vw);
+        // }
+    }
+
+    .illustrationLeft {
+        transition: transform 1.5s ease-in-out;
+
+        &.isBetween {
+            transform: translateX(-15vw);
+        }
+    }
+
+    .illustrationRight {
+        transition: transform 1.5s ease-in-out;
+        transform: translateX(-10rem);
+
+        &.isBetween {
+            transform: translateX(28vw);
+        }
+    }
+
+    // }
+
+
+    .linksWrap {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        color: white;
+        // width: fit-content;
+        // max-width: 100%;
+        // margin: 0 auto;
+        height: 30rem;
+        // background-color: pink;
+        width: 10rem;
+        // opacity: 80%;
+    }
+
+    button {
+        position: absolute;
+    }
+
+}
