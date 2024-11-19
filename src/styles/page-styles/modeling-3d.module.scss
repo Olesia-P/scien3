@@ -1,0 +1,19 @@
+@import "../main";
+
+.container {
+    padding-top: 3.5rem;
+    min-height: 100vh;
+    background-color: $black;
+    background-image: url("/modeling-3d/frfgrg.png");
+    background-size: cover;
+    color: $white;
+
+    .mainContent {
+        max-width: $content-width;
+        background-color: $black;
+        border: 2px solid $blue;
+        margin: 5rem auto;
+        padding: 3rem;
+    }
+
+}

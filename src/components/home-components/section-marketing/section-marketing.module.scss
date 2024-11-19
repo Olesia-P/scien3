@@ -4,21 +4,21 @@
     // background-color: #495964;
     background-color: $grey;
     color: $white;
-    padding: 1rem 0;
+    padding: 3rem 0;
     position: relative;
-    background-image: url("/marketing/blue-grid.png");
+    background-image: url("/marketing/jhuyjk.jpeg");
     background-size: cover;
     // background-position: center;
     // background-repeat: no-repeat;
     isolation: isolate;
-    padding: 8rem 0;
+    // padding: 8rem 0;
 
 
 
     //background opacity overlay
     &::after {
         content: " ";
-        filter: opacity(85%);
+        filter: opacity(70%);
         position: absolute;
         top: 0;
         left: 0;
@@ -30,8 +30,12 @@
 
     .statementsList {
         margin: 0 auto;
-        padding: 0 15%;
-        max-width: $content-width;
+        // padding: 0 15%;
+        padding: 5rem;
+        // max-width: $content-width;
+        // width: 70%;
+        // background-color: #303841cc;
+        // border: 2px solid $blue;
 
         .statementCard {
             background-color: $black;

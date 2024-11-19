@@ -31,8 +31,8 @@ export default function LangSwitch() {
           <img
             src={
               isSwitched
-                ? 'icons/united-kingdom-icon.png'
-                : 'icons/ukraine-icon.png'
+                ? '/icons/united-kingdom-icon.png'
+                : '/icons/ukraine-icon.png'
             }
             alt={
               isSwitched
@@ -44,11 +44,11 @@ export default function LangSwitch() {
 
         <div className={css.background}>
           <img
-            src="icons/ukraine-icon.png"
+            src="/icons/ukraine-icon.png"
             alt="Switch to Ukrainian language"
           />
           <img
-            src="icons/united-kingdom-icon.png"
+            src="/icons/united-kingdom-icon.png"
             alt="Switch to English language"
           />
         </div>

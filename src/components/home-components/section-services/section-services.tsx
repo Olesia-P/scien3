@@ -8,7 +8,7 @@ export default function SectionServices() {
     links: [
       {
         name: '3D моделювання',
-        link: '/',
+        link: '/modeling-3d',
         img: 'services/3d-modeling.jpg',
         alt: 'ілюстрація 3Д-моделювання',
       },

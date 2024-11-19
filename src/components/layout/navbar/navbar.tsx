@@ -6,7 +6,8 @@ import { useRouter } from 'next/router';
 import css from './navbar.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
-import useClickOutsideClose from '@/components/hooks/useOutsideClickClose';
+import useMouseOutsideClose from '@/components/hooks/useMouseOutsideClose';
+// import useClickOutsideClose from '@/components/hooks/useOutsideClickClose';
 // import MobileMenu from '../mobile-menu/mobile-menu';
 
 export default function Navbar() {
@@ -17,7 +18,7 @@ export default function Navbar() {
     },
     {
       name: 'послуги',
-      link: '/',
+      link: '/services',
       hasDropdown: true,
     },
     {
@@ -37,7 +38,7 @@ export default function Navbar() {
   const servicesDropdownLinks = [
     {
       name: '3D моделювання',
-      link: '/',
+      link: '/services/modeling-3d',
     },
     {
       name: 'Серійне лиття',
@@ -57,9 +58,9 @@ export default function Navbar() {
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const router = useRouter();
 
-  const handleServicesButtonClick = () => {
-    setIsServicesMenuOpen((prevState) => !prevState);
-  };
+  // const handleServicesButtonClick = () => {
+  //   setIsServicesMenuOpen((prevState) => !prevState);
+  // };
   // const handleHamburgerClick = () => {
   //   setIsMobileMenuOpen((prevState) => !prevState);
   // };
@@ -73,7 +74,12 @@ export default function Navbar() {
   //     }
   //   }
   // }, [router.asPath]);
-  const refServicesMenu = useClickOutsideClose(
+  // const refServicesMenu = useClickOutsideClose(
+  //   setIsServicesMenuOpen,
+  //   isServicesMenuOpen,
+  // );
+
+  const refServicesMenu = useMouseOutsideClose(
     setIsServicesMenuOpen,
     isServicesMenuOpen,
   );
@@ -82,7 +88,7 @@ export default function Navbar() {
     <header>
       <nav className={css.container}>
         <Link href="/" className={css.logo}>
-          <img src="logo-3d-small.png" alt="scien3 logo 3D" />
+          <img src="/logo-3d-small.png" alt="scien3 logo 3D" />
           <p>Scien3 Cast Creations</p>
         </Link>
 
@@ -95,15 +101,21 @@ export default function Navbar() {
             <li key={element.name}>
               {element.hasDropdown ? (
                 <div ref={refServicesMenu}>
-                  <button
-                    type="button"
-                    className={css.navlink}
-                    onClick={handleServicesButtonClick}
+                  <Link
+                    href={element.link}
+                    className={cx(
+                      css.navlink,
+                      router.pathname === element.link && css.selected,
+                    )}
+                    onMouseEnter={() => setIsServicesMenuOpen(true)}
                   >
                     {element.name}
-                  </button>
+                  </Link>
                   {isServicesMenuOpen && (
-                    <div className={css.dropdownWrap}>
+                    <div
+                      className={css.dropdownWrap}
+                      onClick={() => setIsServicesMenuOpen(false)}
+                    >
                       <DropdownMenu items={servicesDropdownLinks} />
                     </div>
                   )}

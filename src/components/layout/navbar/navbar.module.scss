@@ -59,6 +59,7 @@
                 transition: color 0.2s ease-in;
                 box-shadow: $shadow-white-out;
                 position: relative;
+                color: $black;
 
                 &:hover {
                     color: $blue;
@@ -71,9 +72,10 @@
 
             .dropdownWrap {
                 position: absolute;
-                width: 200%;
-                top: 2.8rem;
-                left: -50%;
+                width: 250%;
+                top: 1.8rem;
+                left: -75%;
+                z-index: 11;
             }
         }
     }

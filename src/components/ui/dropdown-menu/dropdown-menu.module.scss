@@ -2,21 +2,22 @@
 
 .container {
     background-color: $white;
-    padding: 0.3em;
+    padding: 0.1rem;
     border-radius: 5px;
     overflow: hidden;
 
     .linksWrap {
-        padding: 1em;
+        padding: 1.5em;
         box-shadow: $shadow-white-out;
         border-radius: 5px;
 
         li {
             cursor: pointer;
-
+            transition: color 0.2s linear;
+            text-align: center;
 
             &+li {
-                margin-top: 2em;
+                padding-top: 1.5em;
             }
 
             &+li:before {
@@ -24,20 +25,16 @@
                 @include horizontalSeparator;
                 position: absolute;
                 width: 100%;
-                top: -1em;
+                top: 0.75em;
+                left: 0;
             }
 
             &:hover {
                 color: $blue;
-
             }
 
             .link {
-
                 font-weight: 600;
-                position: relative;
-
-
             }
         }
     }
