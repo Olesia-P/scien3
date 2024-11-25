@@ -1,12 +1,17 @@
-/* eslint-disable react/no-unstable-nested-components */
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import css from './section-contacts.module.scss';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export default function SectionContacts() {
   const textSectionContacts = {
-    mainHeader: 'Дзвоніть та замовляйте!',
+    mainHeader: 'Пишіть, дзвоніть та замовляйте!',
     mainHeaderCaption:
       'Ми проконсультуємо та допоможемо з підбором матеріалів.',
+    description: [
+      'Оформлення замовлення може проводитись як від приватної особи, так і від організації.',
+      'Є різні форми доставки та оплати замовлень.',
+    ],
     speechBubble: {
       caption: 'Ваші ідеї буде втілено!',
       alt: 'спіч бабл',
@@ -42,8 +47,18 @@ export default function SectionContacts() {
       },
     ],
   };
+
+  const [isObserved, setIsObserved] = useState(false);
+  const handleIntersection = () => {
+    setIsObserved(true);
+  };
+  const contactsSectionRef = useIntersectionObserver(
+    handleIntersection,
+    undefined,
+    0,
+  );
   return (
-    <section className={css.container}>
+    <section className={css.container} ref={contactsSectionRef}>
       <hgroup className={css.contactsHeader}>
         <h3>{textSectionContacts.mainHeader}</h3>
         <p>{textSectionContacts.mainHeaderCaption}</p>{' '}
@@ -56,7 +71,7 @@ export default function SectionContacts() {
           aria-hidden="true"
           className={css.illustration}
         />
-        <div className={css.bubbleWrap}>
+        <div className={cx(css.bubbleWrap, isObserved && css.isAnimated)}>
           <p>{textSectionContacts.speechBubble.caption}</p>
           <img
             src="contacts/speech-bubble.png"
@@ -66,6 +81,12 @@ export default function SectionContacts() {
         </div>
 
         <article className={css.contactsCard}>
+          <div className={css.description}>
+            {textSectionContacts.description.map((element) => (
+              <p key={element}>{element}</p>
+            ))}
+          </div>
+
           <ul className={css.contactsList}>
             <a
               className={css.singleContactWrap}

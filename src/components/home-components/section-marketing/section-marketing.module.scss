@@ -1,19 +1,17 @@
 @import "../../../styles/main";
 
 .container {
-    // background-color: #495964;
     background-color: $grey;
     color: $white;
     padding: 3rem 0;
     position: relative;
-    background-image: url("/marketing/jhuyjk.jpeg");
+    background-image: url("/marketing/chess.jpeg");
     background-size: cover;
-    // background-position: center;
-    // background-repeat: no-repeat;
     isolation: isolate;
-    // padding: 8rem 0;
-
-
+    @include dfc;
+    min-height: 100vh;
+    border-bottom: 2px solid $blue;
+    border-top: 2px solid $blue;
 
     //background opacity overlay
     &::after {
@@ -30,12 +28,6 @@
 
     .statementsList {
         margin: 0 auto;
-        // padding: 0 15%;
-        padding: 5rem;
-        // max-width: $content-width;
-        // width: 70%;
-        // background-color: #303841cc;
-        // border: 2px solid $blue;
 
         .statementCard {
             background-color: $black;
@@ -44,8 +36,8 @@
             border-radius: 70px;
             margin: 0 auto;
             width: 45rem;
-            max-width: 100%;
             position: relative;
+            transition: transform 0.5s linear;
 
             .statementIllustration {
                 height: 8em;
@@ -70,7 +62,7 @@
             }
 
             &:nth-child(odd) {
-                transform: translateX(-15%);
+                transform: translateX(-30%);
 
                 img {
                     right: -22%;
@@ -79,7 +71,7 @@
             }
 
             &:nth-child(even) {
-                transform: translateX(15%);
+                transform: translateX(30%);
 
                 img {
                     left: -22%;
@@ -89,6 +81,22 @@
 
             &+.statementCard {
                 margin-top: 3rem;
+            }
+        }
+
+        &.isAnimated {
+            .statementCard {
+                &:nth-child(odd) {
+                    transform: translateX(-15%);
+
+
+                }
+
+                &:nth-child(even) {
+                    transform: translateX(15%);
+
+
+                }
             }
         }
     }

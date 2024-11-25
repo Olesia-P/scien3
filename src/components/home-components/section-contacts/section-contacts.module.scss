@@ -1,7 +1,7 @@
 @import "../../../styles/main";
 
 .container {
-    padding: 4rem 0 1rem 0;
+    padding: 3rem 0 1rem 0;
     width: $content-width;
     max-width: 100%;
     margin: 0 auto;
@@ -22,6 +22,7 @@
             font-size: $font-size-22;
             margin-top: 0.5rem;
             font-weight: 600;
+            text-align: center;
         }
     }
 
@@ -29,9 +30,9 @@
         display: grid;
         // grid-template-columns: repeat((2, 1fr));
         grid-template-columns: 55% 45%;
-        margin: 2.5rem auto;
+        margin: 2rem auto;
         position: relative;
-        max-width: 85%;
+        padding: 0 2rem;
         gap: 3rem;
 
         .illustration {
@@ -44,11 +45,14 @@
             position: absolute;
             width: 10rem;
             top: -4.5rem;
-            left: -1.5rem;
+            left: 2rem;
+            transform: scale(10%);
+            transition: transform 1s ease-in-out;
 
             img {
                 width: 100%;
                 filter: opacity(70%);
+
             }
 
             p {
@@ -61,16 +65,29 @@
                 font-family: $font-family-fancy;
                 color: $grey;
             }
+
+            &.isAnimated {
+                transform: scale(100%);
+            }
         }
 
         .contactsCard {
-            padding: 3em;
+            padding: 2rem;
             align-self: center;
             box-shadow: $shadow-white-out;
             border-radius: 10px;
 
+            .description {
+                margin-bottom: 2rem;
+
+                p {
+                    margin-bottom: 0.5rem;
+                    font-size: $font-size-18;
+                }
+            }
+
             .contactsList {
-                font-size: $font-size-20 ;
+                font-size: $font-size-18 ;
 
                 .singleContactWrap {
                     margin: 0 0 2rem 4rem;
@@ -119,13 +136,13 @@
         .socialMediaHeader {
             font-weight: 600;
             margin: 1.5rem 0;
-            font-size: $font-size-20;
+            font-size: $font-size-18;
         }
 
         .socialMediaList {
 
             .socialMediaLink {
-                font-size: $font-size-20;
+                font-size: $font-size-18;
                 @include dfc;
                 width: fit-content;
                 padding: 0.5em;

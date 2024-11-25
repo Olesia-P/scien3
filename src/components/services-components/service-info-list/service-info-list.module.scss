@@ -1,0 +1,55 @@
+@import "../../../styles/main";
+
+.container {
+    padding: 1rem 0;
+
+    .header {
+        margin-bottom: 1rem;
+        position: relative;
+        width: fit-content;
+        padding: 0.5em 0;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 0%;
+            border-bottom: 2px solid $blue;
+            transition: width 0.9s ease-in;
+            z-index: 1;
+        }
+
+        &::after {
+            bottom: 0em;
+        }
+
+        &::before {
+            top: 0em;
+        }
+
+        &.isAnimated {
+
+            &::after,
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    .card {
+        li {
+            font-size: $font-size-16;
+        }
+    }
+}
+
+.container:has(>h1, >h2, >h3) {
+    .card {
+
+        li {
+            font-size: $font-size-18;
+        }
+
+    }
+}

@@ -3,10 +3,10 @@
 .container {
     background-color: $white;
     max-width: $content-width;
-    margin: 4rem auto 2rem auto;
+    margin: 3rem auto 2rem auto;
 
     .mainHeader {
-        font-size: $font-size-24;
+        // font-size: $font-size-24;
         font-family: $font-family-mono;
         margin: 3rem auto;
         width: fit-content;
@@ -20,10 +20,8 @@
 
     .descriptionList {
         margin: 0 auto;
-        padding: 0;
-        width: 80%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
         gap: 1.5rem;
 
         li {
@@ -31,7 +29,7 @@
             list-style: none;
             align-self: center;
             position: relative;
-            margin-left: 2rem;
+            margin-left: 3rem;
             display: flex;
             align-items: center;
 
@@ -41,9 +39,17 @@
                 position: absolute;
                 height: 1.5em;
                 width: 1.5em;
-                left: -2.5rem;
+                left: -2.2rem;
                 background-size: contain;
                 background-repeat: no-repeat;
+                transform: scale(10%);
+                transition: transform 0.7s linear;
+            }
+        }
+
+        &.isAnimated {
+            li::before {
+                transform: scale(100%);
             }
         }
     }

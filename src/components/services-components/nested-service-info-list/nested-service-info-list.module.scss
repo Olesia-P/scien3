@@ -1,0 +1,42 @@
+@import "../../../styles/main";
+
+.container {
+    border-left: 1px solid $white;
+    padding-left: 1rem;
+
+    .header {
+        padding: 0 0 0.7em 2.3rem;
+        position: relative;
+        @include dfc;
+        width: fit-content;
+
+        &::before {
+            content: ' ';
+            background-image: var(--icon-url);
+            position: absolute;
+            height: 1em;
+            width: 1em;
+            left: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .card {
+        li {
+            font-size: $font-size-16;
+        }
+    }
+}
+
+.container+.container {
+    margin-top: 1rem;
+}
+
+.container:has(>h1, >h2, >h3) {
+    .card {
+        li {
+            font-size: $font-size-18;
+        }
+    }
+}

@@ -27,7 +27,7 @@ export default function SectionServices() {
       {
         name: 'Форми для лиття',
         link: '/',
-        img: 'services/silicon-form.jpg',
+        img: 'services/silicon-mold.jpg',
         alt: 'силіконова форма',
       },
     ],
@@ -40,7 +40,7 @@ export default function SectionServices() {
           {textSectionServices.links.map((element) => (
             <Link href={element.link} className={css.link} key={element.name}>
               <img src={element.img} alt={element.alt} />
-              <h3>
+              <h3 className={css.caption}>
                 {element.name} <FaArrowRightLong />
               </h3>
             </Link>

@@ -33,11 +33,12 @@
                     transition: filter 0.3s ease-in;
                 }
 
-                h3 {
+                .caption {
                     font-size: $font-size-18;
                     margin-top: 0.7rem;
                     @include dfc;
                     text-decoration: underline;
+                    transition: filter 0.2s linear;
 
                     svg {
                         margin-left: 0.5rem;
@@ -48,22 +49,26 @@
                     img {
                         filter: grayscale(0%);
                     }
+
+                    .caption {
+                        filter: brightness(110%);
+                    }
                 }
             }
+        }
 
-            .horizontalSeparator {
-                @include horizontalSeparator;
-                width: 100%;
-                top: 49%;
-                position: absolute;
-            }
+        .horizontalSeparator {
+            @include horizontalSeparator;
+            width: 100%;
+            top: 49%;
+            position: absolute;
+        }
 
-            .verticalSeparator {
-                @include verticalSeparator;
-                left: 50%;
-                height: 100%;
-                position: absolute;
-            }
+        .verticalSeparator {
+            @include verticalSeparator;
+            left: 50%;
+            height: 100%;
+            position: absolute;
         }
     }
 }

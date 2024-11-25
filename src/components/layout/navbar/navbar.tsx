@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import css from './navbar.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
-import useMouseOutsideClose from '@/components/hooks/useMouseOutsideClose';
+import useMouseOutsideClose from '@/hooks/useMouseOutsideClose';
 // import useClickOutsideClose from '@/components/hooks/useOutsideClickClose';
 // import MobileMenu from '../mobile-menu/mobile-menu';
 
@@ -38,7 +38,7 @@ export default function Navbar() {
   const servicesDropdownLinks = [
     {
       name: '3D моделювання',
-      link: '/services/modeling-3d',
+      link: '/services/modeling-3D',
     },
     {
       name: 'Серійне лиття',
@@ -85,7 +85,7 @@ export default function Navbar() {
   );
 
   return (
-    <header>
+    <header className={css.shadowWrapper}>
       <nav className={css.container}>
         <Link href="/" className={css.logo}>
           <img src="/logo-3d-small.png" alt="scien3 logo 3D" />
@@ -108,6 +108,7 @@ export default function Navbar() {
                       router.pathname === element.link && css.selected,
                     )}
                     onMouseEnter={() => setIsServicesMenuOpen(true)}
+                    aria-selected={router.pathname === element.link}
                   >
                     {element.name}
                   </Link>

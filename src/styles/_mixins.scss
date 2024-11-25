@@ -22,3 +22,16 @@
     width: 3px;
     box-shadow: 1px 0 0 #ffffff;
 }
+
+@mixin blueBackgroundRounded ($padTop: 0.4em, $padRight: 1em, $padBottom: 0.4em, $padLeft: 1em) {
+    background-color: $blue;
+    color: white;
+    padding: $padTop $padRight $padBottom $padLeft;
+    border-radius: 10px;
+}
+
+@mixin blueBorderRounded ($padTop: 0.4em, $padRight: 1em, $padBottom: 0.4em, $padLeft: 1em, $thickness: 1px) {
+    border: $thickness solid $blue;
+    padding: $padTop $padRight $padBottom $padLeft;
+    border-radius: 10px;
+}

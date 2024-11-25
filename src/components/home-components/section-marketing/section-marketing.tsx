@@ -1,13 +1,14 @@
-/* eslint-disable react/no-unstable-nested-components */
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import css from './section-marketing.module.scss';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export default function SectionMarketing() {
   const textSectionMarketing = {
     statements: [
       {
         question: 'Ви маєте ідею, але не знаєте, з чого почати?',
-        answer: () => (
+        answer: (
           <>
             Ми допоможемо із <mark> розробкою з нуля </mark> або{' '}
             <mark>виготовимо виріб за ескізом</mark>.
@@ -19,7 +20,7 @@ export default function SectionMarketing() {
       },
       {
         question: 'Вам треба дрібносерійна партія деталей *ще на вчора*? ',
-        answer: () => (
+        answer: (
           <>
             Виробимо у кількості 1-1000 штук, що дозволить вам{' '}
             <mark> зекономити бюджет </mark>
@@ -31,7 +32,7 @@ export default function SectionMarketing() {
       },
       {
         question: 'Маєте зношену або поламану деталь?',
-        answer: () => (
+        answer: (
           <>
             Ми зробимо її <mark> точну копію</mark>. Або навіть краще.
           </>
@@ -42,7 +43,8 @@ export default function SectionMarketing() {
       },
       {
         question: 'Вашій колекції не вистачає фігурки леприкона?',
-        answer: () => (
+        //
+        answer: (
           <>
             У нас ви знайдете{' '}
             <mark> широкий вибір матеріалів та кольорів </mark> для лиття або
@@ -54,21 +56,30 @@ export default function SectionMarketing() {
       },
       {
         question: 'Власноруч робите мило або шоколадки?',
-        answer: () => (
+        answer: (
           <>
             Виготовимо <mark>унікальні силіконові форми</mark>, яких не буде ні
             у кого, крім вас,
           </>
         ),
 
-        img: 'marketing/soap-silicone-form.png',
+        img: 'marketing/soap-silicone-mold.png',
         alt: 'силіконова форма для мила у формі Маріо',
       },
     ],
   };
+  const [isObserved, setIsObserved] = useState(false);
+  const handleIntersection = () => {
+    setIsObserved(true);
+  };
+  const marketingSectionRef = useIntersectionObserver(
+    handleIntersection,
+    undefined,
+    0,
+  );
   return (
-    <section className={css.container}>
-      <ul className={css.statementsList}>
+    <section className={css.container} ref={marketingSectionRef}>
+      <ul className={cx(css.statementsList, isObserved && css.isAnimated)}>
         {textSectionMarketing.statements.map((element) => (
           <li className={css.statementCard} key={element.question}>
             <img
@@ -78,7 +89,7 @@ export default function SectionMarketing() {
               aria-hidden="true"
             />
             <h3 className={css.question}>&#128269; {element.question}</h3>
-            <p className={css.answer}>{element.answer()}</p>
+            <p className={css.answer}>{element.answer}</p>
           </li>
         ))}
       </ul>

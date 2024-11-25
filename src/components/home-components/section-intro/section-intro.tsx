@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './section-intro.module.scss';
-import useIntersectionObserver from '@/components/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export default function SectionIntro() {
   const [isObserved, setIsObserved] = useState(false);
