@@ -37,19 +37,39 @@
         }
     }
 
+    .paragraph {
+        font-size: $font-size-16;
+
+        &+.paragraph {
+            margin-top: 0.5em;
+        }
+
+        &+.card {
+            margin-top: 1em;
+
+        }
+
+    }
+
     .card {
         li {
             font-size: $font-size-16;
+
+            &+li {
+                margin-top: 0.4em;
+            }
         }
     }
 }
 
 .container:has(>h1, >h2, >h3) {
-    .card {
+    .paragraph {
+        font-size: $font-size-18;
+    }
 
+    .card {
         li {
             font-size: $font-size-18;
         }
-
     }
 }

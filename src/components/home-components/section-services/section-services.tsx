@@ -8,26 +8,26 @@ export default function SectionServices() {
     links: [
       {
         name: '3D моделювання',
-        link: '/modeling-3d',
-        img: 'services/3d-modeling.jpg',
+        link: '/services/modeling-3d',
+        img: '/services/3d-modeling.jpg',
         alt: 'ілюстрація 3Д-моделювання',
       },
       {
         name: 'Серійне лиття',
-        link: '/',
-        img: 'services/mass-production.jpg',
+        link: '/services/mass-production',
+        img: '/services/mass-production.jpg',
         alt: 'ілюстрація серійного лиття пластикових продуктів',
       },
       {
         name: '3D друк',
         link: '/',
-        img: 'services/3d-printer.jpg',
+        img: '/services/3d-printer.jpg',
         alt: '3Д-принтер',
       },
       {
         name: 'Форми для лиття',
         link: '/',
-        img: 'services/silicon-mold.jpg',
+        img: '/services/silicon-mold.jpg',
         alt: 'силіконова форма',
       },
     ],

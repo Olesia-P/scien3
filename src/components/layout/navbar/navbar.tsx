@@ -42,7 +42,7 @@ export default function Navbar() {
     },
     {
       name: 'Серійне лиття',
-      link: '/',
+      link: '/services/mass-production',
     },
     {
       name: '3D друк',
