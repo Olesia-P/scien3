@@ -1,0 +1,15 @@
+@import "../main";
+
+.linkMassProduction {
+    font-size: $font-size-18;
+    display: flex;
+    align-items: center;
+    color: $blue;
+    text-decoration: underline;
+    padding-bottom: 1rem;
+
+    .massProdIcon {
+        margin-left: 0.5em;
+    }
+
+}

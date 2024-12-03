@@ -3,6 +3,7 @@ import Link from 'next/link';
 import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './single-service-layout.module.scss';
+import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -39,6 +40,12 @@ export default function SingleServiceLayout({
   button,
   contacts,
 }: SingleServiceLayoutProps) {
+  const text = {
+    popupText: 'Email скопійовано!',
+    email: 'some email',
+    emailButton: 'Скопіювати some email',
+  };
+
   const decideBackgroundStyle = () => {
     switch (backgroundStyle) {
       case 1:
@@ -54,8 +61,14 @@ export default function SingleServiceLayout({
     }
   };
 
+  const { handleCopyClick, Popup } = useCopyTextWithPopup(
+    text.email,
+    text.popupText,
+  );
+
   return (
     <main className={cx(css.container, decideBackgroundStyle())}>
+      <Popup />
       <article className={css.mainContent}>
         <h1 className={css.mainHeader}>{content.main.header}</h1>
         <img
@@ -74,8 +87,12 @@ export default function SingleServiceLayout({
             <a className={css.singleContact} href="tel:+380689873600">
               {contacts.phone.text}
             </a>
-            <button type="button" className={css.singleContact}>
-              {contacts.email.text}
+            <button
+              type="button"
+              className={css.singleContact}
+              onClick={handleCopyClick}
+            >
+              {text.emailButton}
             </button>
           </ul>
         </section>

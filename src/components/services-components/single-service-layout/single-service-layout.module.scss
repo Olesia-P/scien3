@@ -60,7 +60,7 @@
         }
 
         .mainHeader {
-            font-size: $font-size-36;
+            font-size: $font-size-28;
             margin-bottom: 0.5rem;
             color: $blue;
             position: relative;
@@ -81,10 +81,10 @@
         }
 
         .contacts {
-            margin: 2rem auto;
+            margin: 1rem auto;
             width: 60%;
             border: 2px dashed $blue;
-            padding: 1rem;
+            padding: 1.5em 1em;
 
             .contactsHeader {
                 text-align: center;
@@ -128,5 +128,9 @@
                 filter: brightness(130%);
             }
         }
+    }
+
+    strong {
+        color: $light-blue;
     }
 }

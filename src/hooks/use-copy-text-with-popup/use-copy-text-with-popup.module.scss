@@ -1,0 +1,33 @@
+@import "../../styles/main";
+
+.popupContainer {
+    position: fixed;
+    z-index: 100;
+    margin-top: 2rem;
+    width: 100%;
+    opacity: 0;
+    @include animationFadeAway;
+
+    p {
+        background-color: $blue;
+        width: 40%;
+        margin: 0 auto;
+        font-size: $font-size-28;
+        padding: 0.8em 1em;
+        border-radius: 10px;
+        position: relative;
+        border: 1px solid $black;
+        font-weight: 900;
+        color: $white;
+        text-align: center;
+
+        .exitIcon {
+            position: absolute;
+            top: 0.3em;
+            right: 0.5em;
+            background-color: $blue;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 .container {
     padding: 1rem 0;
 
-    .header {
+    .mainHeader {
         margin-bottom: 1rem;
         position: relative;
         width: fit-content;
@@ -44,19 +44,50 @@
             margin-top: 0.5em;
         }
 
-        &+.card {
+        &+.card,
+        &+.nestedListContainer {
             margin-top: 1em;
-
         }
+
 
     }
 
     .card {
-        li {
+        .listItem {
             font-size: $font-size-16;
 
-            &+li {
+            &+.listItem {
                 margin-top: 0.4em;
+            }
+
+            .listIcon {
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    .nestedListContainer {
+        .nestedHeader {
+            padding: 0 0 0.2em 2.3rem;
+            position: relative;
+            @include dfc;
+            width: fit-content;
+
+            &::before {
+                content: ' ';
+                background-image: var(--icon-url);
+                position: absolute;
+                height: 1em;
+                width: 1em;
+                left: 0;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .nestedListItem {
+            &+.nestedListItem {
+                margin-top: 1em;
             }
         }
     }
@@ -68,7 +99,7 @@
     }
 
     .card {
-        li {
+        .listItem {
             font-size: $font-size-18;
         }
     }

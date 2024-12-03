@@ -1,59 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import css from './service-info-block.module.scss';
-import NestedServiceInfoBlock from '../nested-service-info-block/nested-service-info-block';
 
-type NestedList = {
+type NestedListObject = {
   header: string;
   paragraphs?: (string | React.JSX.Element)[];
   list?: (string | React.JSX.Element)[];
 };
 
-// type BaseProps = {
-//   header: string;
-//   headerSize: number;
-//   paragraphs?: string[] | React.JSX.Element[];
-// };
+type ServiceInfoListProps = {
+  header: string;
+  headerSize: number;
+  paragraphs?: (string | React.JSX.Element)[];
+  list?: (string | React.JSX.Element)[];
+  nestedList?: NestedListObject[];
+  nestedListIcon?: 'laptop' | 'pouring' | 'cup' | 'rocket' | 'ball';
+  listWithIcon?: boolean;
+};
 
-// type ListProps = {
-//   list: string[] | React.JSX.Element[];
-//   nestedList?: never;
-//   nestedListIcon?: never;
-// };
-
-// type NestedListProps = {
-//   list?: never;
-//   nestedList: NestedList[];
-//   nestedListIcon: string;
-// };
-
-// type NoListProps = {
-//   list?: never;
-//   nestedList?: never;
-//   nestedListIcon?: never;
-// };
-
-// type ConditionalProps = ListProps | NestedListProps | NoListProps;
-
-// type ServiceInfoListProps = BaseProps & ConditionalProps;
-
-type ServiceInfoListProps =
-  | {
-      header: string;
-      headerSize: number;
-      paragraphs?: (string | React.JSX.Element)[];
-      list?: (string | React.JSX.Element)[];
-      nestedList?: NestedList[];
-      nestedListIcon: 'laptop' | 'pouring' | 'cup' | 'rocket';
-    }
-  | {
-      header: string;
-      headerSize: number;
-      paragraphs?: (string | React.JSX.Element)[];
-      list?: (string | React.JSX.Element)[];
-      nestedList?: undefined;
-      nestedListIcon?: 'laptop' | 'pouring' | 'cup' | 'rocket';
-    };
 export default function ServiceInfoBlock({
   header,
   headerSize,
@@ -61,15 +25,55 @@ export default function ServiceInfoBlock({
   list,
   nestedList,
   nestedListIcon,
+  listWithIcon = false,
 }: ServiceInfoListProps) {
-  if (headerSize < 1 || headerSize > 5) {
+  const createHeaderTag = (headerSize: number) => {
+    if (headerSize >= 1 && headerSize <= 5) {
+      return `h${headerSize}` as keyof JSX.IntrinsicElements;
+    }
     throw new Error('headerType must be between 1 and 5');
-  }
+  };
 
-  const decideNestedListHeaderSize = () =>
-    headerSize + 1 <= 5 ? headerSize + 1 : 5;
+  const MainHeaderTag = createHeaderTag(headerSize);
+  const NestedHeaderTag = createHeaderTag(headerSize + 1);
 
-  const HeaderTag = `h${headerSize}` as keyof JSX.IntrinsicElements;
+  const displayParagraphs = (paragraphs: (string | React.JSX.Element)[]) => {
+    return paragraphs?.map((element) => (
+      <p className={css.paragraph} key={Math.random()}>
+        {element}
+      </p>
+    ));
+  };
+
+  const displayList = (list: (string | React.JSX.Element)[]) => {
+    return (
+      <ul className={css.card}>
+        {list.map((element) => (
+          <li className={css.listItem} key={Math.random()}>
+            {listWithIcon && <strong className={css.listIcon}>▲</strong>}
+            {element}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const decideIcon = () => {
+    switch (nestedListIcon) {
+      case 'laptop':
+        return '/icons/laptop-icon.png';
+      case 'rocket':
+        return '/icons/rocket-icon.png';
+      case 'cup':
+        return '/icons/stationary-cup-icon.png';
+      case 'pouring':
+        return '/icons/pouring-icon.png';
+      case 'ball':
+        return '/icons/angled-ball-icon.png';
+      default:
+        return '/icons/rocket-icon.png';
+    }
+  };
 
   const [isAnimated, setIsAnimated] = useState(false);
 
@@ -79,36 +83,35 @@ export default function ServiceInfoBlock({
 
   return (
     <section className={css.container}>
-      <HeaderTag className={cx(css.header, isAnimated && css.isAnimated)}>
+      <MainHeaderTag
+        className={cx(css.mainHeader, isAnimated && css.isAnimated)}
+      >
         {header}
-      </HeaderTag>
+      </MainHeaderTag>
 
-      {paragraphs?.map((element) => (
-        <p className={css.paragraph} key={Math.random()}>
-          {element}
-        </p>
-      ))}
+      {paragraphs && displayParagraphs(paragraphs)}
 
-      {list && (
-        <ul className={css.card}>
-          {(list as string[]).map((element) => (
-            <li key={Math.random()}>{element}</li>
-          ))}
-        </ul>
-      )}
+      {list && displayList(list)}
+
       {nestedList && (
-        <ul>
-          {nestedListIcon &&
-            nestedList?.map((element) => (
-              <NestedServiceInfoBlock
-                list={element.list}
-                header={element.header}
-                headerSize={decideNestedListHeaderSize()}
-                key={element.header}
-                icon={nestedListIcon}
-                paragraphs={element.paragraphs}
-              />
-            ))}
+        <ul className={css.nestedListContainer}>
+          {nestedList?.map((element) => (
+            <li className={css.nestedListItem} key={Math.random()}>
+              <NestedHeaderTag
+                className={css.nestedHeader}
+                style={
+                  {
+                    '--icon-url': `url(${decideIcon()})`,
+                  } as React.CSSProperties
+                }
+              >
+                {element.header}
+              </NestedHeaderTag>
+              {element.paragraphs && displayParagraphs(element.paragraphs)}
+
+              {element.list && displayList(element.list)}
+            </li>
+          ))}
         </ul>
       )}
     </section>

@@ -20,7 +20,7 @@ export default function SectionServices() {
       },
       {
         name: '3D друк',
-        link: '/',
+        link: '/services/printing-3D',
         img: '/services/3d-printer.jpg',
         alt: '3Д-принтер',
       },

@@ -46,7 +46,7 @@ export default function Navbar() {
     },
     {
       name: '3D друк',
-      link: '/',
+      link: '/services/printing-3D',
     },
     {
       name: 'Форми для лиття',

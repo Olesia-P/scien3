@@ -1,4 +1,4 @@
-@mixin floatingAnimationClockwise {
+@mixin animationFloatingClockwise {
     @keyframes floatClockwise {
         0% {
             transform: translate(0.7rem, 0);
@@ -26,7 +26,7 @@
     animation: floatClockwise 18s infinite linear;
 }
 
-@mixin floatingAnimationCounterClockwise {
+@mixin animationFloatingCounterClockwise {
     @keyframes floatCounterClockwise {
         0% {
             transform: translate(0.7rem, 0);
@@ -52,4 +52,24 @@
     }
 
     animation: floatCounterClockwise 18s infinite linear;
+}
+
+@mixin animationFadeAway {
+    @keyframes fadeAway {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+
+        ;
+    }
+
+    animation: fadeAway 4s linear;
 }

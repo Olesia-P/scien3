@@ -1,5 +1,4 @@
 import React from 'react';
-// import css from '../../styles/page-styles/modeling-3D.module.scss';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import { textSingleServiceWrapper } from '@/utils/texts/text-single-service-wrapper';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
@@ -20,7 +19,11 @@ export default function MassProduction() {
 
       <ServiceInfoBlock {...textMassProduction.benefits} headerSize={2} />
 
-      <ServiceInfoBlock {...textMassProduction.useCases} headerSize={2} />
+      <ServiceInfoBlock
+        {...textMassProduction.useCases}
+        headerSize={2}
+        listWithIcon
+      />
 
       <ServiceInfoBlock {...textMassProduction.stages} headerSize={2} />
       <ServiceInfoBlock
@@ -31,6 +34,7 @@ export default function MassProduction() {
       <ServiceInfoBlock
         {...textMassProduction.whyNot3Dprinting}
         headerSize={2}
+        listWithIcon
       />
     </SingleServiceLayout>
   );
