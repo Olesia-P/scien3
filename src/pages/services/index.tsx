@@ -28,8 +28,8 @@ export default function Services() {
       },
       {
         name: 'Форми для лиття',
-        link: '/',
-        img: 'services/bw-silicon-mold.png',
+        link: '/services/molds',
+        img: 'services/bw-silicone-mold.png',
         alt: 'силіконова форма',
       },
     ],

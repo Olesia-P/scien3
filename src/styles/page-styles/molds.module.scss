@@ -1,0 +1,12 @@
+@import "../main";
+
+.comparisonTable {
+    width: 100%;
+    padding-bottom: 1rem;
+
+    &>* {
+        margin: 0 auto;
+
+    }
+
+}

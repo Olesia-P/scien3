@@ -26,8 +26,8 @@ export default function SectionServices() {
       },
       {
         name: 'Форми для лиття',
-        link: '/',
-        img: '/services/silicon-mold.jpg',
+        link: '/services/molds',
+        img: '/services/silicone-mold.jpg',
         alt: 'силіконова форма',
       },
     ],

@@ -50,7 +50,7 @@ export default function Navbar() {
     },
     {
       name: 'Форми для лиття',
-      link: '/',
+      link: '/services/molds',
     },
   ];
 

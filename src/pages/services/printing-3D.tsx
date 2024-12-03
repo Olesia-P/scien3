@@ -11,6 +11,7 @@ export default function printing3D() {
   const { content, backgroundStyle } = textPrinting3D.forWrapper;
   const { button, contacts } = textSingleServiceWrapper;
   const {
+    howItWorks,
     useCases,
     mainOptions,
     fdm,
@@ -27,11 +28,7 @@ export default function printing3D() {
       button={button}
       contacts={contacts}
     >
-      <ServiceInfoBlock
-        {...textPrinting3D.howItWorks}
-        headerSize={2}
-        listWithIcon
-      />
+      <ServiceInfoBlock {...howItWorks} headerSize={2} listWithIcon />
 
       <ServiceInfoBlock {...useCases} headerSize={2} />
 
