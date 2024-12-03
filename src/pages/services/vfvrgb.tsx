@@ -6,6 +6,7 @@ import SingleServiceLayout from '@/components/services-components/single-service
 
 export default function Modeling3D() {
   const { content, backgroundStyle } = textModeling3D.forWrapper;
+  const { stages, product, useCases } = textModeling3D;
   const { button, contacts } = textSingleServiceWrapper;
 
   return (
@@ -15,15 +16,11 @@ export default function Modeling3D() {
       button={button}
       contacts={contacts}
     >
-      <ServiceInfoBlock
-        {...textModeling3D.useCases}
-        headerSize={2}
-        listWithIcon
-      />
+      <ServiceInfoBlock {...useCases} headerSize={2} listWithIcon />
 
-      <ServiceInfoBlock {...textModeling3D.stages} headerSize={2} />
+      <ServiceInfoBlock {...stages} headerSize={2} />
 
-      <ServiceInfoBlock {...textModeling3D.product} headerSize={2} />
+      <ServiceInfoBlock {...product} headerSize={2} />
     </SingleServiceLayout>
   );
 }

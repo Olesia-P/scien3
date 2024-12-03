@@ -4,12 +4,23 @@
     font-size: $font-size-18;
     display: flex;
     align-items: center;
-    color: $blue;
+    color: $light-blue;
     text-decoration: underline;
     padding-bottom: 1rem;
 
     .massProdIcon {
         margin-left: 0.5em;
+    }
+
+}
+
+.comparisonTable {
+    width: 100%;
+    padding-bottom: 1rem;
+
+    &>* {
+        margin: 0 auto;
+
     }
 
 }

@@ -5,10 +5,20 @@ import { textSingleServiceWrapper } from '@/utils/texts/text-single-service-wrap
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
 import { textPrinting3D } from '@/utils/texts/text-printing-3D';
 import css from '../../styles/page-styles/printing-3D.module.scss';
+import Table from '@/components/ui/table/table';
 
 export default function printing3D() {
   const { content, backgroundStyle } = textPrinting3D.forWrapper;
   const { button, contacts } = textSingleServiceWrapper;
+  const {
+    useCases,
+    mainOptions,
+    fdm,
+    sla,
+    important,
+    linkToMassProduction,
+    table,
+  } = textPrinting3D;
 
   return (
     <SingleServiceLayout
@@ -23,21 +33,26 @@ export default function printing3D() {
         listWithIcon
       />
 
-      <ServiceInfoBlock {...textPrinting3D.useCases} headerSize={2} />
+      <ServiceInfoBlock {...useCases} headerSize={2} />
 
-      <ServiceInfoBlock {...textPrinting3D.mainOptions} headerSize={2} />
+      <ServiceInfoBlock {...mainOptions} headerSize={2} />
 
-      <ServiceInfoBlock {...textPrinting3D.fdm} headerSize={3} />
+      <ServiceInfoBlock {...fdm} headerSize={3} />
 
-      <ServiceInfoBlock {...textPrinting3D.sla} headerSize={3} />
+      <ServiceInfoBlock {...sla} headerSize={3} />
 
-      <ServiceInfoBlock {...textPrinting3D.important} headerSize={2} />
+      <div className={css.comparisonTable}>
+        <Table
+          headers={table.headers}
+          rows={table.rows}
+          headerSize={3}
+          title={table.title}
+        />
+      </div>
+      <ServiceInfoBlock {...important} headerSize={2} />
 
-      <a
-        href={textPrinting3D.linkToMassProduction.link}
-        className={css.linkMassProduction}
-      >
-        {textPrinting3D.linkToMassProduction.text}{' '}
+      <a href={linkToMassProduction.link} className={css.linkMassProduction}>
+        {linkToMassProduction.text}{' '}
         <FaArrowRightLong className={css.massProdIcon} />
       </a>
     </SingleServiceLayout>

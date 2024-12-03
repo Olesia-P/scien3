@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import css from './service-info-block.module.scss';
+import { createHeaderTag } from '@/utils/functions';
 
 type NestedListObject = {
   header: string;
@@ -27,13 +28,6 @@ export default function ServiceInfoBlock({
   nestedListIcon,
   listWithIcon = false,
 }: ServiceInfoListProps) {
-  const createHeaderTag = (headerSize: number) => {
-    if (headerSize >= 1 && headerSize <= 5) {
-      return `h${headerSize}` as keyof JSX.IntrinsicElements;
-    }
-    throw new Error('headerType must be between 1 and 5');
-  };
-
   const MainHeaderTag = createHeaderTag(headerSize);
   const NestedHeaderTag = createHeaderTag(headerSize + 1);
 

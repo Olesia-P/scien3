@@ -98,7 +98,8 @@ export default function SingleServiceLayout({
         </section>
 
         <Link href="/services" className={css.otherServicesLink}>
-          {button} <FaArrowRightLong />
+          {button} <FaArrowRightLong /> <FaArrowRightLong />{' '}
+          <FaArrowRightLong />
         </Link>
       </article>
     </main>

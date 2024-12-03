@@ -6,6 +6,14 @@ import { textMassProduction } from '@/utils/texts/text-mass-production';
 
 export default function MassProduction() {
   const { content, backgroundStyle } = textMassProduction.forWrapper;
+  const {
+    howItWorks,
+    benefits,
+    useCases,
+    stages,
+    importantMoments,
+    whyNot3Dprinting,
+  } = textMassProduction;
   const { button, contacts } = textSingleServiceWrapper;
 
   return (
@@ -15,27 +23,16 @@ export default function MassProduction() {
       button={button}
       contacts={contacts}
     >
-      <ServiceInfoBlock {...textMassProduction.howItWorks} headerSize={2} />
+      <ServiceInfoBlock {...howItWorks} headerSize={2} />
 
-      <ServiceInfoBlock {...textMassProduction.benefits} headerSize={2} />
+      <ServiceInfoBlock {...benefits} headerSize={2} />
 
-      <ServiceInfoBlock
-        {...textMassProduction.useCases}
-        headerSize={2}
-        listWithIcon
-      />
+      <ServiceInfoBlock {...useCases} headerSize={2} listWithIcon />
 
-      <ServiceInfoBlock {...textMassProduction.stages} headerSize={2} />
-      <ServiceInfoBlock
-        {...textMassProduction.importantMoments}
-        headerSize={2}
-      />
+      <ServiceInfoBlock {...stages} headerSize={2} />
+      <ServiceInfoBlock {...importantMoments} headerSize={2} />
 
-      <ServiceInfoBlock
-        {...textMassProduction.whyNot3Dprinting}
-        headerSize={2}
-        listWithIcon
-      />
+      <ServiceInfoBlock {...whyNot3Dprinting} headerSize={2} listWithIcon />
     </SingleServiceLayout>
   );
 }

@@ -16,13 +16,13 @@ export default function Services() {
       },
       {
         name: 'Серійне лиття',
-        link: '/',
+        link: '/services/mass-production',
         img: 'services/bw-mass-production.png',
         alt: 'ілюстрація серійного лиття пластикових продуктів',
       },
       {
         name: '3D друк',
-        link: '/',
+        link: '/services/printing-3D',
         img: 'services/bw-3d-printer.png',
         alt: '3Д-принтер',
       },
