@@ -14,11 +14,9 @@ export default function DropdownMenu({ items }: DropdownMenuProps) {
     <div className={css.container}>
       <ul className={css.linksWrap} role="menu">
         {items.map((element) => (
-          <li key={element.name}>
-            <Link className={css.link} href={element.link}>
-              {element.name}
-            </Link>
-          </li>
+          <Link className={css.link} key={element.name} href={element.link}>
+            {element.name}
+          </Link>
         ))}
       </ul>
     </div>

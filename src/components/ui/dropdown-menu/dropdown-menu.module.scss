@@ -11,16 +11,19 @@
         box-shadow: $shadow-white-out;
         border-radius: 5px;
 
-        li {
+        .link {
             cursor: pointer;
             transition: color 0.2s linear;
             text-align: center;
+            display: block;
+            position: relative;
+            font-weight: 600;
 
-            &+li {
+            &+.link {
                 padding-top: 1.5em;
             }
 
-            &+li:before {
+            &+.link:before {
                 content: " ";
                 @include horizontalSeparator;
                 position: absolute;
@@ -32,11 +35,6 @@
             &:hover {
                 color: $blue;
             }
-
-            .link {
-                font-weight: 600;
-            }
         }
     }
-
 }
