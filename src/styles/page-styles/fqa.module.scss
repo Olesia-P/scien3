@@ -1,0 +1,50 @@
+@import "../main";
+
+.container {
+    padding-top: 3.5rem;
+    background-image: url("/fqa/bgfbhn.jpeg");
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+        content: " ";
+        filter: opacity(50%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: $white;
+    }
+
+    .outline {
+        padding: 0.1rem;
+        background-color: $white;
+        max-width: $content-width;
+        margin: 0 auto;
+        border-radius: 15px;
+
+
+        .mainWrap {
+            box-shadow: $shadow-white-out;
+            padding: 2rem;
+            border-radius: 15px;
+            min-height: 90vh;
+
+
+            .mainHeader {
+                padding-bottom: 1em;
+                text-align: center;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+
+}

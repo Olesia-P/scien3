@@ -1,0 +1,91 @@
+@import "../../../styles/main";
+
+.container {
+    padding: 1.5rem;
+    box-shadow: $shadow-white-out;
+    border-radius: 15px;
+
+    .headerWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.4s ease-in-out;
+
+        .header {
+            cursor: pointer;
+        }
+
+        .button {
+            @include dfc;
+            color: $blue;
+            padding: 0.5rem;
+            box-shadow: $shadow-white-out;
+            border-radius: 100%;
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+
+            .chevron,
+            .cross {
+                transition: all 0.4s ease-in-out;
+                position: absolute;
+                font-size: $font-size-28;
+            }
+
+            .chevron {
+                transform: scale(1);
+            }
+
+            .cross {
+                transform: scale(0);
+            }
+        }
+    }
+
+    .textWrap {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s ease-in;
+
+        .text {
+            font-size: $font-size-22;
+            overflow: hidden;
+
+            p {
+                font-size: $font-size-18;
+
+                &+p {
+                    margin-top: 1em;
+
+                }
+            }
+
+
+        }
+    }
+
+    &.opened {
+        .headerWrap {
+            padding-bottom: 1rem;
+        }
+
+        .textWrap {
+            grid-template-rows: 1fr;
+        }
+
+        .button {
+            .chevron {
+                transform: scale(0);
+            }
+
+            .cross {
+                transform: scale(1);
+            }
+        }
+    }
+
+    em {
+        font-style: italic;
+    }
+}
