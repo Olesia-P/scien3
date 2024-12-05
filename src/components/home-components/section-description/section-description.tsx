@@ -32,7 +32,7 @@ export default function SectionDescription() {
   const descriptionSectionRef = useIntersectionObserver(
     handleIntersection,
     undefined,
-    0,
+    0.5,
   );
 
   return (

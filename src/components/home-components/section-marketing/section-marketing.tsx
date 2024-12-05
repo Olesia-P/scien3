@@ -75,8 +75,9 @@ export default function SectionMarketing() {
   const marketingSectionRef = useIntersectionObserver(
     handleIntersection,
     undefined,
-    0,
+    0.5,
   );
+
   return (
     <section className={css.container} ref={marketingSectionRef}>
       <ul className={cx(css.statementsList, isObserved && css.isAnimated)}>

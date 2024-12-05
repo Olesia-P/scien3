@@ -3,9 +3,22 @@
 .container {
     padding-top: 3.8rem;
 
+
     .illustration {
         width: 100%;
         border-bottom: 2px solid $blue;
+        filter: grayscale(100%);
+        transition: filter 1.2s ease-in;
+    }
+
+
+
+    &.animated {
+
+        .illustration {
+            filter: grayscale(0%);
+        }
+
     }
 
     h1 {

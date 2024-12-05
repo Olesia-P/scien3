@@ -10,7 +10,7 @@
 
     &::after {
         content: " ";
-        filter: opacity(60%);
+        filter: opacity(40%);
         position: absolute;
         top: 0;
         left: 0;
@@ -19,6 +19,7 @@
         z-index: -1;
         background: $white;
     }
+
 
     .outline {
         padding: 0.1rem;

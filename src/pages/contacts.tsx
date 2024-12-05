@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import css from '../styles/page-styles/contacts.module.scss';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export default function Contacts() {
   const textSectionContacts = {
@@ -9,7 +11,7 @@ export default function Contacts() {
       'Є різні форми доставки та оплати замовлень.',
     ],
 
-    illustrationAlt: 'Людина майструє макет будунку з пластика у майстерні',
+    illustrationAlt: 'Людина майструє макет будинку з пластика у майстерні',
 
     phone: {
       title: 'Телефон:',
@@ -43,10 +45,14 @@ export default function Contacts() {
     ],
   };
 
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
+
   return (
-    <main className={css.container}>
+    <main className={cx(css.container, isAnimated && css.animated)} ref={ref}>
       <img
-        src="/contacts/htyjyuj.jpeg"
+        src="/contacts/building-model.jpeg"
         className={css.illustration}
         alt={textSectionContacts.illustrationAlt}
       />

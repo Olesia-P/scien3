@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './service-info-block.module.scss';
 import { createHeaderTag } from '@/utils/functions';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 type NestedListObject = {
   header: string;
@@ -71,12 +72,10 @@ export default function ServiceInfoBlock({
 
   const [isAnimated, setIsAnimated] = useState(false);
 
-  useEffect(() => {
-    setIsAnimated(true);
-  }, []);
+  const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
 
   return (
-    <section className={css.container}>
+    <section className={css.container} ref={ref}>
       <MainHeaderTag
         className={cx(css.mainHeader, isAnimated && css.isAnimated)}
       >

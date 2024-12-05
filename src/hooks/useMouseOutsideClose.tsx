@@ -3,8 +3,8 @@ import { useEffect, useRef, MutableRefObject } from 'react';
 export default function useMouseOutsideClose(
   setOpeningState: React.Dispatch<React.SetStateAction<boolean>>,
   openingState: boolean,
-): MutableRefObject<HTMLDivElement | null> {
-  const ref = useRef<HTMLDivElement | null>(null);
+): MutableRefObject<any> {
+  const ref = useRef<any>(null);
 
   const handleMouseOutside = (event: MouseEvent) => {
     if (ref.current && ref.current.contains(event.target as Node)) {

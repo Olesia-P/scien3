@@ -55,7 +55,7 @@ export default function SectionContacts() {
   const contactsSectionRef = useIntersectionObserver(
     handleIntersection,
     undefined,
-    0,
+    0.5,
   );
   return (
     <section className={css.container} ref={contactsSectionRef}>

@@ -3,6 +3,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 import Link from 'next/link';
 import cx from 'classnames';
 import css from '../../styles/page-styles/services.module.scss';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export default function Services() {
   const textServices = {
@@ -36,12 +37,14 @@ export default function Services() {
   };
   const [isBetween, setIsBetween] = useState(false);
 
+  const ref = useIntersectionObserver(() => setIsBetween(true), undefined, 0);
+
   useEffect(() => {
     setIsBetween(true);
   }, []);
 
   return (
-    <main className={css.container}>
+    <main className={css.container} ref={ref}>
       <img
         src="services/left-curtain.png"
         className={cx(css.illustrationLeft, isBetween && css.isBetween)}

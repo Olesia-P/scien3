@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 export const textModeling3D = {
   forWrapper: {
@@ -67,13 +67,8 @@ export const textModeling3D = {
   product: {
     header: 'Що ви отримуєте?',
     list: [
-      <>
-        Готову 3D-модель в <strong>STL</strong> форматі.
-      </>,
-      <>
-        Можливість <strong> виготовлення прототипу виробу</strong>, на базі
-        створеної цифрової моделі.
-      </>,
+      'Готову 3D-модель в STL форматі.',
+      'Можливість виготовлення прототипу виробу, на базі створеної цифрової моделі.',
     ],
   },
 };
