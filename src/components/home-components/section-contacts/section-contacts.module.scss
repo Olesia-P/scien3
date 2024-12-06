@@ -72,10 +72,11 @@
         }
 
         .contactsCard {
-            padding: 2rem;
+            // padding: 2rem;
             align-self: center;
-            box-shadow: $shadow-white-out;
-            border-radius: 10px;
+            // box-shadow: $shadow-white-out;
+            // border-radius: 10px;
+            @include whiteCard($pad: 2rem, $borderRad: 10px);
 
             .description {
                 margin-bottom: 2rem;
@@ -145,9 +146,10 @@
                 font-size: $font-size-18;
                 @include dfc;
                 width: fit-content;
-                padding: 0.5em;
-                box-shadow: $shadow-white-out;
-                border-radius: 15px;
+                // padding: 0.5em;
+                // box-shadow: $shadow-white-out;
+                // border-radius: 15px;
+                @include whiteCard($pad: 0.5em, $borderRad: 5px);
                 cursor: pointer;
                 transition: color 0.2s linear;
 

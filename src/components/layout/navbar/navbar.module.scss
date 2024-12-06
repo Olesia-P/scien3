@@ -53,10 +53,11 @@
 
                 .navlink {
                     font-weight: 600;
-                    padding: 0.4em 1.1em;
-                    border-radius: 5px;
+                    // padding: 0.4em 1.1em;
+                    // border-radius: 5px;
+                    @include whiteCard($pad: 0.4em 1.1em, $borderRad: 5px);
                     transition: color 0.2s ease-in;
-                    box-shadow: $shadow-white-out;
+                    // box-shadow: $shadow-white-out;
                     position: relative;
 
                     &:hover {

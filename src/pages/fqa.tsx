@@ -82,7 +82,11 @@ export default function Fqa() {
     <main className={css.container}>
       <div className={css.outline}>
         <div className={css.mainWrap}>
-          <h1 className={css.mainHeader}>{textFqa.mainHeader}</h1>
+          <h1 className={css.mainHeader}>
+            <span>|</span>
+            {textFqa.mainHeader}
+            <span>|</span>
+          </h1>
 
           {textFqa.questionCards.map((card) => (
             <div className={css.card} key={card.question}>

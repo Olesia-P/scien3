@@ -7,14 +7,13 @@
 
     .mainHeader {
         // font-size: $font-size-24;
-        font-family: $font-family-mono;
+        // font-family: $font-family-mono;
         margin: 3rem auto;
         width: fit-content;
         font-weight: 900;
 
         span {
-            color: $blue;
-            margin: 0 1rem;
+            @include verticalBlueDecoration;
         }
     }
 

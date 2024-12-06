@@ -1,9 +1,10 @@
 @import "../../../styles/main";
 
 .container {
-    padding: 1.5rem;
-    box-shadow: $shadow-white-out;
-    border-radius: 15px;
+    // padding: 1.5rem;
+    // box-shadow: $shadow-white-out;
+    @include whiteCard($pad: 1.5rem, $borderRad: 10px);
+    // border-radius: 15px;
 
     .headerWrap {
         display: flex;
@@ -19,9 +20,10 @@
         .button {
             @include dfc;
             color: $blue;
-            padding: 0.5rem;
-            box-shadow: $shadow-white-out;
-            border-radius: 100%;
+            // padding: 0.5rem;
+            // box-shadow: $shadow-white-out;
+            // border-radius: 100%;
+            @include whiteCard($pad: 0.5rem, $borderRad: 100%);
             position: relative;
             width: 3rem;
             height: 3rem;

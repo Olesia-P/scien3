@@ -8,17 +8,17 @@
     position: relative;
     isolation: isolate;
 
-    &::after {
-        content: " ";
-        filter: opacity(40%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background: $white;
-    }
+    // &::after {
+    //     content: " ";
+    //     filter: opacity(40%);
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     z-index: -1;
+    //     background: $white;
+    // }
 
 
     .outline {
@@ -30,15 +30,19 @@
 
 
         .mainWrap {
-            box-shadow: $shadow-white-out;
-            padding: 2rem;
-            border-radius: 15px;
+            // box-shadow: $shadow-white-out;
+            // padding: 2rem;
+            // border-radius: 15px;
             min-height: 95vh;
-
+            @include whiteCard($pad: 2rem, $borderRad: 10px);
 
             .mainHeader {
                 padding-bottom: 1em;
                 text-align: center;
+
+                span {
+                    @include verticalBlueDecoration;
+                }
             }
 
             .card {

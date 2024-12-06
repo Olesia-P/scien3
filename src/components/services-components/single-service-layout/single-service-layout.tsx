@@ -43,7 +43,8 @@ export default function SingleServiceLayout({
   const text = {
     popupText: 'Email скопійовано!',
     email: 'some email',
-    emailButton: 'Скопіювати some email',
+    emailButton: 'some email',
+    emailTitle: 'Натисніть щоб скопіювати',
   };
 
   const decideBackgroundStyle = () => {
@@ -91,6 +92,7 @@ export default function SingleServiceLayout({
               type="button"
               className={css.singleContact}
               onClick={handleCopyClick}
+              title={text.emailTitle}
             >
               {text.emailButton}
             </button>

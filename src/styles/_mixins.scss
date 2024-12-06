@@ -23,6 +23,18 @@
     box-shadow: 1px 0 0 #ffffff;
 }
 
+@mixin whiteCard ($pad: 1rem, $borderRad: 10px) {
+    border-radius: $borderRad;
+    box-shadow: $shadow-white-out;
+    background-color: $white;
+    padding: $pad;
+}
+
+@mixin verticalBlueDecoration {
+    color: $blue;
+    margin: 0 1.5em;
+}
+
 @mixin blueBackgroundRounded ($padTop: 0.4em, $padRight: 1em, $padBottom: 0.4em, $padLeft: 1em) {
     background-color: $blue;
     color: white;

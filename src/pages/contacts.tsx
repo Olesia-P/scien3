@@ -56,7 +56,11 @@ export default function Contacts() {
         className={css.illustration}
         alt={textSectionContacts.illustrationAlt}
       />
-      <h1>Контакти</h1>
+      <h1>
+        <span>|</span>
+        {textSectionContacts.mainHeader}
+        <span>|</span>
+      </h1>
       <div className={css.description}>
         {textSectionContacts.description.map((element) => (
           <p key={element}>{element}</p>

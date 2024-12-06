@@ -1,0 +1,80 @@
+@import "../main";
+
+
+.container {
+    padding-top: 3.5rem;
+    background-image: url("/works/mixture.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+    @include dfc;
+
+    &::after {
+        content: " ";
+        filter: opacity(20%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: $white;
+    }
+
+    .outline {
+        max-width: $content-width;
+        background-color: $white;
+        border-radius: 10px;
+        padding: 0.15rem;
+
+
+        .mainCard {
+            margin: 0 auto;
+            @include whiteCard($pad: 2rem, $borderRad: 15px);
+
+            h1 {
+                text-align: center;
+
+                span {
+                    @include verticalBlueDecoration;
+                }
+            }
+
+            .caption {
+                font-size: $font-size-22;
+                text-align: center;
+                padding: 1.5rem 0;
+                @include dfc;
+
+                a {
+                    color: $blue;
+                    @include dfc;
+                    margin: 0 0.5em;
+
+                    svg {
+                        margin: 0 0.5em
+                    }
+                }
+            }
+
+            .cardsWrap {
+                @include dfc;
+                gap: 3rem;
+                flex-wrap: wrap;
+
+                .card {
+                    @include whiteCard($pad: 1rem, $borderRad: 10px);
+                    width: 30%;
+                    height: 30rem;
+                    @include dfc;
+
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
