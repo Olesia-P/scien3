@@ -35,21 +35,43 @@ export default function Services() {
       },
     ],
   };
-  const [isBetween, setIsBetween] = useState(false);
+  // const [isBetween, setIsBetween] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
 
-  const ref = useIntersectionObserver(() => setIsBetween(true), undefined, 0);
+  const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
+
+  // useEffect(() => {
+  //   setIsBetween(true);
+  // }, []);
+
+  // console.log(isImageLoaded, 'isImageLoaded');
 
   useEffect(() => {
-    setIsBetween(true);
+    const allImages = document.querySelectorAll('img');
+    const areAllImagesLoaded = Array.from(allImages).every(
+      (img) => img.complete,
+    );
+
+    if (areAllImagesLoaded) {
+      setIsImageLoaded(true);
+    }
   }, []);
 
   return (
     <main className={css.container} ref={ref}>
       <img
         src="services/left-curtain.png"
-        className={cx(css.illustrationLeft, isBetween && css.isBetween)}
+        className={cx(
+          css.illustrationLeft,
+          isImageLoaded && isAnimated && css.animated,
+        )}
         alt="left part of a decorative illustration of a workshop"
         aria-hidden="true"
+        onLoad={handleImageLoad}
       />
 
       <h1>{textServices.header}</h1>
@@ -67,9 +89,13 @@ export default function Services() {
 
       <img
         src="services/right-curtain.png"
-        className={cx(css.illustrationRight, isBetween && css.isBetween)}
+        className={cx(
+          css.illustrationRight,
+          isImageLoaded && isAnimated && css.animated,
+        )}
         alt="right part of a decorative illustration of a workshop"
         aria-hidden="true"
+        onLoad={handleImageLoad}
       />
       {/* <button onClick={() => setIsBetween(!isBetween)} type="button">
         between
