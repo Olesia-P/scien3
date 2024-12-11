@@ -40,33 +40,32 @@
     }
 
     .mainContent {
-        max-width: 1400px;
+        max-width: $content-width;
         background-color: $grey;
         border: 2px solid $light-blue;
-        margin: 7rem auto 0 auto;
+        margin: 6rem auto 0 auto;
         padding: 0rem 5rem 3rem 5rem;
         position: relative;
 
         .illustration {
             position: absolute;
-            width: 40%;
+            width: 35%;
             margin: 0 auto;
             padding: 2rem;
             border: 2px solid $light-blue;
             top: -4rem;
-            right: 3%;
+            right: 5%;
             z-index: 1;
             background-color: $grey;
         }
 
         .mainHeader {
             font-size: $font-size-28;
-            margin-bottom: 0.5rem;
             color: $light-blue;
             position: relative;
             width: 50%;
             border: 2px solid $light-blue;
-            bottom: 2rem;
+            bottom: 1rem;
             padding: 0.5em;
             text-align: center;
             font-family: $font-family-mono;
@@ -76,7 +75,7 @@
 
         .description {
             margin: 1rem 0;
-            font-size: $font-size-20;
+            font-size: $font-size-18;
             width: 50%;
         }
 

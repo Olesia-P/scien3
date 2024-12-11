@@ -3,12 +3,10 @@
 .container {
     background-color: $white;
     max-width: $content-width;
-    margin: 3rem auto 2rem auto;
+    margin: 2rem auto;
 
     .mainHeader {
-        // font-size: $font-size-24;
-        // font-family: $font-family-mono;
-        margin: 3rem auto;
+        margin: 3rem auto 2rem auto;
         width: fit-content;
         font-weight: 900;
 
@@ -24,7 +22,6 @@
         gap: 1.5rem;
 
         li {
-            font-size: $font-size-16;
             list-style: none;
             align-self: center;
             position: relative;

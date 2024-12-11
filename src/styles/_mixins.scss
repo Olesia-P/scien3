@@ -35,6 +35,24 @@
     margin: 0 1.5em;
 }
 
+@mixin backgroundMask($backgroundColor, $maskOpacity) {
+    isolation: isolate;
+    position: relative;
+
+    //background opacity overlay
+    &::after {
+        content: " ";
+        filter: opacity($maskOpacity);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: $backgroundColor;
+    }
+}
+
 @mixin blueBackgroundRounded ($padTop: 0.4em, $padRight: 1em, $padBottom: 0.4em, $padLeft: 1em) {
     background-color: $blue;
     color: white;

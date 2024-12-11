@@ -4,6 +4,8 @@ import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './single-service-layout.module.scss';
 import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
+import { textContactInfo } from '@/utils/texts/text-contact-info';
+import { textSingleServiceWrapper } from '@/utils/texts/services/text-single-service-wrapper';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -18,34 +20,16 @@ type SingleServiceLayoutProps = {
       alt: string;
     };
   };
-  button: string;
-  contacts: {
-    header: string;
-    phone: {
-      text: string;
-      icon: string;
-    };
-
-    email: {
-      text: string;
-      icon: string;
-    };
-  };
 };
 
 export default function SingleServiceLayout({
   children,
   backgroundStyle,
   content,
-  button,
-  contacts,
 }: SingleServiceLayoutProps) {
-  const text = {
-    popupText: 'Email скопійовано!',
-    email: 'some email',
-    emailButton: 'some email',
-    emailTitle: 'Натисніть щоб скопіювати',
-  };
+  const language = 'ua';
+  const { email, phone, copyingMessage } = textContactInfo[language];
+  const { otherServicesTitle, mainHeader } = textSingleServiceWrapper[language];
 
   const decideBackgroundStyle = () => {
     switch (backgroundStyle) {
@@ -63,8 +47,8 @@ export default function SingleServiceLayout({
   };
 
   const { handleCopyClick, Popup } = useCopyTextWithPopup(
-    text.email,
-    text.popupText,
+    email.text,
+    email.onCopyPopupText,
   );
 
   return (
@@ -83,24 +67,22 @@ export default function SingleServiceLayout({
         {children}
 
         <section className={css.contacts}>
-          <h2 className={css.contactsHeader}>{contacts.header}</h2>
+          <h2 className={css.contactsHeader}>{mainHeader}</h2>
           <ul className={css.contactsWrap}>
-            <a className={css.singleContact} href="tel:+380689873600">
-              {contacts.phone.text}
-            </a>
+            <li className={css.singleContact}>{phone.text}</li>
             <button
               type="button"
               className={css.singleContact}
               onClick={handleCopyClick}
-              title={text.emailTitle}
+              title={copyingMessage}
             >
-              {text.emailButton}
+              {email.text}
             </button>
           </ul>
         </section>
 
         <Link href="/services" className={css.otherServicesLink}>
-          {button} <FaArrowRightLong /> <FaArrowRightLong />{' '}
+          {otherServicesTitle} <FaArrowRightLong /> <FaArrowRightLong />{' '}
           <FaArrowRightLong />
         </Link>
       </article>

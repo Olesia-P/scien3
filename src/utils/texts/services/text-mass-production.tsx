@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const textMassProduction = {
+const ua = {
   forWrapper: {
     content: {
       main: {
@@ -128,4 +128,8 @@ export const textMassProduction = {
       'Для великої кількості деталей 3D-друк дорожчий, ніж лиття.',
     ],
   },
+};
+
+export const textMassProduction = {
+  ua,
 };

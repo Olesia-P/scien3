@@ -1,6 +1,5 @@
 // import React from 'react';
-
-export const textMolds = {
+const ua = {
   forWrapper: {
     content: {
       main: {
@@ -132,4 +131,7 @@ export const textMolds = {
     ],
     title: 'Порівняння силіконових та поліуретанових форм',
   },
+};
+export const textMolds = {
+  ua,
 };

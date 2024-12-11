@@ -2,7 +2,7 @@
 
 .container {
     color: $white;
-    min-height: 100vh;
+    min-height: 95vh;
 
     .contentLimit {
         max-width: $content-width;
@@ -11,7 +11,7 @@
     }
 
     .mainHeader {
-        padding: 1.5rem;
+        padding: 1.5rem 0;
         background: rgb(12, 19, 25);
         background: linear-gradient(90deg, rgba(12, 19, 25, 1) 0%,
                 rgba(12, 19, 25, 1) 16%,
@@ -25,14 +25,14 @@
             font-family: $font-family-logo;
             line-height: 1;
             font-size: $font-size-70;
-            margin: 0 0 0 10%;
+            margin: 0 0 0 7%;
             text-shadow: $text-shadow-1;
         }
 
         p {
             font-size: $font-size-26;
             font-weight: 900;
-            margin: 0 0 0 17%;
+            margin: 0 0 0 14%;
             color: $blue;
             text-shadow: $text-shadow-1;
             font-family: $font-family-mono;
@@ -48,7 +48,7 @@
         z-index: 1;
         position: absolute;
         top: 2rem;
-        left: 10%;
+        left: 7%;
         padding: 1.5em;
         border-right: 1px solid $white;
         border-left: 1px solid $white;

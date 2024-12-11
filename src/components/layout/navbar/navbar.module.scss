@@ -43,7 +43,7 @@
             @include blueBackgroundRounded ($padLeft: 0.7em)
         }
 
-        .navlinksWrap {
+        .navLinksWrap {
             @include dfc;
             gap: 2rem;
             margin-left: auto;
@@ -51,7 +51,7 @@
             li {
                 position: relative;
 
-                .navlink {
+                .navLink {
                     font-weight: 600;
                     // padding: 0.4em 1.1em;
                     // border-radius: 5px;

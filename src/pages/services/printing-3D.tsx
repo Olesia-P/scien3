@@ -1,15 +1,14 @@
 import React from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
-import { textSingleServiceWrapper } from '@/utils/texts/text-single-service-wrapper';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
-import { textPrinting3D } from '@/utils/texts/text-printing-3D';
+import { textPrinting3D } from '@/utils/texts/services/text-printing-3D';
 import css from '../../styles/page-styles/printing-3D.module.scss';
 import Table from '@/components/ui/table/table';
 
 export default function printing3D() {
-  const { content, backgroundStyle } = textPrinting3D.forWrapper;
-  const { button, contacts } = textSingleServiceWrapper;
+  const language = 'ua';
+  const { content, backgroundStyle } = textPrinting3D[language].forWrapper;
   const {
     howItWorks,
     useCases,
@@ -19,15 +18,10 @@ export default function printing3D() {
     important,
     linkToMassProduction,
     table,
-  } = textPrinting3D;
+  } = textPrinting3D[language];
 
   return (
-    <SingleServiceLayout
-      backgroundStyle={backgroundStyle}
-      content={content}
-      button={button}
-      contacts={contacts}
-    >
+    <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
       <ServiceInfoBlock {...howItWorks} headerSize={2} listWithIcon />
 
       <ServiceInfoBlock {...useCases} headerSize={2} />

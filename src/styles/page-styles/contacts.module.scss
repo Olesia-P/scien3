@@ -24,6 +24,7 @@
     h1 {
         text-align: center;
         padding: 0.5em 0;
+        margin-top: 1rem;
         // color: $blue;
 
         span {
@@ -41,62 +42,56 @@
         }
     }
 
-    .mainWrapper {
+    .card {
         margin: 0 auto;
-        max-width: 1300px;
+        max-width: 1200px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-        // border-top: 1px solid $blue;
-        // border-bottom: 1px solid $blue;
-        // padding: 3rem 0;
         @include whiteCard($pad: 2rem, $borderRad: 10px);
 
-        .contactsCard {
+        .contacts {
             align-self: center;
 
-            .contactsList {
-                font-size: $font-size-18 ;
+            .singleContactWrap {
+                margin: 0 0 1rem 3rem;
+                display: block;
+                display: flex;
+                align-items: center;
+                position: relative;
 
-                .singleContactWrap {
-                    margin: 0 0 2rem 4rem;
-                    display: block;
-                    display: flex;
-                    align-items: center;
-                    position: relative;
+                &::before {
+                    content: ' ';
+                    background-image: var(--icon-url);
+                    position: absolute;
+                    height: 1.5em;
+                    width: 1.5em;
+                    left: -3rem;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
 
-                    &::before {
-                        content: ' ';
-                        background-image: var(--icon-url);
-                        position: absolute;
-                        height: 1.5em;
-                        width: 1.5em;
-                        left: -3.5rem;
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                    }
+                .contactTitle {
+                    font-weight: 700;
+                    margin-right: 0.5rem;
+                }
 
-                    .contactTitle {
-                        font-weight: 700;
-                        margin-right: 0.5rem;
-                    }
-
-                    .phoneNumber {
-                        border-bottom: 2px solid $blue;
-                    }
+                .phoneNumber {
+                    border-bottom: 2px solid $blue;
                 }
             }
+
         }
 
         .socialMediaHeader {
             font-weight: 600;
             margin: 1.5rem 0;
-            font-size: $font-size-18;
+
         }
 
         .socialMediaList {
 
             .socialMediaLink {
-                font-size: $font-size-18;
+
                 @include dfc;
                 width: fit-content;
                 @include whiteCard($pad: 0.5em, $borderRad: 5px);

@@ -45,14 +45,14 @@
         width: fit-content;
 
         .link {
-            padding: 2rem 6rem;
-            font-size: $font-size-26;
+            padding: 1.5em 4em;
+            font-size: $font-size-22;
             display: flex;
             align-items: center;
             gap: 2rem;
             background-color: $grey;
             cursor: pointer;
-            transition: filter 0.3s ease;
+            transition: all 0.3s ease;
 
             &:hover {
                 filter: brightness(110%);

@@ -1,6 +1,5 @@
 // import React from 'react';
-
-export const textModeling3D = {
+const ua = {
   forWrapper: {
     content: {
       main: {
@@ -71,4 +70,7 @@ export const textModeling3D = {
       'Можливість виготовлення прототипу виробу, на базі створеної цифрової моделі.',
     ],
   },
+};
+export const textModeling3D = {
+  ua,
 };

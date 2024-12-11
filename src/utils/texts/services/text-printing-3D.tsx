@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const textPrinting3D = {
+const ua = {
   forWrapper: {
     content: {
       main: {
@@ -173,4 +173,8 @@ export const textPrinting3D = {
     ],
     title: 'Порівняння FDM та SLA',
   },
+};
+
+export const textPrinting3D = {
+  ua,
 };

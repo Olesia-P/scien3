@@ -1,32 +1,11 @@
 import React from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from '../styles/page-styles/works.module.scss';
+import { textWorks } from '@/utils/texts/text-works';
 
 export default function Works() {
-  const worksImgs = {
-    alt: 'Зразок продукту лиття або 3D-друку',
-    images: [
-      '/works/1.png',
-      '/works/2.png',
-      '/works/3.png',
-      '/works/4.png',
-      '/works/5.png',
-      '/works/6.png',
-      '/works/7.png',
-      '/works/8.png',
-      '/works/9.png',
-      '/works/10.png',
-      '/works/11.png',
-      '/works/12.png',
-      '/works/13.png',
-      '/works/14.png',
-      '/works/15.png',
-      '/works/16.png',
-      '/works/17.png',
-      '/works/18.png',
-    ],
-  };
-
+  const language = 'ua';
+  const { alt, images } = textWorks[language];
   const text = {
     mainHeader: 'Приклади наших робіт',
     caption: 'Більше робіт в нашому',
@@ -47,9 +26,9 @@ export default function Works() {
             </a>
           </p>
           <div className={css.cardsWrap}>
-            {worksImgs.images.map((img) => (
+            {images.map((img) => (
               <article className={css.card} key={img}>
-                <img src={img} alt={worksImgs.alt} />
+                <img src={img} alt={alt} />
               </article>
             ))}
           </div>

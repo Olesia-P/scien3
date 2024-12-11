@@ -6,21 +6,12 @@
     background-image: url("/works/mixture.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
-    isolation: isolate;
-    @include dfc;
 
-    &::after {
-        content: " ";
-        filter: opacity(20%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background: $white;
-    }
+    @include dfc;
+    position: relative;
+    // @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
+
+
 
     .outline {
         max-width: $content-width;
@@ -31,7 +22,7 @@
 
         .mainCard {
             margin: 0 auto;
-            @include whiteCard($pad: 2rem, $borderRad: 15px);
+            @include whiteCard($pad: 3rem, $borderRad: 15px);
 
             h1 {
                 text-align: center;
@@ -60,13 +51,13 @@
 
             .cardsWrap {
                 @include dfc;
-                gap: 3rem;
+                gap: 2rem;
                 flex-wrap: wrap;
 
                 .card {
                     @include whiteCard($pad: 1rem, $borderRad: 10px);
                     width: 30%;
-                    height: 30rem;
+                    height: 25rem;
                     @include dfc;
 
 

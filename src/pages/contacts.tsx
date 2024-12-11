@@ -2,48 +2,20 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import css from '../styles/page-styles/contacts.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import { cssIconUrlVariable } from '@/utils/functions';
+import { textContactInfo } from '@/utils/texts/text-contact-info';
+import { textContactsPage } from '@/utils/texts/text-contacts-page';
 
 export default function Contacts() {
-  const textSectionContacts = {
-    mainHeader: 'Контакти',
-    description: [
-      'Оформлення замовлення може проводитись як від приватної особи, так і від організації.',
-      'Є різні форми доставки та оплати замовлень.',
-    ],
+  const language = 'ua';
 
-    illustrationAlt: 'Людина майструє макет будинку з пластика у майстерні',
+  const { email, phone, workingHours, location, socialMedia } =
+    textContactInfo[language];
 
-    phone: {
-      title: 'Телефон:',
-      text: '+38(068)-987-36-00',
-      icon: '/icons/phone-icon.png',
-    },
-    otherContacts: [
-      {
-        title: 'Email:',
-        text: ' ',
-        icon: '/icons/email-icon.png',
-      },
-      {
-        title: 'Робочі години:',
-        text: 'Пн-Пт 9:00-18:00',
-        icon: '/icons/timetable-icon.png',
-      },
-      {
-        title: 'Наш офіс:',
-        text: 'Київ, вул. Вінстона Черчилля, 42А, офіс 7',
-        icon: '/icons/location-icon.png',
-      },
-    ],
-    socialMediaHeader: 'Ми в соціальних мережах:',
-    socialMedia: [
-      {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/3d_scien3_ua?igsh=dDQ1OWxia29jaXpu',
-        icon: 'icons/instagram-icon.svg',
-      },
-    ],
-  };
+  const { mainHeader, description, illustrationAlt } =
+    textContactsPage[language];
+
+  const contactsList = [phone, workingHours, location];
 
   const [isAnimated, setIsAnimated] = useState(false);
 
@@ -54,62 +26,47 @@ export default function Contacts() {
       <img
         src="/contacts/building-model.jpeg"
         className={css.illustration}
-        alt={textSectionContacts.illustrationAlt}
+        alt={illustrationAlt}
       />
       <h1>
         <span>|</span>
-        {textSectionContacts.mainHeader}
+        {mainHeader}
         <span>|</span>
       </h1>
       <div className={css.description}>
-        {textSectionContacts.description.map((element) => (
-          <p key={element}>{element}</p>
+        {description.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
-      <div className={css.mainWrapper}>
-        <article className={css.contactsCard}>
-          <ul className={css.contactsList}>
-            <a
+      <div className={css.card}>
+        <article className={css.contacts}>
+          <ul>
+            <li
               className={css.singleContactWrap}
-              href="tel:+380689873600"
-              style={
-                {
-                  '--icon-url': `url(${textSectionContacts.phone.icon})`,
-                } as React.CSSProperties
-              }
+              style={cssIconUrlVariable(email.icon)}
             >
               <span>
-                <strong className={css.contactTitle}>
-                  {textSectionContacts.phone.title}
-                </strong>{' '}
-                <span className={css.phoneNumber}>
-                  {textSectionContacts.phone.text}
-                </span>
+                <strong className={css.contactTitle}>{email.title}</strong>{' '}
+                {email.text}
               </span>
-            </a>
-            {textSectionContacts.otherContacts.map((element) => (
+            </li>
+            {contactsList.map((contact) => (
               <li
                 className={css.singleContactWrap}
-                key={element.icon}
-                style={
-                  {
-                    '--icon-url': `url(${element.icon})`,
-                  } as React.CSSProperties
-                }
+                key={contact.icon}
+                style={cssIconUrlVariable(contact.icon)}
               >
                 <span>
-                  <strong className={css.contactTitle}>{element.title}</strong>{' '}
-                  {element.text}
+                  <strong className={css.contactTitle}>{contact.title}</strong>{' '}
+                  {contact.text}
                 </span>
               </li>
             ))}
           </ul>
 
-          <p className={css.socialMediaHeader}>
-            {textSectionContacts.socialMediaHeader}
-          </p>
+          <p className={css.socialMediaHeader}>{socialMedia.header}</p>
           <ul className={css.socialMediaList}>
-            {textSectionContacts.socialMedia.map((element) => (
+            {socialMedia.list.map((element) => (
               <a
                 key={element.name}
                 href={element.link}
@@ -119,7 +76,7 @@ export default function Contacts() {
                   src={element.icon}
                   className={css.instaIcon}
                   aria-hidden="true"
-                  alt="instagram icon"
+                  alt={element.alt}
                 />
                 {element.name}
               </a>
@@ -139,3 +96,5 @@ export default function Contacts() {
     </main>
   );
 }
+
+// href={"tel:+380689873600"}

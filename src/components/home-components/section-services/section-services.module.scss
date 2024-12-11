@@ -6,6 +6,7 @@
     background-size: cover;
     padding: 2rem 0 5rem 0;
 
+
     .cardBorder {
         background-color: $white;
         width: 45rem;
@@ -15,9 +16,7 @@
         margin: 0 auto;
 
         .servicesNavigation {
-            // box-shadow: $shadow-white-out;
             position: relative;
-            // border-radius: 15px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
             @include whiteCard($pad: 0, $borderRad: 10px);

@@ -2,51 +2,24 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './section-contacts.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import { cssIconUrlVariable } from '@/utils/functions';
+import { textContactInfo } from '@/utils/texts/text-contact-info';
+import { textConstactsSectionHomePage } from '@/utils/texts/home/text-contacts-section';
 
 export default function SectionContacts() {
-  const textSectionContacts = {
-    mainHeader: 'Пишіть, дзвоніть та замовляйте!',
-    mainHeaderCaption:
-      'Ми проконсультуємо та допоможемо з підбором матеріалів.',
-    description: [
-      'Оформлення замовлення може проводитись як від приватної особи, так і від організації.',
-      'Є різні форми доставки та оплати замовлень.',
-    ],
-    speechBubble: {
-      caption: 'Ваші ідеї буде втілено!',
-      alt: 'спіч бабл',
-    },
-    phone: {
-      title: 'Телефон:',
-      text: '+38(068)-987-36-00',
-      icon: '/icons/phone-icon.png',
-    },
-    otherContacts: [
-      {
-        title: 'Email:',
-        text: ' ',
-        icon: '/icons/email-icon.png',
-      },
-      {
-        title: 'Робочі години:',
-        text: 'Пн-Пт 9:00-18:00',
-        icon: '/icons/timetable-icon.png',
-      },
-      {
-        title: 'Наш офіс:',
-        text: 'Київ, вул. Вінстона Черчилля, 42А, офіс 7',
-        icon: '/icons/location-icon.png',
-      },
-    ],
-    socialMediaHeader: 'Ми в соціальних мережах:',
-    socialMedia: [
-      {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/3d_scien3_ua?igsh=dDQ1OWxia29jaXpu',
-        icon: 'icons/instagram-icon.svg',
-      },
-    ],
-  };
+  const language = 'ua';
+  const { phone, email, workingHours, location, socialMedia } =
+    textContactInfo[language];
+
+  const {
+    mainHeader,
+    mainHeaderCaption,
+    description,
+    speechBubble,
+    illustrationAlt,
+  } = textConstactsSectionHomePage[language];
+
+  const contactsList = [phone, location, workingHours];
 
   const [isObserved, setIsObserved] = useState(false);
   const handleIntersection = () => {
@@ -57,68 +30,56 @@ export default function SectionContacts() {
     undefined,
     0.5,
   );
+
   return (
     <section className={css.container} ref={contactsSectionRef}>
       <hgroup className={css.contactsHeader}>
-        <h3>{textSectionContacts.mainHeader}</h3>
-        <p>{textSectionContacts.mainHeaderCaption}</p>{' '}
+        <h3>{mainHeader}</h3>
+        <p>{mainHeaderCaption}</p>{' '}
       </hgroup>
 
       <div className={css.contentWrap}>
         <img
           src="contacts/discussion.png"
-          alt="Two people discussing a business deal"
+          alt={illustrationAlt}
           aria-hidden="true"
           className={css.illustration}
         />
         <div className={cx(css.bubbleWrap, isObserved && css.isAnimated)}>
-          <p>{textSectionContacts.speechBubble.caption}</p>
+          <p>{speechBubble.caption}</p>
           <img
             src="contacts/speech-bubble.png"
-            alt={textSectionContacts.speechBubble.alt}
+            alt={speechBubble.alt}
             aria-hidden="true"
           />
         </div>
 
         <article className={css.contactsCard}>
           <div className={css.description}>
-            {textSectionContacts.description.map((element) => (
-              <p key={element}>{element}</p>
+            {description.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 
           <ul className={css.contactsList}>
-            <a
+            <li
               className={css.singleContactWrap}
-              href="tel:+380689873600"
-              style={
-                {
-                  '--icon-url': `url(${textSectionContacts.phone.icon})`,
-                } as React.CSSProperties
-              }
+              style={cssIconUrlVariable(email.icon)}
             >
               <span>
-                <strong className={css.contactTitle}>
-                  {textSectionContacts.phone.title}
-                </strong>{' '}
-                <span className={css.phoneNumber}>
-                  {textSectionContacts.phone.text}
-                </span>
+                <strong className={css.contactTitle}>{email.title}</strong>{' '}
+                {email.text}
               </span>
-            </a>
-            {textSectionContacts.otherContacts.map((element) => (
+            </li>
+            {contactsList.map((contact) => (
               <li
                 className={css.singleContactWrap}
-                key={element.icon}
-                style={
-                  {
-                    '--icon-url': `url(${element.icon})`,
-                  } as React.CSSProperties
-                }
+                key={contact.icon}
+                style={cssIconUrlVariable(contact.icon)}
               >
                 <span>
-                  <strong className={css.contactTitle}>{element.title}</strong>{' '}
-                  {element.text}
+                  <strong className={css.contactTitle}>{contact.title}</strong>{' '}
+                  {contact.text}
                 </span>
               </li>
             ))}
@@ -134,23 +95,21 @@ export default function SectionContacts() {
             />
           </div>
 
-          <p className={css.socialMediaHeader}>
-            {textSectionContacts.socialMediaHeader}
-          </p>
+          <p className={css.socialMediaHeader}>{socialMedia.header}</p>
           <ul className={css.socialMediaList}>
-            {textSectionContacts.socialMedia.map((element) => (
+            {socialMedia.list.map((mediaItem) => (
               <a
-                key={element.name}
-                href={element.link}
+                key={mediaItem.name}
+                href={mediaItem.link}
                 className={css.socialMediaLink}
               >
                 <img
-                  src={element.icon}
+                  src={mediaItem.icon}
                   className={css.instaIcon}
                   aria-hidden="true"
-                  alt="instagram icon"
+                  alt={mediaItem.alt}
                 />
-                {element.name}
+                {mediaItem.name}
               </a>
             ))}
           </ul>

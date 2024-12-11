@@ -1,11 +1,11 @@
 import React from 'react';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
-import { textSingleServiceWrapper } from '@/utils/texts/text-single-service-wrapper';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
-import { textMassProduction } from '@/utils/texts/text-mass-production';
+import { textMassProduction } from '@/utils/texts/services/text-mass-production';
 
 export default function MassProduction() {
-  const { content, backgroundStyle } = textMassProduction.forWrapper;
+  const language = 'ua';
+  const { content, backgroundStyle } = textMassProduction[language].forWrapper;
   const {
     howItWorks,
     benefits,
@@ -13,16 +13,10 @@ export default function MassProduction() {
     stages,
     importantMoments,
     whyNot3Dprinting,
-  } = textMassProduction;
-  const { button, contacts } = textSingleServiceWrapper;
+  } = textMassProduction[language];
 
   return (
-    <SingleServiceLayout
-      backgroundStyle={backgroundStyle}
-      content={content}
-      button={button}
-      contacts={contacts}
-    >
+    <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
       <ServiceInfoBlock {...howItWorks} headerSize={2} />
 
       <ServiceInfoBlock {...benefits} headerSize={2} />

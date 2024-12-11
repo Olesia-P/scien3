@@ -7,56 +7,21 @@ import css from './navbar.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
 import useMouseOutsideClose from '@/hooks/useMouseOutsideClose';
+import { textContactInfo } from '@/utils/texts/text-contact-info';
+import { textNavbar } from '@/utils/texts/layout/text-navbar';
 // import useClickOutsideClose from '@/components/hooks/useOutsideClickClose';
 // import MobileMenu from '../mobile-menu/mobile-menu';
 
 export default function Navbar() {
-  const navlinks = [
-    {
-      name: 'про нас',
-      link: '/',
-    },
-    {
-      name: 'послуги',
-      link: '/services',
-      hasDropdown: true,
-    },
-    {
-      name: 'роботи',
-      link: '/works',
-    },
-    {
-      name: 'FQA',
-      link: '/fqa',
-    },
-    {
-      name: 'контакти',
-      link: '/contacts',
-    },
-  ];
+  const language = 'ua';
 
-  const servicesDropdownLinks = [
-    {
-      name: '3D моделювання',
-      link: '/services/modeling-3D',
-    },
-    {
-      name: 'Серійне лиття',
-      link: '/services/mass-production',
-    },
-    {
-      name: '3D друк',
-      link: '/services/printing-3D',
-    },
-    {
-      name: 'Форми для лиття',
-      link: '/services/molds',
-    },
-  ];
+  const { navLinks, dropdownLinks } = textNavbar[language];
 
   // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const router = useRouter();
+
+  const { phone } = textContactInfo[language];
 
   // const handleServicesButtonClick = () => {
   //   setIsServicesMenuOpen((prevState) => !prevState);
@@ -92,45 +57,43 @@ export default function Navbar() {
           <p>Scien3 Cast Creations</p>
         </Link>
 
-        <a className={css.phoneNumber} href="tel:+380689873600">
-          +38(068)-987-36-00
-        </a>
+        <p className={css.phoneNumber}>{phone.text}</p>
 
-        <ul className={css.navlinksWrap}>
-          {navlinks.map((element) => (
-            <li key={element.name}>
-              {element.hasDropdown ? (
+        <ul className={css.navLinksWrap}>
+          {navLinks.map((navLink) => (
+            <li key={navLink.name}>
+              {navLink.hasDropdown ? (
                 <div ref={refServicesMenu}>
                   <Link
-                    href={element.link}
+                    href={navLink.link}
                     className={cx(
-                      css.navlink,
-                      router.pathname === element.link && css.selected,
+                      css.navLink,
+                      router.pathname === navLink.link && css.selected,
                     )}
                     onMouseEnter={() => setIsServicesMenuOpen(true)}
-                    aria-selected={router.pathname === element.link}
+                    aria-selected={router.pathname === navLink.link}
                   >
-                    {element.name}
+                    {navLink.name}
                   </Link>
                   {isServicesMenuOpen && (
                     <div
                       className={css.dropdownWrap}
                       onClick={() => setIsServicesMenuOpen(false)}
                     >
-                      <DropdownMenu items={servicesDropdownLinks} />
+                      <DropdownMenu links={dropdownLinks} />
                     </div>
                   )}
                 </div>
               ) : (
                 <Link
                   className={cx(
-                    css.navlink,
-                    router.pathname === element.link && css.selected,
+                    css.navLink,
+                    router.pathname === navLink.link && css.selected,
                   )}
-                  href={element.link}
-                  key={element.name}
+                  href={navLink.link}
+                  key={navLink.name}
                 >
-                  {element.name}
+                  {navLink.name}
                 </Link>
               )}
             </li>
@@ -156,3 +119,5 @@ export default function Navbar() {
     </header>
   );
 }
+
+//  href={`tel:${phoneN}`}

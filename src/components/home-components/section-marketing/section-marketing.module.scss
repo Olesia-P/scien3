@@ -4,30 +4,17 @@
     background-color: $grey;
     color: $white;
     padding: 3rem 0;
-    position: relative;
     background-image: url("/marketing/chess.jpeg");
     background-size: cover;
-    isolation: isolate;
     @include dfc;
-    min-height: 100vh;
+    min-height: 95vh;
     border-bottom: 2px solid $blue;
     border-top: 2px solid $blue;
-
-    //background opacity overlay
-    &::after {
-        content: " ";
-        filter: opacity(70%);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background: $grey;
-    }
+    @include backgroundMask($backgroundColor: $grey, $maskOpacity: 70%);
 
     .statementsList {
         margin: 0 auto;
+
 
         .statementCard {
             background-color: $black;
@@ -53,7 +40,7 @@
             }
 
             .answer {
-                font-size: $font-size-16;
+
 
                 mark {
                     color: $blue;
@@ -80,7 +67,7 @@
             }
 
             &+.statementCard {
-                margin-top: 3rem;
+                margin-top: 2rem;
             }
         }
 

@@ -1,23 +1,17 @@
 import React from 'react';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
-import { textSingleServiceWrapper } from '@/utils/texts/text-single-service-wrapper';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
 import Table from '@/components/ui/table/table';
-import { textMolds } from '@/utils/texts/text-molds';
+import { textMolds } from '@/utils/texts/services/text-molds';
 import css from '../../styles/page-styles/molds.module.scss';
 
 export default function Molds() {
-  const { content, backgroundStyle } = textMolds.forWrapper;
-  const { button, contacts } = textSingleServiceWrapper;
-  const { silicone, polyurethane, orderOptions, table } = textMolds;
+  const language = 'ua';
+  const { content, backgroundStyle } = textMolds[language].forWrapper;
+  const { silicone, polyurethane, orderOptions, table } = textMolds[language];
 
   return (
-    <SingleServiceLayout
-      backgroundStyle={backgroundStyle}
-      content={content}
-      button={button}
-      contacts={contacts}
-    >
+    <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
       <ServiceInfoBlock {...silicone} headerSize={2} />
 
       <ServiceInfoBlock {...polyurethane} headerSize={2} />
