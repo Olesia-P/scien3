@@ -5,12 +5,19 @@ import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { cssIconUrlVariable } from '@/utils/functions';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textContactsPage } from '@/utils/texts/text-contacts-page';
+import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 
 export default function Contacts() {
   const language = 'ua';
 
-  const { email, phone, workingHours, location, socialMedia } =
-    textContactInfo[language];
+  const {
+    email,
+    phone,
+    workingHours,
+    location,
+    socialMedia,
+    clickToCopyMessage,
+  } = textContactInfo[language];
 
   const { mainHeader, description, illustrationAlt } =
     textContactsPage[language];
@@ -21,8 +28,14 @@ export default function Contacts() {
 
   const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
 
+  const { handleCopyClick, Popup } = useCopyTextWithPopup(
+    email.text,
+    email.onCopyPopupText,
+  );
+
   return (
     <main className={cx(css.container, isAnimated && css.animated)} ref={ref}>
+      <Popup />
       <img
         src="/contacts/building-model.jpeg"
         className={css.illustration}
@@ -47,7 +60,14 @@ export default function Contacts() {
             >
               <span>
                 <strong className={css.contactTitle}>{email.title}</strong>{' '}
-                {email.text}
+                <span
+                  className={css.link}
+                  onClick={handleCopyClick}
+                  title={clickToCopyMessage}
+                >
+                  {' '}
+                  {email.text}
+                </span>
               </span>
             </li>
             {contactsList.map((contact) => (

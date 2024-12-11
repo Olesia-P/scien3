@@ -4,12 +4,12 @@
 .container {
     padding-top: 3.5rem;
     background-image: url("/works/mixture.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    // background-repeat: no-repeat;
 
     @include dfc;
-    position: relative;
-    // @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
+    // position: relative;
+    @include backgroundMask($backgroundColor: $white, $maskOpacity: 30%);
 
 
 
@@ -51,7 +51,7 @@
 
             .cardsWrap {
                 @include dfc;
-                gap: 2rem;
+                gap: 3rem;
                 flex-wrap: wrap;
 
                 .card {
@@ -62,7 +62,7 @@
 
 
                     img {
-                        width: 100%;
+                        width: 90%;
                     }
                 }
             }

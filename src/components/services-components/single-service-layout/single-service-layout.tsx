@@ -28,7 +28,7 @@ export default function SingleServiceLayout({
   content,
 }: SingleServiceLayoutProps) {
   const language = 'ua';
-  const { email, phone, copyingMessage } = textContactInfo[language];
+  const { email, phone, clickToCopyMessage } = textContactInfo[language];
   const { otherServicesTitle, mainHeader } = textSingleServiceWrapper[language];
 
   const decideBackgroundStyle = () => {
@@ -74,7 +74,7 @@ export default function SingleServiceLayout({
               type="button"
               className={css.singleContact}
               onClick={handleCopyClick}
-              title={copyingMessage}
+              title={clickToCopyMessage}
             >
               {email.text}
             </button>

@@ -5,11 +5,18 @@ import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { cssIconUrlVariable } from '@/utils/functions';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textConstactsSectionHomePage } from '@/utils/texts/home/text-contacts-section';
+import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 
 export default function SectionContacts() {
   const language = 'ua';
-  const { phone, email, workingHours, location, socialMedia } =
-    textContactInfo[language];
+  const {
+    phone,
+    email,
+    workingHours,
+    location,
+    socialMedia,
+    clickToCopyMessage,
+  } = textContactInfo[language];
 
   const {
     mainHeader,
@@ -31,8 +38,14 @@ export default function SectionContacts() {
     0.5,
   );
 
+  const { handleCopyClick, Popup } = useCopyTextWithPopup(
+    email.text,
+    email.onCopyPopupText,
+  );
+
   return (
     <section className={css.container} ref={contactsSectionRef}>
+      <Popup />
       <hgroup className={css.contactsHeader}>
         <h3>{mainHeader}</h3>
         <p>{mainHeaderCaption}</p>{' '}
@@ -68,7 +81,14 @@ export default function SectionContacts() {
             >
               <span>
                 <strong className={css.contactTitle}>{email.title}</strong>{' '}
-                {email.text}
+                <span
+                  className={css.link}
+                  onClick={handleCopyClick}
+                  title={clickToCopyMessage}
+                >
+                  {' '}
+                  {email.text}
+                </span>
               </span>
             </li>
             {contactsList.map((contact) => (
@@ -105,7 +125,7 @@ export default function SectionContacts() {
               >
                 <img
                   src={mediaItem.icon}
-                  className={css.instaIcon}
+                  className={css.mediaIcon}
                   aria-hidden="true"
                   alt={mediaItem.alt}
                 />

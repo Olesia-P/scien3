@@ -23,8 +23,8 @@
 
     h1 {
         text-align: center;
-        padding: 0.5em 0;
-        margin-top: 1rem;
+        padding: 1.5em 0 0.5em 0;
+
         // color: $blue;
 
         span {
@@ -75,8 +75,9 @@
                     margin-right: 0.5rem;
                 }
 
-                .phoneNumber {
+                .link {
                     border-bottom: 2px solid $blue;
+                    cursor: pointer;
                 }
             }
 

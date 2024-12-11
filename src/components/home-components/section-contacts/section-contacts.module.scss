@@ -6,6 +6,7 @@
     max-width: 100%;
     margin: 0 auto;
     min-height: 95vh;
+    position: relative;
 
     .contactsHeader {
         margin: 0 auto;
@@ -109,8 +110,9 @@
                         margin-right: 0.5rem;
                     }
 
-                    .phoneNumber {
+                    .link {
                         border-bottom: 2px solid $blue;
+                        cursor: pointer;
                     }
                 }
             }
@@ -147,7 +149,7 @@
                     color: $blue;
                 }
 
-                .instaIcon {
+                .mediaIcon {
                     margin-right: 0.5rem;
                     height: 1em;
                 }

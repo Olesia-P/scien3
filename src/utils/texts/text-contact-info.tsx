@@ -34,6 +34,6 @@ export const textContactInfo = {
       ],
     },
 
-    copyingMessage: 'Натисніть щоб скопіювати',
+    clickToCopyMessage: 'Натисніть щоб скопіювати',
   },
 };
