@@ -51,6 +51,7 @@ export default function Contacts() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
+
       <div className={css.card}>
         <article className={css.contacts}>
           <ul>
