@@ -1,7 +1,7 @@
 import React from 'react';
 import css from '../styles/page-styles/fqa.module.scss';
 import CollapsableBlock from '@/components/ui/collapsable-block/collapsable-block';
-import { textFqa } from '@/utils/texts/fqa';
+import { textFqa } from '@/utils/texts/text-fqa';
 
 export default function Fqa() {
   const language = 'ua';

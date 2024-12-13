@@ -5,22 +5,19 @@ import { textWorks } from '@/utils/texts/text-works';
 
 export default function Works() {
   const language = 'ua';
-  const { alt, images } = textWorks[language];
-  const text = {
-    mainHeader: 'Приклади наших робіт',
-    caption: 'Більше робіт в нашому',
-  };
+  const { alt, images, mainHeader, caption } = textWorks[language];
+
   return (
     <main className={css.container}>
       <div className={css.outline}>
         <section className={css.mainCard}>
           <h1>
             <span>|</span>
-            {text.mainHeader}
+            {mainHeader}
             <span>|</span>
           </h1>
           <p className={css.caption}>
-            {text.caption}{' '}
+            {caption}{' '}
             <a href="https://www.instagram.com/3d_scien3_ua?igsh=dDQ1OWxia29jaXpu">
               Instagram <FaArrowRightLong />{' '}
             </a>
