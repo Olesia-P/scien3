@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import localFont from 'next/font/local';
 import css from './section-intro.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { textSectionIntro } from '@/utils/texts/home/text-section-intro';
+
+const logoFont = localFont({
+  src: '../../../../public/fonts/Teko Medium.woff',
+});
+const monoFont = localFont({
+  src: '../../../../public/fonts/GeistMonoVF.woff',
+});
 
 export default function SectionIntro() {
   const language = 'ua';
@@ -23,8 +31,8 @@ export default function SectionIntro() {
     <section className={css.container} ref={introSectionRef}>
       <hgroup className={css.mainHeader}>
         <div className={css.contentLimit}>
-          <h1>Scien3 Cast Creations</h1>
-          <p>{caption}</p>
+          <h1 className={logoFont.className}>Scien3 Cast Creations</h1>
+          <p className={monoFont.className}>{caption}</p>
         </div>
       </hgroup>
       <div className={css.contentLimit}>
