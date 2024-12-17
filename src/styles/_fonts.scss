@@ -1,39 +1,55 @@
-@font-face {
-    font-family: 'Geist Mono';
-    src: url('../../public/fonts/GeistMonoVF.woff') format('woff');
-}
+// @font-face {
+//     font-family: 'Teko Medium';
+//     src:
+//         url('../../public/fonts/Teko Medium.woff') format('woff'),
+// }
+
+
+// @font-face {
+//     font-family: 'Onest Medium';
+//     src: url('../../public/fonts/Onest-Medium.ttf') format('truetype'),
+// }
+
+
+// @font-face {
+//     font-family: 'Pricedown BI';
+//     src: url('../../public/fonts/PricedownBl-Regular.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+//     font-stretch: normal;
+//     unicode-range: U+0020-2212;
+// }
 
 
 @font-face {
-    font-family: 'Teko Medium';
-    src:
-        url('../../public/fonts/Teko Medium.woff') format('woff'),
-
-}
-
-
-@font-face {
-    font-family: 'Onest Medium';
-    src: url('../../public/fonts/Onest-Medium.ttf') format('truetype'),
-}
-
-
-@font-face {
-    font-family: 'Pricedown BI';
-    src: url('../../public/fonts/PricedownBl-Regular.ttf') format('truetype');
-
-    font-weight: 400;
+    font-family: 'Onest';
+    src: url('/fonts/Onest-Medium.woff2') format('woff2');
+    font-weight: 500;
     font-style: normal;
-    font-stretch: normal;
-    unicode-range: U+0020-2212;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Teko';
+    src: url('/fonts/Teko-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pricedown Bl';
+    src: url('/fonts/PricedownBl-Regular.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 //fonts
-
-$font-family-main: "Onest Medium", sans-serif;
-$font-family-mono: "Geist Mono", sans-serif;
-$font-family-logo: "Teko Medium", sans-serif;
-$font-family-fancy: 'Pricedown BI', sans-serif;
+$font-family-main: "Onest", sans-serif;
+$font-family-logo: "Teko", sans-serif;
+$font-family-fancy: 'Pricedown Bl', sans-serif;
 
 
 //font sizes

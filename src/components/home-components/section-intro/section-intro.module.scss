@@ -22,7 +22,7 @@
         border-bottom: 1px solid white;
 
         h1 {
-            // font-family: $font-family-logo;
+            font-family: $font-family-logo;
             line-height: 1;
             font-size: $font-size-70;
             margin: 0 0 0 7%;
@@ -35,7 +35,6 @@
             margin: 0 0 0 14%;
             color: $blue;
             text-shadow: $text-shadow-1;
-            // font-family: $font-family-mono;
         }
     }
 
@@ -63,7 +62,6 @@
             line-height: 1.3;
             position: relative;
             padding-left: 1.7em;
-            font-family: $font-family-mono;
 
             &::before {
                 content: ' ';
