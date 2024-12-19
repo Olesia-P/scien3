@@ -9,7 +9,7 @@
 
     @include dfc;
     // position: relative;
-    @include backgroundMask($backgroundColor: $white, $maskOpacity: 30%);
+    @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
 
 
 

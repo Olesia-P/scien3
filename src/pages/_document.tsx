@@ -12,13 +12,13 @@ export default function Document() {
         type="font/woff2"
         crossOrigin="anonymous"
       />
-      {/* <link
+      <link
         rel="preload"
         href="/fonts/PricedownBl-Regular.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"
-      /> */}
+      />
       <link
         rel="preload"
         href="/fonts/Teko-Medium.woff2"
