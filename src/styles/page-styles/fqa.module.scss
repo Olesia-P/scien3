@@ -30,7 +30,7 @@
 
             .cardsGroup {
                 @include dfcc;
-                gap: 5rem;
+                gap: 3rem;
                 transition: all 0.7s ease-in-out;
 
                 .card {

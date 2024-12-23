@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import cx from 'classnames';
 import css from '../styles/page-styles/works.module.scss';
 import { textWorks } from '@/utils/texts/text-works';
+import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
 export default function Works() {
   const language = 'ua';
   const { alt, images, mainHeader, caption } = textWorks[language];
 
+  const [isObserved, setIsObserved] = useState(false);
+  const handleIntersection = () => {
+    setIsObserved(true);
+  };
+
+  const worksRef = useIntersectionObserver(handleIntersection, undefined, 0);
+
   return (
-    <main className={css.container}>
+    <main className={css.container} ref={worksRef}>
       <div className={css.outline}>
         <section className={css.mainCard}>
           <h1>
@@ -22,7 +31,7 @@ export default function Works() {
               Instagram <FaArrowRightLong />{' '}
             </a>
           </p>
-          <div className={css.cardsWrap}>
+          <div className={cx(css.cardsWrap, isObserved && css.animated)}>
             {images.map((img) => (
               <article className={css.card} key={img}>
                 <img src={img} alt={alt} />

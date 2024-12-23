@@ -14,7 +14,7 @@ export default function Fqa() {
   const handleIntersection = () => {
     setIsObserved(true);
   };
-  const fqaRef = useIntersectionObserver(handleIntersection, undefined, 0.5);
+  const fqaRef = useIntersectionObserver(handleIntersection, undefined, 0);
 
   return (
     <main className={css.container} ref={fqaRef}>
