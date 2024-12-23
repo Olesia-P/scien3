@@ -95,12 +95,13 @@
 
                 @include dfc;
                 width: fit-content;
-                @include whiteCard($pad: 0.5em, $borderRad: 5px);
-                // padding: 0.5em;
+                // @include whiteCard($pad: 0.5em, $borderRad: 5px);
+                padding: 0.5em;
+                box-shadow: $shadow-button;
                 // box-shadow: $shadow-white-out;
-                // border-radius: 15px;
+                border-radius: 5px;
                 cursor: pointer;
-                transition: color 0.2s linear;
+                transition: color 0.1s linear;
 
                 &:hover {
                     color: $blue;

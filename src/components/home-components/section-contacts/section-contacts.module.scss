@@ -141,9 +141,12 @@
             .socialMediaLink {
                 @include dfc;
                 width: fit-content;
-                @include whiteCard($pad: 0.5em, $borderRad: 5px);
+                // @include whiteCard($pad: 0.5em, $borderRad: 5px);
+                padding: 0.5em;
                 cursor: pointer;
-                transition: color 0.2s linear;
+                transition: color 0.1s linear;
+                border-radius: 5px;
+                box-shadow: $shadow-button;
 
                 &:hover {
                     color: $blue;

@@ -17,6 +17,8 @@ $shadow-white-in-strong: inset -3px -3px 4px 0 rgba(255, 255, 255),
 $shadow-blue-out: -3px -3px 4px 0 rgba(255, 255, 255, 0.5), // Softer white highlight to complement the bright teal
     3px 3px 4px 0 rgba(0, 70, 75, 0.2); // Darkened teal shadow for subtle depth
 
+$shadow-button: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 
 //text-shadow
 $text-shadow-1: -1px -1px 0 black,

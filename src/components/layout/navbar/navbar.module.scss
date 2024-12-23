@@ -53,19 +53,32 @@
 
                 .navLink {
                     font-weight: 600;
-                    // padding: 0.4em 1.1em;
+                    padding: 0.4em 1.1em;
                     // border-radius: 5px;
-                    @include whiteCard($pad: 0.4em 1.1em, $borderRad: 5px);
-                    transition: color 0.2s ease-in;
+                    // background-color: #e6e6e6;
+                    // border: 2px solid $blue;
+                    // @include whiteCard($pad: 0.4em 1.1em, $borderRad: 5px);
+                    transition: color 0.1s ease-in;
                     // box-shadow: $shadow-white-out;
                     position: relative;
 
+                    // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
                     &:hover {
                         color: $blue;
+                        // filter: brightness(120%);
+
                     }
 
                     &.selected {
-                        box-shadow: $shadow-white-in;
+                        // box-shadow: $shadow-white-in;
+                        // border-bottom: 2px solid $blue;
+                        // border: 1px solid $blue;
+                        // background-color: $light-blue;
+                        // color: $blue;
+                        border-bottom: 2px solid $blue;
+                        // border-top: 2px solid $blue;
                     }
                 }
 
