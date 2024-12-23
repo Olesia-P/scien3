@@ -22,7 +22,7 @@
 
     .illustrationLeft {
         transition: right 1.2s ease-in-out;
-        right: 56.5%;
+        right: 65.5%;
 
         &.animated {
             right: 73.5%;
@@ -31,7 +31,7 @@
 
     .illustrationRight {
         transition: left 1.2s ease-in-out;
-        left: 43.5%;
+        left: 65.5%;
 
         &.animated {
             left: 73.5%;
