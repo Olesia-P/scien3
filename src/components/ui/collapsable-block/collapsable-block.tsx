@@ -23,11 +23,9 @@ export default function CollapsableBlock({
   const HeaderTag = createHeaderTag(headerSize);
   return (
     <article className={cx(css.container, isOpen && css.opened)}>
-      <header className={css.headerWrap}>
-        <HeaderTag className={css.header} onClick={handleClick}>
-          {header}
-        </HeaderTag>
-        <button type="button" className={css.button} onClick={handleClick}>
+      <header className={css.headerWrap} onClick={handleClick}>
+        <HeaderTag className={css.header}>{header}</HeaderTag>
+        <button type="button" className={css.button}>
           <IoChevronDownOutline className={css.chevron} />
 
           <IoCloseSharp className={css.cross} />

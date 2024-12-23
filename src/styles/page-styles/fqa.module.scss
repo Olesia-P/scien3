@@ -28,8 +28,18 @@
                 }
             }
 
-            .card {
-                margin-bottom: 1rem;
+            .cardsGroup {
+                @include dfcc;
+                gap: 5rem;
+                transition: all 0.7s ease-in-out;
+
+                .card {
+                    margin-bottom: 1rem;
+                }
+
+                &.animated {
+                    gap: 0rem;
+                }
             }
         }
     }
