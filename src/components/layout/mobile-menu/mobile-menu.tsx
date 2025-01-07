@@ -20,8 +20,8 @@ export default function MobileMenu() {
       link: '/works',
     },
     {
-      name: 'FQA',
-      link: '/fqa',
+      name: 'FAQ',
+      link: '/faq',
     },
     {
       name: 'контакти',

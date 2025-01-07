@@ -75,6 +75,6 @@ const ua = {
   ],
 };
 
-export const textFqa = {
+export const textFaq = {
   ua,
 };

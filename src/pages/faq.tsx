@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import css from '../styles/page-styles/fqa.module.scss';
+import css from '../styles/page-styles/faq.module.scss';
 import CollapsableBlock from '@/components/ui/collapsable-block/collapsable-block';
-import { textFqa } from '@/utils/texts/text-fqa';
+import { textFaq } from '@/utils/texts/text-faq';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
-export default function Fqa() {
+export default function Faq() {
   const language = 'ua';
 
-  const { mainHeader, questionCards } = textFqa[language];
+  const { mainHeader, questionCards } = textFaq[language];
 
   const [isObserved, setIsObserved] = useState(false);
   const handleIntersection = () => {
     setIsObserved(true);
   };
-  const fqaRef = useIntersectionObserver(handleIntersection, undefined, 0);
+  const faqRef = useIntersectionObserver(handleIntersection, undefined, 0);
 
   return (
-    <main className={css.container} ref={fqaRef}>
+    <main className={css.container} ref={faqRef}>
       <div className={css.outline}>
         <div className={css.mainWrap}>
           <h1 className={css.mainHeader}>

@@ -2,7 +2,7 @@
 
 .container {
     padding-top: 3.5rem;
-    background-image: url("/works-fqa/scattered-forms.jpeg");
+    background-image: url("/works-faq/scattered-forms.jpeg");
     background-size: 100vw;
 
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
