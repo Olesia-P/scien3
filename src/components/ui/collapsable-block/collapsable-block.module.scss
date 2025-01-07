@@ -32,7 +32,7 @@
 
             .chevron,
             .cross {
-                transition: all 0.4s ease-in-out;
+                transition: all 0.4s linear;
                 position: absolute;
                 font-size: $font-size-28;
             }
