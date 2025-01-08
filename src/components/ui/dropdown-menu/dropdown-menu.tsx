@@ -12,7 +12,7 @@ type DropdownMenuProps = {
 export default function DropdownMenu({ links }: DropdownMenuProps) {
   return (
     <div className={css.container}>
-      <ul className={css.linksWrap} role="menu">
+      <ul className={css.linksWrap}>
         {links.map((link) => (
           <Link className={css.link} key={link.name} href={link.link}>
             {link.name}

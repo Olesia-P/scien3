@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
-// import { IoMenu } from 'react-icons/io5';
+import { IoMenu } from 'react-icons/io5';
 import css from './navbar.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
@@ -71,7 +71,9 @@ export default function Navbar() {
                       router.pathname === navLink.link && css.selected,
                     )}
                     onMouseEnter={() => setIsServicesMenuOpen(true)}
-                    aria-selected={router.pathname === navLink.link}
+                    aria-current={
+                      router.pathname === navLink.link ? 'page' : undefined
+                    }
                   >
                     {navLink.name}
                   </Link>
@@ -91,7 +93,9 @@ export default function Navbar() {
                     router.pathname === navLink.link && css.selected,
                   )}
                   href={navLink.link}
-                  key={navLink.name}
+                  aria-current={
+                    router.pathname === navLink.link ? 'page' : undefined
+                  }
                 >
                   {navLink.name}
                 </Link>
@@ -103,14 +107,14 @@ export default function Navbar() {
         <div className={css.switch}>
           <LangSwitch />
         </div>
-        {/* 
+
         <button
           type="button"
           className={css.hamburger}
           // onClick={handleHamburgerClick}
         >
           <IoMenu />
-        </button> */}
+        </button>
 
         {/* <div className={css.mobileMenuWrap}>
           <MobileMenu />
