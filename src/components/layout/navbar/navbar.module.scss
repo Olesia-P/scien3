@@ -160,15 +160,26 @@
 @include lowTablet {
     .shadowWrapper {
         .container {
-            height: 4rem;
-            font-size: $font-size-20;
+            height: 4.5rem;
+            // font-size: $font-size-20;
 
             .logo {
                 height: 2.8rem;
 
                 p {
-                    font-size: $font-size-28;
+                    font-size: $font-size-30;
+                    // display: none;
                 }
+            }
+
+            .phoneNumber {
+                display: none;
+            }
+
+            .hamburger {
+                width: 40px;
+                height: 40px;
+                margin-right: 1rem;
             }
         }
     }
