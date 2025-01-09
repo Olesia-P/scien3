@@ -1,27 +1,25 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 
 export default function useMediaQuery(maxWidth: number) {
-  const [state, setState] = useState({
-    windowWidth: typeof window !== 'undefined' ? window.innerWidth : 0,
-    isDesiredWidth: false,
-  });
-
-  useEffect(() => {
-    const currentWindowWidth = window?.innerWidth;
-    const isDesiredWidth = currentWindowWidth > maxWidth;
-    setState({ windowWidth: currentWindowWidth, isDesiredWidth });
-  }, [maxWidth]);
+  const [isDesiredWidth, setIsDesiredWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth > maxWidth : false,
+  );
 
   useEffect(() => {
     const resizeHandler = () => {
       const currentWindowWidth = window?.innerWidth;
-      const isDesiredWidth = currentWindowWidth > maxWidth;
-      setState({ windowWidth: currentWindowWidth, isDesiredWidth });
+      setIsDesiredWidth(currentWindowWidth > maxWidth);
     };
-    window.addEventListener('resize', resizeHandler);
-    return () => window.removeEventListener('resize', resizeHandler);
-  }, [state.windowWidth]);
 
-  return state.isDesiredWidth;
+    // Run once to set the initial value
+    resizeHandler();
+
+    // Add event listener for resize
+    window.addEventListener('resize', resizeHandler);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener('resize', resizeHandler);
+  }, [maxWidth]); // Re-run effect only if maxWidth changes
+
+  return isDesiredWidth;
 }

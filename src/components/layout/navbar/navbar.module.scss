@@ -95,13 +95,18 @@
             }
         }
 
-        // .mobileMenuWrap {
-        //     background-color: pink;
-        //     position: absolute;
-        //     right: 0;
-        //     top: 3.5rem;
-        // }
-        // }
+        .mobileMenuWrap {
+            position: absolute;
+            right: 0;
+            top: 3.2rem;
+            width: 15rem;
+            transform: translateX(100%);
+            transition: all 0.3s ease-in-out;
+
+            &.opened {
+                transform: translateX(0);
+            }
+        }
     }
 }
 

@@ -3,7 +3,11 @@ import cx from 'classnames';
 import css from './lang-switch.module.scss';
 import { textLangSwitch } from '@/utils/texts/layout/text-lang-switch';
 
-export default function LangSwitch() {
+type SwitchProps = {
+  fontSize: 's' | 'm' | 'l';
+};
+
+export default function LangSwitch({ fontSize }: SwitchProps) {
   const language = 'ua';
   const { switchToUkrainian, switchToEnglish, chosenEnglish, chosenUkrainian } =
     textLangSwitch[language];
@@ -13,7 +17,7 @@ export default function LangSwitch() {
   };
   return (
     <div className={css.container}>
-      <div className={css.caption}>ua</div>
+      <div className={cx(css.caption, css[fontSize])}>ua</div>
       <button
         onClick={toSwitch}
         role="switch"
@@ -37,7 +41,7 @@ export default function LangSwitch() {
           <img src="/icons/united-kingdom-icon.png" alt={switchToEnglish} />
         </div>
       </button>
-      <div className={css.caption}>en</div>
+      <div className={cx(css.caption, css[fontSize])}>en</div>
     </div>
   );
 }

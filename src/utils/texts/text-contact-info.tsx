@@ -4,6 +4,7 @@ export const textContactInfo = {
       text: '+38(068)-987-36-00',
       title: 'Телефон:',
       icon: '/icons/phone-icon.png',
+      number: '+380689873600',
     },
     email: {
       title: 'Email:',

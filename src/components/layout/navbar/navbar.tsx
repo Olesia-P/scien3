@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
 import { IoMenu } from 'react-icons/io5';
@@ -9,45 +9,42 @@ import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
 import useMouseOutsideClose from '@/hooks/useMouseOutsideClose';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
-// import useClickOutsideClose from '@/components/hooks/useOutsideClickClose';
-// import MobileMenu from '../mobile-menu/mobile-menu';
+import MobileMenu from '../mobile-menu/mobile-menu';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import useClickOutsideClose from '@/hooks/useOutsideClickClose';
 
 export default function Navbar() {
   const language = 'ua';
 
   const { navLinks, dropdownLinks } = textNavbar[language];
 
-  // const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
   const router = useRouter();
 
   const { phone } = textContactInfo[language];
 
-  // const handleServicesButtonClick = () => {
-  //   setIsServicesMenuOpen((prevState) => !prevState);
-  // };
-  // const handleHamburgerClick = () => {
-  //   setIsMobileMenuOpen((prevState) => !prevState);
-  // };
-
-  // useEffect(() => {
-  //   if (router.asPath === '/#services-description') {
-  //     // Scroll to the section when this path is matched
-  //     const section = document.getElementById('services-description');
-  //     if (section) {
-  //       section.scrollIntoView({ behavior: 'smooth' });
-  //     }
-  //   }
-  // }, [router.asPath]);
-  // const refServicesMenu = useClickOutsideClose(
-  //   setIsServicesMenuOpen,
-  //   isServicesMenuOpen,
-  // );
+  const handleHamburgerClick = () => {
+    setIsMobileMenuOpen((prevState) => !prevState);
+  };
 
   const refServicesMenu = useMouseOutsideClose(
     setIsServicesMenuOpen,
     isServicesMenuOpen,
   );
+
+  const [refMobileMenu, refHamburger] = useClickOutsideClose<
+    HTMLDivElement,
+    HTMLButtonElement
+  >(setIsMobileMenuOpen, isMobileMenuOpen);
+
+  const isLargeScreen = useMediaQuery(1024);
+
+  useEffect(() => {
+    if (isLargeScreen) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [isLargeScreen]);
 
   return (
     <header className={css.shadowWrapper}>
@@ -56,8 +53,13 @@ export default function Navbar() {
           <img src="/logo-3d-small.png" alt="scien3 logo 3D" />
           <p>Scien3 Cast Creations</p>
         </Link>
-
-        <p className={css.phoneNumber}>{phone.text}</p>
+        {isLargeScreen ? (
+          <p className={css.phoneNumber}>{phone.text}</p>
+        ) : (
+          <a className={css.phoneNumber} href={`tel:${phone.number}`}>
+            {phone.text}
+          </a>
+        )}
 
         <ul className={css.navLinksWrap}>
           {navLinks.map((navLink) => (
@@ -105,23 +107,25 @@ export default function Navbar() {
         </ul>
 
         <div className={css.switch}>
-          <LangSwitch />
+          <LangSwitch fontSize="s" />
         </div>
 
         <button
           type="button"
           className={css.hamburger}
-          // onClick={handleHamburgerClick}
+          onClick={handleHamburgerClick}
+          ref={refHamburger}
         >
           <IoMenu />
         </button>
 
-        {/* <div className={css.mobileMenuWrap}>
+        <div
+          className={cx(css.mobileMenuWrap, isMobileMenuOpen && css.opened)}
+          ref={refMobileMenu}
+        >
           <MobileMenu />
-        </div> */}
+        </div>
       </nav>
     </header>
   );
 }
-
-//  href={`tel:${phoneN}`}

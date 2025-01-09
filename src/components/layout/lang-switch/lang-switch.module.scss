@@ -53,6 +53,18 @@
     .caption {
         font-family: $font-family-main;
         font-weight: 600;
-        font-size: $font-size-14;
+
+
+        &.s {
+            font-size: $font-size-14;
+        }
+
+        &.m {
+            font-size: $font-size-18;
+        }
+
+        &.l {
+            font-size: $font-size-22;
+        }
     }
 }

@@ -1,13 +1,20 @@
 import { useEffect, useRef, MutableRefObject } from 'react';
 
-export default function useClickOutsideClose(
+export default function useClickOutsideClose<
+  T extends Element,
+  U extends Element,
+>(
   setOpeningState: React.Dispatch<React.SetStateAction<boolean>>,
   openingState: boolean,
-): MutableRefObject<HTMLDivElement | null> {
-  const ref = useRef<HTMLDivElement | null>(null);
+): [MutableRefObject<T | null>, MutableRefObject<U | null>] {
+  const ref1 = useRef<T | null>(null);
+  const ref2 = useRef<U | null>(null);
 
   const handleOutsideClick = (event: MouseEvent) => {
-    if (ref.current && ref.current.contains(event.target as Node)) {
+    if (
+      (ref1.current && ref1.current.contains(event.target as Node)) ||
+      (ref2.current && ref2.current.contains(event.target as Node))
+    ) {
       return;
     }
     setOpeningState(false);
@@ -24,5 +31,5 @@ export default function useClickOutsideClose(
     };
   }, [openingState]);
 
-  return ref;
+  return [ref1, ref2];
 }

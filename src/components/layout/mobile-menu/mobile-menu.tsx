@@ -4,48 +4,33 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import css from './mobile.menu.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
+import { textNavbar } from '@/utils/texts/layout/text-navbar';
 
 export default function MobileMenu() {
-  const navlinks = [
-    {
-      name: 'про нас',
-      link: '/',
-    },
-    {
-      name: 'послуги',
-      link: '/services',
-    },
-    {
-      name: 'роботи',
-      link: '/works',
-    },
-    {
-      name: 'FAQ',
-      link: '/faq',
-    },
-    {
-      name: 'контакти',
-      link: '/contacts',
-    },
-  ];
+  const language = 'ua';
+
+  const { navLinks } = textNavbar[language];
 
   const router = useRouter();
   return (
-    <div className={css.container}>
-      {navlinks.map((element) => (
-        <Link
-          className={cx(
-            css.navlink,
-            router.pathname === element.link && css.selected,
-          )}
-          href={element.link}
-          key={element.name}
-        >
-          {element.name}
-        </Link>
-      ))}
-      <div className={css.switch}>
-        <LangSwitch />
+    <div className={css.shadowWrapper}>
+      <div className={css.container}>
+        {navLinks.map((navLink) => (
+          <Link
+            className={cx(
+              css.navlink,
+              router.pathname === navLink.link && css.selected,
+            )}
+            href={navLink.link}
+            key={navLink.name}
+            aria-current={router.pathname === navLink.link ? 'page' : undefined}
+          >
+            {navLink.name}
+          </Link>
+        ))}
+        <div className={css.switch}>
+          <LangSwitch fontSize="m" />
+        </div>
       </div>
     </div>
   );
