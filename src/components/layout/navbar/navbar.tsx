@@ -5,33 +5,21 @@ import { useRouter } from 'next/router';
 import { IoMenu } from 'react-icons/io5';
 import css from './navbar.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
-import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
-import useMouseOutsideClose from '@/hooks/useMouseOutsideClose';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
-import MobileMenu from '../mobile-menu/mobile-menu';
+import MobileMenu from './mobile-menu/mobile-menu';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import useClickOutsideClose from '@/hooks/useOutsideClickClose';
+import Navlink from './navlink/navlink';
 
 export default function Navbar() {
   const language = 'ua';
-
-  const { navLinks, dropdownLinks } = textNavbar[language];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
-  const router = useRouter();
-
+  const { navlinks } = textNavbar[language];
   const { phone } = textContactInfo[language];
 
-  const handleHamburgerClick = () => {
-    setIsMobileMenuOpen((prevState) => !prevState);
-  };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const refServicesMenu = useMouseOutsideClose(
-    setIsServicesMenuOpen,
-    isServicesMenuOpen,
-  );
+  const router = useRouter();
 
   const [refMobileMenu, refHamburger] = useClickOutsideClose<
     HTMLDivElement,
@@ -46,6 +34,10 @@ export default function Navbar() {
     }
   }, [isLargeScreen]);
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [router.pathname]);
+
   return (
     <header className={css.shadowWrapper}>
       <nav className={css.container}>
@@ -53,6 +45,7 @@ export default function Navbar() {
           <img src="/logo-3d-small.png" alt="scien3 logo 3D" />
           <p>Scien3 Cast Creations</p>
         </Link>
+
         {isLargeScreen ? (
           <p className={css.phoneNumber}>{phone.text}</p>
         ) : (
@@ -62,47 +55,8 @@ export default function Navbar() {
         )}
 
         <ul className={css.navLinksWrap}>
-          {navLinks.map((navLink) => (
-            <li key={navLink.name}>
-              {navLink.hasDropdown ? (
-                <div ref={refServicesMenu}>
-                  <Link
-                    href={navLink.link}
-                    className={cx(
-                      css.navLink,
-                      router.pathname === navLink.link && css.selected,
-                    )}
-                    onMouseEnter={() => setIsServicesMenuOpen(true)}
-                    aria-current={
-                      router.pathname === navLink.link ? 'page' : undefined
-                    }
-                  >
-                    {navLink.name}
-                  </Link>
-                  {isServicesMenuOpen && (
-                    <div
-                      className={css.dropdownWrap}
-                      onClick={() => setIsServicesMenuOpen(false)}
-                    >
-                      <DropdownMenu links={dropdownLinks} />
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link
-                  className={cx(
-                    css.navLink,
-                    router.pathname === navLink.link && css.selected,
-                  )}
-                  href={navLink.link}
-                  aria-current={
-                    router.pathname === navLink.link ? 'page' : undefined
-                  }
-                >
-                  {navLink.name}
-                </Link>
-              )}
-            </li>
+          {navlinks.map((navlink) => (
+            <Navlink navlink={navlink} key={navlink.name} />
           ))}
         </ul>
 
@@ -113,7 +67,7 @@ export default function Navbar() {
         <button
           type="button"
           className={css.hamburger}
-          onClick={handleHamburgerClick}
+          onClick={() => setIsMobileMenuOpen((prevState) => !prevState)}
           ref={refHamburger}
         >
           <IoMenu />

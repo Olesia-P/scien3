@@ -1,4 +1,4 @@
-@import "../../../styles/main";
+@import "../../../../styles/main";
 
 .shadowWrapper {
     background-color: $white;
@@ -11,7 +11,6 @@
         border-radius: 5px;
         @include dfcc;
         gap: 2rem;
-
 
         .navlink {
             font-size: $font-size-22;

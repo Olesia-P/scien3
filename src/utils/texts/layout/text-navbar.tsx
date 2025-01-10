@@ -1,8 +1,9 @@
 const ua = {
-  navLinks: [
+  navlinks: [
     {
       name: 'про нас',
       link: '/',
+      hasDropdown: false,
     },
     {
       name: 'послуги',
@@ -12,14 +13,17 @@ const ua = {
     {
       name: 'роботи',
       link: '/works',
+      hasDropdown: false,
     },
     {
       name: 'FAQ',
       link: '/faq',
+      hasDropdown: false,
     },
     {
       name: 'контакти',
       link: '/contacts',
+      hasDropdown: false,
     },
   ],
 

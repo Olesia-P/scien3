@@ -1,0 +1,42 @@
+@import "../../../../styles/main";
+
+.linkWrap {
+    position: relative;
+
+    .navLink {
+        font-weight: 600;
+        padding: 0.7em 1.1em;
+        transition: color 0.1s ease-in;
+        position: relative;
+
+        &:hover {
+            color: $blue;
+        }
+
+        &.selected::before {
+            content: " ";
+            position: absolute;
+            border-bottom: 2px solid $blue;
+            width: 100%;
+            bottom: 0.3em;
+            left: 0;
+
+        }
+    }
+
+    .dropdownWrap {
+        position: absolute;
+        width: 250%;
+        top: 2.1rem;
+        left: -75%;
+        z-index: 11;
+    }
+}
+
+@include laptop {
+    .linkWrap {
+        .dropdownWrap {
+            top: 1.8rem;
+        }
+    }
+}

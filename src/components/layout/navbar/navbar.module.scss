@@ -47,33 +47,6 @@
             @include dfc;
             gap: 2rem;
             margin-left: auto;
-
-            li {
-                position: relative;
-
-                .navLink {
-                    font-weight: 600;
-                    padding: 0.4em 1.1em;
-                    transition: color 0.1s ease-in;
-                    position: relative;
-
-                    &:hover {
-                        color: $blue;
-                    }
-
-                    &.selected {
-                        border-bottom: 2px solid $blue;
-                    }
-                }
-
-                .dropdownWrap {
-                    position: absolute;
-                    width: 250%;
-                    top: 1.9rem;
-                    left: -75%;
-                    z-index: 11;
-                }
-            }
         }
 
         .switch {

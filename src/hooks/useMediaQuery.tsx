@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function useMediaQuery(maxWidth: number) {
-  const [isDesiredWidth, setIsDesiredWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth > maxWidth : false,
-  );
+  const [isDesiredWidth, setIsDesiredWidth] = useState(false);
 
   useEffect(() => {
     const resizeHandler = () => {
@@ -19,7 +17,7 @@ export default function useMediaQuery(maxWidth: number) {
 
     // Cleanup the event listener
     return () => window.removeEventListener('resize', resizeHandler);
-  }, [maxWidth]); // Re-run effect only if maxWidth changes
+  }, [maxWidth]);
 
   return isDesiredWidth;
 }
