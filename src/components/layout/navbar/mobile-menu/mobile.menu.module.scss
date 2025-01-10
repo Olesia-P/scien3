@@ -4,16 +4,60 @@
     background-color: $white;
     padding: 0.2rem;
     border-radius: 5px;
+    max-height: 80vh;
+    overflow-y: scroll;
 
     .container {
         box-shadow: $shadow-white-out;
         padding: 1.5rem;
         border-radius: 5px;
-        @include dfcc;
-        gap: 2rem;
+
+        &>*:not(:first-child) {
+            margin-top: 2rem;
+        }
 
         .navlink {
             font-size: $font-size-22;
+            @include dfc;
+
+            .chevron {
+                margin-left: 0.5rem;
+                @include dfc;
+                transition: transform 0.3s linear;
+                width: 1.2em;
+                height: 1.2em;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &.turned {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        .dropdownBlockWrap {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s linear;
+
+            &.opened {
+                grid-template-rows: 1fr;
+            }
+
+            .dropdownBlock {
+                overflow: hidden;
+                @include dfcc;
+                margin-top: 0.3rem;
+            }
+
+            .dropdownLink {
+                text-decoration: none;
+                font-size: $font-size-18;
+                margin-top: 0.3em;
+            }
         }
     }
 }
