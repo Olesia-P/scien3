@@ -22,12 +22,12 @@ export default function SectionIntro() {
   return (
     <section className={css.container} ref={introSectionRef}>
       <hgroup className={css.mainHeader}>
-        <div className={css.contentLimit}>
+        <div className={css.headerWrapper}>
           <h1>Scien3 Cast Creations</h1>
           <p>{caption}</p>
         </div>
       </hgroup>
-      <div className={css.contentLimit}>
+      <div className={css.listWrap}>
         <ul className={cx(css.introList, isObserved && css.animated)}>
           {ourProducts.map((product) => (
             <li key={product}>{product}</li>

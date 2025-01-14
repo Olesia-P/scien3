@@ -3,3 +3,15 @@
 .container {
     padding-top: 3.5rem;
 }
+
+@include laptop {
+    .container {
+        padding-top: 3rem;
+    }
+}
+
+@include lowTablet {
+    .container {
+        padding-top: 3.5rem;
+    }
+}
