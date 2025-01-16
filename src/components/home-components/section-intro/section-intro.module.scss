@@ -168,3 +168,71 @@
         }
     }
 }
+
+@include lowTablet {
+    .container {
+        .mainHeader {
+            padding: 0;
+
+            .headerWrapper {
+                width: 100%;
+                padding: 1rem;
+
+                h1 {
+                    margin: 0 auto;
+                    width: fit-content;
+                }
+
+                p {
+                    margin: 0 auto;
+                    font-size: $font-size-14;
+                    width: fit-content;
+                    text-align: center
+                }
+            }
+        }
+
+        .contentWrap {
+            @include dfcc;
+            flex-direction: column-reverse;
+
+            .illustrationSmall {
+                width: 20rem;
+                max-width: 95%;
+            }
+
+            .listWrap {
+                .list {
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin: 0 auto;
+                    flex-wrap: wrap;
+                    font-size: $font-size-16;
+                    padding-top: 0;
+
+                    li {
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include mobile {
+    .container {
+        .contentWrap {
+            .listWrap {
+                .list {
+                    flex-direction: column;
+
+                    li {
+                        flex-shrink: 1;
+                    }
+                }
+            }
+        }
+    }
+}
