@@ -8,7 +8,8 @@ const ua = {
     '3D-друк',
     'Виготовлення форм для лиття на замовлення',
   ],
-  illustrationAlt: 'абстрактна ілюстрація лиття пластику',
+  illustrationLargeAlt: 'абстрактна ілюстрація лиття пластику',
+  illustrationSmallAlt: 'пластикова фігурка дракона',
 };
 
 export const textSectionIntro = {

@@ -1,4 +1,4 @@
-@import "../../../styles/main";
+@import "/src/styles/main";
 
 .container {
     color: $white;
@@ -78,7 +78,7 @@
                         height: 1em;
                         width: 1em;
                         left: 0em;
-                        // top: 0.2rem;
+                        top: 2px;
                         background-size: contain;
                     }
                 }
@@ -89,8 +89,6 @@
             }
         }
     }
-
-
 }
 
 @include laptop {
@@ -98,7 +96,7 @@
         .mainHeader {
             .headerWrapper {
                 h1 {
-                    font-size: 50px;
+                    font-size: $font-size-50;
                 }
 
                 p {
@@ -110,7 +108,6 @@
         .contentWrap {
             .listWrap {
                 .list {
-                    // max-width: 24%;
                     width: 24%;
                     top: 1.5rem;
                     left: 12%;
@@ -128,9 +125,11 @@
         position: relative;
 
         .mainHeader {
+            border-bottom: 1px solid $white;
+
             .headerWrapper {
                 h1 {
-                    font-size: 40px;
+                    font-size: $font-size-40;
                 }
 
                 p {
