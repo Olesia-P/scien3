@@ -10,7 +10,6 @@
     .cardBorder {
         background-color: $white;
         width: 45rem;
-        max-width: 90%;
         border: 1px solid $blue;
         padding: 2em;
         margin: 0 auto;
@@ -18,7 +17,7 @@
         .servicesNavigation {
             position: relative;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             @include whiteCard($pad: 0, $borderRad: 10px);
 
             .link {
@@ -69,6 +68,91 @@
             left: 50%;
             height: 100%;
             position: absolute;
+        }
+    }
+}
+
+@include laptop {
+    .container {
+        padding: 0 0 1rem 0;
+
+        .cardBorder {
+            width: 30rem;
+            padding: 1.7em;
+
+            .servicesNavigation {
+                .link {
+                    .caption {
+                        font-size: $font-size-16;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container {
+        .cardBorder {
+            width: 80%;
+
+            .servicesNavigation {
+                .link {
+                    img {
+                        filter: grayscale(0%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        .cardBorder {
+            width: 95%;
+            border: 0;
+            padding: 0.3rem;
+        }
+    }
+}
+
+@include mobile {
+    .container {
+        .cardBorder {
+            width: fit-content;
+
+            .servicesNavigation {
+                display: flex;
+                flex-direction: column;
+
+                .link {
+                    position: relative;
+                    padding: 1.5em;
+
+                    &+.link::after {
+                        @include horizontalSeparator;
+                        width: 100%;
+                        top: -0.5rem;
+                        position: absolute;
+                        content: "";
+                    }
+
+                    img {
+                        width: 16rem;
+                        height: 16rem;
+                    }
+
+                    .caption {
+                        font-size: $font-size-20;
+                    }
+                }
+
+                .verticalSeparator,
+                .horizontalSeparator {
+                    display: none;
+                }
+            }
         }
     }
 }

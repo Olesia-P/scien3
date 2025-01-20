@@ -15,7 +15,7 @@
         border-bottom: 1px solid white;
 
         .headerWrapper {
-            max-width: $content-width;
+            max-width: $content-width-L;
             margin: 0 auto;
 
             h1 {
@@ -46,7 +46,7 @@
         }
 
         .listWrap {
-            max-width: $content-width;
+            max-width: $content-width-L;
             position: relative;
             margin: 0 auto;
 

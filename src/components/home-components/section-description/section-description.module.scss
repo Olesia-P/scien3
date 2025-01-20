@@ -2,7 +2,7 @@
 
 .container {
     background-color: $white;
-    max-width: $content-width;
+    max-width: $content-width-L;
     margin: 2rem auto;
 
     .mainHeader {
@@ -56,6 +56,7 @@
 @include laptop {
     .container {
         margin: 1rem auto;
+        max-width: $content-width-S;
 
         .mainHeader {
             font-size: $font-size-20;
@@ -88,7 +89,6 @@
 
         .mainHeader {
             padding: 0.5rem;
-            text-wrap-style: stable;
             text-align: center;
 
             span {
