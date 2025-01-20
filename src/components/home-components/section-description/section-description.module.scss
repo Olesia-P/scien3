@@ -6,7 +6,8 @@
     margin: 2rem auto;
 
     .mainHeader {
-        margin: 3rem auto 2rem auto;
+        margin: 0 auto;
+        padding: 1rem 0;
         width: fit-content;
         font-weight: 900;
 
@@ -20,6 +21,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
         gap: 1.5rem;
+        padding: 1rem;
 
         li {
             list-style: none;
@@ -47,6 +49,59 @@
             li::before {
                 transform: scale(100%);
             }
+        }
+    }
+}
+
+@include laptop {
+    .container {
+        margin: 1rem auto;
+
+        .mainHeader {
+            font-size: $font-size-20;
+            padding: 0.5rem 0;
+        }
+
+        .descriptionList {
+            gap: 1rem;
+            font-size: $font-size-14;
+        }
+    }
+}
+
+@include tablet {
+    .container {
+
+        .mainHeader {
+            font-size: $font-size-18;
+        }
+
+        .descriptionList {
+            font-size: $font-size-16;
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        margin: 0.5rem auto;
+
+        .mainHeader {
+            padding: 0.5rem;
+            text-wrap-style: stable;
+            text-align: center;
+
+            span {
+                display: none;
+            }
+
+        }
+
+        .descriptionList {
+            font-size: $font-size-16;
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
         }
     }
 }
