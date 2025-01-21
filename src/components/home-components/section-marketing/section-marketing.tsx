@@ -12,6 +12,7 @@ export default function SectionMarketing() {
   const handleIntersection = () => {
     setIsObserved(true);
   };
+
   const marketingSectionRef = useIntersectionObserver(
     handleIntersection,
     undefined,
@@ -20,6 +21,9 @@ export default function SectionMarketing() {
 
   return (
     <section className={css.container} ref={marketingSectionRef}>
+      {/* <div className={css.mobileImgCarousel}>
+        <CarouselImgNoControls />
+      </div> */}
       <ul className={cx(css.statementsList, isObserved && css.isAnimated)}>
         {statements.map((statement) => (
           <li className={css.statementCard} key={statement.question}>
@@ -29,8 +33,10 @@ export default function SectionMarketing() {
               className={css.statementIllustration}
               aria-hidden="true"
             />
-            <h3 className={css.question}>&#128269; {statement.question}</h3>
-            <p className={css.answer}>{statement.answer}</p>
+            <div>
+              <h3 className={css.question}>&#128269; {statement.question}</h3>
+              <p className={css.answer}>{statement.answer}</p>
+            </div>
           </li>
         ))}
       </ul>

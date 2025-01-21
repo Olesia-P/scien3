@@ -7,13 +7,15 @@
     background-image: url("/marketing/chess.jpeg");
     background-size: cover;
     @include dfc;
-    min-height: 95vh;
     border-bottom: 2px solid $blue;
     border-top: 2px solid $blue;
     @include backgroundMask($backgroundColor: $grey, $maskOpacity: 70%);
+    overflow: hidden;
 
     .statementsList {
         margin: 0 auto;
+        width: $content-width-L;
+        padding: 0.5rem;
 
         .statementCard {
             background-color: $black;
@@ -21,12 +23,12 @@
             border: 2px solid $white;
             border-radius: 70px;
             margin: 0 auto;
-            width: 45rem;
+            width: 60%;
             position: relative;
             transition: transform 0.5s linear;
 
             .statementIllustration {
-                height: 8em;
+                height: 8rem;
                 position: absolute;
                 top: -0.5rem;
             }
@@ -38,7 +40,7 @@
             }
 
             .answer {
-
+                font-size: $font-size-16;
 
                 mark {
                     color: $blue;
@@ -65,7 +67,7 @@
             }
 
             &+.statementCard {
-                margin-top: 2rem;
+                margin-top: 6vh;
             }
         }
 
@@ -73,14 +75,104 @@
             .statementCard {
                 &:nth-child(odd) {
                     transform: translateX(-15%);
-
-
                 }
 
                 &:nth-child(even) {
                     transform: translateX(15%);
+                }
+            }
+        }
+    }
+}
 
+@include laptop {
+    .container {
+        .statementsList {
+            width: $content-width-S;
+            max-width: 95%;
 
+            .statementCard {
+                padding: 1rem 2rem;
+
+                .statementIllustration {
+                    height: 6rem;
+                }
+
+                .question {
+                    font-size: $font-size-16;
+                }
+
+                .answer {
+                    font-size: $font-size-14;
+
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container {
+        padding: 2rem 0;
+
+        .statementsList {
+            width: 100%;
+
+            .statementCard {
+                width: 100%;
+                display: flex;
+                align-items: center;
+
+                &:nth-child(odd),
+                &:nth-child(even) {
+                    transform: translateX(0);
+                }
+
+                &+.statementCard {
+                    margin-top: 2rem;
+                }
+
+                .statementIllustration {
+                    position: static;
+                    margin: 0 1rem;
+                }
+
+                .answer {
+                    font-size: $font-size-16;
+                }
+            }
+
+            &.isAnimated {
+                .statementCard {
+
+                    &:nth-child(odd),
+                    &:nth-child(even) {
+                        transform: translateX(0);
+
+                        img {
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        .statementsList {
+            width: 95%;
+
+            .statementCard {
+                border-radius: 40px;
+
+                &+.statementCard {
+                    margin-top: 1rem;
+                }
+
+                .statementIllustration {
+                    display: none;
                 }
             }
         }
