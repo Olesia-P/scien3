@@ -137,9 +137,6 @@
                     margin: 0 1rem;
                 }
 
-                .answer {
-                    font-size: $font-size-16;
-                }
             }
 
             &.isAnimated {
@@ -167,8 +164,17 @@
             .statementCard {
                 border-radius: 40px;
 
+                .question {
+                    font-size: $font-size-18;
+                }
+
+                .answer {
+                    font-size: $font-size-16;
+
+                }
+
                 &+.statementCard {
-                    margin-top: 1rem;
+                    margin-top: 1.5rem;
                 }
 
                 .statementIllustration {
