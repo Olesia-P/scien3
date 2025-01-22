@@ -1,0 +1,27 @@
+@import "/src/styles/main";
+
+.container {
+    width: 100%;
+    display: flex;
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .marquee {
+        display: flex;
+        animation: scroll 35s linear infinite;
+        gap: 3rem;
+        padding-left: 3rem;
+
+        img {
+            height: 120px;
+        }
+    }
+}

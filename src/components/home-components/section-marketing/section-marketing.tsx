@@ -3,6 +3,7 @@ import cx from 'classnames';
 import css from './section-marketing.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { textSectionMarketing } from '@/utils/texts/home/text-section-marketing';
+import ImageMarquee from '@/components/ui/image-marquee/image-marquee';
 
 export default function SectionMarketing() {
   const language = 'ua';
@@ -19,11 +20,13 @@ export default function SectionMarketing() {
     0.5,
   );
 
+  const images = statements.map(({ img, alt }) => ({ img, alt }));
+
   return (
     <section className={css.container} ref={marketingSectionRef}>
-      {/* <div className={css.mobileImgCarousel}>
-        <CarouselImgNoControls />
-      </div> */}
+      <div className={css.mobileMarquee}>
+        <ImageMarquee images={images} />
+      </div>
       <ul className={cx(css.statementsList, isObserved && css.isAnimated)}>
         {statements.map((statement) => (
           <li className={css.statementCard} key={statement.question}>

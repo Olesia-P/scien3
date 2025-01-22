@@ -6,7 +6,7 @@
     padding: 3rem 0;
     background-image: url("/marketing/chess.jpeg");
     background-size: cover;
-    @include dfc;
+    @include dfcc;
     border-bottom: 2px solid $blue;
     border-top: 2px solid $blue;
     @include backgroundMask($backgroundColor: $grey, $maskOpacity: 70%);
@@ -83,6 +83,11 @@
             }
         }
     }
+
+    .mobileMarquee {
+        display: none;
+    }
+
 }
 
 @include laptop {
@@ -170,7 +175,6 @@
 
                 .answer {
                     font-size: $font-size-16;
-
                 }
 
                 &+.statementCard {
@@ -182,5 +186,12 @@
                 }
             }
         }
+
+        .mobileMarquee {
+            display: block;
+            width: 100%;
+            padding: 0 0 2rem 0;
+        }
     }
+
 }
