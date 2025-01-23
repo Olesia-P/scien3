@@ -37,15 +37,11 @@
                 font-weight: 900;
                 margin: 0 0 0.5rem 0;
                 font-size: $font-size-18;
+                color: $light-blue;
             }
 
             .answer {
                 font-size: $font-size-16;
-
-                mark {
-                    color: $blue;
-                    background-color: transparent;
-                }
             }
 
             &:nth-child(odd) {
