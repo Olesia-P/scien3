@@ -40,7 +40,7 @@ export default function SingleServiceLayout({
       case 3:
         return css.style3;
       case 4:
-        return css.style3;
+        return css.style4;
       default:
         return css.style1;
     }

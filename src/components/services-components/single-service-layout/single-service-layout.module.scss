@@ -2,7 +2,7 @@
 
 .container {
     padding: 3.5rem 0;
-    min-height: 100vh;
+
     background-color: $grey;
     color: $white;
     position: relative;
@@ -40,7 +40,9 @@
     }
 
     .mainContent {
-        max-width: $content-width-L;
+        // max-width: $content-width-L;
+        width: $content-width-L;
+        max-width: 95%;
         background-color: $grey;
         border: 2px solid $light-blue;
         margin: 6rem auto 0 auto;
@@ -92,6 +94,8 @@
             .contactsWrap {
                 @include dfc;
                 justify-content: space-evenly;
+                flex-wrap: wrap;
+                gap: 1rem;
 
                 .singleContact {
                     font-size: $font-size-22;
@@ -130,5 +134,139 @@
 
     strong {
         color: $light-blue;
+    }
+}
+
+@include laptop {
+    .container {
+        h2 {
+            font-size: $font-size-20;
+        }
+
+        h3 {
+            font-size: $font-size-18;
+        }
+
+        h4 {
+            font-size: $font-size-18;
+        }
+
+        .mainContent {
+            width: $content-width-S;
+            padding: 0rem 2rem 3rem 2rem;
+
+            .illustration {
+                padding: 1rem;
+            }
+
+            .mainHeader {
+                font-size: $font-size-22;
+            }
+
+            .description {
+                font-size: $font-size-16;
+            }
+
+            .contacts {
+                width: 75%;
+
+                .contactsWrap {
+
+                    .singleContact {
+                        font-size: $font-size-18;
+                    }
+                }
+            }
+
+            .otherServicesLink {
+                font-size: $font-size-24;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container {
+        padding: 2rem 0 1rem 0;
+
+        .mainContent {
+            margin: 3rem auto 0 auto;
+            padding: 0 2rem 2rem 2rem;
+
+            .illustration {
+                position: relative;
+                width: 30rem;
+                margin: 1rem auto;
+                top: -0.5rem;
+                right: 0;
+                left: 0;
+                padding: 0;
+            }
+
+            .mainHeader {
+                width: 100%;
+            }
+
+            .description {
+                width: 100%;
+                margin: 0;
+            }
+
+            .contacts {
+                width: 95%;
+                padding: 1rem;
+
+                .contactsHeader {
+                    margin-bottom: 0;
+                }
+
+                .contactsWrap {
+                    .singleContact {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        padding: 3.5rem 0 1rem 0;
+
+        .mainContent {
+            padding: 0 1rem 2rem 1rem;
+
+            .illustration {
+                width: 20rem;
+            }
+
+            .contacts {
+                width: 100%;
+                border: none;
+                padding: 0;
+
+                .contactsHeader {
+                    margin-bottom: 1rem;
+                }
+
+                .contactsWrap {
+                    .singleContact {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .container {
+        .mainContent {
+            .illustration {
+                width: 15rem;
+            }
+
+        }
     }
 }
