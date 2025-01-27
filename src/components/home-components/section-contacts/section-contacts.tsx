@@ -23,7 +23,9 @@ export default function SectionContacts() {
     mainHeaderCaption,
     description,
     speechBubble,
-    illustrationAlt,
+    desktopIllustrationAlt,
+    tabletIllustrationAlt,
+    mobileIllustrationAlt,
   } = textConstactsSectionHomePage[language];
 
   const contactsList = [phone, location, workingHours];
@@ -54,9 +56,21 @@ export default function SectionContacts() {
       <div className={css.contentWrap}>
         <img
           src="contacts/discussion.png"
-          alt={illustrationAlt}
+          alt={desktopIllustrationAlt}
           aria-hidden="true"
-          className={css.illustration}
+          className={css.desktopIllustration}
+        />
+        <img
+          src="contacts/phone-talking.png"
+          alt={tabletIllustrationAlt}
+          aria-hidden="true"
+          className={css.tabletIllustration}
+        />
+        <img
+          src="contacts/box-with-stuff.png"
+          alt={mobileIllustrationAlt}
+          aria-hidden="true"
+          className={css.mobileIllustration}
         />
         <div className={cx(css.bubbleWrap, isObserved && css.isAnimated)}>
           <p>{speechBubble.caption}</p>

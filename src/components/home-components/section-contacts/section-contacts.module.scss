@@ -1,12 +1,14 @@
 @import "/src/styles/main";
 
 .container {
-    padding: 3rem 0 3rem 0;
+    padding: 3rem 2rem;
     width: $content-width-L;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto;
     min-height: 95vh;
     position: relative;
+    @include dfcc;
+    gap: 2rem;
 
     .contactsHeader {
         margin: 0 auto;
@@ -29,16 +31,24 @@
 
     .contentWrap {
         display: grid;
-        // grid-template-columns: repeat((2, 1fr));
         grid-template-columns: 55% 45%;
-        margin: 2rem auto;
+        margin: 2rem auto auto;
         position: relative;
         gap: 1.5rem;
         padding: 0 1rem;
+        font-size: $font-size-16;
 
-        .illustration {
+        .desktopIllustration {
             width: 100%;
             align-self: center;
+        }
+
+        .tabletIllustration {
+            display: none;
+        }
+
+        .mobileIllustration {
+            display: none;
         }
 
         .bubbleWrap {
@@ -53,11 +63,9 @@
             img {
                 width: 100%;
                 filter: opacity(70%);
-
             }
 
             p {
-                font-size: $font-size-16;
                 text-align: center;
                 z-index: 1;
                 position: absolute;
@@ -65,6 +73,7 @@
                 width: 60%;
                 font-family: $font-family-fancy;
                 color: $grey;
+                font-size: $font-size-16;
             }
 
             &.isAnimated {
@@ -85,14 +94,12 @@
             }
 
             .contactsList {
-
                 .singleContactWrap {
-                    margin: 0 0 1rem 3rem;
-                    display: block;
+                    margin-bottom: 1rem;
+                    padding-left: 3rem;
                     display: flex;
                     align-items: center;
                     position: relative;
-
 
                     &::before {
                         content: ' ';
@@ -100,7 +107,7 @@
                         position: absolute;
                         height: 1.5em;
                         width: 1.5em;
-                        left: -2.8rem;
+                        left: 0;
                         background-size: contain;
                         background-repeat: no-repeat;
                     }
@@ -113,6 +120,7 @@
                     .link {
                         border-bottom: 2px solid $blue;
                         cursor: pointer;
+                        color: $blue;
                     }
                 }
             }
@@ -137,11 +145,9 @@
         }
 
         .socialMediaList {
-
             .socialMediaLink {
                 @include dfc;
                 width: fit-content;
-                // @include whiteCard($pad: 0.5em, $borderRad: 5px);
                 padding: 0.5em;
                 cursor: pointer;
                 transition: color 0.1s linear;
@@ -158,5 +164,102 @@
                 }
             }
         }
+    }
+}
+
+@include laptop {
+    .container {
+        min-height: auto;
+        max-width: 100%;
+        display: block;
+
+        .contactsHeader {
+            h3 {
+                font-size: $font-size-20 ;
+            }
+
+            p {
+                font-size: $font-size-16;
+            }
+        }
+
+        .contentWrap {
+            gap: 0;
+            font-size: $font-size-14;
+            width: 100%;
+            @include dfc;
+
+            .desktopIllustration {
+                display: none;
+            }
+
+            .tabletIllustration {
+                width: 20rem;
+                display: block;
+                opacity: .7;
+            }
+
+            .bubbleWrap {
+                display: none;
+            }
+
+            .contactsCard {
+                width: 50%;
+
+                .map {
+                    iframe {
+                        height: 14rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container {
+        .contentWrap {
+            .contactsCard {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        padding: 2rem 1rem;
+
+        .contactsHeader {
+            h3 {
+                font-size: $font-size-18 ;
+            }
+        }
+
+        .contentWrap {
+            font-size: $font-size-16;
+            @include dfcc;
+            flex-direction: column-reverse;
+
+            .tabletIllustration {
+                display: none;
+            }
+
+            .mobileIllustration {
+                display: block;
+                width: 17rem;
+                margin-top: 2rem;
+            }
+
+            .contactsCard {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .container {
+        padding: 2rem 0.5rem;
     }
 }

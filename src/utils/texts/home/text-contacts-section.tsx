@@ -9,7 +9,9 @@ const ua = {
     caption: 'Ваші ідеї буде втілено!',
     alt: 'спіч бабл',
   },
-  illustrationAlt: 'Двоє людей обговорюють бізнес угоду',
+  desktopIllustrationAlt: 'Двоє людей обговорюють бізнес угоду',
+  tabletIllustrationAlt: 'Бізнесмен говорить по телефону',
+  mobileIllustrationAlt: 'Картонна коробка із деталями, виробленими з пластику',
 };
 
 export const textConstactsSectionHomePage = {
