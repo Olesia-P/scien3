@@ -6,6 +6,7 @@ import { cssIconUrlVariable } from '@/utils/functions';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textConstactsSectionHomePage } from '@/utils/texts/home/text-contacts-section';
 import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 export default function SectionContacts() {
   const language = 'ua';
@@ -28,7 +29,7 @@ export default function SectionContacts() {
     mobileIllustrationAlt,
   } = textConstactsSectionHomePage[language];
 
-  const contactsList = [phone, location, workingHours];
+  const contactsList = [location, workingHours];
 
   const [isObserved, setIsObserved] = useState(false);
   const handleIntersection = () => {
@@ -44,6 +45,8 @@ export default function SectionContacts() {
     email.text,
     email.onCopyPopupText,
   );
+
+  const isLargeScreen = useMediaQuery(1024);
 
   return (
     <section className={css.container} ref={contactsSectionRef}>
@@ -89,6 +92,7 @@ export default function SectionContacts() {
           </div>
 
           <ul className={css.contactsList}>
+            {/* email */}
             <li
               className={css.singleContactWrap}
               style={cssIconUrlVariable(email.icon)}
@@ -105,6 +109,32 @@ export default function SectionContacts() {
                 </span>
               </span>
             </li>
+
+            {/* phone */}
+            {isLargeScreen ? (
+              <li
+                className={css.singleContactWrap}
+                style={cssIconUrlVariable(phone.icon)}
+              >
+                <span>
+                  <strong className={css.contactTitle}>{phone.title}</strong>{' '}
+                  {phone.text}
+                </span>
+              </li>
+            ) : (
+              <a
+                className={css.singleContactWrap}
+                href={`tel:${phone.number}`}
+                style={cssIconUrlVariable(phone.icon)}
+              >
+                <span>
+                  <strong className={css.contactTitle}>{phone.title}</strong>{' '}
+                  <span className={css.link}> {phone.text}</span>
+                </span>
+              </a>
+            )}
+
+            {/* rest of the contacts */}
             {contactsList.map((contact) => (
               <li
                 className={css.singleContactWrap}
@@ -119,6 +149,7 @@ export default function SectionContacts() {
             ))}
           </ul>
 
+          {/* map */}
           <div className={css.map}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.3134611455907!2d30.63728290644443!3d50.45694614088012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4daac5317ae83%3A0xf5450b4ea3b09a48!2z0LLRg9C70LjRhtGPINCS0ZbQvdGB0YLQvtC90LAg0KfQtdGA0YfQuNC70LvRjywgNDLQkCwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1729060035949!5m2!1suk!2sua"
@@ -129,6 +160,7 @@ export default function SectionContacts() {
             />
           </div>
 
+          {/* social media */}
           <p className={css.socialMediaHeader}>{socialMedia.header}</p>
           <ul className={css.socialMediaList}>
             {socialMedia.list.map((mediaItem) => (
