@@ -17,7 +17,7 @@
         }
 
         .navlink {
-            font-size: $font-size-22;
+            font-size: $font-size-24;
             @include dfc;
 
             .chevron {
@@ -55,7 +55,8 @@
 
             .dropdownLink {
                 text-decoration: none;
-                font-size: $font-size-18;
+                font-size: $font-size-20;
+                line-height: 1.5;
                 margin-top: 0.3em;
             }
         }
