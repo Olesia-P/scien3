@@ -6,6 +6,7 @@ import css from './single-service-layout.module.scss';
 import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textSingleServiceWrapper } from '@/utils/texts/services/text-single-service-wrapper';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -51,6 +52,8 @@ export default function SingleServiceLayout({
     email.onCopyPopupText,
   );
 
+  const isLargeScreen = useMediaQuery(1024);
+
   return (
     <main className={cx(css.container, decideBackgroundStyle())}>
       <Popup />
@@ -69,7 +72,14 @@ export default function SingleServiceLayout({
         <section className={css.contacts}>
           <h2 className={css.contactsHeader}>{mainHeader}</h2>
           <ul className={css.contactsWrap}>
-            <li className={css.singleContact}>{phone.text}</li>
+            {isLargeScreen ? (
+              <li className={css.phoneNumber}>{phone.text}</li>
+            ) : (
+              <a className={css.singleContact} href={`tel:${phone.number}`}>
+                {phone.text}
+              </a>
+            )}
+
             <button
               type="button"
               className={css.singleContact}

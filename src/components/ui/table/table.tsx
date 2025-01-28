@@ -21,28 +21,30 @@ export default function Table({
   return (
     <div className={css.container}>
       <HeaderTag className={css.title}>{title}</HeaderTag>
-      <table className={css.table}>
-        <thead>
-          <tr>
-            {headers.map((header) => (
-              <th key={Math.random()} className={css.head}>
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className={css.body}>
-          {rows.map((row) => (
-            <tr key={Math.random()}>
-              {row.map((cell) => (
-                <td key={Math.random()} className={css.cell}>
-                  {cell}
-                </td>
+      <div className={css.scrollWrapper}>
+        <table className={css.table}>
+          <thead>
+            <tr>
+              {headers.map((header) => (
+                <th key={Math.random()} className={css.head}>
+                  {header}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className={css.body}>
+            {rows.map((row) => (
+              <tr key={Math.random()}>
+                {row.map((cell) => (
+                  <td key={Math.random()} className={css.cell}>
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

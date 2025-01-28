@@ -48,8 +48,6 @@
         &+.nestedListContainer {
             margin-top: 1em;
         }
-
-
     }
 
     .card {
@@ -72,6 +70,7 @@
             position: relative;
             @include dfc;
             width: fit-content;
+            text-wrap: stable;
 
             &::before {
                 content: ' ';
@@ -93,14 +92,19 @@
     }
 }
 
-// .container:has(>h1, >h2, >h3) {
-//     .paragraph {
-//         font-size: $font-size-18;
-//     }
+@include lowTablet {
+    .container {
+        padding: 0.5rem 0;
 
-//     .card {
-//         .listItem {
-//             font-size: $font-size-18;
-//         }
-//     }
-// }
+        .nestedListContainer {
+            .nestedHeader {
+                padding: 0 0 0.2em 2rem;
+                align-items: flex-start;
+
+                &::before {
+                    top: 0.2rem;
+                }
+            }
+        }
+    }
+}

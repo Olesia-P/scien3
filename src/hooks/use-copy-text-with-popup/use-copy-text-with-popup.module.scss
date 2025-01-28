@@ -4,7 +4,6 @@
     position: fixed;
     z-index: 100;
     margin: auto;
-    // margin-top: 2rem;
     width: 100%;
     opacity: 0;
     @include animationFadeAway;
@@ -16,6 +15,7 @@
     p {
         background-color: $blue;
         width: 40%;
+        max-width: 95%;
         margin: 0 auto;
         font-size: $font-size-28;
         padding: 0.8em 1em;
@@ -33,6 +33,15 @@
             background-color: $blue;
             color: $white;
             cursor: pointer;
+        }
+    }
+}
+
+@include lowTablet {
+    .popupContainer {
+        p {
+            width: 25rem;
+            font-size: $font-size-22;
         }
     }
 }
