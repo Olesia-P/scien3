@@ -1,75 +1,159 @@
 @import "/src/styles/main";
 
+$border: 2px solid $white;
+
 .container {
     padding-top: 3.5rem;
-    background-color: $grey;
-    overflow-x: hidden;
+    overflow: hidden;
     height: 100vh;
     position: relative;
-    @include dfcc;
+    @include dfc;
     color: $white;
+    background-color: #313E45;
 
-    h1 {
-        margin-bottom: 3rem;
+    .content {
+        @include dfcc;
+        width: 30%;
+        background-color: #313e45ef;
+
+        h1 {
+            border-right: $border;
+            width: 100%;
+            text-align: center;
+            font-size: $font-size-24;
+            padding: 0.7rem 0 1.2rem 0;
+            margin-top: 2rem;
+            color: $light-blue;
+        }
+
+        .linksWrap {
+            border-top: $border;
+            border-bottom: $border;
+            width: 100%;
+
+            li {
+
+                &+li {
+                    border-top: $border;
+                }
+
+                &:nth-child(odd) {
+                    border-left: $border;
+                }
+
+                &:nth-child(even) {
+                    border-right: $border;
+                }
+
+                .link {
+                    padding: 1.7rem;
+                    font-size: $font-size-18;
+                    cursor: pointer;
+                    @include dfc;
+                    justify-content: space-between;
+                    width: 85%;
+                    margin: 0 auto;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        filter: drop-shadow(0px 0px 12px $light-blue);
+                    }
+
+                    img {
+                        transition: all 0.3s ease;
+                        width: 3.8rem;
+                        display: inline;
+                    }
+                }
+            }
+        }
+
+        .adding {
+            height: 3rem;
+            background-color: #313e45ef;
+            border-left: $border;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     .illustrationLeft,
     .illustrationRight {
-        height: 100%;
+        height: 100vh;
         position: absolute;
-        top: 0;
+        border: $border;
     }
 
     .illustrationLeft {
         transition: right 1.2s ease-in-out;
-        right: 65.5%;
+        right: 83%;
 
         &.animated {
-            right: 73.5%;
+            right: 73%;
         }
     }
 
     .illustrationRight {
         transition: left 1.2s ease-in-out;
-        left: 65.5%;
+        left: 83%;
 
         &.animated {
-            left: 73.5%;
+            left: 73%;
         }
     }
-
-    .linksWrap {
-        border-top: 2px solid $white;
-        border-bottom: 2px solid $white;
-        width: fit-content;
-
-        .link {
-            padding: 1.5em 4em;
-            font-size: $font-size-22;
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            background-color: $grey;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &:hover {
-                filter: brightness(110%);
-            }
-
-            img {
-                width: 5rem;
-                display: inline;
-            }
-        }
-
-        li+li {
-            border-top: 2px solid $white;
-        }
-    }
-
-    // button {
-    //     position: absolute;
-    // }
-
 }
+
+
+
+// @include laptop {
+
+
+//     .container {
+//         padding-top: 4.5rem;
+
+//         h1 {
+//             font-size: $font-size-22;
+//             padding: 0.2rem 0 1rem 0;
+//             // padding: 0.5rem 0;
+//             // background-color: green;
+//             // padding: 0 0 0.7rem 0;
+//         }
+
+//         .linksWrap {
+//             li {
+//                 .link {
+//                     font-size: $font-size-16;
+//                     padding: 1rem;
+//                     width: 18rem;
+
+//                     img {
+//                         width: 5rem;
+//                     }
+//                 }
+//             }
+//         }
+
+//         .adding {
+//             height: 2.5rem;
+//         }
+
+//         .illustrationLeft,
+//         .illustrationRight {
+//             // height: 100%;
+//             //   position: absolute;
+//             // top: 3rem;
+//         }
+//     }
+// }
+
+// @include tablet {
+//     .container {
+//         background-image: url("/services/vbnhjmjmjk.jpeg");
+//         background-position: center;
+
+//         .illustrationLeft,
+//         .illustrationRight {
+//             display: none;
+//         }
+//     }
+// }

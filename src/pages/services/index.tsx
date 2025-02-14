@@ -42,22 +42,23 @@ export default function Services() {
         aria-hidden="true"
         onLoad={handleImageLoad}
       />
-      {/* {isImageLoaded && isAnimated && ( */}
-      {/* <> */}
-      <h1>{header}</h1>
 
-      <ul className={css.linksWrap}>
-        {services.map((service) => (
-          <li key={service.name}>
-            <Link href={service.link} className={css.link}>
-              <img src={service.img} alt={service.alt} />
-              {service.name} <FaArrowRightLong />
-            </Link>
-          </li>
-        ))}
-      </ul>
-      {/* </> */}
-      {/* )} */}
+      <div className={css.content}>
+        <h1>{header}</h1>
+
+        <ul className={css.linksWrap}>
+          {services.map((service) => (
+            <li key={service.name}>
+              <Link href={service.link} className={css.link}>
+                <img src={service.img} alt={service.alt} />
+                {service.name} <FaArrowRightLong />
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className={css.adding}> </div>
+      </div>
 
       <img
         src="services/right-curtain.png"
