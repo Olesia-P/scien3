@@ -1,27 +1,19 @@
 @import "/src/styles/main";
 
-
 .container {
     padding-top: 3.5rem;
     background-image: url("/works-faq/scattered-forms.jpeg");
     background-size: contain;
-    // background-repeat: no-repeat;
-
     @include dfc;
-    // position: relative;
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
 
-
-
     .outline {
-        max-width: $content-width-L;
+        max-width: 1400px;
         background-color: $white;
         border-radius: 10px;
         padding: 0.15rem;
 
-
-        .mainCard {
-            margin: 0 auto;
+        .contentWrap {
             @include whiteCard($pad: 3rem, $borderRad: 15px);
 
             h1 {
@@ -57,20 +49,113 @@
                 transform: translateY(3rem);
 
                 .card {
-                    @include whiteCard($pad: 1rem, $borderRad: 10px);
+                    @include whiteCard($pad: 0rem, $borderRad: 10px);
                     width: 30%;
                     height: 25rem;
                     @include dfc;
 
-
-                    img {
+                    .imgControl {
                         width: 90%;
+                        height: 90%;
+                        overflow: hidden;
+                        @include dfc;
+
+                        img {
+                            width: 100%;
+                            overflow: hidden;
+                        }
                     }
                 }
 
                 &.animated {
                     gap: 3rem;
                     transform: translateY(0rem);
+                }
+            }
+        }
+    }
+}
+
+@include laptop {
+    .container {
+        padding-top: 3rem;
+
+        .outline {
+            width: 90%;
+
+            .contentWrap {
+                .cardsWrap {
+                    transform: translateY(4rem);
+                    gap: 2rem;
+
+                    .card {
+                        height: 20rem;
+                    }
+
+                    &.animated {
+                        gap: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container {
+        .outline {
+            .contentWrap {
+                padding: 1.5rem 2rem 2rem 2rem;
+
+                h1 {
+                    font-size: $font-size-20;
+                }
+
+                .caption {
+                    font-size: $font-size-18;
+                    padding: 1rem 0 1.5rem 0;
+                }
+
+                .cardsWrap {
+                    .card {
+                        width: 47%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        padding-top: 4.5rem;
+
+        .outline {
+            width: 100%;
+
+            .contentWrap {
+                h1 {
+                    span {
+                        display: none;
+                    }
+                }
+
+                .caption {
+                    display: block;
+                }
+
+                .cardsWrap {
+                    .card {
+                        width: 100%;
+                        padding: 1.5rem;
+                        height: auto;
+
+                        .imgControl {
+                            width: 100%;
+                            height: 100%;
+
+                        }
+                    }
                 }
             }
         }

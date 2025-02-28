@@ -19,7 +19,7 @@ export default function Works() {
   return (
     <main className={css.container} ref={worksRef}>
       <div className={css.outline}>
-        <section className={css.mainCard}>
+        <section className={css.contentWrap}>
           <h1>
             <span>|</span>
             {mainHeader}
@@ -34,7 +34,9 @@ export default function Works() {
           <div className={cx(css.cardsWrap, isObserved && css.animated)}>
             {images.map((img) => (
               <article className={css.card} key={img}>
-                <img src={img} alt={alt} />
+                <div className={css.imgControl}>
+                  <img src={img} alt={alt} />
+                </div>
               </article>
             ))}
           </div>
