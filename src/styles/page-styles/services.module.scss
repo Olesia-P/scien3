@@ -131,7 +131,29 @@ $border: 2px solid $white;
 @include lowLaptop {
     .container {
         .content {
-            width: 35%;
+            width: 32%;
+
+            h1 {
+                font-size: $font-size-16;
+                padding: 0.5rem 0 0.8rem 0;
+            }
+
+            .linksWrap {
+                li {
+                    .link {
+                        font-size: $font-size-16;
+                        padding: 1rem;
+
+                        img {
+                            width: 2rem;
+                        }
+                    }
+                }
+            }
+
+            .adding {
+                height: 2rem;
+            }
         }
     }
 }
@@ -153,11 +175,19 @@ $border: 2px solid $white;
 
             h1 {
                 width: 60%;
-
+                padding: 0.7rem 0 1.2rem 0;
             }
 
             .linksWrap {
                 width: 60%;
+
+                li {
+                    .link {
+                        img {
+                            width: 3rem;
+                        }
+                    }
+                }
             }
 
             .adding {
@@ -176,41 +206,18 @@ $border: 2px solid $white;
             padding: 2rem;
 
             h1 {
-                width: 100%;
+                width: 32rem;
+                max-width: 100%;
             }
 
             .linksWrap {
-                width: 100%;
-
-                li {
-                    .link {
-                        img {
-                            width: 3.8rem;
-                        }
-                    }
-                }
+                width: 32rem;
+                max-width: 100%;
             }
 
             .adding {
-                width: 100%;
-            }
-        }
-    }
-}
-
-@include mobile {
-    .container {
-        .content {
-            .linksWrap {
-                li {
-                    .link {
-                        font-size: $font-size-16;
-
-                        img {
-                            width: 3rem;
-                        }
-                    }
-                }
+                width: 32rem;
+                max-width: 100%;
             }
         }
     }
