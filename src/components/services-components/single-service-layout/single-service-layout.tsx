@@ -82,7 +82,7 @@ export default function SingleServiceLayout({
 
             <button
               type="button"
-              className={css.singleContact}
+              className={css.emailBtn}
               onClick={handleCopyClick}
               title={clickToCopyMessage}
             >
