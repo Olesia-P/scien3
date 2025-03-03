@@ -8,20 +8,20 @@
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
 
     .outline {
-        padding: 0.1rem;
+        padding: 0.15rem;
         background-color: $white;
-        max-width: $content-width-L;
+        max-width: 1200px;
         margin: 0 auto;
         border-radius: 15px;
 
-        .mainWrap {
-
+        .contentWrap {
             min-height: 95vh;
-            @include whiteCard($pad: 3rem, $borderRad: 10px);
+            @include whiteCard($pad: 2rem 3rem 3rem 3rem, $borderRad: 10px);
 
-            .mainHeader {
-                padding-bottom: 1.5em;
+            h1 {
+                padding-bottom: 2rem;
                 text-align: center;
+                font-size: $font-size-24;
 
                 span {
                     @include verticalBlueDecoration;
@@ -35,10 +35,64 @@
 
                 .card {
                     margin-bottom: 1rem;
+                    width: 100%;
                 }
 
                 &.animated {
                     gap: 0rem;
+                }
+            }
+        }
+    }
+}
+
+@include laptop {
+    .container {
+        padding-top: 3rem;
+
+        .outline {
+            width: 90%;
+
+            h1 {
+                font-size: $font-size-24;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container {
+        .outline {
+            .contentWrap {
+                padding: 1.5rem 2rem 2rem 2rem;
+
+                h1 {
+                    font-size: $font-size-22;
+                    padding-bottom: 1.5rem;
+
+                }
+            }
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        padding-top: 4.5rem;
+        background: $white;
+
+        .outline {
+            width: 100%;
+
+            .contentWrap {
+                padding: 1.5rem 1.5rem 2rem 1.5rem;
+
+                h1 {
+                    color: $blue;
+
+                    span {
+                        display: none;
+                    }
                 }
             }
         }

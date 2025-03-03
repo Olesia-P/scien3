@@ -19,8 +19,8 @@ export default function Faq() {
   return (
     <main className={css.container} ref={faqRef}>
       <div className={css.outline}>
-        <div className={css.mainWrap}>
-          <h1 className={css.mainHeader}>
+        <div className={css.contentWrap}>
+          <h1>
             <span>|</span>
             {mainHeader}
             <span>|</span>

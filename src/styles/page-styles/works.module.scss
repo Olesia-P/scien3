@@ -8,7 +8,7 @@
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
 
     .outline {
-        max-width: 1400px;
+        max-width: 1200px;
         background-color: $white;
         border-radius: 10px;
         padding: 0.15rem;
@@ -108,7 +108,7 @@
                 padding: 1.5rem 2rem 2rem 2rem;
 
                 h1 {
-                    font-size: $font-size-20;
+                    font-size: $font-size-22;
                 }
 
                 .caption {
@@ -129,6 +129,7 @@
 @include lowTablet {
     .container {
         padding-top: 4.5rem;
+        background: $white;
 
         .outline {
             width: 100%;
