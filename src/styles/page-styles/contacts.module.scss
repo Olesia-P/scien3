@@ -3,20 +3,21 @@
 .container {
     padding-top: 3.8rem;
 
-
-    .illustration {
-        width: 100%;
-        border-bottom: 1px solid $blue;
-        filter: grayscale(100%);
-        transition: filter 1.2s ease-in;
-    }
-
-
-
-    &.animated {
+    .illustrationOutline {
+        padding: 0 0 0.15rem 0;
+        background-color: $blue;
+        transform: translateY(-100%);
+        transition: all 1.5s ease-in-out;
 
         .illustration {
-            filter: grayscale(0%);
+            width: 100%;
+            @include blueCard($pad: 0 0 0.3rem 0, $borderRad: 0px);
+        }
+    }
+
+    &.animated {
+        .illustrationOutline {
+            transform: translateY(0%);
         }
 
     }

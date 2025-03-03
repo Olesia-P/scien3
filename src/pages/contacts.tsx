@@ -36,11 +36,13 @@ export default function Contacts() {
   return (
     <main className={cx(css.container, isAnimated && css.animated)} ref={ref}>
       <Popup />
-      <img
-        src="/contacts/building-model.jpeg"
-        className={css.illustration}
-        alt={illustrationAlt}
-      />
+      <div className={css.illustrationOutline}>
+        <img
+          src="/contacts/building-model.jpeg"
+          className={css.illustration}
+          alt={illustrationAlt}
+        />
+      </div>
       <h1>
         <span>|</span>
         {mainHeader}

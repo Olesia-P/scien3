@@ -30,6 +30,13 @@
     padding: $pad;
 }
 
+@mixin blueCard ($pad: 1rem, $borderRad: 10px) {
+    border-radius: $borderRad;
+    box-shadow: $shadow-blue-out;
+    background-color: $blue;
+    padding: $pad;
+}
+
 @mixin verticalBlueDecoration {
     color: $blue;
     margin: 0 1.5em;

@@ -14,10 +14,11 @@
         padding: 0.15rem;
 
         .contentWrap {
-            @include whiteCard($pad: 3rem, $borderRad: 15px);
+            @include whiteCard($pad: 2rem, $borderRad: 15px);
 
             h1 {
                 text-align: center;
+                font-size: $font-size-24;
 
                 span {
                     @include verticalBlueDecoration;
@@ -25,7 +26,7 @@
             }
 
             .caption {
-                font-size: $font-size-22;
+                font-size: $font-size-20;
                 text-align: center;
                 padding: 1.5rem 0;
                 @include dfc;
@@ -33,28 +34,30 @@
                 a {
                     color: $blue;
                     @include dfc;
-                    margin: 0 0.5em;
+                    margin-left: 0.5em;
 
                     svg {
-                        margin: 0 0.5em
+                        margin-left: 0.5em
                     }
                 }
             }
 
             .cardsWrap {
                 @include dfc;
-                gap: 4rem;
+                gap: 2rem;
                 flex-wrap: wrap;
                 transition: all 0.7s ease-in-out;
                 transform: translateY(3rem);
 
+
                 .card {
                     @include whiteCard($pad: 0rem, $borderRad: 10px);
-                    width: 30%;
-                    height: 25rem;
+                    width: 23%;
+                    height: 15rem;
                     @include dfc;
+                    flex-shrink: 0;
 
-                    .imgControl {
+                    .imgLimit {
                         width: 90%;
                         height: 90%;
                         overflow: hidden;
@@ -68,7 +71,7 @@
                 }
 
                 &.animated {
-                    gap: 3rem;
+                    gap: 1.5rem;
                     transform: translateY(0rem);
                 }
             }
@@ -151,7 +154,7 @@
                         padding: 1.5rem;
                         height: auto;
 
-                        .imgControl {
+                        .imgLimit {
                             width: 100%;
                             height: 100%;
 

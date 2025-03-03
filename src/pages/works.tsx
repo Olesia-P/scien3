@@ -34,7 +34,7 @@ export default function Works() {
           <div className={cx(css.cardsWrap, isObserved && css.animated)}>
             {images.map((img) => (
               <article className={css.card} key={img}>
-                <div className={css.imgControl}>
+                <div className={css.imgLimit}>
                   <img src={img} alt={alt} />
                 </div>
               </article>
