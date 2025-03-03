@@ -1,7 +1,7 @@
 @import "/src/styles/main";
 
 .container {
-    padding-top: 3.8rem;
+    padding-top: 3.5rem;
 
     .illustrationOutline {
         padding: 0 0 0.15rem 0;
@@ -11,7 +11,7 @@
 
         .illustration {
             width: 100%;
-            @include blueCard($pad: 0 0 0.3rem 0, $borderRad: 0px);
+            @include blueCard($pad: 0 0 0.2rem 0, $borderRad: 0px);
         }
     }
 

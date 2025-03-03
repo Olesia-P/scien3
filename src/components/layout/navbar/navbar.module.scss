@@ -40,7 +40,8 @@
         }
 
         .phoneNumber {
-            @include blueBackgroundRounded ($padLeft: 0.7em)
+            @include blueBackgroundRounded ($padLeft: 0.7em);
+            box-shadow: $shadow-white-out
         }
 
         .navLinksWrap {

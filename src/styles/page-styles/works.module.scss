@@ -52,7 +52,7 @@
 
                 .card {
                     @include whiteCard($pad: 0rem, $borderRad: 10px);
-                    width: 23%;
+                    width: 22%;
                     height: 15rem;
                     @include dfc;
                     flex-shrink: 0;
