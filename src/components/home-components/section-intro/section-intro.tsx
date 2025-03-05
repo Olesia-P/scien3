@@ -3,6 +3,7 @@ import cx from 'classnames';
 import css from './section-intro.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { textSectionIntro } from '@/utils/texts/home/text-section-intro';
+import SectionIntroHeader from './section-intro-header/section-intro-header';
 
 export default function SectionIntro() {
   const language = 'ua';
@@ -12,44 +13,39 @@ export default function SectionIntro() {
 
   const [isObserved, setIsObserved] = useState(false);
 
-  const introSectionRef = useIntersectionObserver(
+  const introSectionRef = useIntersectionObserver<HTMLDivElement>(
     () => setIsObserved(true),
     undefined,
     0,
   );
 
   return (
-    <section className={css.container} ref={introSectionRef}>
-      <hgroup className={css.mainHeader}>
-        <div className={css.headerWrapper}>
-          <h1>Scien3 Cast Creations</h1>
-          <p>{caption}</p>
-        </div>
-      </hgroup>
+    <div className={css.container} ref={introSectionRef}>
+      <SectionIntroHeader caption={caption} />
 
-      <div className={css.contentWrap}>
-        <div className={css.listWrap}>
-          <ul className={cx(css.list, isObserved && css.animated)}>
+      <section className={css.mainContent}>
+        <div className={css.listLimit}>
+          <ul className={cx(css.ourServicesList, isObserved && css.animated)}>
             {ourProducts.map((product) => (
               <li key={product}>{product}</li>
             ))}
           </ul>
         </div>
 
+        {/* for desktop > 1024px */}
         <img
           src="intro/intro-scene.jpg"
           alt={illustrationLargeAlt}
-          aria-hidden="true"
           className={css.illustrationLarge}
         />
 
+        {/* for tablet <= 1024px */}
         <img
           src="intro/dragon.png"
           alt={illustrationSmallAlt}
-          aria-hidden="true"
           className={css.illustrationSmall}
         />
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
-export default function useIntersectionObserver(
+export default function useIntersectionObserver<T extends HTMLElement>(
   handleIntersection: () => void,
   handleOutsideIntersection: (() => void) | undefined,
   thresholdValue: number,
 ) {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<T | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

@@ -21,7 +21,7 @@ $shadow-button: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 
 //text-shadow
-$text-shadow-1: -1px -1px 0 black,
+$text-shadow-outline-1: -1px -1px 0 black,
     1px -1px 0 black,
     -1px 1px 0 black,
     1px 1px 0 black;
@@ -35,8 +35,9 @@ $text-shadow-2: -2px -2px 0 black,
 //     2px 2px 0 $blue;
 
 
-$content-width-L: 1400px;
-$content-width-S: 1200px;
+// $content-width-L: 1400px;
+// $content-width-S: 1200px;
+$content-width-main: 1300px;
 
 // $shadow-white-out: -3px -3px 4px 0 rgb(255, 255, 255, 0.8),
 //     3px 3px 4px 0 rgba(100, 75, 50, 0.1);
