@@ -133,22 +133,16 @@
             .servicesNavigation {
                 display: flex;
                 flex-direction: column;
+                gap: 1.5rem;
+                box-shadow: none;
 
                 .link {
                     position: relative;
-                    padding: 1.5em;
-
-                    &+.link::after {
-                        @include horizontalSeparator;
-                        width: 100%;
-                        top: -0.5rem;
-                        position: absolute;
-                        content: "";
-                    }
+                    @include whiteCard($pad: 1.5em, $borderRad: 10px);
 
                     img {
-                        width: 17rem;
-                        height: 17rem;
+                        width: 16rem;
+                        height: 16rem;
                     }
 
                     .caption {

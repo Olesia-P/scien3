@@ -88,6 +88,7 @@
         .mainContent {
             display: grid;
             grid-template-columns: 50% 50%;
+            padding: 1rem 0;
 
             .illustrationLarge {
                 display: none;
@@ -102,7 +103,7 @@
 
             .listLimit {
                 align-self: center;
-                width: 80%;
+                width: 90%;
                 margin: 0 0 0 auto;
 
                 .ourServicesList {
@@ -122,7 +123,6 @@
             @include dfcc;
             flex-direction: column-reverse;
 
-
             .illustrationSmall {
                 width: 20rem;
                 max-width: 95%;
@@ -130,16 +130,16 @@
 
             .listLimit {
                 margin: 0 auto;
+                width: 80%;
 
                 .ourServicesList {
-                    width: 100%;
                     flex-direction: row;
                     justify-content: center;
                     flex-wrap: wrap;
-                    padding-top: 0;
 
                     li {
                         flex-shrink: 0;
+                        text-wrap: stable;
                     }
                 }
             }
