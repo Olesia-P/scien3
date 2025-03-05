@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import css from './section-description.module.scss';
+import css from './services-description.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { textDescriptionSection } from '@/utils/texts/home/text-section-description';
 
-export default function SectionDescription() {
+export default function ServicesDescription() {
   const language = 'ua';
   const { header, ourBenefitsList } = textDescriptionSection[language];
   const [isObserved, setIsObserved] = useState(false);
@@ -19,7 +19,7 @@ export default function SectionDescription() {
 
   return (
     <article className={css.container} ref={descriptionSectionRef}>
-      <h2 className={css.mainHeader}>
+      <h2>
         <span aria-hidden="true">|</span>
         {header}
         <span aria-hidden="true">|</span>

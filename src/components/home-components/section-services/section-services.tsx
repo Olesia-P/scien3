@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './section-services.module.scss';
 import { textSectionServices } from '@/utils/texts/home/text-section-services';
+import ServicesDescription from './services-description/services-description';
 
 export default function SectionServices() {
   const language = 'ua';
@@ -10,6 +11,8 @@ export default function SectionServices() {
 
   return (
     <section className={css.container}>
+      <ServicesDescription />
+
       <div className={css.cardBorder}>
         <nav className={css.servicesNavigation}>
           {services.map((service) => (

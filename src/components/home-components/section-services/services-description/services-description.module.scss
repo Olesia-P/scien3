@@ -2,14 +2,14 @@
 
 .container {
     background-color: $white;
-    max-width: $content-width-L;
-    margin: 2rem auto;
+    max-width: $content-width-main;
+    margin: 0 auto;
 
-    .mainHeader {
-        margin: 0 auto;
-        padding: 1rem 0;
-        width: fit-content;
+    h2 {
+        padding: 0 1rem 0.5rem 1rem;
         font-weight: 900;
+        text-align: center;
+        font-size: $font-size-24;
 
         span {
             @include verticalBlueDecoration;
@@ -17,19 +17,18 @@
     }
 
     .descriptionList {
-        margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
         padding: 1rem;
 
         li {
             list-style: none;
-            align-self: center;
             position: relative;
             margin-left: 3rem;
             display: flex;
             align-items: center;
+
 
             &::before {
                 content: ' ';
@@ -43,6 +42,10 @@
                 transform: scale(10%);
                 transition: transform 1.2s linear;
             }
+
+            p {
+                font-size: $font-size-16;
+            }
         }
 
         &.isAnimated {
@@ -55,57 +58,44 @@
 
 @include laptop {
     .container {
-        margin: 1rem auto;
-        max-width: $content-width-S;
-
-        .mainHeader {
-            font-size: $font-size-20;
-            padding: 0.5rem 0;
+        h2 {
+            font-size: $font-size-18;
         }
 
         .descriptionList {
-            gap: 1rem;
-            font-size: $font-size-14;
+            li {
+                p {
+                    font-size: $font-size-14;
+                }
+            }
         }
     }
 }
 
 @include tablet {
     .container {
-
-        .mainHeader {
-            font-size: $font-size-18;
-        }
-
         .descriptionList {
-            font-size: $font-size-16;
+            li {
+                p {
+                    font-size: $font-size-16;
+                }
+            }
         }
     }
 }
 
 @include lowTablet {
     .container {
-        margin: 0.5rem auto;
-
-        .mainHeader {
-            padding: 0.5rem;
-            text-align: center;
-
+        h2 {
             span {
                 display: none;
             }
-
         }
 
         .descriptionList {
-            font-size: $font-size-16;
             display: flex;
             flex-direction: column;
             padding: 0.7rem;
-
-            li {
-                align-self: flex-start;
-            }
         }
     }
 }
