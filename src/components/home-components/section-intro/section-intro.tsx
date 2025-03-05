@@ -43,7 +43,7 @@ export default function SectionIntro() {
         <img
           src="intro/dragon.png"
           alt={illustrationSmallAlt}
-          className={css.illustrationSmall}
+          className={cx(css.illustrationSmall, isObserved && css.animated)}
         />
       </section>
     </div>

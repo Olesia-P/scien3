@@ -122,10 +122,17 @@
         .mainContent {
             @include dfcc;
             flex-direction: column-reverse;
+            overflow: hidden;
 
             .illustrationSmall {
                 width: 20rem;
                 max-width: 95%;
+                transform: translateY(-50%);
+                transition: transform 0.7s ease-in-out;
+
+                &.animated {
+                    transform: translateX(0);
+                }
             }
 
             .listLimit {
@@ -136,6 +143,7 @@
                     flex-direction: row;
                     justify-content: center;
                     flex-wrap: wrap;
+                    transform: translateX(0rem);
 
                     li {
                         flex-shrink: 0;
