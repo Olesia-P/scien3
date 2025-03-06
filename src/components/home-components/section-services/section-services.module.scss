@@ -4,7 +4,7 @@
     background-color: $white;
     background-image: url("/services/horizontal-blue-wave.png");
     background-size: cover;
-    padding: 2rem 0;
+    padding: 3rem 0;
     min-height: 100vh;
     @include dfcc;
     gap: 2rem;
@@ -79,7 +79,7 @@
         min-height: auto;
 
         .cardBorder {
-            width: 28rem;
+            width: 30rem;
             padding: 1.5rem;
 
             .servicesNavigation {
@@ -96,9 +96,10 @@
 @include tablet {
     .container {
         background: $white;
+        padding: 2rem 0;
 
         .cardBorder {
-            width: 70%;
+            width: 60%;
 
             .servicesNavigation {
                 .link {
