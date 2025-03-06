@@ -27,19 +27,19 @@ export default function SectionMarketing() {
       <div className={css.mobileMarquee}>
         <ImageMarquee images={images} />
       </div>
-      <ul className={cx(css.statementsList, isObserved && css.isAnimated)}>
+
+      <ul className={cx(css.statementsList, isObserved && css.animated)}>
         {statements.map((statement) => (
           <li className={css.statementCard} key={statement.question}>
             <img
               src={statement.img}
               alt={statement.alt}
               className={css.statementIllustration}
-              aria-hidden="true"
             />
-            <div>
+            <article>
               <h3 className={css.question}>&#128269; {statement.question}</h3>
               <p className={css.answer}>{statement.answer}</p>
-            </div>
+            </article>
           </li>
         ))}
       </ul>

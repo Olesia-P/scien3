@@ -11,11 +11,14 @@
     border-top: 2px solid $blue;
     @include backgroundMask($backgroundColor: $grey, $maskOpacity: 70%);
     overflow: hidden;
+    min-height: 100vh;
 
     .statementsList {
         margin: 0 auto;
-        width: 1300px;
+        width: $content-width-main;
         padding: 0.5rem;
+        @include dfcc;
+        gap: 3rem;
 
         .statementCard {
             background-color: $black;
@@ -61,13 +64,9 @@
                     @include animationFloatingClockwise;
                 }
             }
-
-            &+.statementCard {
-                margin-top: 6vh;
-            }
         }
 
-        &.isAnimated {
+        &.animated {
             .statementCard {
                 &:nth-child(odd) {
                     transform: translateX(-15%);
@@ -83,14 +82,13 @@
     .mobileMarquee {
         display: none;
     }
-
 }
 
 @include laptop {
     .container {
         .statementsList {
             width: 1200px;
-            max-width: 95%;
+            gap: 2rem;
 
             .statementCard {
                 padding: 1rem 2rem;
@@ -112,12 +110,23 @@
     }
 }
 
+
+@include lowLaptop {
+    .container {
+        min-height: auto;
+
+        .statementsList {
+            width: 100%;
+        }
+    }
+}
+
 @include tablet {
     .container {
         padding: 2rem 0;
 
         .statementsList {
-            width: 100%;
+            width: 90%;
 
             .statementCard {
                 width: 100%;
@@ -129,27 +138,26 @@
                     transform: translateX(0);
                 }
 
-                &+.statementCard {
-                    margin-top: 2rem;
-                }
-
                 .statementIllustration {
                     position: static;
-                    margin: 0 1rem;
+                    margin: 0 2rem;
                 }
 
+                .question {
+                    font-size: $font-size-18;
+                }
+
+                .answer {
+                    font-size: $font-size-16;
+                }
             }
 
-            &.isAnimated {
+            &.animated {
                 .statementCard {
 
                     &:nth-child(odd),
                     &:nth-child(even) {
                         transform: translateX(0);
-
-                        img {
-                            animation: none;
-                        }
                     }
                 }
             }
@@ -165,18 +173,6 @@
             .statementCard {
                 border-radius: 40px;
 
-                .question {
-                    font-size: $font-size-18;
-                }
-
-                .answer {
-                    font-size: $font-size-16;
-                }
-
-                &+.statementCard {
-                    margin-top: 1.5rem;
-                }
-
                 .statementIllustration {
                     display: none;
                 }
@@ -189,5 +185,4 @@
             padding: 0 0 2rem 0;
         }
     }
-
 }
