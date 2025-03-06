@@ -7,11 +7,11 @@ import ServicesDescription from './services-description/services-description';
 
 export default function SectionServices() {
   const language = 'ua';
-  const { services } = textSectionServices[language];
+  const { services, header, ourBenefitsList } = textSectionServices[language];
 
   return (
     <section className={css.container}>
-      <ServicesDescription />
+      <ServicesDescription header={header} ourBenefitsList={ourBenefitsList} />
 
       <div className={css.cardBorder}>
         <nav className={css.servicesNavigation}>
