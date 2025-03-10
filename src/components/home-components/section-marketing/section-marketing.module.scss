@@ -86,6 +86,8 @@
 
 @include laptop {
     .container {
+        min-height: auto;
+
         .statementsList {
             width: 1200px;
             gap: 2rem;
@@ -113,8 +115,6 @@
 
 @include lowLaptop {
     .container {
-        min-height: auto;
-
         .statementsList {
             width: 100%;
         }

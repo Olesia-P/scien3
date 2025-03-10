@@ -4,9 +4,11 @@ import css from './section-contacts.module.scss';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { cssIconUrlVariable } from '@/utils/functions';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
-import { textConstactsSectionHomePage } from '@/utils/texts/home/text-contacts-section';
+import { textConstactsSectionHomePage } from '@/utils/texts/home/text-section-contacts';
 import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import SingleContact from './single-contact/single-contact';
+import SocialMedia from './social-media/social-media';
 
 export default function SectionContacts() {
   const language = 'ua';
@@ -20,8 +22,8 @@ export default function SectionContacts() {
   } = textContactInfo[language];
 
   const {
-    mainHeader,
-    mainHeaderCaption,
+    header,
+    headerCaption,
     description,
     speechBubble,
     desktopIllustrationAlt,
@@ -48,33 +50,45 @@ export default function SectionContacts() {
 
   const isLargeScreen = useMediaQuery(1024);
 
+  const imgs = [
+    {
+      src: 'contacts/discussion.png',
+      alt: desktopIllustrationAlt,
+      classname: css.desktopIllustration,
+    },
+    {
+      src: 'contacts/phone-talking.png',
+      alt: tabletIllustrationAlt,
+      classname: css.tabletIllustration,
+    },
+    {
+      src: 'contacts/box-with-stuff.png',
+      alt: mobileIllustrationAlt,
+      classname: css.mobileIllustration,
+    },
+  ];
+
   return (
     <section className={css.container} ref={contactsSectionRef}>
       <Popup />
       <hgroup className={css.contactsHeader}>
-        <h3>{mainHeader}</h3>
-        <p>{mainHeaderCaption}</p>{' '}
+        <h3>{header}</h3>
+        <p>{headerCaption}</p>{' '}
       </hgroup>
 
-      <div className={css.contentWrap}>
-        <img
-          src="contacts/discussion.png"
-          alt={desktopIllustrationAlt}
-          aria-hidden="true"
-          className={css.desktopIllustration}
-        />
-        <img
-          src="contacts/phone-talking.png"
-          alt={tabletIllustrationAlt}
-          aria-hidden="true"
-          className={css.tabletIllustration}
-        />
-        <img
-          src="contacts/box-with-stuff.png"
-          alt={mobileIllustrationAlt}
-          aria-hidden="true"
-          className={css.mobileIllustration}
-        />
+      <div className={css.content}>
+        {/* illustration */}
+        {imgs.map((img) => (
+          <img
+            src={img.src}
+            alt={img.alt}
+            aria-hidden="true"
+            className={img.classname}
+            key={img.src}
+          />
+        ))}
+
+        {/* speech bubble img */}
         <div className={cx(css.bubbleWrap, isObserved && css.isAnimated)}>
           <p>{speechBubble.caption}</p>
           <img
@@ -84,6 +98,7 @@ export default function SectionContacts() {
           />
         </div>
 
+        {/* card */}
         <article className={css.contactsCard}>
           <div className={css.description}>
             {description.map((paragraph) => (
@@ -96,43 +111,29 @@ export default function SectionContacts() {
             <li
               className={css.singleContactWrap}
               style={cssIconUrlVariable(email.icon)}
+              onClick={handleCopyClick}
+              title={clickToCopyMessage}
             >
-              <span>
-                <strong className={css.contactTitle}>{email.title}</strong>{' '}
-                <span
-                  className={css.link}
-                  onClick={handleCopyClick}
-                  title={clickToCopyMessage}
-                >
-                  {' '}
-                  {email.text}
-                </span>
-              </span>
+              <SingleContact
+                title={email.title}
+                text={email.text}
+                isLink={false}
+                isBlue
+              />
             </li>
 
             {/* phone */}
-            {isLargeScreen ? (
-              <li
-                className={css.singleContactWrap}
-                style={cssIconUrlVariable(phone.icon)}
-              >
-                <span>
-                  <strong className={css.contactTitle}>{phone.title}</strong>{' '}
-                  {phone.text}
-                </span>
-              </li>
-            ) : (
-              <a
-                className={css.singleContactWrap}
-                href={`tel:${phone.number}`}
-                style={cssIconUrlVariable(phone.icon)}
-              >
-                <span>
-                  <strong className={css.contactTitle}>{phone.title}</strong>{' '}
-                  <span className={css.link}> {phone.text}</span>
-                </span>
-              </a>
-            )}
+            <li
+              className={css.singleContactWrap}
+              style={cssIconUrlVariable(phone.icon)}
+            >
+              <SingleContact
+                title={phone.title}
+                text={phone.text}
+                isLink={!isLargeScreen}
+                link={`tel:${phone.number}`}
+              />
+            </li>
 
             {/* rest of the contacts */}
             {contactsList.map((contact) => (
@@ -141,16 +142,17 @@ export default function SectionContacts() {
                 key={contact.icon}
                 style={cssIconUrlVariable(contact.icon)}
               >
-                <span>
-                  <strong className={css.contactTitle}>{contact.title}</strong>{' '}
-                  {contact.text}
-                </span>
+                <SingleContact
+                  title={contact.title}
+                  text={contact.text}
+                  isLink={false}
+                />
               </li>
             ))}
           </ul>
 
-          {/* map */}
-          <div className={css.map}>
+          {/* google map */}
+          <div className={css.googleMap}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.3134611455907!2d30.63728290644443!3d50.45694614088012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4daac5317ae83%3A0xf5450b4ea3b09a48!2z0LLRg9C70LjRhtGPINCS0ZbQvdGB0YLQvtC90LAg0KfQtdGA0YfQuNC70LvRjywgNDLQkCwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1729060035949!5m2!1suk!2sua"
               allowFullScreen
@@ -160,25 +162,7 @@ export default function SectionContacts() {
             />
           </div>
 
-          {/* social media */}
-          <p className={css.socialMediaHeader}>{socialMedia.header}</p>
-          <ul className={css.socialMediaList}>
-            {socialMedia.list.map((mediaItem) => (
-              <a
-                key={mediaItem.name}
-                href={mediaItem.link}
-                className={css.socialMediaLink}
-              >
-                <img
-                  src={mediaItem.icon}
-                  className={css.mediaIcon}
-                  aria-hidden="true"
-                  alt={mediaItem.alt}
-                />
-                {mediaItem.name}
-              </a>
-            ))}
-          </ul>
+          <SocialMedia header={socialMedia.header} list={socialMedia.list} />
         </article>
       </div>
     </section>

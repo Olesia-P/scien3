@@ -1,0 +1,27 @@
+@import "/src/styles/main";
+
+.socialMediaHeader {
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.socialMediaList {
+    .socialMediaLink {
+        @include dfc;
+        width: fit-content;
+        padding: 0.5em;
+        cursor: pointer;
+        transition: color 0.1s linear;
+        border-radius: 5px;
+        box-shadow: $shadow-button;
+
+        &:hover {
+            color: $blue;
+        }
+
+        .mediaIcon {
+            margin-right: 0.5rem;
+            height: 1em;
+        }
+    }
+}
