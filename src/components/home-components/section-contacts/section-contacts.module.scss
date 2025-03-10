@@ -30,6 +30,7 @@
         position: relative;
         gap: 1.5rem;
         width: 100%;
+        font-size: $font-size-16;
 
         .desktopIllustration {
             width: 100%;
@@ -187,6 +188,14 @@
         .content {
             font-size: $font-size-16;
             gap: 1rem;
+
+            .contactsCard {
+                .contactsList {
+                    .singleContactWrap {
+                        font-size: $font-size-16;
+                    }
+                }
+            }
         }
     }
 }
