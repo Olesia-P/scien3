@@ -30,7 +30,8 @@ export default function SingleServiceLayout({
 }: SingleServiceLayoutProps) {
   const language = 'ua';
   const { email, phone, clickToCopyMessage } = textContactInfo[language];
-  const { otherServicesTitle, mainHeader } = textSingleServiceWrapper[language];
+  const { otherServicesLinkTitle, contactsHeader } =
+    textSingleServiceWrapper[language];
 
   const decideBackgroundStyle = () => {
     switch (backgroundStyle) {
@@ -69,16 +70,18 @@ export default function SingleServiceLayout({
 
         {children}
 
-        <section className={css.contacts}>
-          <h2 className={css.contactsHeader}>{mainHeader}</h2>
+        <section className={css.contactsCard}>
+          <p className={css.contactsHeader}>{contactsHeader}</p>
           <ul className={css.contactsWrap}>
-            {isLargeScreen ? (
-              <li className={css.phoneNumber}>{phone.text}</li>
-            ) : (
-              <a className={css.singleContact} href={`tel:${phone.number}`}>
-                {phone.text}
-              </a>
-            )}
+            <li
+              className={cx(css.phoneNumber, !isLargeScreen && css.underlined)}
+            >
+              {isLargeScreen ? (
+                <span>{phone.text} </span>
+              ) : (
+                <a href={`tel:${phone.number}`}>{phone.text}</a>
+              )}
+            </li>
 
             <button
               type="button"
@@ -92,7 +95,7 @@ export default function SingleServiceLayout({
         </section>
 
         <Link href="/services" className={css.otherServicesLink}>
-          {otherServicesTitle} <FaArrowRightLong /> <FaArrowRightLong />{' '}
+          {otherServicesLinkTitle} <FaArrowRightLong /> <FaArrowRightLong />
           <FaArrowRightLong />
         </Link>
       </article>

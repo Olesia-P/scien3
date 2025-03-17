@@ -22,15 +22,15 @@ export default function printing3D() {
 
   return (
     <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
-      <ServiceInfoBlock {...howItWorks} headerSize={2} listWithIcon />
+      <ServiceInfoBlock {...howItWorks} headerLevel={2} listWithIcon />
 
-      <ServiceInfoBlock {...useCases} headerSize={2} />
+      <ServiceInfoBlock {...useCases} headerLevel={2} />
 
-      <ServiceInfoBlock {...mainOptions} headerSize={2} />
+      <ServiceInfoBlock {...mainOptions} headerLevel={2} />
 
-      <ServiceInfoBlock {...fdm} headerSize={3} />
+      <ServiceInfoBlock {...fdm} headerLevel={3} />
 
-      <ServiceInfoBlock {...sla} headerSize={3} />
+      <ServiceInfoBlock {...sla} headerLevel={3} />
 
       <div className={css.comparisonTable}>
         <Table
@@ -40,7 +40,7 @@ export default function printing3D() {
           title={table.title}
         />
       </div>
-      <ServiceInfoBlock {...important} headerSize={2} />
+      <ServiceInfoBlock {...important} headerLevel={2} />
 
       <a href={linkToMassProduction.link} className={css.linkMassProduction}>
         {linkToMassProduction.text}{' '}

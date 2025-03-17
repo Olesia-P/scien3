@@ -10,11 +10,11 @@ export default function Modeling3D() {
 
   return (
     <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
-      <ServiceInfoBlock {...useCases} headerSize={2} listWithIcon />
+      <ServiceInfoBlock {...useCases} headerLevel={2} listWithIcon />
 
-      <ServiceInfoBlock {...stages} headerSize={2} />
+      <ServiceInfoBlock {...stages} headerLevel={2} />
 
-      <ServiceInfoBlock {...product} headerSize={2} />
+      <ServiceInfoBlock {...product} headerLevel={2} />
     </SingleServiceLayout>
   );
 }

@@ -1,6 +1,6 @@
 export const textSingleServiceWrapper = {
   ua: {
-    otherServicesTitle: 'Інші послуги',
-    mainHeader: 'Зробіть замовлення вже сьогодні!',
+    otherServicesLinkTitle: 'Інші послуги',
+    contactsHeader: 'Зробіть замовлення вже сьогодні!',
   },
 };

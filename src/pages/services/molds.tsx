@@ -12,9 +12,9 @@ export default function Molds() {
 
   return (
     <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
-      <ServiceInfoBlock {...silicone} headerSize={2} />
+      <ServiceInfoBlock {...silicone} headerLevel={2} />
 
-      <ServiceInfoBlock {...polyurethane} headerSize={2} />
+      <ServiceInfoBlock {...polyurethane} headerLevel={2} />
 
       <div className={css.comparisonTable}>
         <Table
@@ -25,7 +25,7 @@ export default function Molds() {
         />
       </div>
 
-      <ServiceInfoBlock {...orderOptions} headerSize={2} listWithIcon />
+      <ServiceInfoBlock {...orderOptions} headerLevel={2} listWithIcon />
     </SingleServiceLayout>
   );
 }

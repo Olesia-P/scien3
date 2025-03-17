@@ -39,8 +39,7 @@
     }
 
     .mainContent {
-        width: 1200px;
-        max-width: 95%;
+        width: $content-width-main;
         background-color: $grey;
         border: 2px solid $light-blue;
         margin: 6rem auto 0 auto;
@@ -49,8 +48,7 @@
 
         .illustration {
             position: absolute;
-            width: 40%;
-            margin: 0 auto;
+            width: 35%;
             padding: 2rem;
             border: 2px solid $light-blue;
             top: -4rem;
@@ -78,7 +76,7 @@
             width: 50%;
         }
 
-        .contacts {
+        .contactsCard {
             margin: 1rem auto;
             width: 60%;
             border: 2px dashed $light-blue;
@@ -88,6 +86,7 @@
                 text-align: center;
                 margin-bottom: 1rem;
                 font-size: $font-size-24;
+                font-weight: 900;
             }
 
             .contactsWrap {
@@ -95,6 +94,21 @@
                 justify-content: space-evenly;
                 flex-wrap: wrap;
                 gap: 1rem;
+
+                .phoneNumber {
+                    font-size: $font-size-22;
+                    font-weight: 900;
+                    text-shadow: $text-shadow-outline-1;
+
+                    &.underlined {
+                        border-bottom: 2px solid $light-blue;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: $light-blue;
+                    }
+                }
 
                 .emailBtn {
                     font-size: $font-size-22;
@@ -110,10 +124,6 @@
                     &:hover {
                         background-color: $grey;
                     }
-                }
-
-                .phoneNumber {
-                    font-size: $font-size-22;
                 }
             }
         }
@@ -141,24 +151,14 @@
 
 @include laptop {
     .container {
-        h2 {
-            font-size: $font-size-20;
-        }
-
-        h3 {
-            font-size: $font-size-18;
-        }
-
-        h4 {
-            font-size: $font-size-18;
-        }
-
         .mainContent {
-            width: $content-width-main;
+            width: 1200px;
+            max-width: 95%;
             padding: 0rem 2rem 3rem 2rem;
 
             .illustration {
                 padding: 1rem;
+                width: 38%;
             }
 
             .mainHeader {
@@ -169,21 +169,16 @@
                 font-size: $font-size-16;
             }
 
-            .contacts {
-                width: 75%;
-
+            .contactsCard {
                 .contactsWrap {
-
-                    .singleContact {
+                    .phoneNumber {
                         font-size: $font-size-18;
                     }
 
-
+                    .emailBtn {
+                        font-size: $font-size-18;
+                    }
                 }
-            }
-
-            .otherServicesLink {
-                font-size: $font-size-24;
             }
         }
     }
@@ -216,17 +211,22 @@
                 margin: 0;
             }
 
-            .contacts {
-                width: 95%;
+            .contactsCard {
+                width: 30rem;
                 padding: 1rem;
 
                 .contactsHeader {
-                    margin-bottom: 0;
+                    font-size: $font-size-18;
                 }
 
                 .contactsWrap {
-                    .singleContact {
-                        margin-top: 1rem;
+                    .phoneNumber {
+                        font-size: $font-size-16;
+                        text-shadow: none;
+                    }
+
+                    .emailBtn {
+                        font-size: $font-size-16;
                     }
                 }
             }
@@ -249,21 +249,8 @@
                 margin-bottom: 0.5rem;
             }
 
-            .contacts {
-                width: 100%;
-                border: none;
-                padding: 0;
-
-                .contactsHeader {
-                    margin-bottom: 1rem;
-                    color: $light-blue;
-                }
-
-                .contactsWrap {
-                    .singleContact {
-                        margin: 0;
-                    }
-                }
+            .contactsCard {
+                width: 95%;
             }
         }
     }
@@ -276,6 +263,10 @@
                 width: 15rem;
             }
 
+        }
+
+        .contactsCard {
+            width: 100%;
         }
     }
 }

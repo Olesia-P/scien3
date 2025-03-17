@@ -17,16 +17,16 @@ export default function MassProduction() {
 
   return (
     <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
-      <ServiceInfoBlock {...howItWorks} headerSize={2} />
+      <ServiceInfoBlock {...howItWorks} headerLevel={2} />
 
-      <ServiceInfoBlock {...benefits} headerSize={2} />
+      <ServiceInfoBlock {...benefits} headerLevel={2} />
 
-      <ServiceInfoBlock {...useCases} headerSize={2} listWithIcon />
+      <ServiceInfoBlock {...useCases} headerLevel={2} listWithIcon />
 
-      <ServiceInfoBlock {...stages} headerSize={2} />
-      <ServiceInfoBlock {...importantMoments} headerSize={2} />
+      <ServiceInfoBlock {...stages} headerLevel={2} />
+      <ServiceInfoBlock {...importantMoments} headerLevel={2} />
 
-      <ServiceInfoBlock {...whyNot3Dprinting} headerSize={2} listWithIcon />
+      <ServiceInfoBlock {...whyNot3Dprinting} headerLevel={2} listWithIcon />
     </SingleServiceLayout>
   );
 }

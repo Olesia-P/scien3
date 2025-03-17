@@ -4,6 +4,21 @@ import css from './service-info-block.module.scss';
 import { createHeaderTag } from '@/utils/functions';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 
+// The component has two parts - main and nested list
+
+// Main part has header and headerLevel (from 1 to 5).
+// Main part can OPTIONALLY have:
+//  - list of paragraphs (they are displayed without icon)
+// - list of strings or jsx (if listWithIcon is true, displayed with triangle icon)
+// - nested list
+
+// Nested list is a list of objects.
+// Each Nested list object has a header, that is one level lower than the Main part header.
+// Nested list has an icon: 4 options to choose using nestedListIcon, 'rocket' is default.
+// Nested list can OPTIONALLY have:
+// - list of paragraphs (they are displayed without icon)
+// - list of strings or jsx (if listWithIcon is true, displayed with triangle icon)
+
 type NestedListObject = {
   header: string;
   paragraphs?: (string | React.JSX.Element)[];
@@ -12,7 +27,7 @@ type NestedListObject = {
 
 type ServiceInfoListProps = {
   header: string;
-  headerSize: number;
+  headerLevel: 1 | 2 | 3 | 4 | 5;
   paragraphs?: (string | React.JSX.Element)[];
   list?: (string | React.JSX.Element)[];
   nestedList?: NestedListObject[];
@@ -22,15 +37,15 @@ type ServiceInfoListProps = {
 
 export default function ServiceInfoBlock({
   header,
-  headerSize,
+  headerLevel,
   paragraphs,
   list,
   nestedList,
   nestedListIcon,
   listWithIcon = false,
 }: ServiceInfoListProps) {
-  const MainHeaderTag = createHeaderTag(headerSize);
-  const NestedHeaderTag = createHeaderTag(headerSize + 1);
+  const MainHeaderTag = createHeaderTag(headerLevel);
+  const NestedHeaderTag = createHeaderTag(headerLevel + 1);
 
   const displayParagraphs = (paragraphs: (string | React.JSX.Element)[]) => {
     return paragraphs?.map((element) => (

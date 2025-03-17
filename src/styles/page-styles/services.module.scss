@@ -222,3 +222,19 @@ $border: 2px solid $white;
         }
     }
 }
+
+@include mobile {
+    .container {
+        .content {
+            .linksWrap {
+                li {
+                    .link {
+                        img {
+                            width: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
