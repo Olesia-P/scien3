@@ -21,9 +21,9 @@ export default function Works() {
       <div className={css.outline}>
         <section className={css.contentWrap}>
           <h1>
-            <span>|</span>
+            <span aria-hidden="true">|</span>
             {mainHeader}
-            <span>|</span>
+            <span aria-hidden="true">|</span>
           </h1>
           <p className={css.caption}>
             {caption}{' '}

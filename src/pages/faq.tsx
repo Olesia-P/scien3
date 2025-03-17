@@ -21,9 +21,9 @@ export default function Faq() {
       <div className={css.outline}>
         <div className={css.contentWrap}>
           <h1>
-            <span>|</span>
+            <span aria-hidden="true">|</span>
             {mainHeader}
-            <span>|</span>
+            <span aria-hidden="true">|</span>
           </h1>
 
           <div className={cx(css.cardsGroup, isObserved && css.animated)}>
