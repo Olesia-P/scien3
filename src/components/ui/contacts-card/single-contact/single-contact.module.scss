@@ -45,6 +45,7 @@
 
 @include tablet {
     .container {
+        padding-left: 3rem;
         font-size: $font-size-16;
     }
 }

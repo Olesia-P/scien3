@@ -5,6 +5,7 @@ import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import { textContactsPage } from '@/utils/texts/text-contacts-page';
 // import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 export default function Contacts() {
   const language = 'ua';
@@ -22,14 +23,26 @@ export default function Contacts() {
   //   email.onCopyPopupText,
   // );
 
+  const isLargeScreen = useMediaQuery(1024);
+
   return (
     <main className={cx(css.container, isAnimated && css.animated)} ref={ref}>
       {/* <Popup /> */}
-      <img
-        src="/contacts/building-model.jpeg"
-        className={css.illustration}
-        alt={illustrationAlt}
-      />
+
+      {isLargeScreen ? (
+        <img
+          src="/contacts/building-model.jpeg"
+          className={css.illustration}
+          alt={illustrationAlt}
+        />
+      ) : (
+        <img
+          src="/contacts/building-model-mobile.jpeg"
+          className={css.illustration}
+          alt={illustrationAlt}
+        />
+      )}
+
       <h1>
         <span aria-hidden="true">|</span>
         {mainHeader}
@@ -37,7 +50,7 @@ export default function Contacts() {
       </h1>
 
       <div className={css.contactsCard}>
-        <ContactsCard option="horizontal" />
+        <ContactsCard option={isLargeScreen ? 'horizontal' : 'vertical'} />
       </div>
     </main>
   );

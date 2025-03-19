@@ -72,7 +72,6 @@ export default function SectionContacts() {
           <img
             src={img.src}
             alt={img.alt}
-            aria-hidden="true"
             className={img.classname}
             key={img.src}
           />

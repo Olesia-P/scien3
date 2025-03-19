@@ -1,7 +1,8 @@
 @import "/src/styles/main";
 
 .container {
-    padding-top: 3.5rem;
+    padding: 3.5rem 0 2rem 0;
+    overflow: hidden;
 
     .illustration {
         width: 100%;
@@ -17,17 +18,57 @@
 
     h1 {
         text-align: center;
-        padding: 1em 0 0.5em 0;
+        padding: 1em 0;
 
         span {
             @include verticalBlueDecoration;
         }
     }
 
-
     .contactsCard {
         margin: 0 auto;
-        margin-top: 1.5rem;
-        max-width: 1200px;
+        width: 1000px;
+        max-width: 90%;
+    }
+}
+
+@include laptop {
+    .container {
+        padding-top: 3rem;
+    }
+}
+
+@include tablet {
+    .container {
+        .contactsCard {
+            max-width: 85%;
+        }
+    }
+}
+
+@include lowTablet {
+    .container {
+        padding-top: 4.5rem;
+
+        h1 {
+            span {
+                display: none;
+            }
+        }
+
+        .contactsCard {
+            max-width: 93%;
+        }
+    }
+}
+
+@include mobile {
+    .container {
+        .illustration {
+            height: 10rem;
+            width: auto;
+            position: relative;
+            left: -4rem;
+        }
     }
 }

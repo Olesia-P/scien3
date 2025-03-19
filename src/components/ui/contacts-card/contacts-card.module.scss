@@ -9,8 +9,9 @@
         margin-bottom: 1.5rem;
 
         p {
-            margin-bottom: 0.5rem;
-            font-size: $font-size-16;
+            margin-bottom: 0.7em;
+            font-size: $font-size-18;
+            text-wrap: stable;
         }
     }
 
@@ -56,7 +57,7 @@
             .googleMap {
                 margin: 0;
                 height: auto;
-                flex-grow: 1;
+                flex-grow: 2;
 
                 iframe {
                     height: 100%;
@@ -74,24 +75,13 @@
 
         .description {
             p {
-                font-size: $font-size-14;
+                font-size: $font-size-16;
             }
         }
 
         .googleMap {
             iframe {
                 height: 16rem;
-            }
-        }
-    }
-}
-
-
-@include tablet {
-    .container {
-        .description {
-            p {
-                font-size: $font-size-16;
             }
         }
     }
