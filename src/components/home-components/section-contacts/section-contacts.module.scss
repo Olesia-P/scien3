@@ -77,50 +77,6 @@
 
         .contactsCard {
             align-self: center;
-            @include whiteCard($pad: 2rem, $borderRad: 10px);
-
-            .description {
-                margin-bottom: 1.5rem;
-
-                p {
-                    margin-bottom: 0.5rem;
-                }
-            }
-
-            .contactsList {
-                .singleContactWrap {
-                    margin-bottom: 1rem;
-                    padding-left: 3rem;
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    font-size: $font-size-16;
-
-                    &::before {
-                        content: ' ';
-                        background-image: var(--icon-url);
-                        position: absolute;
-                        height: 1.5em;
-                        width: 1.5em;
-                        left: 0;
-                        background-size: contain;
-                        background-repeat: no-repeat;
-                    }
-                }
-            }
-
-            .googleMap {
-                box-shadow: $shadow-white-in;
-                margin-top: 1.5rem;
-                border-radius: 10px;
-
-                iframe {
-                    width: 100%;
-                    height: 18rem;
-                    border: none;
-                    padding: 1rem;
-                }
-            }
         }
     }
 }
@@ -160,23 +116,6 @@
             .bubbleWrap {
                 display: none;
             }
-
-            .contactsCard {
-                padding: 1.5rem;
-
-                .contactsList {
-                    .singleContactWrap {
-                        padding-left: 2rem;
-                        font-size: $font-size-14;
-                    }
-                }
-
-                .googleMap {
-                    iframe {
-                        height: 16rem;
-                    }
-                }
-            }
         }
     }
 }
@@ -188,14 +127,6 @@
         .content {
             font-size: $font-size-16;
             gap: 1rem;
-
-            .contactsCard {
-                .contactsList {
-                    .singleContactWrap {
-                        font-size: $font-size-16;
-                    }
-                }
-            }
         }
     }
 }

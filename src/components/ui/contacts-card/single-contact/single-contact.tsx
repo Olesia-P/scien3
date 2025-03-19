@@ -44,9 +44,9 @@ export default function SingleContact({
   };
 
   return (
-    <>
+    <span className={css.container}>
       {isLink && renderLink(renderInfo())}
       {!isLink && renderInfo()}
-    </>
+    </span>
   );
 }

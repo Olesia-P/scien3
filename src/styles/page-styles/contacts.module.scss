@@ -3,129 +3,31 @@
 .container {
     padding-top: 3.5rem;
 
-    .illustrationOutline {
-        padding: 0 0 0.15rem 0;
-        background-color: $blue;
+    .illustration {
+        width: 100%;
         transform: translateY(-100%);
-        transition: all 1.5s ease-in-out;
-
-        .illustration {
-            width: 100%;
-            @include blueCard($pad: 0 0 0.2rem 0, $borderRad: 0px);
-        }
+        transition: all 1.7s ease-in-out;
     }
 
     &.animated {
-        .illustrationOutline {
+        .illustration {
             transform: translateY(0%);
         }
-
     }
 
     h1 {
         text-align: center;
         padding: 1em 0 0.5em 0;
 
-        // color: $blue;
-
         span {
             @include verticalBlueDecoration;
         }
     }
 
-    .description {
-        margin-bottom: 2rem;
-        text-align: center;
 
-        p {
-            margin-bottom: 0.5rem;
-            font-size: $font-size-18;
-        }
-    }
-
-    .card {
+    .contactsCard {
         margin: 0 auto;
+        margin-top: 1.5rem;
         max-width: 1200px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-        @include whiteCard($pad: 2rem, $borderRad: 10px);
-
-        .contacts {
-            align-self: center;
-
-            .singleContactWrap {
-                margin: 0 0 1rem 3rem;
-                display: block;
-                display: flex;
-                align-items: center;
-                position: relative;
-
-                &::before {
-                    content: ' ';
-                    background-image: var(--icon-url);
-                    position: absolute;
-                    height: 1.5em;
-                    width: 1.5em;
-                    left: -3rem;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                }
-
-                .contactTitle {
-                    font-weight: 700;
-                    margin-right: 0.5rem;
-                }
-
-                .link {
-                    border-bottom: 2px solid $blue;
-                    cursor: pointer;
-                }
-            }
-
-        }
-
-        .socialMediaHeader {
-            font-weight: 600;
-            margin: 1.5rem 0;
-
-        }
-
-        .socialMediaList {
-
-            .socialMediaLink {
-
-                @include dfc;
-                width: fit-content;
-                // @include whiteCard($pad: 0.5em, $borderRad: 5px);
-                padding: 0.5em;
-                box-shadow: $shadow-button;
-                // box-shadow: $shadow-white-out;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: color 0.1s linear;
-
-                &:hover {
-                    color: $blue;
-                }
-
-                .instaIcon {
-                    margin-right: 0.5rem;
-                    height: 1em;
-                }
-            }
-        }
-
-        .map {
-            box-shadow: $shadow-white-in;
-
-            border-radius: 10px;
-
-            iframe {
-                width: 100%;
-                height: 100%;
-                border: none;
-                padding: 1rem;
-            }
-        }
     }
 }

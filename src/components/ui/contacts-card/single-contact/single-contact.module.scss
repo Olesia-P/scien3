@@ -1,0 +1,50 @@
+@import "/src/styles/main";
+
+.container {
+    padding-left: 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: $font-size-16;
+
+    &::before {
+        content: ' ';
+        background-image: var(--icon-url);
+        position: absolute;
+        height: 1.5em;
+        width: 1.5em;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .link {
+        text-decoration: none;
+
+    }
+
+    .contactTitle {
+        font-weight: 700;
+        margin-right: 0.5rem;
+    }
+
+    .blueUnderlined {
+        border-bottom: 2px solid $blue;
+        cursor: pointer;
+        color: $blue;
+    }
+}
+
+
+@include laptop {
+    .container {
+        padding-left: 2rem;
+        font-size: $font-size-14;
+    }
+}
+
+@include tablet {
+    .container {
+        font-size: $font-size-16;
+    }
+}
