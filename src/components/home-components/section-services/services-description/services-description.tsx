@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './services-description.module.scss';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 type ServicesDescriptionProps = {
   header: string;

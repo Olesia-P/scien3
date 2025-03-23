@@ -3,7 +3,7 @@ import cx from 'classnames';
 import css from '../styles/page-styles/faq.module.scss';
 import CollapsableBlock from '@/components/ui/collapsable-block/collapsable-block';
 import { textFaq } from '@/utils/texts/text-faq';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 export default function Faq() {
   const language = 'ua';

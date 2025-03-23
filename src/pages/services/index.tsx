@@ -3,7 +3,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 import Link from 'next/link';
 import cx from 'classnames';
 import css from '../../styles/page-styles/services.module.scss';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textServicesPage } from '@/utils/texts/services/text-services-page';
 
 export default function Services() {

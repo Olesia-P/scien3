@@ -8,8 +8,8 @@ import LangSwitch from '../lang-switch/lang-switch';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
 import MobileMenu from './mobile-menu/mobile-menu';
-import useMediaQuery from '@/hooks/useMediaQuery';
-import useClickOutsideClose from '@/hooks/useOutsideClickClose';
+import useMediaQuery from '@/hooks/use-media-query';
+import useClickOutsideClose from '@/hooks/use-outside-click-close';
 import Navlink from './navlink/navlink';
 
 export default function Navbar() {

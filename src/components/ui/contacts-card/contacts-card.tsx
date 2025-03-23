@@ -2,11 +2,11 @@ import React from 'react';
 import cx from 'classnames';
 import css from './contacts-card.module.scss';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
-// import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
-import useMediaQuery from '@/hooks/useMediaQuery';
+import useMediaQuery from '@/hooks/use-media-query';
 import { cssIconUrlVariable } from '@/utils/functions';
 import SingleContact from './single-contact/single-contact';
 import SocialMedia from '@/components/ui/contacts-card/social-media/social-media';
+import useCopyAndToast from '@/hooks/use-copy-and-toast';
 
 type ContactsCardProps = {
   option: 'vertical' | 'horizontal';
@@ -22,18 +22,15 @@ export default function ContactsCard({
     workingHours,
     location,
     socialMedia,
-    clickToCopyMessage,
+    clickToCopyBtnTitle,
     contactsCardDescription,
   } = textContactInfo[language];
 
   const contactsList = [location, workingHours];
 
-  // const { handleCopyClick, Popup } = useCopyTextWithPopup(
-  //   email.text,
-  //   email.onCopyPopupText,
-  // );
-
   const isLargeScreen = useMediaQuery(1024);
+
+  const copyText = useCopyAndToast();
 
   return (
     <article
@@ -42,8 +39,6 @@ export default function ContactsCard({
         option === 'horizontal' && css.horizontalView,
       )}
     >
-      {/* <Popup /> */}
-
       <div className={css.description}>
         {contactsCardDescription.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
@@ -56,8 +51,8 @@ export default function ContactsCard({
           <li
             className={css.singleContactWrap}
             style={cssIconUrlVariable(email.icon)}
-            // onClick={handleCopyClick}
-            title={clickToCopyMessage}
+            onClick={() => copyText(email.text, email.toastMessageCopied)}
+            title={clickToCopyBtnTitle}
           >
             <SingleContact
               title={email.title}

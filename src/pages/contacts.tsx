@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import css from '../styles/page-styles/contacts.module.scss';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textContactsPage } from '@/utils/texts/text-contacts-page';
 // import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
-import useMediaQuery from '@/hooks/useMediaQuery';
+import useMediaQuery from '@/hooks/use-media-query';
 
 export default function Contacts() {
   const language = 'ua';

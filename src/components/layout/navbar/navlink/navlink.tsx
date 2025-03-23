@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
-import useMouseOutsideClose from '@/hooks/useMouseOutsideClose';
+import useMouseOutsideClose from '@/hooks/use-mouse-outside-close';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
 import css from './navlink.module.scss';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';

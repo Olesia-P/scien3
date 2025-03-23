@@ -12,7 +12,8 @@ body {
 
 * {
   &:focus {
-    outline: none;
+    // outline: none;
+    // outline: 2px solid $blue;
   }
 
   &:focus-visible {

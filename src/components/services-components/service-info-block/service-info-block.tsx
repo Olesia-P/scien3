@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './service-info-block.module.scss';
 import { createHeaderTag } from '@/utils/functions';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 // The component has two parts - main and nested list
 

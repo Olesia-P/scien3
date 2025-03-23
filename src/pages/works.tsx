@@ -3,7 +3,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 import cx from 'classnames';
 import css from '../styles/page-styles/works.module.scss';
 import { textWorks } from '@/utils/texts/text-works';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 export default function Works() {
   const language = 'ua';

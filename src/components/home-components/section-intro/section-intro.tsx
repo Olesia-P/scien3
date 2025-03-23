@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './section-intro.module.scss';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textSectionIntro } from '@/utils/texts/home/text-section-intro';
 import SectionIntroHeader from './section-intro-header/section-intro-header';
 

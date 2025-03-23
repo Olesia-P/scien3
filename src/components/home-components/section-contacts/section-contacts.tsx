@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './section-contacts.module.scss';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-// import { cssIconUrlVariable } from '@/utils/functions';
-// import { textContactInfo } from '@/utils/texts/text-contact-info';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textConstactsSectionHomePage } from '@/utils/texts/home/text-section-contacts';
-// import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
-// import useMediaQuery from '@/hooks/useMediaQuery';
-// import SingleContact from '../../ui/contacts-card/single-contact/single-contact';
-// import SocialMedia from './social-media/social-media';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
 
 export default function SectionContacts() {
@@ -33,13 +27,6 @@ export default function SectionContacts() {
     0.5,
   );
 
-  // const { handleCopyClick, Popup } = useCopyTextWithPopup(
-  //   email.text,
-  //   email.onCopyPopupText,
-  // );
-
-  // const isLargeScreen = useMediaQuery(1024);
-
   const imgs = [
     {
       src: 'contacts/discussion.png',
@@ -60,7 +47,6 @@ export default function SectionContacts() {
 
   return (
     <section className={css.container} ref={contactsSectionRef}>
-      {/* <Popup /> */}
       <hgroup className={css.contactsHeader}>
         <h3>{header}</h3>
         <p>{headerCaption}</p>{' '}

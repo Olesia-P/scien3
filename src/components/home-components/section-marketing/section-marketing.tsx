@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './section-marketing.module.scss';
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textSectionMarketing } from '@/utils/texts/home/text-section-marketing';
 import ImageMarquee from '@/components/ui/image-marquee/image-marquee';
 

@@ -3,10 +3,10 @@ import Link from 'next/link';
 import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './single-service-layout.module.scss';
-import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textSingleServiceWrapper } from '@/utils/texts/services/text-single-service-wrapper';
-import useMediaQuery from '@/hooks/useMediaQuery';
+import useMediaQuery from '@/hooks/use-media-query';
+import useCopyAndToast from '@/hooks/use-copy-and-toast';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -29,7 +29,7 @@ export default function SingleServiceLayout({
   content,
 }: SingleServiceLayoutProps) {
   const language = 'ua';
-  const { email, phone, clickToCopyMessage } = textContactInfo[language];
+  const { email, phone, clickToCopyBtnTitle } = textContactInfo[language];
   const { otherServicesLinkTitle, contactsHeader } =
     textSingleServiceWrapper[language];
 
@@ -48,16 +48,12 @@ export default function SingleServiceLayout({
     }
   };
 
-  const { handleCopyClick, Popup } = useCopyTextWithPopup(
-    email.text,
-    email.onCopyPopupText,
-  );
+  const copyText = useCopyAndToast();
 
   const isLargeScreen = useMediaQuery(1024);
 
   return (
     <main className={cx(css.container, decideBackgroundStyle())}>
-      <Popup />
       <article className={css.mainContent}>
         <h1 className={css.mainHeader}>{content.main.header}</h1>
         <img
@@ -86,8 +82,8 @@ export default function SingleServiceLayout({
             <button
               type="button"
               className={css.emailBtn}
-              onClick={handleCopyClick}
-              title={clickToCopyMessage}
+              onClick={() => copyText(email.text, email.toastMessageCopied)}
+              title={clickToCopyBtnTitle}
             >
               {email.text}
             </button>

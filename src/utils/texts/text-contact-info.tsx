@@ -10,7 +10,7 @@ export const textContactInfo = {
       title: 'Email:',
       text: 'some email',
       icon: '/icons/email-icon.png',
-      onCopyPopupText: 'Email скопійовано!',
+      toastMessageCopied: 'Email скопійовано!',
     },
     workingHours: {
       title: 'Робочі години:',
@@ -35,7 +35,7 @@ export const textContactInfo = {
       ],
     },
 
-    clickToCopyMessage: 'Натисніть щоб скопіювати',
+    clickToCopyBtnTitle: 'Натисніть щоб скопіювати',
     contactsCardDescription: [
       'Оформлення замовлення може проводитись як від приватної особи, так і від організації.',
       'Є різні форми доставки та оплати замовлень.',
