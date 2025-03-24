@@ -18,6 +18,7 @@ export default function Navbar() {
   const { phone } = textContactInfo[language];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
 
   const router = useRouter();
 
@@ -31,12 +32,25 @@ export default function Navbar() {
   useEffect(() => {
     if (isLargeScreen) {
       setIsMobileMenuOpen(false);
+      setIsAnimated(false);
     }
   }, [isLargeScreen]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsAnimated(false);
   }, [router.pathname]);
+
+  useEffect(() => {
+    if (!isAnimated) {
+      setTimeout(() => {
+        setIsMobileMenuOpen(false);
+      }, 500);
+    }
+    if (isAnimated) {
+      setIsMobileMenuOpen(true);
+    }
+  }, [isAnimated]);
 
   return (
     <header className={css.shadowWrapper}>
@@ -67,18 +81,20 @@ export default function Navbar() {
         <button
           type="button"
           className={css.hamburger}
-          onClick={() => setIsMobileMenuOpen((prevState) => !prevState)}
+          onClick={() => setIsAnimated((prevState) => !prevState)}
           ref={refHamburger}
         >
           <IoMenu />
         </button>
 
-        <div
-          className={cx(css.mobileMenuWrap, isMobileMenuOpen && css.opened)}
-          ref={refMobileMenu}
-        >
-          <MobileMenu />
-        </div>
+        {isMobileMenuOpen && (
+          <div
+            className={cx(css.mobileMenuWrap, isAnimated && css.opened)}
+            ref={refMobileMenu}
+          >
+            <MobileMenu />
+          </div>
+        )}
       </nav>
     </header>
   );

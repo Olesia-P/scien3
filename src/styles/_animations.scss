@@ -73,3 +73,41 @@
 
     animation: fadeAway 4s linear;
 }
+
+@mixin animationMobileMenuSlideLeft {
+    @keyframes mobileMenuSlideLeft {
+        0% {
+            transform: translateX(0%);
+        }
+
+
+
+        100% {
+            transform: translateX(100%);
+        }
+
+        ;
+    }
+
+    animation: mobileMenuSlideLeft 0.5s linear;
+    transform: translateX(100%);
+}
+
+@mixin animationMobileMenuSlideRight {
+    @keyframes mobileMenuSlideRight {
+        0% {
+            transform: translateX(100%);
+        }
+
+
+
+        100% {
+            transform: translateX(0%);
+        }
+
+        ;
+    }
+
+    animation: mobileMenuSlideRight 0.5s linear;
+    transform: translateX(0);
+}

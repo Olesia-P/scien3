@@ -74,11 +74,10 @@
             right: 0;
             top: 3.1rem;
             width: 15rem;
-            transform: translateX(100%);
-            transition: all 0.3s ease-in-out;
+            @include animationMobileMenuSlideLeft;
 
             &.opened {
-                transform: translateX(0);
+                @include animationMobileMenuSlideRight;
             }
         }
     }
@@ -175,32 +174,3 @@
         }
     }
 }
-
-// &.hoverable {
-// &::after,
-// &::before {
-//     content: "";
-//     position: absolute;
-//     bottom: 0rem;
-//     width: 0%;
-//     border-bottom: 1px solid $black;
-//     transition: width 0.3s ease-in;
-//     z-index: 3;
-// }
-
-// &::after {
-//     left: 50%;
-// }
-
-// &::before {
-//     right: 50%;
-// }
-
-// &:hover {
-
-// &::after,
-// &::before {
-//     width: 45%;
-// }
-// }
-// }
