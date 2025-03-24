@@ -4,18 +4,11 @@
     border-bottom: 1px solid white;
     overflow: hidden;
 
-
     .limit {
         padding: 1.5rem 0;
         max-width: $content-width-main;
         margin: 0 auto;
-
-        transform: translateY(-5rem);
-        transition: transform 1s ease-in-out;
-
-        &.animated {
-            transform: translateY(0);
-        }
+        @include transitionSlideDown;
 
         h1 {
             font-family: $font-family-logo;
@@ -66,11 +59,7 @@
 @include lowTablet {
     .container {
         .limit {
-            transform: translateX(50%);
-
-            &.animated {
-                transform: translateX(0);
-            }
+            @include transitionSlideLeft;
 
 
             h1 {

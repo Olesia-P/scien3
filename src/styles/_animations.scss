@@ -111,3 +111,39 @@
     animation: mobileMenuSlideRight 0.5s linear;
     transform: translateX(0);
 }
+
+@mixin transitionSlideRight ($percent: -50%, $speed: 1s) {
+    transform: translateX($percent);
+    transition: transform $speed ease-in-out;
+
+    &.animated {
+        transform: translateX(0);
+    }
+}
+
+@mixin transitionSlideLeft ($percent: 50%, $speed: 1s) {
+    transform: translateX($percent);
+    transition: transform $speed ease-in-out;
+
+    &.animated {
+        transform: translateX(0);
+    }
+}
+
+@mixin transitionSlideDown ($percent: -50%, $speed: 1s) {
+    transform: translateY($percent);
+    transition: transform $speed ease-in-out;
+
+    &.animated {
+        transform: translateY(0);
+    }
+}
+
+@mixin transitionSlideUp ($percent: 50%, $speed: 1s) {
+    transform: translateY($percent);
+    transition: transform $speed ease-in-out;
+
+    &.animated {
+        transform: translateY(0);
+    }
+}
