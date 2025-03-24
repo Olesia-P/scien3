@@ -1,27 +1,40 @@
-import React from 'react';
-import Link from 'next/link';
-import { FaArrowRightLong } from 'react-icons/fa6';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import css from './section-services.module.scss';
 import { textSectionServices } from '@/utils/texts/home/text-section-services';
 import ServicesDescription from './services-description/services-description';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import CardItem from './card-item/card-item';
 
 export default function SectionServices() {
   const language = 'ua';
   const { services, header, ourBenefitsList } = textSectionServices[language];
+
+  const [isCardObserved, setIsCardObserved] = useState(false);
+
+  const cardRef = useIntersectionObserver(
+    () => setIsCardObserved(true),
+    undefined,
+    0,
+  );
 
   return (
     <section className={css.container}>
       <ServicesDescription header={header} ourBenefitsList={ourBenefitsList} />
 
       <div className={css.cardBorder}>
-        <nav className={css.servicesNavigation}>
+        <nav
+          className={cx(css.servicesNavigation, isCardObserved && css.animated)}
+          ref={cardRef}
+        >
           {services.map((service) => (
-            <Link href={service.link} className={css.link} key={service.name}>
-              <img src={service.img} alt={service.alt} />
-              <h3 className={css.caption}>
-                {service.name} <FaArrowRightLong />
-              </h3>
-            </Link>
+            <CardItem
+              link={service.link}
+              alt={service.alt}
+              imgSrc={service.img}
+              text={service.name}
+              key={service.name}
+            />
           ))}
           <div className={css.horizontalSeparator} />
           <div className={css.verticalSeparator} />

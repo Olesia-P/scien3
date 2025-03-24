@@ -147,3 +147,13 @@
         transform: translateY(0);
     }
 }
+
+// @mixin transitionScaleUp ($percent: 10%, $speed: 1s, 
+// $selector: li) {
+//     transform: translateY($percent);
+//     transition: transform $speed ease-in-out;
+
+//     &.animated {
+//         transform: translateY(0);
+//     }
+// }

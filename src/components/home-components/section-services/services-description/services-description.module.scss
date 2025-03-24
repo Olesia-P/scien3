@@ -4,12 +4,14 @@
     background-color: $white;
     max-width: $content-width-main;
     margin: 0 auto;
+    overflow: hidden;
 
     h2 {
         padding: 0 1rem 0.5rem 1rem;
         font-weight: 900;
         text-align: center;
         font-size: $font-size-24;
+        @include transitionSlideRight(-25%);
 
         span {
             @include verticalBlueDecoration;
@@ -48,7 +50,7 @@
             }
         }
 
-        &.isAnimated {
+        &.animated {
             li::before {
                 transform: scale(100%);
             }

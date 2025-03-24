@@ -1,0 +1,74 @@
+@import "/src/styles/main";
+
+.link {
+    padding: 1.5em;
+    @include dfcc;
+    color: $blue;
+
+    img {
+        width: 85%;
+        height: 85%;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease-in;
+    }
+
+    .caption {
+        font-size: $font-size-18;
+        margin-top: 0.7rem;
+        @include dfc;
+        transition: filter 0.2s linear;
+
+        svg {
+            margin-left: 0.5rem;
+        }
+    }
+
+    &:hover {
+        img {
+            filter: grayscale(0%);
+        }
+
+        .caption {
+            filter: brightness(110%);
+        }
+    }
+}
+
+
+@include laptop {
+    .link {
+        .caption {
+            font-size: $font-size-14;
+        }
+    }
+}
+
+@include tablet {
+    .link {
+        .caption {
+            font-size: $font-size-16;
+        }
+
+        img {
+            filter: grayscale(0%);
+        }
+    }
+}
+
+@include mobile {
+    .link {
+        position: relative;
+        @include whiteCard($pad: 1.5em, $borderRad: 10px);
+
+        img {
+            width: 16rem;
+            height: 16rem;
+        }
+
+        .caption {
+            font-size: $font-size-20;
+        }
+
+        @include transitionSlideLeft;
+    }
+}

@@ -16,23 +16,21 @@ export default function ServicesDescription({
   ourBenefitsList,
 }: ServicesDescriptionProps) {
   const [isObserved, setIsObserved] = useState(false);
-  const handleIntersection = () => {
-    setIsObserved(true);
-  };
+
   const descriptionSectionRef = useIntersectionObserver(
-    handleIntersection,
+    () => setIsObserved(true),
     undefined,
     0.5,
   );
 
   return (
     <article className={css.container} ref={descriptionSectionRef}>
-      <h2>
+      <h2 className={cx(isObserved && css.animated)}>
         <span aria-hidden="true">|</span>
         {header}
         <span aria-hidden="true">|</span>
       </h2>
-      <ul className={cx(css.descriptionList, isObserved && css.isAnimated)}>
+      <ul className={cx(css.descriptionList, isObserved && css.animated)}>
         {ourBenefitsList.map((benefit) => (
           <li
             key={benefit.icon}
