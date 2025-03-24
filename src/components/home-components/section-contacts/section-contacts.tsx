@@ -41,13 +41,13 @@ export default function SectionContacts() {
     {
       src: 'contacts/box-with-stuff.png',
       alt: mobileIllustrationAlt,
-      classname: css.mobileIllustration,
+      classname: cx(css.mobileIllustration, isObserved && css.animated),
     },
   ];
 
   return (
     <section className={css.container} ref={contactsSectionRef}>
-      <hgroup className={css.contactsHeader}>
+      <hgroup className={cx(css.contactsHeader, isObserved && css.animated)}>
         <h3>{header}</h3>
         <p>{headerCaption}</p>{' '}
       </hgroup>
@@ -64,7 +64,7 @@ export default function SectionContacts() {
         ))}
 
         {/* speech bubble img */}
-        <div className={cx(css.bubbleWrap, isObserved && css.isAnimated)}>
+        <div className={cx(css.bubbleWrap, isObserved && css.animated)}>
           <p>{speechBubble.caption}</p>
           <img
             src="contacts/speech-bubble.png"
@@ -73,7 +73,7 @@ export default function SectionContacts() {
           />
         </div>
 
-        <div className={css.contactsCard}>
+        <div className={cx(css.contactsCard, isObserved && css.animated)}>
           <ContactsCard option="vertical" />
         </div>
       </div>

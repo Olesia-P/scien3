@@ -7,8 +7,11 @@
     min-height: 95vh;
     @include dfcc;
     gap: 2rem;
+    overflow: hidden;
 
     .contactsHeader {
+        @include transitionSlideRight(-25%);
+
         h3 {
             font-size: $font-size-26 ;
             text-align: center;
@@ -51,8 +54,8 @@
             width: 9rem;
             top: -4.5rem;
             left: 1.5rem;
-            transform: scale(10%);
-            transition: transform 1s ease-in-out;
+            @include transitionScaleUp;
+
 
             img {
                 width: 100%;
@@ -69,14 +72,11 @@
                 color: $grey;
                 font-size: $font-size-16;
             }
-
-            &.isAnimated {
-                transform: scale(100%);
-            }
         }
 
         .contactsCard {
             align-self: center;
+            @include transitionSlideLeft;
         }
     }
 }
@@ -146,6 +146,7 @@
             .mobileIllustration {
                 display: block;
                 width: 14rem;
+                @include transitionScaleUp;
             }
 
             .contactsCard {
