@@ -21,7 +21,7 @@ export default function SectionIntro() {
 
   return (
     <div className={css.container} ref={introSectionRef}>
-      <SectionIntroHeader caption={caption} />
+      <SectionIntroHeader caption={caption} isAnimated={isObserved} />
 
       <section className={css.mainContent}>
         <div className={css.listLimit}>
