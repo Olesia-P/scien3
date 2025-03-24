@@ -10,7 +10,7 @@
     overflow: hidden;
 
     .contactsHeader {
-        @include transitionSlideRight(-25%);
+        @include transitionSlideRight(25%);
 
         h3 {
             font-size: $font-size-26 ;

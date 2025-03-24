@@ -112,8 +112,8 @@
     transform: translateX(0);
 }
 
-@mixin transitionSlideRight ($percent: -50%, $speed: 1s) {
-    transform: translateX($percent);
+@mixin transitionSlideRight ($percent: 50%, $speed: 1s) {
+    transform: translateX(-$percent);
     transition: transform $speed ease-in-out;
 
     &.animated {
@@ -130,8 +130,8 @@
     }
 }
 
-@mixin transitionSlideDown ($percent: -50%, $speed: 1s) {
-    transform: translateY($percent);
+@mixin transitionSlideDown ($percent: 50%, $speed: 1s) {
+    transform: translateY(-$percent);
     transition: transform $speed ease-in-out;
 
     &.animated {

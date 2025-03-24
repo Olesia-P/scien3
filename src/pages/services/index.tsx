@@ -12,12 +12,12 @@ export default function Services() {
     textServicesPage[language];
 
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [isObserved, setIsObserved] = useState(false);
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   };
 
-  const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
+  const ref = useIntersectionObserver(() => setIsObserved(true), undefined, 0);
 
   useEffect(() => {
     const allImages = document.querySelectorAll('img');
@@ -36,7 +36,7 @@ export default function Services() {
         src="services/left-curtain.png"
         className={cx(
           css.illustrationLeft,
-          isImageLoaded && isAnimated && css.animated,
+          isImageLoaded && isObserved && css.animated,
         )}
         alt={leftPictureAlt}
         aria-hidden="true"
@@ -44,11 +44,11 @@ export default function Services() {
       />
 
       <div className={css.content}>
-        <h1>{header}</h1>
+        <h1 className={cx(isObserved && css.animated)}>{header}</h1>
 
         <ul className={css.linksWrap}>
           {services.map((service) => (
-            <li key={service.name}>
+            <li key={service.name} className={cx(isObserved && css.animated)}>
               <Link href={service.link} className={css.link}>
                 <img src={service.img} alt={service.alt} />
                 {service.name} <FaArrowRightLong />
@@ -64,7 +64,7 @@ export default function Services() {
         src="services/right-curtain.png"
         className={cx(
           css.illustrationRight,
-          isImageLoaded && isAnimated && css.animated,
+          isImageLoaded && isObserved && css.animated,
         )}
         alt={rightPictureAlt}
         aria-hidden="true"
