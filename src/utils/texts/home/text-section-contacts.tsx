@@ -3,11 +3,12 @@ const ua = {
   headerCaption: 'Ми проконсультуємо та допоможемо з підбором матеріалів.',
   speechBubble: {
     caption: 'Ваші ідеї буде втілено!',
-    alt: 'спіч бабл',
+    alt: '',
   },
-  desktopIllustrationAlt: 'Двоє людей обговорюють бізнес угоду',
-  tabletIllustrationAlt: 'Бізнесмен говорить по телефону',
-  mobileIllustrationAlt: 'Картонна коробка із деталями, виробленими з пластику',
+  desktopIllustrationAlt: 'Двоє людей обговорюють бізнес угоду.',
+  tabletIllustrationAlt: 'Бізнесмен говорить по телефону.',
+  mobileIllustrationAlt:
+    'Картонна коробка із деталями, виробленими з пластику.',
 };
 
 export const textConstactsSectionHomePage = {

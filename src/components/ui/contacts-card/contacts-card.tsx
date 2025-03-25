@@ -54,12 +54,14 @@ export default function ContactsCard({
             onClick={() => copyText(email.text, email.toastMessageCopied)}
             title={clickToCopyBtnTitle}
           >
-            <SingleContact
-              title={email.title}
-              text={email.text}
-              isLink={false}
-              isBlue
-            />
+            <button type="button">
+              <SingleContact
+                title={email.title}
+                text={email.text}
+                isLink={false}
+                isBlue
+              />
+            </button>
           </li>
 
           {/* phone */}

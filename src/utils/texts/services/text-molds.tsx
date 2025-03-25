@@ -9,7 +9,7 @@ const ua = {
       },
       img: {
         link: '/services/molds.jpeg',
-        alt: 'Різні форми для лиття на столі',
+        alt: 'Форми для лиття на столі.',
       },
     },
 
