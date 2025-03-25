@@ -4,7 +4,7 @@
     padding-top: 3.5rem;
     background-image: url("/works-faq/scattered-forms.jpeg");
     background-size: 100vw;
-
+    overflow: hidden;
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
 
     .outline {
@@ -22,6 +22,7 @@
                 padding-bottom: 2rem;
                 text-align: center;
                 font-size: $font-size-24;
+                @include transitionSlideRight(25%);
 
                 span {
                     @include verticalBlueDecoration;

@@ -20,7 +20,7 @@ export default function Faq() {
     <main className={css.container} ref={faqRef}>
       <div className={css.outline}>
         <div className={css.contentWrap}>
-          <h1>
+          <h1 className={cx(isObserved && css.animated)}>
             <span aria-hidden="true">|</span>
             {mainHeader}
             <span aria-hidden="true">|</span>
