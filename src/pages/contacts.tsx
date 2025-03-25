@@ -3,7 +3,6 @@ import cx from 'classnames';
 import css from '../styles/page-styles/contacts.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textContactsPage } from '@/utils/texts/text-contacts-page';
-// import useCopyTextWithPopup from '@/hooks/use-copy-text-with-popup/use-copy-text-with-popup';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
 import useMediaQuery from '@/hooks/use-media-query';
 
@@ -11,34 +10,26 @@ export default function Contacts() {
   const language = 'ua';
 
   const { mainHeader, illustrationAlt } = textContactsPage[language];
-
-  // const contactsList = [phone, workingHours, location];
-
-  const [isAnimated, setIsAnimated] = useState(false);
-
-  const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
-
-  // const { handleCopyClick, Popup } = useCopyTextWithPopup(
-  //   email.text,
-  //   email.onCopyPopupText,
-  // );
-
+  const [isObserved, setIsObserved] = useState(false);
+  const contactsPageRef = useIntersectionObserver(
+    () => setIsObserved(true),
+    undefined,
+    0,
+  );
   const isLargeScreen = useMediaQuery(1024);
 
   return (
-    <main className={cx(css.container, isAnimated && css.animated)} ref={ref}>
-      {/* <Popup /> */}
-
+    <main className={css.container} ref={contactsPageRef}>
       {isLargeScreen ? (
         <img
           src="/contacts/building-model.jpeg"
-          className={css.illustration}
+          className={cx(css.illustration, isObserved && css.animated)}
           alt={illustrationAlt}
         />
       ) : (
         <img
           src="/contacts/building-model-mobile.jpeg"
-          className={css.illustration}
+          className={cx(css.illustration, isObserved && css.animated)}
           alt={illustrationAlt}
         />
       )}
@@ -49,7 +40,7 @@ export default function Contacts() {
         <span aria-hidden="true">|</span>
       </h1>
 
-      <div className={css.contactsCard}>
+      <div className={cx(css.contactsCard, isObserved && css.animated)}>
         <ContactsCard option={isLargeScreen ? 'horizontal' : 'vertical'} />
       </div>
     </main>
