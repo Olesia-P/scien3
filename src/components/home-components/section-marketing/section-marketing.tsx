@@ -17,7 +17,7 @@ export default function SectionMarketing() {
   const marketingSectionRef = useIntersectionObserver(
     handleIntersection,
     undefined,
-    0.5,
+    0.2,
   );
 
   const images = statements.map(({ img, alt }) => ({ img, alt }));

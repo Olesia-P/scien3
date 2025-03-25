@@ -24,7 +24,7 @@ export default function SectionContacts() {
   const contactsSectionRef = useIntersectionObserver(
     handleIntersection,
     undefined,
-    0.5,
+    0.1,
   );
 
   const imgs = [
