@@ -36,7 +36,7 @@ export default function SectionContacts() {
     {
       src: 'contacts/phone-talking.png',
       alt: tabletIllustrationAlt,
-      classname: css.tabletIllustration,
+      classname: cx(css.tabletIllustration, isObserved && css.animated),
     },
     {
       src: 'contacts/box-with-stuff.png',
