@@ -1,0 +1,47 @@
+@import "/src/styles/main";
+
+.card {
+    @include whiteCard($pad: 0rem, $borderRad: 10px);
+    width: 22%;
+    height: 15rem;
+    @include dfc;
+    flex-shrink: 0;
+
+    .imgLimit {
+        width: 90%;
+        height: 90%;
+        overflow: hidden;
+        @include dfc;
+
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+}
+
+@include laptop {
+    .card {
+        height: 16rem;
+    }
+}
+
+@include tablet {
+    .card {
+        width: 47%;
+    }
+}
+
+@include lowTablet {
+    .card {
+        width: 100%;
+        padding: 1.5rem;
+        height: auto;
+        @include transitionSlideLeft;
+
+        .imgLimit {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

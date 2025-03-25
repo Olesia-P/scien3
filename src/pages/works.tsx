@@ -4,6 +4,7 @@ import cx from 'classnames';
 import css from '../styles/page-styles/works.module.scss';
 import { textWorks } from '@/utils/texts/text-works';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import WorksImgCard from '@/components/works-components/works-img-card/works-img-card';
 
 export default function Works() {
   const language = 'ua';
@@ -20,7 +21,7 @@ export default function Works() {
     <main className={css.container} ref={worksRef}>
       <div className={css.outline}>
         <section className={css.contentWrap}>
-          <h1>
+          <h1 className={cx(isObserved && css.animated)}>
             <span aria-hidden="true">|</span>
             {mainHeader}
             <span aria-hidden="true">|</span>
@@ -33,11 +34,7 @@ export default function Works() {
           </p>
           <div className={cx(css.cardsWrap, isObserved && css.animated)}>
             {images.map((img) => (
-              <article className={css.card} key={img}>
-                <div className={css.imgLimit}>
-                  <img src={img} alt={alt} />
-                </div>
-              </article>
+              <WorksImgCard img={img} alt={alt} key={img} />
             ))}
           </div>
         </section>

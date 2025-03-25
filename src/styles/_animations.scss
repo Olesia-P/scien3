@@ -156,3 +156,12 @@
         transform: scale(100%);
     }
 }
+
+@mixin noTransition {
+    transform: none;
+    transition: none;
+
+    &.animated {
+        transform: none;
+    }
+}

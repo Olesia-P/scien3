@@ -6,6 +6,7 @@
     background-size: contain;
     @include dfc;
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
+    overflow: hidden;
 
     .outline {
         max-width: 1200px;
@@ -19,6 +20,7 @@
             h1 {
                 text-align: center;
                 font-size: $font-size-24;
+                @include transitionSlideRight(25%);
 
                 span {
                     @include verticalBlueDecoration;
@@ -46,34 +48,7 @@
                 @include dfc;
                 gap: 2rem;
                 flex-wrap: wrap;
-                transition: all 0.7s ease-in-out;
-                transform: translateY(3rem);
-
-
-                .card {
-                    @include whiteCard($pad: 0rem, $borderRad: 10px);
-                    width: 22%;
-                    height: 15rem;
-                    @include dfc;
-                    flex-shrink: 0;
-
-                    .imgLimit {
-                        width: 90%;
-                        height: 90%;
-                        overflow: hidden;
-                        @include dfc;
-
-                        img {
-                            width: 100%;
-                            overflow: hidden;
-                        }
-                    }
-                }
-
-                &.animated {
-                    gap: 1.5rem;
-                    transform: translateY(0rem);
-                }
+                @include transitionSlideUp(5rem);
             }
         }
     }
@@ -85,21 +60,6 @@
 
         .outline {
             width: 90%;
-
-            .contentWrap {
-                .cardsWrap {
-                    transform: translateY(4rem);
-                    gap: 2rem;
-
-                    .card {
-                        height: 16rem;
-                    }
-
-                    &.animated {
-                        gap: 2rem;
-                    }
-                }
-            }
         }
     }
 }
@@ -117,12 +77,6 @@
                 .caption {
                     font-size: $font-size-18;
                     padding: 1rem 0 1.5rem 0;
-                }
-
-                .cardsWrap {
-                    .card {
-                        width: 47%;
-                    }
                 }
             }
         }
@@ -149,16 +103,7 @@
                 }
 
                 .cardsWrap {
-                    .card {
-                        width: 100%;
-                        padding: 1.5rem;
-                        height: auto;
-
-                        .imgLimit {
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
+                    @include noTransition;
                 }
             }
         }
