@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import cx from 'classnames';
 import css from './table.module.scss';
 import { createHeaderTag } from '@/utils/functions';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 type Cells = string[];
 
@@ -18,8 +20,18 @@ export default function Table({
   rows,
 }: TableProps) {
   const HeaderTag = createHeaderTag(headerSize);
+  const [isObserved, setIsObserved] = useState(false);
+
+  const tableRef = useIntersectionObserver<HTMLDivElement>(
+    () => setIsObserved(true),
+    undefined,
+    0,
+  );
   return (
-    <div className={css.container}>
+    <div
+      className={cx(css.container, isObserved && css.animated)}
+      ref={tableRef}
+    >
       <HeaderTag className={css.title}>{title}</HeaderTag>
       <div className={css.scrollWrapper}>
         <table className={css.table}>

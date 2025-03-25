@@ -85,15 +85,17 @@ export default function ServiceInfoBlock({
     }
   };
 
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [isObserved, setIsObserved] = useState(false);
 
-  const ref = useIntersectionObserver(() => setIsAnimated(true), undefined, 0);
+  const serviceInfoBlockRef = useIntersectionObserver(
+    () => setIsObserved(true),
+    undefined,
+    0,
+  );
 
   return (
-    <section className={css.container} ref={ref}>
-      <MainHeaderTag
-        className={cx(css.mainHeader, isAnimated && css.isAnimated)}
-      >
+    <section className={css.container} ref={serviceInfoBlockRef}>
+      <MainHeaderTag className={cx(css.mainHeader, isObserved && css.animated)}>
         {header}
       </MainHeaderTag>
 

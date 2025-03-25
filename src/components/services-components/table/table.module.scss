@@ -4,6 +4,9 @@
     width: fit-content;
     text-align: center;
     max-width: 100%;
+    @include transitionSlideLeft(40%);
+    overflow: hidden;
+    background-color: $grey;
 
     .title {
         color: $light-blue;

@@ -27,7 +27,7 @@
             left: 0;
             width: 0%;
             border-bottom: 2px solid $light-blue;
-            transition: width 1.2s ease-in;
+            transition: width 2s ease-in-out;
             z-index: 1;
         }
 
@@ -39,7 +39,7 @@
             top: 0em;
         }
 
-        &.isAnimated {
+        &.animated {
 
             &::after,
             &::before {

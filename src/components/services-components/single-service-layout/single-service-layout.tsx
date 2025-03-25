@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
@@ -7,6 +7,7 @@ import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textSingleServiceWrapper } from '@/utils/texts/services/text-single-service-wrapper';
 import useMediaQuery from '@/hooks/use-media-query';
 import useCopyAndToast from '@/hooks/use-copy-and-toast';
+import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -52,21 +53,45 @@ export default function SingleServiceLayout({
 
   const isLargeScreen = useMediaQuery(1024);
 
+  const [isObserved, setIsObserved] = useState(false);
+  const singleServiceRef = useIntersectionObserver(
+    () => setIsObserved(true),
+    undefined,
+    0,
+  );
+  const [isContactsCardObserved, setIsContatsCardObserved] = useState(false);
+  const contactsCardRef = useIntersectionObserver(
+    () => setIsContatsCardObserved(true),
+    undefined,
+    0,
+  );
+
   return (
-    <main className={cx(css.container, decideBackgroundStyle())}>
+    <main
+      className={cx(css.container, decideBackgroundStyle())}
+      ref={singleServiceRef}
+    >
       <article className={css.mainContent}>
-        <h1 className={css.mainHeader}>{content.main.header}</h1>
+        <h1 className={cx(css.mainHeader, isObserved && css.animated)}>
+          {content.main.header}
+        </h1>
         <img
           src={content.img.link}
           alt={content.img.alt}
-          className={css.illustration}
+          className={cx(css.illustration, isObserved && css.animated)}
         />
 
         <p className={css.description}>{content.main.description}</p>
 
         {children}
 
-        <section className={css.contactsCard}>
+        <section
+          className={cx(
+            css.contactsCard,
+            isContactsCardObserved && css.animated,
+          )}
+          ref={contactsCardRef}
+        >
           <p className={css.contactsHeader}>{contactsHeader}</p>
           <ul className={css.contactsWrap}>
             <li

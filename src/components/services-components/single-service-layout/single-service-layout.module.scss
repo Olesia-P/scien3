@@ -6,6 +6,7 @@
     color: $white;
     position: relative;
     isolation: isolate;
+    overflow: hidden;
 
     &::after {
         content: " ";
@@ -55,6 +56,7 @@
             right: 4%;
             z-index: 1;
             background-color: $grey;
+            @include transitionSlideLeft(25%);
         }
 
         .mainHeader {
@@ -68,6 +70,7 @@
             text-align: center;
             z-index: 1;
             background-color: $grey;
+            @include transitionSlideRight(25%);
         }
 
         .description {
@@ -81,6 +84,8 @@
             width: 60%;
             border: 2px dashed $light-blue;
             padding: 1.5rem;
+
+            @include transitionScaleUp(40%, 1.5s);
 
             .contactsHeader {
                 text-align: center;

@@ -149,8 +149,8 @@
 }
 
 @mixin transitionScaleUp ($percent: 10%, $speed: 1s) {
-    transform: scale(10%);
-    transition: transform 1s ease-in-out;
+    transform: scale($percent);
+    transition: transform $speed ease-in-out;
 
     &.animated {
         transform: scale(100%);
