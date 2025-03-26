@@ -4,7 +4,7 @@ import cx from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import css from './mobile.menu.module.scss';
-import LangSwitch from '../../lang-switch/lang-switch';
+import LangSwitch from '../lang-switch/lang-switch';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
 
 export default function MobileMenu() {

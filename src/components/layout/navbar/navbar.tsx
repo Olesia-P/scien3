@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { useRouter } from 'next/router';
 import { IoMenu } from 'react-icons/io5';
 import css from './navbar.module.scss';
-import LangSwitch from '../lang-switch/lang-switch';
+import LangSwitch from './lang-switch/lang-switch';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
 import MobileMenu from './mobile-menu/mobile-menu';
