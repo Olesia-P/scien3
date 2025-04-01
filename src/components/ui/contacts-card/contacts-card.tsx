@@ -99,7 +99,7 @@ export default function ContactsCard({
         {/* google map */}
         <div className={css.googleMap}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.3134611455907!2d30.63728290644443!3d50.45694614088012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4daac5317ae83%3A0xf5450b4ea3b09a48!2z0LLRg9C70LjRhtGPINCS0ZbQvdGB0YLQvtC90LAg0KfQtdGA0YfQuNC70LvRjywgNDLQkCwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1729060035949!5m2!1suk!2sua"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.180346881388!2d30.634904110563106!3d50.45636627147477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4daacec089349%3A0x6143af37cc8bccf0!2z0LLRg9C70LjRhtGPINCS0ZbQvdGB0YLQvtC90LAg0KfQtdGA0YfQuNC70LvRjywgNDIsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1743442448527!5m2!1suk!2sua"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -8,7 +8,7 @@ export const textContactInfo = {
     },
     email: {
       title: 'Email:',
-      text: 'some email',
+      text: 'zozulyanikv@gmail.com',
       icon: '/icons/email-icon.png',
       toastMessageCopied: 'Email скопійовано!',
     },
@@ -19,7 +19,7 @@ export const textContactInfo = {
     },
     location: {
       title: 'Наш офіс:',
-      text: 'Київ, вул. Вінстона Черчилля, 42А, офіс 7',
+      text: 'Київ, вул. Вінстона Черчилля (колишня назва - Червоноткацька), 42-М',
       icon: '/icons/location-icon.png',
     },
 
