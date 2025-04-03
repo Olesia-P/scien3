@@ -16,8 +16,8 @@ const ua = {
         <>
           <strong>Ціна форми для лиття.</strong> Вартість залежить від розміру,
           складності деталі та якості силікону або поліуретану. Форми мають
-          обмежений термін служби (зазвичай 20–50 виливок), тому на більші
-          партії може знадобитися кілька форм.
+          обмежений термін служби, тому на більші партії може знадобитися кілька
+          форм.
         </>,
         <>
           <strong>Матеріали для лиття.</strong> Тип пластику (прозорий, гнучкий,
@@ -63,7 +63,7 @@ const ua = {
     {
       question: 'Як ви обробляєте готові вироби після лиття?',
       text: [
-        'За допомогою зрізання та фрезерування проводиться зачистка від технологічних елементів, літників та напливів. За потреби виріб фарбується.',
+        'За допомогою зрізання та фрезерування проводиться зачистка від технологічних елементів, литників та грату. За потреби виріб фарбується.',
       ],
     },
     {
@@ -75,6 +75,82 @@ const ua = {
   ],
 };
 
+const en = {
+  mainHeader: 'Frequently asked questions',
+  questionCards: [
+    {
+      question: 'What is the cost of your products?',
+      text: [
+        'We do not have a universal price for all products. The pricing for small-batch plastic vacuum casting depends on several key factors:',
+        <>
+          <strong>Cost of creating the master model.</strong> If the master
+          model is specially created for your project (e.g., through 3D printing
+          or manual crafting), its production adds a significant portion to the
+          total cost, especially for small batches.
+        </>,
+        <>
+          <strong>Cost of the casting mold.</strong> The price depends on the
+          size, complexity of the part, and the quality of the silicone or
+          polyurethane used. Molds have a limited service life, so multiple
+          molds may be required for larger batches.
+        </>,
+        <>
+          <strong>Materials for casting.</strong> The type of plastic (clear,
+          flexible, heat-resistant, or impact-resistant plastic comes at
+          different prices) and the amount of material required matter.
+        </>,
+        <>
+          <strong>Quantity of products.</strong> The cost per part decreases as
+          the batch size increases, since mold and preparation costs are spread
+          across a larger number of products.
+        </>,
+        <>
+          <strong>Complexity of parts.</strong> Parts with complex geometries
+          may require additional manual work for finishing or even the creation
+          of separate molds, which increases the costs.
+        </>,
+        <>
+          <strong>Post-processing of finished products.</strong> If additional
+          processing is required (sanding, painting, polishing), this adds to
+          the overall cost. Special coatings or quality tests also affect the
+          final price.
+        </>,
+        <>
+          <strong>Lead time.</strong> Expedited orders may cost more due to the
+          need to accelerate the processes.
+        </>,
+        <em>
+          {' '}
+          For a more accurate estimate, please send us photographs, sketches, or
+          drawings of the product along with your inquiry. We will be able to
+          provide the most precise calculation with a 3D model.
+        </em>,
+      ],
+    },
+    {
+      question: 'What is a prototype and why is it necessary?',
+      text: [
+        'A prototype (master model) is a fully functional model of the product that will go into serial production. All parameters of such a sample correspond to the real dimensions and characteristics of the final product.',
+        'Prototypes are needed for thorough testing, such as assembly or function testing. Thanks to the prototype, we can identify and correct any issues before launching the product into full-scale production.',
+        'In addition, the prototype is essential for creating flexible molds when manufacturing a product using vacuum casting.',
+      ],
+    },
+    {
+      question: 'How do you process the finished products after casting?',
+      text: [
+        'Technological elements, sprues, and flash are removed through cutting and milling. If necessary, the product is painted.',
+      ],
+    },
+    {
+      question: 'What is the minimum quantity of parts I can order?',
+      text: [
+        'We specialize in small-batch casting but can also produce a single unit. However, the smaller the batch, the higher the cost per piece.',
+      ],
+    },
+  ],
+};
+
 export const textFaq = {
   ua,
+  en,
 };

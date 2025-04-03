@@ -16,7 +16,7 @@ export default function printing3D() {
     fdm,
     sla,
     important,
-    linkToMassProduction,
+    linkToSerialProduction,
     table,
   } = textPrinting3D[language];
 
@@ -42,9 +42,12 @@ export default function printing3D() {
       </div>
       <ServiceInfoBlock {...important} headerLevel={2} />
 
-      <a href={linkToMassProduction.link} className={css.linkMassProduction}>
-        {linkToMassProduction.text}{' '}
-        <FaArrowRightLong className={css.massProdIcon} />
+      <a
+        href={linkToSerialProduction.link}
+        className={css.linkToSerialProduction}
+      >
+        {linkToSerialProduction.text}{' '}
+        <FaArrowRightLong className={css.serialProdIcon} />
       </a>
     </SingleServiceLayout>
   );

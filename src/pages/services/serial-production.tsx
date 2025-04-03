@@ -1,11 +1,12 @@
 import React from 'react';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
-import { textMassProduction } from '@/utils/texts/services/text-mass-production';
+import { textSerialProduction } from '@/utils/texts/services/text-serial-production';
 
-export default function MassProduction() {
+export default function SerialProduction() {
   const language = 'ua';
-  const { content, backgroundStyle } = textMassProduction[language].forWrapper;
+  const { content, backgroundStyle } =
+    textSerialProduction[language].forWrapper;
   const {
     howItWorks,
     benefits,
@@ -13,7 +14,7 @@ export default function MassProduction() {
     stages,
     importantMoments,
     whyNot3Dprinting,
-  } = textMassProduction[language];
+  } = textSerialProduction[language];
 
   return (
     <SingleServiceLayout backgroundStyle={backgroundStyle} content={content}>
