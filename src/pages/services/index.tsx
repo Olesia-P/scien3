@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import css from '../../styles/page-styles/services.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { textServicesPage } from '@/utils/texts/services/text-services-page';
+import { textServicesPage } from '@/texts/services/text-services-page';
 import { RootState } from '@/store/store';
 
 export default function Services() {

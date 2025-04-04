@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from './section-intro.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { textSectionIntro } from '@/utils/texts/home/text-section-intro';
+import { textSectionIntro } from '@/texts/home/text-section-intro';
 import SectionIntroHeader from './section-intro-header/section-intro-header';
 import { RootState } from '@/store/store';
 

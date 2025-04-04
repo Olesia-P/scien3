@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from './section-marketing.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { textSectionMarketing } from '@/utils/texts/home/text-section-marketing';
+import { textSectionMarketing } from '@/texts/home/text-section-marketing';
 import ImageMarquee from '@/components/ui/image-marquee/image-marquee';
 import { RootState } from '@/store/store';
 

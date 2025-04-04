@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from './section-services.module.scss';
-import { textSectionServices } from '@/utils/texts/home/text-section-services';
+import { textSectionServices } from '@/texts/home/text-section-services';
 import ServicesDescription from './services-description/services-description';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import CardItem from './card-item/card-item';

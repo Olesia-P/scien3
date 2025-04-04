@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
-import { textSerialProduction } from '@/utils/texts/services/text-serial-production';
+import { textSerialProduction } from '@/texts/services/text-serial-production';
 import { RootState } from '@/store/store';
 
 export default function SerialProduction() {

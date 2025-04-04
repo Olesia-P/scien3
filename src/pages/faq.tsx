@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from '../styles/page-styles/faq.module.scss';
 import CollapsableBlock from '@/components/ui/collapsable-block/collapsable-block';
-import { textFaq } from '@/utils/texts/text-faq';
+import { textFaq } from '@/texts/text-faq';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { RootState } from '@/store/store';
 

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import useMouseOutsideClose from '@/hooks/use-mouse-outside-close';
-import { textNavbar } from '@/utils/texts/layout/text-navbar';
+import { textNavbar } from '@/texts/layout/text-navbar';
 import css from './navlink.module.scss';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
 import { RootState } from '@/store/store';

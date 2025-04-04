@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from './contacts-card.module.scss';
-import { textContactInfo } from '@/utils/texts/text-contact-info';
+import { textContactInfo } from '@/texts/text-contact-info';
 import useMediaQuery from '@/hooks/use-media-query';
 import { cssIconUrlVariable } from '@/utils/functions';
 import SingleContact from './single-contact/single-contact';

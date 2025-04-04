@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
 import Table from '@/components/services-components/table/table';
-import { textMolds } from '@/utils/texts/services/text-molds';
+import { textMolds } from '@/texts/services/text-molds';
 import css from '../../styles/page-styles/molds.module.scss';
 import { RootState } from '@/store/store';
 

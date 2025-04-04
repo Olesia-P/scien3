@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import css from './lang-switch.module.scss';
-import { textLangSwitch } from '@/utils/texts/layout/text-lang-switch';
+import { textLangSwitch } from '@/texts/layout/text-lang-switch';
 import { changeLanguage } from '@/store/modules/language-slice';
 import { RootState } from '@/store/store';
 

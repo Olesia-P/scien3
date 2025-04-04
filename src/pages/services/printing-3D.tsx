@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
-import { textPrinting3D } from '@/utils/texts/services/text-printing-3D';
+import { textPrinting3D } from '@/texts/services/text-printing-3D';
 import css from '../../styles/page-styles/printing-3D.module.scss';
 import Table from '@/components/services-components/table/table';
 import { RootState } from '@/store/store';

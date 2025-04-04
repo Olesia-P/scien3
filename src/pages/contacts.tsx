@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from '../styles/page-styles/contacts.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { textContactsPage } from '@/utils/texts/text-contacts-page';
+import { textContactsPage } from '@/texts/text-contacts-page';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
 import useMediaQuery from '@/hooks/use-media-query';
 import { RootState } from '@/store/store';

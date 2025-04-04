@@ -3,7 +3,7 @@ import { FaArrowRightLong } from 'react-icons/fa6';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import css from '../styles/page-styles/works.module.scss';
-import { textWorks } from '@/utils/texts/text-works';
+import { textWorks } from '@/texts/text-works';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import WorksImgCard from '@/components/works-components/works-img-card/works-img-card';
 import { RootState } from '@/store/store';
