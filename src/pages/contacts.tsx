@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 import css from '../styles/page-styles/contacts.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textContactsPage } from '@/utils/texts/text-contacts-page';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
 import useMediaQuery from '@/hooks/use-media-query';
+import { RootState } from '@/store/store';
 
 export default function Contacts() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
 
   const { mainHeader, illustrationAlt } = textContactsPage[language];
   const [isObserved, setIsObserved] = useState(false);

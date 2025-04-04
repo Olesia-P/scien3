@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
 import { IoMenu } from 'react-icons/io5';
+import { useSelector } from 'react-redux';
 import css from './navbar.module.scss';
 import LangSwitch from './lang-switch/lang-switch';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
@@ -11,9 +12,10 @@ import MobileMenu from './mobile-menu/mobile-menu';
 import useMediaQuery from '@/hooks/use-media-query';
 import useClickOutsideClose from '@/hooks/use-outside-click-close';
 import Navlink from './navlink/navlink';
+import { RootState } from '@/store/store';
 
 export default function Navbar() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
   const { navlinks } = textNavbar[language];
   const { phone } = textContactInfo[language];
 

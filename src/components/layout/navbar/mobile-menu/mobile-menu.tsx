@@ -3,12 +3,15 @@ import { IoChevronDown } from 'react-icons/io5';
 import cx from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import css from './mobile.menu.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
 import { textNavbar } from '@/utils/texts/layout/text-navbar';
+import { RootState } from '@/store/store';
 
 export default function MobileMenu() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
+
   const { navlinks, dropdownLinks } = textNavbar[language];
   const router = useRouter();
 

@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { useSelector } from 'react-redux';
 import css from './single-service-layout.module.scss';
 import { textContactInfo } from '@/utils/texts/text-contact-info';
 import { textSingleServiceWrapper } from '@/utils/texts/services/text-single-service-wrapper';
 import useMediaQuery from '@/hooks/use-media-query';
 import useCopyAndToast from '@/hooks/use-copy-and-toast';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import { RootState } from '@/store/store';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -29,7 +31,8 @@ export default function SingleServiceLayout({
   backgroundStyle,
   content,
 }: SingleServiceLayoutProps) {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
+
   const { email, phone, clickToCopyBtnTitle } = textContactInfo[language];
   const { otherServicesLinkTitle, contactsHeader } =
     textSingleServiceWrapper[language];

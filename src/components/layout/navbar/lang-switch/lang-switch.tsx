@@ -1,32 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
-import { useDispatch } from 'react-redux';
-// import { RootState } from '@reduxjs/toolkit/query';
+import { useDispatch, useSelector } from 'react-redux';
 import css from './lang-switch.module.scss';
 import { textLangSwitch } from '@/utils/texts/layout/text-lang-switch';
 import { changeLanguage } from '@/store/modules/language-slice';
+import { RootState } from '@/store/store';
 
 type SwitchProps = {
   fontSize: 's' | 'm' | 'l';
 };
 
 export default function LangSwitch({ fontSize }: SwitchProps) {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
+
   const { switchToUkrainian, switchToEnglish, chosenEnglish, chosenUkrainian } =
     textLangSwitch[language];
-  // const [isSwitched, setIsSwitched] = useState(false);
+
   const [isSwitchedToEN, setIsSwitchedToEN] = useState(false);
 
   const dispatch = useDispatch();
 
-  // const lang = useSelector(({ language }: RootState) => language);
-  // console.log('lang', lang);
-  // console.log('isSwitchedToEN', isSwitchedToEN);
-
   const toSwitch = () => {
     setIsSwitchedToEN((prevState) => !prevState);
-    // dispatch(changeLanguage(isSwitchedToEN ? 'en' : 'ua'));
-    // dispatch(changeLanguage('en'));
   };
 
   useEffect(() => {

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 import css from './section-intro.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textSectionIntro } from '@/utils/texts/home/text-section-intro';
 import SectionIntroHeader from './section-intro-header/section-intro-header';
+import { RootState } from '@/store/store';
 
 export default function SectionIntro() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
 
   const { caption, ourProducts, illustrationLargeAlt, illustrationSmallAlt } =
     textSectionIntro[language];

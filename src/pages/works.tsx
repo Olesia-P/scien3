@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 import css from '../styles/page-styles/works.module.scss';
 import { textWorks } from '@/utils/texts/text-works';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import WorksImgCard from '@/components/works-components/works-img-card/works-img-card';
+import { RootState } from '@/store/store';
 
 export default function Works() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
+
   const { alt, images, mainHeader, caption } = textWorks[language];
 
   const [isObserved, setIsObserved] = useState(false);

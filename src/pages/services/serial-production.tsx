@@ -1,10 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
 import { textSerialProduction } from '@/utils/texts/services/text-serial-production';
+import { RootState } from '@/store/store';
 
 export default function SerialProduction() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
+
   const { content, backgroundStyle } =
     textSerialProduction[language].forWrapper;
   const {

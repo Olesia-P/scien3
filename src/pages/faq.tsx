@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 import css from '../styles/page-styles/faq.module.scss';
 import CollapsableBlock from '@/components/ui/collapsable-block/collapsable-block';
 import { textFaq } from '@/utils/texts/text-faq';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import { RootState } from '@/store/store';
 
 export default function Faq() {
-  const language = 'ua';
+  const { language } = useSelector(({ language }: RootState) => language);
 
   const { mainHeader, questionCards } = textFaq[language];
 
