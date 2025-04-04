@@ -85,7 +85,7 @@
             border: 2px dashed $light-blue;
             padding: 1.5rem;
 
-            @include transitionScaleUp(40%, 1.5s);
+            @include transitionScaleUp(80%, 1.5s);
 
             .contactsHeader {
                 text-align: center;
