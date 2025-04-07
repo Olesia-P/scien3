@@ -5,6 +5,7 @@ import css from './lang-switch.module.scss';
 import { textLangSwitch } from '@/texts/layout/text-lang-switch';
 import { changeLanguage } from '@/store/modules/language-slice';
 import { RootState } from '@/store/store';
+import { setCookie } from '@/utils/cookies';
 
 type SwitchProps = {
   fontSize: 's' | 'm' | 'l';
@@ -12,21 +13,35 @@ type SwitchProps = {
 
 export default function LangSwitch({ fontSize }: SwitchProps) {
   const { language } = useSelector(({ language }: RootState) => language);
+  const [isSwitchedToEN, setIsSwitchedToEN] = useState(false);
+  const [isPendingGlobalLanguageChanging, setIsPendingGlobalLanguageChanging] =
+    useState(false);
+  const dispatch = useDispatch();
 
   const { switchToUkrainian, switchToEnglish, chosenEnglish, chosenUkrainian } =
     textLangSwitch[language];
 
-  const [isSwitchedToEN, setIsSwitchedToEN] = useState(false);
+  useEffect(() => {
+    if (isPendingGlobalLanguageChanging) {
+      const valueLang = isSwitchedToEN ? 'en' : 'ua';
+      dispatch(changeLanguage(valueLang));
+      setCookie('language', valueLang, 30);
+      setIsPendingGlobalLanguageChanging(false);
+    }
+  }, [isPendingGlobalLanguageChanging]);
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    if (language === 'en') {
+      setIsSwitchedToEN(true);
+    } else if (language === 'ua') {
+      setIsSwitchedToEN(false);
+    }
+  }, [language]);
 
   const toSwitch = () => {
     setIsSwitchedToEN((prevState) => !prevState);
+    setIsPendingGlobalLanguageChanging(true);
   };
-
-  useEffect(() => {
-    dispatch(changeLanguage(isSwitchedToEN ? 'en' : 'ua'));
-  }, [isSwitchedToEN]);
 
   return (
     <div className={css.container}>
@@ -34,9 +49,7 @@ export default function LangSwitch({ fontSize }: SwitchProps) {
       <button
         onClick={toSwitch}
         role="switch"
-        // ?
         aria-checked={isSwitchedToEN}
-        // ?
         aria-label={isSwitchedToEN ? switchToUkrainian : switchToEnglish}
         type="button"
       >
