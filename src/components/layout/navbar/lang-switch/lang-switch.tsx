@@ -25,7 +25,7 @@ export default function LangSwitch({ fontSize }: SwitchProps) {
     if (isPendingGlobalLanguageChanging) {
       const valueLang = isSwitchedToEN ? 'en' : 'ua';
 
-      setCookie('language', valueLang, 30);
+      setCookie('language', valueLang, 365);
 
       const { pathname } = router;
       const segments = pathname.split('/');
