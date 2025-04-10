@@ -26,6 +26,11 @@ export default function Document() {
         type="font/woff2"
         crossOrigin="anonymous"
       />
+
+      <link rel="preload" as="image" href="/intro/intro-scene.jpg" />
+      <link rel="preload" as="image" href="/services/left-curtain.png" />
+      <link rel="preload" as="image" href="/services/right-curtain.png" />
+      <link rel="preload" as="image" href="/contacts/building-model.jpeg" />
       <body>
         <Main />
         <NextScript />
