@@ -28,7 +28,7 @@ const ua = {
       {
         name: 'Instagram',
         link: 'https://www.instagram.com/3d_scien3_ua?igsh=dDQ1OWxia29jaXpu',
-        icon: 'icons/instagram-icon.svg',
+        icon: '/icons/instagram-icon.svg',
         alt: 'instagram icon',
       },
     ],

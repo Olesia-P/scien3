@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import toastSliceReducer from './modules/toast-slice';
-import languageSliceReducer from './modules/language-slice';
+// import languageSliceReducer from './modules/language-slice';
 
 export const store = configureStore({
   reducer: {
     toast: toastSliceReducer,
-    language: languageSliceReducer,
+    // language: languageSliceReducer,
   },
 });
 

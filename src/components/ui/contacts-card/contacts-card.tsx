@@ -1,6 +1,5 @@
 import React from 'react';
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
 import css from './contacts-card.module.scss';
 import { textContactInfo } from '@/texts/text-contact-info';
 import useMediaQuery from '@/hooks/use-media-query';
@@ -8,7 +7,7 @@ import { cssIconUrlVariable } from '@/utils/functions';
 import SingleContact from './single-contact/single-contact';
 import SocialMedia from '@/components/ui/contacts-card/social-media/social-media';
 import useCopyAndToast from '@/hooks/use-copy-and-toast';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 type ContactsCardProps = {
   option: 'vertical' | 'horizontal';
@@ -17,7 +16,7 @@ type ContactsCardProps = {
 export default function ContactsCard({
   option = 'vertical',
 }: ContactsCardProps) {
-  const { language } = useSelector(({ language }: RootState) => language);
+  const language = useLanguage();
 
   const {
     phone,

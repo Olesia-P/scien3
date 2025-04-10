@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
-import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import css from './lang-switch.module.scss';
 import { textLangSwitch } from '@/texts/layout/text-lang-switch';
-import { changeLanguage } from '@/store/modules/language-slice';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 import { setCookie } from '@/utils/cookies';
 
 type SwitchProps = {
@@ -12,22 +11,37 @@ type SwitchProps = {
 };
 
 export default function LangSwitch({ fontSize }: SwitchProps) {
-  const { language } = useSelector(({ language }: RootState) => language);
+  const language = useLanguage();
   const [isSwitchedToEN, setIsSwitchedToEN] = useState(false);
   const [isPendingGlobalLanguageChanging, setIsPendingGlobalLanguageChanging] =
     useState(false);
-  const dispatch = useDispatch();
 
   const { switchToUkrainian, switchToEnglish, chosenEnglish, chosenUkrainian } =
     textLangSwitch[language];
 
+  const router = useRouter();
+
   useEffect(() => {
     if (isPendingGlobalLanguageChanging) {
       const valueLang = isSwitchedToEN ? 'en' : 'ua';
-      dispatch(changeLanguage(valueLang));
+
       setCookie('language', valueLang, 30);
-      setIsPendingGlobalLanguageChanging(false);
+
+      const { pathname } = router;
+      const segments = pathname.split('/');
+      segments[1] = valueLang;
+      const newPathname = segments.join('/');
+
+      router.replace(
+        {
+          pathname: newPathname,
+          // query,
+        },
+        undefined,
+        { shallow: true },
+      );
     }
+    setIsPendingGlobalLanguageChanging(false);
   }, [isPendingGlobalLanguageChanging]);
 
   useEffect(() => {

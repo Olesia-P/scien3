@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
-import css from '../styles/page-styles/faq.module.scss';
+import css from '@/styles/page-styles/faq.module.scss';
 import CollapsableBlock from '@/components/ui/collapsable-block/collapsable-block';
 import { textFaq } from '@/texts/text-faq';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function Faq() {
-  const { language } = useSelector(({ language }: RootState) => language);
-
+  const language = useLanguage();
   const { mainHeader, questionCards } = textFaq[language];
 
   const [isObserved, setIsObserved] = useState(false);
@@ -43,4 +41,18 @@ export default function Faq() {
       </div>
     </main>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }

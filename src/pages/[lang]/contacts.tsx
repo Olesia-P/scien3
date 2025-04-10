@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
-import css from '../styles/page-styles/contacts.module.scss';
+import css from '@/styles/page-styles/contacts.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textContactsPage } from '@/texts/text-contacts-page';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
 import useMediaQuery from '@/hooks/use-media-query';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function Contacts() {
-  const { language } = useSelector(({ language }: RootState) => language);
-
+  const language = useLanguage();
   const { mainHeader, illustrationAlt } = textContactsPage[language];
   const [isObserved, setIsObserved] = useState(false);
   const contactsPageRef = useIntersectionObserver(
@@ -47,4 +45,18 @@ export default function Contacts() {
       </div>
     </main>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }

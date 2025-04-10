@@ -1,12 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
 import { textSerialProduction } from '@/texts/services/text-serial-production';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function SerialProduction() {
-  const { language } = useSelector(({ language }: RootState) => language);
+  const language = useLanguage();
 
   const { content, backgroundStyle } =
     textSerialProduction[language].forWrapper;
@@ -33,4 +32,18 @@ export default function SerialProduction() {
       <ServiceInfoBlock {...whyNot3Dprinting} headerLevel={2} listWithIcon />
     </SingleServiceLayout>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }

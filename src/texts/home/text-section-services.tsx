@@ -2,25 +2,25 @@ const ua = {
   services: [
     {
       name: '3D моделювання',
-      link: '/services/modeling-3D',
+      link: '/ua/services/modeling-3D',
       img: '/services/3d-modeling.jpg',
       alt: '3D моделювання.',
     },
     {
       name: 'Серійне лиття',
-      link: '/services/serial-production',
+      link: '/ua/services/serial-production',
       img: '/services/serial-production.jpg',
       alt: 'Серійне лиття пластикових виробів.',
     },
     {
       name: '3D друк',
-      link: '/services/printing-3D',
+      link: '/ua/services/printing-3D',
       img: '/services/3d-printer.jpg',
       alt: '3D-принтер.',
     },
     {
       name: 'Форми для лиття',
-      link: '/services/molds',
+      link: '/ua/services/molds',
       img: '/services/silicone-mold.jpg',
       alt: 'Силіконова форма для лиття.',
     },
@@ -50,25 +50,25 @@ const en = {
   services: [
     {
       name: '3D modeling',
-      link: '/services/modeling-3D',
+      link: '/en/services/modeling-3D',
       img: '/services/3d-modeling.jpg',
       alt: '3D modeling.',
     },
     {
       name: 'Serial casting',
-      link: '/services/serial-production',
+      link: '/en/services/serial-production',
       img: '/services/serial-production.jpg',
       alt: 'Serial production casting of plastic products.',
     },
     {
       name: '3D printing',
-      link: '/services/printing-3D',
+      link: '/en/services/printing-3D',
       img: '/services/3d-printer.jpg',
       alt: '3D printer.',
     },
     {
       name: 'Molds for casting',
-      link: '/services/molds',
+      link: '/en/services/molds',
       img: '/services/silicone-mold.jpg',
       alt: 'Silicone mold for casting.',
     },

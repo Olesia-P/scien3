@@ -1,16 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import ServiceInfoBlock from '@/components/services-components/service-info-block/service-info-block';
 import SingleServiceLayout from '@/components/services-components/single-service-layout/single-service-layout';
 import { textPrinting3D } from '@/texts/services/text-printing-3D';
-import css from '../../styles/page-styles/printing-3D.module.scss';
+import css from '@/styles/page-styles/printing-3D.module.scss';
 import Table from '@/components/services-components/table/table';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function Printing3D() {
-  const { language } = useSelector(({ language }: RootState) => language);
-
+  const language = useLanguage();
   const { content, backgroundStyle } = textPrinting3D[language].forWrapper;
   const {
     howItWorks,
@@ -54,4 +52,18 @@ export default function Printing3D() {
       </a>
     </SingleServiceLayout>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }

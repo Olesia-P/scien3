@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
 import css from './section-services.module.scss';
 import { textSectionServices } from '@/texts/home/text-section-services';
 import ServicesDescription from './services-description/services-description';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import CardItem from './card-item/card-item';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function SectionServices() {
-  const { language } = useSelector(({ language }: RootState) => language);
+  const language = useLanguage();
   const { services, header, ourBenefitsList } = textSectionServices[language];
   const [isCardObserved, setIsCardObserved] = useState(false);
 

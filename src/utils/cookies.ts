@@ -15,11 +15,19 @@ export const setCookie = (key: string, value: string, days: number) => {
   document.cookie = `${key}=${value}; expires=${expires.toUTCString()}; path=/`;
 };
 
-export const getCookie = (key: string): string | null => {
-  return (
-    document.cookie
-      .split('; ')
-      .find((row) => row.startsWith(`${key}=`))
-      ?.split('=')[1] || null
-  );
+export const setCookieHeader = (key: string, value: string, days: number) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${key}=${value}; expires=${expires.toUTCString()}; path=/`;
+
+  return `${key}=${value}; expires=${expires.toUTCString()}; path=/`;
 };
+
+// export const getCookie = (key: string): string | null => {
+//   return (
+//     document.cookie
+//       .split('; ')
+//       .find((row) => row.startsWith(`${key}=`))
+//       ?.split('=')[1] || null
+//   );
+// };

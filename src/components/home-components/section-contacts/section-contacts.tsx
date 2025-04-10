@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
 import css from './section-contacts.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textConstactsSectionHomePage } from '@/texts/home/text-section-contacts';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function SectionContacts() {
-  const { language } = useSelector(({ language }: RootState) => language);
+  const language = useLanguage();
 
   const {
     header,

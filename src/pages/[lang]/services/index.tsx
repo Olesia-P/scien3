@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import css from '../../styles/page-styles/services.module.scss';
+import css from '@/styles/page-styles/services.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textServicesPage } from '@/texts/services/text-services-page';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 export default function Services() {
-  const { language } = useSelector(({ language }: RootState) => language);
-
+  const language = useLanguage();
   const { header, services, leftPictureAlt, rightPictureAlt } =
     textServicesPage[language];
 
@@ -36,7 +34,7 @@ export default function Services() {
   return (
     <main className={css.container} ref={ref}>
       <img
-        src="services/left-curtain.png"
+        src="/services/left-curtain.png"
         className={cx(
           css.illustrationLeft,
           isImageLoaded && isObserved && css.animated,
@@ -64,7 +62,7 @@ export default function Services() {
       </div>
 
       <img
-        src="services/right-curtain.png"
+        src="/services/right-curtain.png"
         className={cx(
           css.illustrationRight,
           isImageLoaded && isObserved && css.animated,
@@ -75,4 +73,18 @@ export default function Services() {
       />
     </main>
   );
+}
+
+export async function getStaticPaths() {
+  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
 }

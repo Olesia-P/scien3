@@ -2,27 +2,27 @@ const ua = {
   navlinks: [
     {
       name: 'про нас',
-      link: '/',
+      link: '/ua',
       hasDropdown: false,
     },
     {
       name: 'послуги',
-      link: '/services',
+      link: '/ua/services',
       hasDropdown: true,
     },
     {
       name: 'роботи',
-      link: '/works',
+      link: '/ua/works',
       hasDropdown: false,
     },
     {
       name: 'FAQ',
-      link: '/faq',
+      link: '/ua/faq',
       hasDropdown: false,
     },
     {
       name: 'контакти',
-      link: '/contacts',
+      link: '/ua/contacts',
       hasDropdown: false,
     },
   ],
@@ -30,19 +30,19 @@ const ua = {
   dropdownLinks: [
     {
       name: '3D моделювання',
-      link: '/services/modeling-3D',
+      link: '/ua/services/modeling-3D',
     },
     {
       name: 'Серійне лиття',
-      link: '/services/serial-production',
+      link: '/ua/services/serial-production',
     },
     {
       name: '3D друк',
-      link: '/services/printing-3D',
+      link: '/ua/services/printing-3D',
     },
     {
       name: 'Форми для лиття',
-      link: '/services/molds',
+      link: '/ua/services/molds',
     },
   ],
 };
@@ -51,27 +51,27 @@ const en = {
   navlinks: [
     {
       name: 'about us',
-      link: '/',
+      link: '/en',
       hasDropdown: false,
     },
     {
       name: 'services',
-      link: '/services',
+      link: '/en/services',
       hasDropdown: true,
     },
     {
       name: 'works',
-      link: '/works',
+      link: '/en/works',
       hasDropdown: false,
     },
     {
       name: 'FAQ',
-      link: '/faq',
+      link: '/en/faq',
       hasDropdown: false,
     },
     {
       name: 'contacts',
-      link: '/contacts',
+      link: '/en/contacts',
       hasDropdown: false,
     },
   ],
@@ -79,19 +79,19 @@ const en = {
   dropdownLinks: [
     {
       name: '3D modeling',
-      link: '/services/modeling-3D',
+      link: '/en/services/modeling-3D',
     },
     {
       name: 'Serial production',
-      link: '/services/serial-production',
+      link: '/en/services/serial-production',
     },
     {
       name: '3D printing',
-      link: '/services/printing-3D',
+      link: '/en/services/printing-3D',
     },
     {
       name: 'Casting molds',
-      link: '/services/molds',
+      link: '/en/services/molds',
     },
   ],
 };

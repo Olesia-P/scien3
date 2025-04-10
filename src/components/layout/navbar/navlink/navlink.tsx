@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
-import { useSelector } from 'react-redux';
 import useMouseOutsideClose from '@/hooks/use-mouse-outside-close';
 import { textNavbar } from '@/texts/layout/text-navbar';
 import css from './navlink.module.scss';
 import DropdownMenu from '@/components/ui/dropdown-menu/dropdown-menu';
-import { RootState } from '@/store/store';
+import { useLanguage } from '@/hooks/use-language';
 
 type NavlinkProps = {
   navlink: {
@@ -18,18 +17,16 @@ type NavlinkProps = {
 };
 
 export default function Navlink({ navlink }: NavlinkProps) {
-  const { language } = useSelector(({ language }: RootState) => language);
-
-  const router = useRouter();
-
+  const language = useLanguage();
   const { dropdownLinks } = textNavbar[language];
-
   const [isServicesMenuOpen, setIsServicesMenuOpen] = useState(false);
 
   const refServicesMenu = useMouseOutsideClose(
     setIsServicesMenuOpen,
     isServicesMenuOpen,
   );
+
+  const router = useRouter();
 
   const createNavlinkAttributes = () => {
     const className = cx(
