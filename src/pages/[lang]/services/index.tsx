@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import Link from 'next/link';
 import cx from 'classnames';
@@ -12,24 +12,24 @@ export default function Services() {
   const { header, services, leftPictureAlt, rightPictureAlt } =
     textServicesPage[language];
 
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+  // const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [isObserved, setIsObserved] = useState(false);
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  };
+  // const handleImageLoad = () => {
+  //   setIsImageLoaded(true);
+  // };
 
   const ref = useIntersectionObserver(() => setIsObserved(true), undefined, 0);
 
-  useEffect(() => {
-    const allImages = document.querySelectorAll('img');
-    const areAllImagesLoaded = Array.from(allImages).every(
-      (img) => img.complete,
-    );
+  // useEffect(() => {
+  //   const allImages = document.querySelectorAll('img');
+  //   const areAllImagesLoaded = Array.from(allImages).every(
+  //     (img) => img.complete,
+  //   );
 
-    if (areAllImagesLoaded) {
-      setIsImageLoaded(true);
-    }
-  }, []);
+  //   if (areAllImagesLoaded) {
+  //     setIsImageLoaded(true);
+  //   }
+  // }, []);
 
   return (
     <main className={css.container} ref={ref}>
@@ -37,11 +37,13 @@ export default function Services() {
         src="/services/left-curtain.png"
         className={cx(
           css.illustrationLeft,
-          isImageLoaded && isObserved && css.animated,
+          // isImageLoaded
+          // &&
+          isObserved && css.animated,
         )}
         alt={leftPictureAlt}
         aria-hidden="true"
-        onLoad={handleImageLoad}
+        // onLoad={handleImageLoad}
       />
 
       <div className={css.content}>
@@ -65,11 +67,12 @@ export default function Services() {
         src="/services/right-curtain.png"
         className={cx(
           css.illustrationRight,
-          isImageLoaded && isObserved && css.animated,
+          // isImageLoaded &&
+          isObserved && css.animated,
         )}
         alt={rightPictureAlt}
         aria-hidden="true"
-        onLoad={handleImageLoad}
+        // onLoad={handleImageLoad}
       />
     </main>
   );

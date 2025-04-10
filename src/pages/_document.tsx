@@ -30,6 +30,14 @@ export default function Document() {
       <link rel="preload" as="image" href="/intro/intro-scene.jpg" />
       <link rel="preload" as="image" href="/services/left-curtain.png" />
       <link rel="preload" as="image" href="/services/right-curtain.png" />
+      <link rel="preload" as="image" href="/services/bw-3d-modeling.png" />
+      <link rel="preload" as="image" href="/services/bw-3d-printer.png" />
+      <link
+        rel="preload"
+        as="image"
+        href="/services/bw-serial-production.png"
+      />
+      <link rel="preload" as="image" href="/services/bw-silicone-mold.png" />
       <link rel="preload" as="image" href="/contacts/building-model.jpeg" />
       <body>
         <Main />
