@@ -4,6 +4,12 @@
     background-color: $grey;
     color: $white;
     padding: 3rem 0;
+
+    @supports (background-image: image-set(url("/marketing/chess.webp") type("image/webp"))) {
+        background-image: image-set(url("/marketing/chess.webp") type("image/webp"),
+                url("/marketing/chess.jpeg") type("image/jpeg"));
+    }
+
     background-image: url("/marketing/chess.jpeg");
     background-size: cover;
     @include dfcc;

@@ -20,7 +20,7 @@ export default function SectionMarketing() {
     0.2,
   );
 
-  const images = statements.map(({ img, alt }) => ({ img, alt }));
+  const images = statements.map(({ img, webp, alt }) => ({ img, webp, alt }));
 
   return (
     <section className={css.container} ref={marketingSectionRef}>
@@ -32,10 +32,12 @@ export default function SectionMarketing() {
         {statements.map((statement) => (
           <li className={css.statementCard} key={statement.question}>
             <img
+              srcSet={`${statement.webp}, 300w`}
               src={statement.img}
               alt={statement.alt}
               className={css.statementIllustration}
               loading="lazy"
+              sizes="10vw"
             />
             <article>
               <h3 className={css.question}>&#128269; {statement.question}</h3>
