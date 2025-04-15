@@ -35,6 +35,7 @@ export default function SectionMarketing() {
               src={statement.img}
               alt={statement.alt}
               className={css.statementIllustration}
+              loading="lazy"
             />
             <article>
               <h3 className={css.question}>&#128269; {statement.question}</h3>
