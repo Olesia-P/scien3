@@ -24,7 +24,7 @@ export default function SectionIntro() {
   );
 
   // eslint-disable-next-line no-console
-  console.log(window.devicePixelRatio);
+  // console.log(window.devicePixelRatio);
 
   return (
     <div className={css.container} ref={introSectionRef}>
