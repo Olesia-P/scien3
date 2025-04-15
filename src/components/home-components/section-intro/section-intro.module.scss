@@ -12,13 +12,13 @@
             rgba(16, 21, 27, 1) 100%);
 
     .mainContent {
-        .illustrationLarge {
+        .illustration {
             width: 100%;
         }
 
-        .illustrationSmall {
-            display: none;
-        }
+        // .illustrationSmall {
+        //     display: none;
+        // }
 
         .listLimit {
             max-width: $content-width-main;
@@ -86,16 +86,24 @@
             grid-template-columns: 50% 50%;
             padding: 1rem 0;
 
-            .illustrationLarge {
-                display: none;
-            }
+            // .illustrationLarge {
+            //     display: none;
+            // }
 
-            .illustrationSmall {
+            // .illustrationSmall {
+            //     display: block;
+            //     width: 80%;
+            //     align-self: center;
+            //     padding: 1rem;
+            // }
+            .illustration {
                 display: block;
                 width: 80%;
                 align-self: center;
                 padding: 1rem;
             }
+
+
 
             .listLimit {
                 align-self: center;
@@ -120,7 +128,12 @@
             flex-direction: column-reverse;
             overflow: hidden;
 
-            .illustrationSmall {
+            // .illustrationSmall {
+            //     width: 20rem;
+            //     max-width: 95%;
+            //     @include transitionSlideDown;
+            // }
+            .illustration {
                 width: 20rem;
                 max-width: 95%;
                 @include transitionSlideDown;
