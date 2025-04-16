@@ -20,19 +20,32 @@ export default function Contacts() {
 
   return (
     <main className={css.container} ref={contactsPageRef}>
-      {isLargeScreen ? (
-        <img
-          src="/contacts/building-model.jpeg"
-          className={cx(css.illustration, isObserved && css.animated)}
-          alt={illustrationAlt}
+      <picture>
+        <source
+          media="(max-width: 400px)"
+          srcSet="
+            /contacts/building_model_400.webp 400w, 
+            /contacts/building_model_400.jpeg 400w"
         />
-      ) : (
-        <img
-          src="/contacts/building-model-mobile.jpeg"
-          className={cx(css.illustration, isObserved && css.animated)}
-          alt={illustrationAlt}
+        <source
+          media="(max-width: 1024px)"
+          srcSet="
+            /contacts/building_model_1106.webp 1106w, 
+            /contacts/building_model_1106.jpeg 1106w"
         />
-      )}
+        <source
+          media="(min-width: 1024px)"
+          srcSet="
+            /contacts/building_model_1792.webp 1792w, 
+            /contacts/building_model_1792.jpeg 1792w"
+        />
+
+        <img
+          src="/contacts/building_model_1792.jpeg"
+          alt={illustrationAlt}
+          className={cx(css.illustration, isObserved && css.animated)}
+        />
+      </picture>
 
       <h1>
         <span aria-hidden="true">|</span>

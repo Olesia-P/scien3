@@ -75,7 +75,7 @@ const en = {
       {
         name: 'Instagram',
         link: 'https://www.instagram.com/3d_scien3_ua?igsh=dDQ1OWxia29jaXpu',
-        icon: 'icons/instagram_icon.svg',
+        icon: '/icons/instagram_icon.svg',
         alt: 'instagram icon',
       },
     ],
