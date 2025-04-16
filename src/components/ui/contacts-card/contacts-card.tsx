@@ -61,7 +61,6 @@ export default function ContactsCard({
                 isLink={false}
                 isBlue
                 icon={email.icon}
-                iconWebp={email.iconWebp}
               />
             </button>
           </li>
@@ -74,7 +73,6 @@ export default function ContactsCard({
               isLink={!isLargeScreen}
               link={`tel:${phone.number}`}
               icon={phone.icon}
-              iconWebp={phone.iconWebp}
             />
           </li>
 
@@ -86,7 +84,6 @@ export default function ContactsCard({
                 text={contact.text}
                 isLink={false}
                 icon={contact.icon}
-                iconWebp={contact.iconWebp}
               />
             </li>
           ))}

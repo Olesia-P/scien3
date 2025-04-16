@@ -13,9 +13,9 @@ export default function ImageMarquee({ images }: ImageMarqueeProps) {
           <img
             srcSet={image.webp}
             src={image.img}
-            loading="lazy"
             alt={image.alt}
             key={Math.random()}
+            loading="lazy"
           />
         ))}
       </div>

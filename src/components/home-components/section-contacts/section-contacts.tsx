@@ -87,6 +87,7 @@ export default function SectionContacts() {
             alt=""
             role="presentation"
             aria-hidden="true"
+            loading="lazy"
           />
         </div>
 

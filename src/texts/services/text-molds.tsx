@@ -8,7 +8,8 @@ const ua = {
           'Форми для лиття — це важливий інструмент у серійному виробництві. Ми пропонуємо два найбільш поширені типи форм — силіконові та поліуретанові. Кожен із них має свої переваги, сферу застосування та особливості виготовлення.',
       },
       img: {
-        link: '/services/molds.jpeg',
+        img: '/services/molds.jpeg',
+        webp: '/services/molds.webp',
         alt: 'Форми для лиття на столі.',
       },
     },
@@ -142,7 +143,8 @@ const en = {
           'Molds are essential tools in serial production. We offer two of the most common types of molds — silicone and polyurethane. Each has its own advantages, areas of application, and manufacturing characteristics.',
       },
       img: {
-        link: '/services/molds.jpeg',
+        img: '/services/molds.jpeg',
+        webp: '/services/molds.webp',
         alt: 'Molds on a table.',
       },
     },

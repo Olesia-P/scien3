@@ -8,7 +8,6 @@ type BaseContactProps = {
   text: string;
   isBlue?: boolean;
   icon: string;
-  iconWebp: string;
 };
 
 type SingleContactProps =
@@ -22,7 +21,6 @@ export default function SingleContact({
   link,
   isBlue,
   icon,
-  iconWebp,
 }: SingleContactProps) {
   const renderLink = (children: React.ReactNode) => {
     return (
@@ -43,13 +41,7 @@ export default function SingleContact({
   };
 
   return (
-    <span
-      className={css.container}
-      style={{
-        ...cssIconUrlVariable(icon),
-        ...cssIconUrlVariable(iconWebp, 'webp-icon'),
-      }}
-    >
+    <span className={css.container} style={cssIconUrlVariable(icon)}>
       {isLink && renderLink(renderInfo())}
       {!isLink && renderInfo()}
     </span>

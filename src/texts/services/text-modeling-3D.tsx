@@ -8,7 +8,8 @@ const ua = {
           "Створення 3D-моделі (або 3D-дизайн) - це процес розробки за допомогою комп'ютерної графіки комплексної цифрової тривимірної моделі майбутнього виробу. ",
       },
       img: {
-        link: '/services/3D-modeling-process.jpeg',
+        img: '/services/3D_modeling_process.jpeg',
+        webp: '/services/3D_modeling_process.webp',
         alt: "Монітор комп'ютера із зображенням 3D моделі дрона.",
       },
     },
@@ -80,7 +81,8 @@ const en = {
           'Creating a 3D model (or 3D design) is the process of developing a complex digital three-dimensional model of a future product using computer graphics.',
       },
       img: {
-        link: '/services/3D-modeling-process.jpeg',
+        img: '/services/3D_modeling_process.jpeg',
+        webp: '/services/3D_modeling_process.webp',
         alt: 'Computer monitor with an image of a 3D model of a drone.',
       },
     },

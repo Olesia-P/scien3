@@ -5,8 +5,8 @@ export const createHeaderTag = (headerSize: number) => {
   throw new Error('headerType must be between 1 and 5');
 };
 
-export const cssIconUrlVariable = (iconUrl: string, name: string = 'icon') => {
+export const cssIconUrlVariable = (iconUrl: string) => {
   return {
-    [`--${name}-url`]: `url(${iconUrl})`,
+    '--icon-url': `url(${iconUrl})`,
   } as React.CSSProperties;
 };

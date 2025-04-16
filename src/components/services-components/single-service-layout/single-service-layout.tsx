@@ -19,7 +19,8 @@ type SingleServiceLayoutProps = {
       description: string | React.JSX.Element;
     };
     img: {
-      link: string;
+      img: string;
+      webp: string;
       alt: string;
     };
   };
@@ -78,7 +79,8 @@ export default function SingleServiceLayout({
           {content.main.header}
         </h1>
         <img
-          src={content.img.link}
+          srcSet={`${content.img.webp}`}
+          src={content.img.img}
           alt={content.img.alt}
           className={cx(css.illustration, isObserved && css.animated)}
         />

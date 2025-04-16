@@ -76,30 +76,35 @@ $border: 2px solid $white;
         }
     }
 
-    .illustrationLeft,
-    .illustrationRight {
+    picture {
         height: 100vh;
-        position: absolute;
-        border: $border;
-    }
 
-    .illustrationLeft {
-        transition: right 1.2s ease-in-out;
-        right: 83%;
+        .illustrationLeft,
+        .illustrationRight {
+            height: 100vh;
+            position: absolute;
+            border: $border;
+        }
 
-        &.animated {
-            right: 73%;
+        .illustrationLeft {
+            transition: right 1.2s ease-in-out;
+            right: 83%;
+
+            &.animated {
+                right: 73%;
+            }
+        }
+
+        .illustrationRight {
+            transition: left 1.2s ease-in-out;
+            left: 83%;
+
+            &.animated {
+                left: 73%;
+            }
         }
     }
 
-    .illustrationRight {
-        transition: left 1.2s ease-in-out;
-        left: 83%;
-
-        &.animated {
-            left: 73%;
-        }
-    }
 }
 
 @include laptop {
@@ -160,7 +165,13 @@ $border: 2px solid $white;
 
 @include tablet {
     .container {
-        background-image: url("/services/workshop.jpeg");
+
+        @supports (background-image: image-set(url("/services/workshop_tablet.webp") type("image/webp"))) {
+            background-image: image-set(url("/services/workshop_tablet.webp") type("image/webp"),
+                    url("/services/workshop_tablet.jpeg") type("image/jpeg"));
+        }
+
+        background-image: url("/services/workshop_tablet.jpeg");
         background-position: center;
 
         .illustrationLeft,
@@ -234,6 +245,14 @@ $border: 2px solid $white;
 
 @include mobile {
     .container {
+        @supports (background-image: image-set(url("/services/workshop_mobile.webp") type("image/webp"))) {
+            background-image: image-set(url("/services/workshop_mobile.webp") type("image/webp"),
+                    url("/services/workshop_mobile.jpeg") type("image/jpeg"));
+        }
+
+        background-image: url("/services/workshop_mobile.jpeg");
+        background-position: center;
+
         .content {
             .linksWrap {
                 li {

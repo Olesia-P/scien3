@@ -34,22 +34,18 @@ const ua = {
     {
       text: 'Пропонуємо якісні послуги лиття із пластмас під низьким тиском.',
       icon: '/icons/drop_icon.png',
-      iconWebp: '/icons/drop_icon.webp',
     },
     {
       text: 'Забезпечуємо повний цикл: від вашої креативної ідеї до її повного втілення та виробництва.',
       icon: '/icons/arrows_icon.png',
-      iconWebp: '/icons/arrows_icon.webp',
     },
     {
       text: 'Маємо ґрунтовний досвід та широку спеціалізацію, від дослідних зразків для вузькопрофільного застосування до комплексних розробок нових виробів.',
       icon: '/icons/medal_icon.png',
-      iconWebp: '/icons/medal_icon.webp',
     },
     {
       text: 'Використовуємо індивідуальний підхід до кожного замовника, врахуємо всі ваші інтереси.',
       icon: '/icons/angled_ball_icon.png',
-      iconWebp: '/icons/angled_ball_icon.webp',
     },
   ],
 };
@@ -90,22 +86,18 @@ const en = {
     {
       text: 'We offer high-quality low-pressure plastic casting services.',
       icon: '/icons/drop_icon.png',
-      iconWebp: '/icons/drop_icon.webp',
     },
     {
       text: 'We provide a full cycle: from your creative idea to its complete realization and production.',
       icon: '/icons/arrows_icon.png',
-      iconWebp: '/icons/arrows_icon.webp',
     },
     {
       text: 'We have extensive experience and a broad specialization, from prototype samples for niche applications to complex new product developments.',
       icon: '/icons/medal_icon.png',
-      iconWebp: '/icons/medal_icon.webp',
     },
     {
       text: 'We take an individual approach to each client, considering all your needs.',
       icon: '/icons/angled_ball_icon.png',
-      iconWebp: '/icons/angled_ball_icon.webp',
     },
   ],
 };

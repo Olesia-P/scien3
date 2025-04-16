@@ -33,12 +33,6 @@
 
             &::before {
                 content: ' ';
-
-                @supports (background-image: image-set(var(--webp-icon-url) type("image/webp"))) {
-                    background-image: image-set(var(--webp-icon-url) type("image/webp"),
-                            var(--icon-url) type("image/jpeg"));
-                }
-
                 background-image: var(--icon-url);
                 position: absolute;
                 height: 1.5em;

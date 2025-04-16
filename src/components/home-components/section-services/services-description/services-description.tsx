@@ -9,7 +9,6 @@ type ServicesDescriptionProps = {
   ourBenefitsList: {
     text: string;
     icon: string;
-    iconWebp: string;
   }[];
 };
 
@@ -34,13 +33,7 @@ export default function ServicesDescription({
       </h2>
       <ul className={cx(css.descriptionList, isObserved && css.animated)}>
         {ourBenefitsList.map((benefit) => (
-          <li
-            key={benefit.icon}
-            style={{
-              ...cssIconUrlVariable(benefit.icon),
-              ...cssIconUrlVariable(benefit.iconWebp, 'webp-icon'),
-            }}
-          >
+          <li key={benefit.icon} style={cssIconUrlVariable(benefit.icon)}>
             <p>{benefit.text}</p>
           </li>
         ))}

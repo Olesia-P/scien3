@@ -28,6 +28,7 @@ export default function SocialMedia({ header, list }: SocialMediaProps) {
               className={css.mediaIcon}
               aria-hidden="true"
               alt={mediaItem.alt}
+              loading="lazy"
             />
             {mediaItem.name}
           </a>

@@ -15,7 +15,8 @@ const ua = {
         ),
       },
       img: {
-        link: '/services/buttons.jpg',
+        img: '/services/buttons.jpg',
+        webp: '/services/buttons.webp',
         alt: "Кнопки комп'ютерної клавіатури, розсипані на столі.",
       },
     },
@@ -146,7 +147,8 @@ const en = {
         ),
       },
       img: {
-        link: '/services/buttons.jpg',
+        img: '/services/buttons.jpg',
+        webp: '/services/buttons.webp',
         alt: 'Computer keyboard buttons scattered on a desk.',
       },
     },

@@ -33,18 +33,27 @@ export default function Services() {
 
   return (
     <main className={css.container} ref={ref}>
-      <img
-        src="/services/left-curtain.png"
-        className={cx(
-          css.illustrationLeft,
-          // isImageLoaded
-          // &&
-          isObserved && css.animated,
-        )}
-        alt={leftPictureAlt}
-        aria-hidden="true"
-        // onLoad={handleImageLoad}
-      />
+      <picture>
+        <source
+          media="(min-width: 1600px)"
+          srcSet="
+            /services/left_curtain_776.webp 776w, 
+            /services/left_curtain_776.jpeg 776w"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="
+            /services/left_curtain_582.webp 582w, 
+            /services/left_curtain_582.jpeg 582w"
+        />
+
+        <img
+          src="/services/left_curtain_776.jpeg"
+          alt={leftPictureAlt}
+          className={cx(css.illustrationLeft, isObserved && css.animated)}
+          aria-hidden="true"
+        />
+      </picture>
 
       <div className={css.content}>
         <h1 className={cx(isObserved && css.animated)}>{header}</h1>
@@ -53,7 +62,11 @@ export default function Services() {
           {services.map((service) => (
             <li key={service.name} className={cx(isObserved && css.animated)}>
               <Link href={service.link} className={css.link}>
-                <img src={service.img} alt={service.alt} />
+                <img
+                  srcSet={`${service.webp}`}
+                  src={service.img}
+                  alt={service.alt}
+                />
                 {service.name} <FaArrowRightLong />
               </Link>
             </li>
@@ -62,18 +75,27 @@ export default function Services() {
 
         <div className={css.adding}> </div>
       </div>
+      <picture>
+        <source
+          media="(min-width: 1600px)"
+          srcSet="
+            /services/right_curtain_1016.webp 1016w, 
+            /services/right_curtain_1016.jpeg 1016w"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="
+            /services/right_curtain_762.webp 762w, 
+            /services/right_curtain_762.jpeg 762w"
+        />
 
-      <img
-        src="/services/right-curtain.png"
-        className={cx(
-          css.illustrationRight,
-          // isImageLoaded &&
-          isObserved && css.animated,
-        )}
-        alt={rightPictureAlt}
-        aria-hidden="true"
-        // onLoad={handleImageLoad}
-      />
+        <img
+          src="/services/right_curtain_1016.jpeg"
+          alt={rightPictureAlt}
+          className={cx(css.illustrationRight, isObserved && css.animated)}
+          aria-hidden="true"
+        />
+      </picture>
     </main>
   );
 }

@@ -71,17 +71,17 @@ export default function ServiceInfoBlock({
   const decideIcon = () => {
     switch (nestedListIcon) {
       case 'laptop':
-        return '/icons/laptop-icon.png';
+        return '/icons/laptop_icon.png';
       case 'rocket':
-        return '/icons/rocket-icon.png';
+        return '/icons/rocket_icon.png';
       case 'cup':
-        return '/icons/stationary-cup-icon.png';
+        return '/icons/stationary_cup_icon.png';
       case 'pouring':
-        return '/icons/pouring-icon.png';
+        return '/icons/pouring_icon.png';
       case 'ball':
-        return '/icons/angled-ball-icon.png';
+        return '/icons/angled_ball_icon.png';
       default:
-        return '/icons/rocket-icon.png';
+        return '/icons/rocket_icon.png';
     }
   };
 

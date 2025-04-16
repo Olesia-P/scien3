@@ -9,7 +9,8 @@ const ua = {
           '3D-друк - це технологія створення фізичних об’єктів шляхом пошарового додавання матеріалу відповідно до цифрової моделі. Цей метод дозволяє швидко виготовляти прототипи, складні конструкції та навіть кінцеві продукти з різних матеріалів. ',
       },
       img: {
-        link: '/services/3D-printer-products.jpeg',
+        img: '/services/3D_printer_products.jpeg',
+        webp: '/services/3D_printer_products.webp',
         alt: '3D-принтер та вироблені ним вироби на столі.',
       },
     },
@@ -184,7 +185,8 @@ const en = {
           '3D printing is a technology for creating physical objects by adding material layer by layer according to a digital model. This method allows for quickly producing prototypes, complex structures, and even final products from various materials.',
       },
       img: {
-        link: '/services/3D-printer-products.jpeg',
+        img: '/services/3D_printer_products.jpeg',
+        webp: '/services/3D_printer_products.webp',
         alt: '3D printer and products made by it on a table.',
       },
     },
