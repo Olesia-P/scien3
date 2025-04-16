@@ -15,7 +15,7 @@
         .illustration {
             width: 100%;
             height: auto;
-            aspect-ratio: 275 / 128;
+
         }
 
         .listLimit {
@@ -45,7 +45,7 @@
 
                     &::before {
                         content: ' ';
-                        background-image: url("/icons/polygon-icon.png");
+                        background-image: url("/icons/polygon_icon.png");
                         position: absolute;
                         height: 1em;
                         width: 1em;
@@ -85,10 +85,11 @@
             padding: 1rem 0;
 
             .illustration {
-                display: block;
+
                 width: 80%;
                 align-self: center;
                 padding: 1rem;
+
             }
 
             .listLimit {

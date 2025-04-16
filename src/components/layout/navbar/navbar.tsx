@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
 import { IoMenu } from 'react-icons/io5';
-// import { useSelector } from 'react-redux';
 import css from './navbar.module.scss';
 import LangSwitch from './lang-switch/lang-switch';
 import { textContactInfo } from '@/texts/text-contact-info';
@@ -12,11 +11,9 @@ import MobileMenu from './mobile-menu/mobile-menu';
 import useMediaQuery from '@/hooks/use-media-query';
 import useClickOutsideClose from '@/hooks/use-outside-click-close';
 import Navlink from './navlink/navlink';
-// import { RootState } from '@/store/store';
 import { useLanguage } from '@/hooks/use-language';
 
 export default function Navbar() {
-  // const { language } = useSelector(({ language }: RootState) => language);
   const language = useLanguage();
   const { navlinks } = textNavbar[language];
   const { phone } = textContactInfo[language];
@@ -60,7 +57,7 @@ export default function Navbar() {
     <header className={css.shadowWrapper}>
       <nav className={css.container}>
         <Link href="/" className={css.logo}>
-          <img src="/logo-3d-small.png" alt="scien3 logo 3D" />
+          <img src="/logo_3d_small.png" alt="scien3 logo 3D" />
           <p>Scien3 Cast Creations</p>
         </Link>
 

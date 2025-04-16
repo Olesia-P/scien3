@@ -3,7 +3,6 @@ import cx from 'classnames';
 import css from './contacts-card.module.scss';
 import { textContactInfo } from '@/texts/text-contact-info';
 import useMediaQuery from '@/hooks/use-media-query';
-import { cssIconUrlVariable } from '@/utils/functions';
 import SingleContact from './single-contact/single-contact';
 import SocialMedia from '@/components/ui/contacts-card/social-media/social-media';
 import useCopyAndToast from '@/hooks/use-copy-and-toast';
@@ -52,7 +51,6 @@ export default function ContactsCard({
           {/* email */}
           <li
             className={css.singleContactWrap}
-            style={cssIconUrlVariable(email.icon)}
             onClick={() => copyText(email.text, email.toastMessageCopied)}
             title={clickToCopyBtnTitle}
           >
@@ -62,37 +60,38 @@ export default function ContactsCard({
                 text={email.text}
                 isLink={false}
                 isBlue
+                icon={email.icon}
+                iconWebp={email.iconWebp}
               />
             </button>
           </li>
 
           {/* phone */}
-          <li
-            className={css.singleContactWrap}
-            style={cssIconUrlVariable(phone.icon)}
-          >
+          <li className={css.singleContactWrap}>
             <SingleContact
               title={phone.title}
               text={phone.text}
               isLink={!isLargeScreen}
               link={`tel:${phone.number}`}
+              icon={phone.icon}
+              iconWebp={phone.iconWebp}
             />
           </li>
 
           {/* rest of the contacts */}
           {contactsList.map((contact) => (
-            <li
-              className={css.singleContactWrap}
-              key={contact.icon}
-              style={cssIconUrlVariable(contact.icon)}
-            >
+            <li className={css.singleContactWrap} key={contact.icon}>
               <SingleContact
                 title={contact.title}
                 text={contact.text}
                 isLink={false}
+                icon={contact.icon}
+                iconWebp={contact.iconWebp}
               />
             </li>
           ))}
+
+          {/* social media */}
           <li className={css.socialMediaBlock}>
             <SocialMedia header={socialMedia.header} list={socialMedia.list} />
           </li>

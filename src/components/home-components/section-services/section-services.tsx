@@ -31,7 +31,8 @@ export default function SectionServices() {
             <CardItem
               link={service.link}
               alt={service.alt}
-              imgSrc={service.img}
+              img={service.img}
+              webp={service.webp}
               text={service.name}
               key={service.name}
             />

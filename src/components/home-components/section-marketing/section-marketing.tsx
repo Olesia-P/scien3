@@ -32,12 +32,11 @@ export default function SectionMarketing() {
         {statements.map((statement) => (
           <li className={css.statementCard} key={statement.question}>
             <img
-              srcSet={`${statement.webp}, 300w`}
+              srcSet={statement.webp}
               src={statement.img}
               alt={statement.alt}
               className={css.statementIllustration}
               loading="lazy"
-              sizes="10vw"
             />
             <article>
               <h3 className={css.question}>&#128269; {statement.question}</h3>

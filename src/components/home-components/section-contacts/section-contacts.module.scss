@@ -36,18 +36,9 @@
         font-size: $font-size-16;
 
 
-        .desktopIllustration {
+        .illustration {
             width: 100%;
             align-self: center;
-        }
-
-        .tabletIllustration {
-            display: none;
-            @include transitionSlideRight;
-        }
-
-        .mobileIllustration {
-            display: none;
         }
 
         .bubbleWrap {
@@ -105,11 +96,7 @@
             font-size: $font-size-14;
             @include dfc;
 
-            .desktopIllustration {
-                display: none;
-            }
-
-            .tabletIllustration {
+            .illustration {
                 width: 14rem;
                 display: block;
                 opacity: .8;
@@ -141,11 +128,7 @@
             @include dfcc;
             gap: 0.7rem;
 
-            .tabletIllustration {
-                display: none;
-            }
-
-            .mobileIllustration {
+            .illustration {
                 display: block;
                 width: 14rem;
                 @include transitionScaleUp;
@@ -163,7 +146,7 @@
         padding: 2rem 0.5rem;
 
         .content {
-            .mobileIllustration {
+            .illustration {
                 width: 10rem;
             }
         }

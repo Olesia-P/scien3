@@ -1,12 +1,9 @@
 const ua = {
   header: 'Пишіть, дзвоніть та замовляйте!',
   headerCaption: 'Ми проконсультуємо та допоможемо з підбором матеріалів.',
-  speechBubble: {
-    caption: 'Ваші ідеї буде втілено!',
-    alt: '',
-  },
+  speechBubble: 'Ваші ідеї буде втілено!',
   desktopIllustrationAlt: 'Двоє людей обговорюють бізнес угоду.',
-  tabletIllustrationAlt: 'Бізнесмен говорить по телефону.',
+  laptopIllustrationAlt: 'Бізнесмен говорить по телефону.',
   mobileIllustrationAlt:
     'Картонна коробка із деталями, виробленими з пластику.',
 };
@@ -14,12 +11,9 @@ const ua = {
 const en = {
   header: 'Message, call, and place your order!',
   headerCaption: 'We will consult you and help with material selection.',
-  speechBubble: {
-    caption: 'Your ideas will come to life!',
-    alt: '',
-  },
+  speechBubble: 'Your ideas will come to life!',
   desktopIllustrationAlt: 'Two people discussing a business deal.',
-  tabletIllustrationAlt: 'A businessman talking on the phone.',
+  laptopIllustrationAlt: 'A businessman talking on the phone.',
   mobileIllustrationAlt: 'A cardboard box with plastic parts inside.',
 };
 

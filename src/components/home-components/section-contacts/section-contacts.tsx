@@ -5,6 +5,7 @@ import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textConstactsSectionHomePage } from '@/texts/home/text-section-contacts';
 import ContactsCard from '@/components/ui/contacts-card/contacts-card';
 import { useLanguage } from '@/hooks/use-language';
+import useMediaQuery from '@/hooks/use-media-query';
 
 export default function SectionContacts() {
   const language = useLanguage();
@@ -14,7 +15,7 @@ export default function SectionContacts() {
     headerCaption,
     speechBubble,
     desktopIllustrationAlt,
-    tabletIllustrationAlt,
+    laptopIllustrationAlt,
     mobileIllustrationAlt,
   } = textConstactsSectionHomePage[language];
 
@@ -28,23 +29,17 @@ export default function SectionContacts() {
     0.1,
   );
 
-  const imgs = [
-    {
-      src: 'contacts/discussion.png',
-      alt: desktopIllustrationAlt,
-      classname: css.desktopIllustration,
-    },
-    {
-      src: 'contacts/phone-talking.png',
-      alt: tabletIllustrationAlt,
-      classname: cx(css.tabletIllustration, isObserved && css.animated),
-    },
-    {
-      src: 'contacts/box-with-stuff.png',
-      alt: mobileIllustrationAlt,
-      classname: cx(css.mobileIllustration, isObserved && css.animated),
-    },
-  ];
+  const isLargeScreen = useMediaQuery(1600);
+  const isLaptopScreen = useMediaQuery(768);
+  const chooseAlt = () => {
+    if (isLargeScreen) {
+      return desktopIllustrationAlt;
+    } else if (isLaptopScreen) {
+      return laptopIllustrationAlt;
+    } else {
+      return mobileIllustrationAlt;
+    }
+  };
 
   return (
     <section className={css.container} ref={contactsSectionRef}>
@@ -54,22 +49,43 @@ export default function SectionContacts() {
       </hgroup>
 
       <div className={css.content}>
-        {/* illustration */}
-        {imgs.map((img) => (
-          <img
-            src={img.src}
-            alt={img.alt}
-            className={img.classname}
-            key={img.src}
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="
+            /contacts/box_with_stuff_400.webp 400w, 
+            /contacts/box_with_stuff_400.png 400w,
+            /contacts/box_with_stuff_700.webp 700w, 
+            /contacts/box_with_stuff_700.png 700w"
+            sizes="60vw"
           />
-        ))}
+          <source
+            media="(max-width: 1600px)"
+            srcSet="
+            /contacts/phone_talking.webp,
+            /contacts/phone_talking.png"
+          />
+          <source
+            media="(min-width: 1600px)"
+            srcSet="
+            /contacts/discussion.webp,
+            /contacts/discussion.png"
+          />
+          <img
+            src="/contacts/discussion.png"
+            alt={chooseAlt()}
+            className={cx(css.illustration, isObserved && css.animated)}
+            loading="lazy"
+          />
+        </picture>
 
         {/* speech bubble img */}
         <div className={cx(css.bubbleWrap, isObserved && css.animated)}>
-          <p>{speechBubble.caption}</p>
+          <p>{speechBubble}</p>
           <img
-            src="contacts/speech-bubble.png"
-            alt={speechBubble.alt}
+            src="contacts/speech_bubble.png"
+            alt=""
+            role="presentation"
             aria-hidden="true"
           />
         </div>

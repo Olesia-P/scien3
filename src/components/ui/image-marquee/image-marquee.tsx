@@ -11,9 +11,8 @@ export default function ImageMarquee({ images }: ImageMarqueeProps) {
       <div className={css.marquee}>
         {images.map((image) => (
           <img
-            srcSet={`${image.webp}, 300w`}
+            srcSet={image.webp}
             src={image.img}
-            sizes="350vw"
             loading="lazy"
             alt={image.alt}
             key={Math.random()}

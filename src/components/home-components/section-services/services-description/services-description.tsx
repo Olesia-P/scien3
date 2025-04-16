@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import css from './services-description.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import { cssIconUrlVariable } from '@/utils/functions';
 
 type ServicesDescriptionProps = {
   header: string;
   ourBenefitsList: {
     text: string;
     icon: string;
+    iconWebp: string;
   }[];
 };
 
@@ -34,11 +36,10 @@ export default function ServicesDescription({
         {ourBenefitsList.map((benefit) => (
           <li
             key={benefit.icon}
-            style={
-              {
-                '--icon-url': `url(${benefit.icon})`,
-              } as React.CSSProperties
-            }
+            style={{
+              ...cssIconUrlVariable(benefit.icon),
+              ...cssIconUrlVariable(benefit.iconWebp, 'webp-icon'),
+            }}
           >
             <p>{benefit.text}</p>
           </li>

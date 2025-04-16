@@ -7,12 +7,19 @@ import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 type CardItemProps = {
   link: string;
-  imgSrc: string;
+  img: string;
+  webp: string;
   alt: string;
   text: string;
 };
 
-export default function CardItem({ link, imgSrc, alt, text }: CardItemProps) {
+export default function CardItem({
+  link,
+  img,
+  webp,
+  alt,
+  text,
+}: CardItemProps) {
   const [isCardItemObserved, setIsCardItemObserved] = useState(false);
 
   const cardItemRef = useIntersectionObserver<HTMLAnchorElement>(
@@ -26,7 +33,8 @@ export default function CardItem({ link, imgSrc, alt, text }: CardItemProps) {
       className={cx(css.link, isCardItemObserved && css.animated)}
       ref={cardItemRef}
     >
-      <img src={imgSrc} alt={alt} />
+      <img srcSet={webp} src={img} alt={alt} loading="lazy" />
+
       <h3 className={css.caption}>
         {text} <FaArrowRightLong />
       </h3>

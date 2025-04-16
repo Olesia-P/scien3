@@ -69,18 +69,14 @@ export default function LangSwitch({ fontSize }: SwitchProps) {
       >
         <div className={cx(css.switch, isSwitchedToEN && css.right)}>
           <img
-            src={
-              isSwitchedToEN
-                ? '/icons/united-kingdom-icon.png'
-                : '/icons/ukraine-icon.png'
-            }
+            src={isSwitchedToEN ? '/icons/en.png' : '/icons/ua.png'}
             alt={isSwitchedToEN ? chosenEnglish : chosenUkrainian}
           />
         </div>
 
         <div className={css.background}>
-          <img src="/icons/ukraine-icon.png" alt={switchToUkrainian} />
-          <img src="/icons/united-kingdom-icon.png" alt={switchToEnglish} />
+          <img src="/icons/ua.png" alt={switchToUkrainian} />
+          <img src="/icons/en.png" alt={switchToEnglish} />
         </div>
       </button>
       <div className={cx(css.caption, css[fontSize])}>en</div>

@@ -1,22 +1,19 @@
 import React from 'react';
 import cx from 'classnames';
 import css from './single-contact.module.scss';
+import { cssIconUrlVariable } from '@/utils/functions';
+
+type BaseContactProps = {
+  title: string;
+  text: string;
+  isBlue?: boolean;
+  icon: string;
+  iconWebp: string;
+};
 
 type SingleContactProps =
-  | {
-      title: string;
-      text: string;
-      isBlue?: boolean;
-      isLink: true;
-      link: string;
-    }
-  | {
-      title: string;
-      text: string;
-      isBlue?: boolean;
-      isLink: false;
-      link?: string;
-    };
+  | (BaseContactProps & { isLink: true; link: string })
+  | (BaseContactProps & { isLink: false; link?: string });
 
 export default function SingleContact({
   title,
@@ -24,6 +21,8 @@ export default function SingleContact({
   isLink,
   link,
   isBlue,
+  icon,
+  iconWebp,
 }: SingleContactProps) {
   const renderLink = (children: React.ReactNode) => {
     return (
@@ -44,7 +43,13 @@ export default function SingleContact({
   };
 
   return (
-    <span className={css.container}>
+    <span
+      className={css.container}
+      style={{
+        ...cssIconUrlVariable(icon),
+        ...cssIconUrlVariable(iconWebp, 'webp-icon'),
+      }}
+    >
       {isLink && renderLink(renderInfo())}
       {!isLink && renderInfo()}
     </span>

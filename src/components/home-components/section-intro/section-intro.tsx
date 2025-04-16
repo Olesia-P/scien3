@@ -68,7 +68,6 @@ export default function SectionIntro() {
             src="/intro/intro_scene_1400.jpg"
             alt={chooseAlt()}
             className={cx(css.illustration, isObserved && css.animated)}
-            fetchPriority="high"
             sizes="100vw"
           />
         </picture>
