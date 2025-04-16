@@ -2,7 +2,13 @@
 
 .container {
     padding-top: 3.5rem;
-    background-image: url("/works-faq/scattered-forms.jpeg");
+
+    @supports (background-image: image-set(url("/works_faq/scattered_forms_1792.webp") type("image/webp"))) {
+        background-image: image-set(url("/works_faq/scattered_forms_1792.webp") type("image/webp"),
+                url("/works_faq/scattered_forms_1792.jpeg") type("image/jpeg"));
+    }
+
+    background-image: url("/works_faq/scattered_forms_1792.jpeg");
     background-size: 100vw;
     overflow: hidden;
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
@@ -58,6 +64,17 @@
                 font-size: $font-size-24;
             }
         }
+    }
+}
+
+@include lowLaptop {
+    .container {
+        @supports (background-image: image-set(url("/works_faq/scattered_forms_1280.webp") type("image/webp"))) {
+            background-image: image-set(url("/works_faq/scattered_forms_1280.webp") type("image/webp"),
+                    url("/works_faq/scattered_forms_1280.jpeg") type("image/jpeg"));
+        }
+
+        background-image: url("/works_faq/scattered_forms_1280.jpeg");
     }
 }
 

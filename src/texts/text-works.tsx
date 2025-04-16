@@ -3,24 +3,78 @@ const ua = {
   caption: 'Більше робіт в нашому',
   alt: 'Зразок продукту лиття або 3D-друку.',
   images: [
-    '/works-faq/1.png',
-    '/works-faq/2.png',
-    '/works-faq/3.png',
-    '/works-faq/4.png',
-    '/works-faq/5.png',
-    '/works-faq/6.png',
-    '/works-faq/7.png',
-    '/works-faq/8.png',
-    '/works-faq/9.png',
-    '/works-faq/10.png',
-    '/works-faq/11.png',
-    '/works-faq/12.png',
-    '/works-faq/13.png',
-    '/works-faq/14.png',
-    '/works-faq/15.png',
-    '/works-faq/16.png',
-    '/works-faq/17.png',
-    '/works-faq/18.png',
+    {
+      img: '/works_faq/1.jpeg',
+      webp: '/works_faq/1.webp',
+    },
+    {
+      img: '/works_faq/2.jpeg',
+      webp: '/works_faq/2.webp',
+    },
+    {
+      img: '/works_faq/3.jpeg',
+      webp: '/works_faq/3.webp',
+    },
+    {
+      img: '/works_faq/4.jpeg',
+      webp: '/works_faq/4.webp',
+    },
+    {
+      img: '/works_faq/5.jpeg',
+      webp: '/works_faq/5.webp',
+    },
+    {
+      img: '/works_faq/6.jpeg',
+      webp: '/works_faq/6.webp',
+    },
+    {
+      img: '/works_faq/7.jpeg',
+      webp: '/works_faq/7.webp',
+    },
+    {
+      img: '/works_faq/8.jpeg',
+      webp: '/works_faq/8.webp',
+    },
+    {
+      img: '/works_faq/9.jpeg',
+      webp: '/works_faq/9.webp',
+    },
+    {
+      img: '/works_faq/10.jpeg',
+      webp: '/works_faq/10.webp',
+    },
+    {
+      img: '/works_faq/11.jpeg',
+      webp: '/works_faq/11.webp',
+    },
+    {
+      img: '/works_faq/12.jpeg',
+      webp: '/works_faq/12.webp',
+    },
+    {
+      img: '/works_faq/13.jpeg',
+      webp: '/works_faq/13.webp',
+    },
+    {
+      img: '/works_faq/14.jpeg',
+      webp: '/works_faq/14.webp',
+    },
+    {
+      img: '/works_faq/15.jpeg',
+      webp: '/works_faq/15.webp',
+    },
+    {
+      img: '/works_faq/16.jpeg',
+      webp: '/works_faq/16.webp',
+    },
+    {
+      img: '/works_faq/17.jpeg',
+      webp: '/works_faq/17.webp',
+    },
+    {
+      img: '/works_faq/18.jpeg',
+      webp: '/works_faq/18.webp',
+    },
   ],
 };
 
@@ -29,24 +83,78 @@ const en = {
   caption: 'More works in our',
   alt: 'Example of a casting or 3D printing product.',
   images: [
-    '/works-faq/1.png',
-    '/works-faq/2.png',
-    '/works-faq/3.png',
-    '/works-faq/4.png',
-    '/works-faq/5.png',
-    '/works-faq/6.png',
-    '/works-faq/7.png',
-    '/works-faq/8.png',
-    '/works-faq/9.png',
-    '/works-faq/10.png',
-    '/works-faq/11.png',
-    '/works-faq/12.png',
-    '/works-faq/13.png',
-    '/works-faq/14.png',
-    '/works-faq/15.png',
-    '/works-faq/16.png',
-    '/works-faq/17.png',
-    '/works-faq/18.png',
+    {
+      img: '/works_faq/1.jpeg',
+      webp: '/works_faq/1.webp',
+    },
+    {
+      img: '/works_faq/2.jpeg',
+      webp: '/works_faq/2.webp',
+    },
+    {
+      img: '/works_faq/3.jpeg',
+      webp: '/works_faq/3.webp',
+    },
+    {
+      img: '/works_faq/4.jpeg',
+      webp: '/works_faq/4.webp',
+    },
+    {
+      img: '/works_faq/5.jpeg',
+      webp: '/works_faq/5.webp',
+    },
+    {
+      img: '/works_faq/6.jpeg',
+      webp: '/works_faq/6.webp',
+    },
+    {
+      img: '/works_faq/7.jpeg',
+      webp: '/works_faq/7.webp',
+    },
+    {
+      img: '/works_faq/8.jpeg',
+      webp: '/works_faq/8.webp',
+    },
+    {
+      img: '/works_faq/9.jpeg',
+      webp: '/works_faq/9.webp',
+    },
+    {
+      img: '/works_faq/10.jpeg',
+      webp: '/works_faq/10.webp',
+    },
+    {
+      img: '/works_faq/11.jpeg',
+      webp: '/works_faq/11.webp',
+    },
+    {
+      img: '/works_faq/12.jpeg',
+      webp: '/works_faq/12.webp',
+    },
+    {
+      img: '/works_faq/13.jpeg',
+      webp: '/works_faq/13.webp',
+    },
+    {
+      img: '/works_faq/14.jpeg',
+      webp: '/works_faq/14.webp',
+    },
+    {
+      img: '/works_faq/15.jpeg',
+      webp: '/works_faq/15.webp',
+    },
+    {
+      img: '/works_faq/16.jpeg',
+      webp: '/works_faq/16.webp',
+    },
+    {
+      img: '/works_faq/17.jpeg',
+      webp: '/works_faq/17.webp',
+    },
+    {
+      img: '/works_faq/18.jpeg',
+      webp: '/works_faq/18.webp',
+    },
   ],
 };
 

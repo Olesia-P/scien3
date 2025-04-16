@@ -5,10 +5,11 @@ import useIntersectionObserver from '@/hooks/use-intersection-observer';
 
 type WorksImgCardProps = {
   img: string;
+  webp: string;
   alt: string;
 };
 
-export default function WorksImgCard({ img, alt }: WorksImgCardProps) {
+export default function WorksImgCard({ img, alt, webp }: WorksImgCardProps) {
   const [isWorksCardObserved, setIsWorksCardObserved] = useState(false);
 
   const worksCardRef = useIntersectionObserver<HTMLAnchorElement>(
@@ -23,7 +24,7 @@ export default function WorksImgCard({ img, alt }: WorksImgCardProps) {
       ref={worksCardRef}
     >
       <div className={css.imgLimit}>
-        <img src={img} alt={alt} />
+        <img srcSet={`${webp}`} src={img} alt={alt} />
       </div>
     </article>
   );

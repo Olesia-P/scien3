@@ -35,7 +35,12 @@ export default function Works() {
           </p>
           <div className={cx(css.cardsWrap, isObserved && css.animated)}>
             {images.map((img) => (
-              <WorksImgCard img={img} alt={alt} key={img} />
+              <WorksImgCard
+                img={img.img}
+                webp={img.webp}
+                alt={alt}
+                key={img.img}
+              />
             ))}
           </div>
         </section>
