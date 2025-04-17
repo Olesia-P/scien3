@@ -41,7 +41,9 @@ export default function MobileMenu() {
                   css.navlink,
                   isServicesBlockOpen && css.withDropdown,
                 )}
-                onClick={() => handleServicesClick(navlink.link)}
+                onClick={() =>
+                  handleServicesClick(`/${language}${navlink.link}`)
+                }
               >
                 {navlink.name}{' '}
                 <IoChevronDown
