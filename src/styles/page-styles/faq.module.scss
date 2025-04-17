@@ -11,7 +11,7 @@
     background-image: url("/works_faq/scattered_forms_1792.jpeg");
     background-size: 100vw;
     overflow: hidden;
-    @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
+    @include backgroundMask($backgroundColor: $white, $maskOpacity: 30%);
 
     .outline {
         padding: 0.15rem;

@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './card-item.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import { useLanguage } from '@/hooks/use-language';
 
 type CardItemProps = {
   link: string;
@@ -21,6 +22,7 @@ export default function CardItem({
   text,
 }: CardItemProps) {
   const [isCardItemObserved, setIsCardItemObserved] = useState(false);
+  const language = useLanguage();
 
   const cardItemRef = useIntersectionObserver<HTMLAnchorElement>(
     () => setIsCardItemObserved(true),
@@ -29,7 +31,7 @@ export default function CardItem({
   );
   return (
     <Link
-      href={link}
+      href={`/${language}${link}`}
       className={cx(css.link, isCardItemObserved && css.animated)}
       ref={cardItemRef}
     >

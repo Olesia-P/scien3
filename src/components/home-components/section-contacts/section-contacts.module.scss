@@ -8,6 +8,7 @@
     @include dfcc;
     gap: 2rem;
     overflow: hidden;
+    background-color: $white;
 
     .contactsHeader {
         @include transitionSlideLeft(25%);

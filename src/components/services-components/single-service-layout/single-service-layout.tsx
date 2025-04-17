@@ -119,7 +119,7 @@ export default function SingleServiceLayout({
           </ul>
         </section>
 
-        <Link href="/services" className={css.otherServicesLink}>
+        <Link href={`/${language}/services`} className={css.otherServicesLink}>
           {otherServicesLinkTitle} <FaArrowRightLong /> <FaArrowRightLong />
           <FaArrowRightLong />
         </Link>

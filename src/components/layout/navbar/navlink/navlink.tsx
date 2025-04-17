@@ -28,17 +28,23 @@ export default function Navlink({ navlink }: NavlinkProps) {
 
   const router = useRouter();
 
-  const createNavlinkAttributes = () => {
-    const className = cx(
-      css.navLink,
-      router.pathname === navlink.link && css.selected,
+  const isLinkCurrentPath = () => {
+    const slash = navlink.link === '/' ? '/' : '';
+
+    return (
+      (slash && router.pathname.slice(7) === '') ||
+      (!slash && router.pathname.slice(7).includes(navlink.link))
     );
-    const ariaCurrent =
-      router.pathname === navlink.link ? ('page' as const) : undefined;
+  };
+
+  const createNavlinkAttributes = () => {
+    const className = cx(css.navLink, isLinkCurrentPath() && css.selected);
+    const ariaCurrent = isLinkCurrentPath() ? ('page' as const) : undefined;
+
     return {
       className,
       'aria-current': ariaCurrent,
-      href: navlink.link,
+      href: `/${language}${navlink.link}`,
     };
   };
 

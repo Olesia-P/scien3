@@ -12,7 +12,7 @@
 
     background-size: contain;
     @include dfc;
-    @include backgroundMask($backgroundColor: $white, $maskOpacity: 20%);
+    @include backgroundMask($backgroundColor: $white, $maskOpacity: 30%);
     overflow: hidden;
 
     .outline {
