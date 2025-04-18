@@ -9,6 +9,7 @@
     .linksWrap {
         @include whiteCard($pad: 1em, $borderRad: 5px);
 
+
         .link {
             cursor: pointer;
             transition: color 0.2s linear;
@@ -16,6 +17,10 @@
             display: block;
             position: relative;
             font-weight: 600;
+
+            a {
+                text-decoration: none;
+            }
 
             &+.link {
                 padding-top: 1.5em;

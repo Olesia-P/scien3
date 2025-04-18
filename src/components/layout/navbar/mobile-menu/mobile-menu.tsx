@@ -59,13 +59,11 @@ export default function MobileMenu() {
               >
                 <ul className={css.dropdownBlock}>
                   {dropdownLinks.map((dropdownLink) => (
-                    <Link
-                      href={`/${language}${dropdownLink.link}`}
-                      key={dropdownLink.link}
-                      className={css.dropdownLink}
-                    >
-                      {dropdownLink.name}
-                    </Link>
+                    <li key={dropdownLink.link} className={css.dropdownLink}>
+                      <Link href={`/${language}${dropdownLink.link}`}>
+                        {dropdownLink.name}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </div>

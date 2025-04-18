@@ -20,9 +20,17 @@ class MyDocument extends Document<Props> {
     const initialProps = await Document.getInitialProps(ctx);
     const langFromUrl = ctx.query?.lang;
 
+    const formatLanguage = () => {
+      if (typeof langFromUrl === 'string') {
+        return langFromUrl === 'ua' ? 'uk' : langFromUrl;
+      } else {
+        return 'uk';
+      }
+    };
+
     return {
       ...initialProps,
-      locale: typeof langFromUrl === 'string' ? langFromUrl : 'ua',
+      locale: formatLanguage(),
     };
   }
 

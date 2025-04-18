@@ -29,11 +29,16 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
 
   const { title, description, link } = seo;
 
+  const formatLanguage = language === 'ua' ? 'uk' : language;
+
   return (
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {/* <link rel="canonical" href={`https://scien3.com/${language}${link}`} /> */}
+      {/* <link
+        rel="canonical"
+        href={`https://scien3.com/${formatLanguage}${link}`}
+      /> */}
       {/* <link
         rel="alternate"
         hrefLang="en"
@@ -42,12 +47,12 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
       <link
         rel="alternate"
         hrefLang="ua"
-        href={`https://scien3.com/ua${link}`}
+        href={`https://scien3.com/uk${link}`}
       />
       <link
         rel="alternate"
         hrefLang="x-default"
-        href={`https://scien3.com/ua${link}`}
+        href={`https://scien3.com/uk${link}`}
       /> */}
     </Head>
   );

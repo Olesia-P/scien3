@@ -108,14 +108,15 @@ export default function SingleServiceLayout({
               )}
             </li>
 
-            <button
-              type="button"
-              className={css.emailBtn}
-              onClick={() => copyText(email.text, email.toastMessageCopied)}
-              title={clickToCopyBtnTitle}
-            >
-              {email.text}
-            </button>
+            <li className={css.emailBtn}>
+              <button
+                type="button"
+                onClick={() => copyText(email.text, email.toastMessageCopied)}
+                title={clickToCopyBtnTitle}
+              >
+                {email.text}
+              </button>
+            </li>
           </ul>
         </section>
 

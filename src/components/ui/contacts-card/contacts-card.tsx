@@ -97,8 +97,7 @@ export default function ContactsCard({
         {/* google map */}
         <div className={css.googleMap}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.180346881388!2d30.634904110563106!3d50.45636627147477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4daacec089349%3A0x6143af37cc8bccf0!2z0LLRg9C70LjRhtGPINCS0ZbQvdGB0YLQvtC90LAg0KfQtdGA0YfQuNC70LvRjywgNDIsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1suk!2sua!4v1743442448527!5m2!1suk!2sua"
-            allowFullScreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.2408474741346!2d30.640858442955004!3d50.455239594386555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4dab204119163%3A0x524030c9896f2f8a!2z0LLRg9C70LjRhtGPINCS0ZbQvdGB0YLQvtC90LAg0KfQtdGA0YfQuNC70LvRjywgNDLQkSwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1744987089255!5m2!1suk!2sua"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="map"

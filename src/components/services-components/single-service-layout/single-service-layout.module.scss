@@ -126,6 +126,13 @@
                     border: 2px solid $blue;
                     cursor: pointer;
 
+                    button {
+                        background-color: inherit;
+                        color: inherit;
+                        font-weight: inherit;
+                        font-size: inherit;
+                    }
+
                     &:hover {
                         background-color: $grey;
                     }

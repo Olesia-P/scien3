@@ -6,22 +6,24 @@
 }
 
 .socialMediaList {
-    .socialMediaLink {
-        @include dfc;
-        width: fit-content;
-        padding: 0.5em;
-        cursor: pointer;
-        transition: color 0.1s linear;
-        border-radius: 5px;
-        box-shadow: $shadow-button;
+    li {
+        .socialMediaLink {
+            @include dfc;
+            width: fit-content;
+            padding: 0.5em;
+            cursor: pointer;
+            transition: color 0.1s linear;
+            border-radius: 5px;
+            box-shadow: $shadow-button;
 
-        &:hover {
-            color: $blue;
-        }
+            &:hover {
+                color: $blue;
+            }
 
-        .mediaIcon {
-            margin-right: 0.5rem;
-            height: 1em;
+            .mediaIcon {
+                margin-right: 0.5rem;
+                height: 1em;
+            }
         }
     }
 }

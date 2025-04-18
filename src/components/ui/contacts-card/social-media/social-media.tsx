@@ -18,20 +18,18 @@ export default function SocialMedia({ header, list }: SocialMediaProps) {
       <p className={css.socialMediaHeader}>{header}</p>
       <ul className={css.socialMediaList}>
         {list.map((mediaItem) => (
-          <a
-            key={mediaItem.name}
-            href={mediaItem.link}
-            className={css.socialMediaLink}
-          >
-            <img
-              src={mediaItem.icon}
-              className={css.mediaIcon}
-              aria-hidden="true"
-              alt={mediaItem.alt}
-              loading="lazy"
-            />
-            {mediaItem.name}
-          </a>
+          <li key={mediaItem.name}>
+            <a href={mediaItem.link} className={css.socialMediaLink}>
+              <img
+                src={mediaItem.icon}
+                className={css.mediaIcon}
+                aria-hidden="true"
+                alt={mediaItem.alt}
+                loading="lazy"
+              />
+              {mediaItem.name}
+            </a>
+          </li>
         ))}
       </ul>
     </>

@@ -84,6 +84,7 @@ export default function Navbar() {
           className={css.hamburger}
           onClick={() => setIsAnimated((prevState) => !prevState)}
           ref={refHamburger}
+          aria-label="Toggle  mobile menu"
         >
           <IoMenu />
         </button>
