@@ -25,7 +25,7 @@ export default function CollapsableBlock({
     <article className={cx(css.container, isOpen && css.opened)}>
       <header className={css.headerWrap} onClick={handleClick}>
         <HeaderTag className={css.header}>{header}</HeaderTag>
-        <button type="button" className={css.button}>
+        <button type="button" className={css.button} aria-label="Toggle answer">
           <IoChevronDownOutline className={css.chevron} />
 
           <IoCloseSharp className={css.cross} />
