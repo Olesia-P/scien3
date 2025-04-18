@@ -136,7 +136,7 @@ const en = {
   forWrapper: {
     content: {
       main: {
-        header: 'Small-Batch vacuum plastic casting',
+        header: 'Small-batch vacuum plastic casting',
         description: (
           <>
             Small-batch vacuum plastic casting is a modern technology that

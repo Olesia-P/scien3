@@ -1,0 +1,54 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { useLanguage } from '@/hooks/use-language';
+
+export type SeoData = {
+  title: string;
+  description: string;
+  link: string;
+};
+
+type SeoText = {
+  ua: SeoData;
+  en: SeoData;
+};
+
+type PageHeadProps = {
+  initialSeo: SeoData;
+  seoText: SeoText;
+};
+
+export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
+  const [seo, setSeo] = useState<SeoData>(initialSeo);
+  const language = useLanguage();
+
+  useEffect(() => {
+    setSeo(seoText[language]);
+  }, [language]);
+
+  const { title, description, link } = seo;
+
+  return (
+    <Head>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      {/* <link rel="canonical" href={`https://scien3.com/${language}${link}`} /> */}
+      {/* <link
+        rel="alternate"
+        hrefLang="en"
+        href={`https://scien3.com/en${link}`}
+      />
+      <link
+        rel="alternate"
+        hrefLang="ua"
+        href={`https://scien3.com/ua${link}`}
+      />
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={`https://scien3.com/ua${link}`}
+      /> */}
+    </Head>
+  );
+}
