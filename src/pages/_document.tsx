@@ -75,6 +75,7 @@ class MyDocument extends Document<Props> {
         </Head>
         <body>
           <Main />
+          <div id="modal-root" />
           <NextScript />
         </body>
       </Html>
