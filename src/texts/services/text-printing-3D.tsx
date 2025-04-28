@@ -159,7 +159,6 @@ const ua = {
   },
 
   linkToSerialProduction: {
-    link: '/services/serial-production',
     text: 'Дрібносерійне лиття пластмас у вакуумі',
   },
 
@@ -335,7 +334,6 @@ const en = {
   },
 
   linkToSerialProduction: {
-    link: '/services/serial-production',
     text: 'Small-batch vacuum plastic casting',
   },
 

@@ -55,7 +55,7 @@ export default function Printing3D({ initialSeo }: Printing3DProps) {
         <ServiceInfoBlock {...important} headerLevel={2} />
 
         <a
-          href={linkToSerialProduction.link}
+          href={`/${language}/services/serial-production`}
           className={css.linkToSerialProduction}
         >
           {linkToSerialProduction.text}{' '}
