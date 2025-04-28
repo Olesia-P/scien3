@@ -24,7 +24,6 @@ export default function LangSwitch({ fontSize }: SwitchProps) {
   useEffect(() => {
     if (isPendingGlobalLanguageChanging) {
       const valueLang = isSwitchedToEN ? 'en' : 'ua';
-
       setCookie('language', valueLang, 365);
 
       const { pathname } = router;
@@ -35,7 +34,6 @@ export default function LangSwitch({ fontSize }: SwitchProps) {
       router.replace(
         {
           pathname: newPathname,
-          // query,
         },
         undefined,
         { shallow: true },

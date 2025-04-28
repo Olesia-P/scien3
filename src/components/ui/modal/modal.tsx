@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// import ReactDOM from 'react-dom';
 import css from './modal.module.scss';
 import { useLanguage } from '@/hooks/use-language';
 import { textModal } from '@/texts/modal/text-modal';

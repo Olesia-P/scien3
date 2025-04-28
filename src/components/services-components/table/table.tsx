@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import { GoArrowSwitch } from 'react-icons/go';
 import css from './table.module.scss';
 import { createHeaderTag } from '@/utils/functions';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
@@ -57,6 +58,7 @@ export default function Table({
           </tbody>
         </table>
       </div>
+      <GoArrowSwitch className={css.arrow} />
     </div>
   );
 }

@@ -48,6 +48,10 @@
             }
         }
     }
+
+    .arrow {
+        display: none;
+    }
 }
 
 @include lowTablet {
@@ -84,6 +88,20 @@
                     }
                 }
             }
+        }
+
+
+    }
+}
+
+@include mobile {
+    .container {
+        .arrow {
+            color: $blue;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding-top: 0.5rem;
+            display: inline;
         }
     }
 }
