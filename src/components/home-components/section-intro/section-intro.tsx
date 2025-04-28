@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cx from 'classnames';
+import Link from 'next/link';
 import css from './section-intro.module.scss';
 import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textSectionIntro } from '@/texts/home/text-section-intro';
@@ -34,7 +35,11 @@ export default function SectionIntro() {
         <div className={css.listLimit}>
           <ul className={cx(css.ourServicesList, isObserved && css.animated)}>
             {ourProducts.map((product) => (
-              <li key={product}>{product}</li>
+              <li key={product.name}>
+                <Link href={`/${language}${product.link}`} className={css.link}>
+                  {product.name}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

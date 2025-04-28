@@ -43,6 +43,8 @@
                     position: relative;
                     padding-left: 1.7em;
 
+                    text-wrap: stable;
+
                     &::before {
                         content: ' ';
                         background-image: url("/icons/polygon_icon.png");
@@ -52,6 +54,11 @@
                         left: 0;
                         top: 2px;
                         background-size: contain;
+                    }
+
+                    .link {
+                        text-decoration: none;
+                        @include lightingHover;
                     }
                 }
             }
