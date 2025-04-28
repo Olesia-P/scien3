@@ -35,11 +35,11 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      {/* <link
+      <link
         rel="canonical"
         href={`https://scien3.com/${formatLanguage}${link}`}
-      /> */}
-      {/* <link
+      />
+      <link
         rel="alternate"
         hrefLang="en"
         href={`https://scien3.com/en${link}`}
@@ -53,7 +53,27 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
         rel="alternate"
         hrefLang="x-default"
         href={`https://scien3.com/uk${link}`}
-      /> */}
+      />
+
+      <meta
+        property="og:image"
+        content="http://scien3.com/site_screenshot.jpg"
+      />
+      <meta property="og:image:width" content="350" />
+      <meta property="og:image:height" content="189" />
+
+      <link rel="shortcut icon" href="https://scien3.com/logo_3d_small.png" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="https://scien3.com/logo_3d_small.png"
+        sizes="350x189"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="350x189"
+        href="https://scien3.com/logo_3d_small.png"
+      />
     </Head>
   );
 }
