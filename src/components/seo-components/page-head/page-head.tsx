@@ -61,19 +61,6 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
       />
       <meta property="og:image:width" content="350" />
       <meta property="og:image:height" content="189" />
-
-      <link rel="shortcut icon" href="https://scien3.com/logo_3d_small.png" />
-      <link
-        rel="icon"
-        type="image/png"
-        href="https://scien3.com/logo_3d_small.png"
-        sizes="350x189"
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="350x189"
-        href="https://scien3.com/logo_3d_small.png"
-      />
     </Head>
   );
 }
