@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import css from './section-intro.module.scss';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import { textSectionIntro } from '@/texts/home/text-section-intro';
 import SectionIntroHeader from './section-intro-header/section-intro-header';
 import { useLanguage } from '@/hooks/use-language';
@@ -14,13 +14,18 @@ export default function SectionIntro() {
   const { caption, ourProducts, illustrationLargeAlt, illustrationSmallAlt } =
     textSectionIntro[language];
 
-  const [isObserved, setIsObserved] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
 
-  const introSectionRef = useIntersectionObserver<HTMLDivElement>(
-    () => setIsObserved(true),
-    undefined,
-    0,
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisitedHome');
+
+    if (!hasVisited) {
+      setIsAnimated(true);
+      sessionStorage.setItem('hasVisitedHome', 'true');
+    }
+  }, [router.pathname]);
 
   const isLargeScreen = useMediaQuery(1024);
   const chooseAlt = () => {
@@ -28,12 +33,12 @@ export default function SectionIntro() {
   };
 
   return (
-    <div className={css.container} ref={introSectionRef}>
-      <SectionIntroHeader caption={caption} isAnimated={isObserved} />
+    <div className={css.container}>
+      <SectionIntroHeader caption={caption} isAnimated={isAnimated} />
 
       <section className={css.mainContent}>
         <div className={css.listLimit}>
-          <ul className={cx(css.ourServicesList, isObserved && css.animated)}>
+          <ul className={cx(css.ourServicesList, isAnimated && css.animated)}>
             {ourProducts.map((product) => (
               <li key={product.name}>
                 <Link href={`/${language}${product.link}`} className={css.link}>
@@ -72,7 +77,7 @@ export default function SectionIntro() {
           <img
             src="/intro/intro_scene_1400.jpg"
             alt={chooseAlt()}
-            className={cx(css.illustration, isObserved && css.animated)}
+            className={cx(css.illustration, isAnimated && css.animated)}
             sizes="100vw"
           />
         </picture>

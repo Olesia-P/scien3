@@ -1,3 +1,5 @@
+// ANIMATIONS
+
 @mixin animationFloatingClockwise {
     @keyframes floatClockwise {
         0% {
@@ -74,8 +76,8 @@
     animation: fadeAway 4s linear;
 }
 
-@mixin animationMobileMenuSlideLeft {
-    @keyframes mobileMenuSlideLeft {
+@mixin animationSlideCenterToLeft {
+    @keyframes slideCenterToLeft {
         0% {
             transform: translateX(0%);
         }
@@ -89,12 +91,12 @@
         ;
     }
 
-    animation: mobileMenuSlideLeft 0.5s linear;
+    animation: slideCenterToLeft 0.5s linear;
     transform: translateX(100%);
 }
 
-@mixin animationMobileMenuSlideRight {
-    @keyframes mobileMenuSlideRight {
+@mixin animationSlideCenterToRight {
+    @keyframes slideCenterToRight {
         0% {
             transform: translateX(100%);
         }
@@ -108,9 +110,50 @@
         ;
     }
 
-    animation: mobileMenuSlideRight 0.5s linear;
+    animation: slideCenterToRight 0.5s linear;
     transform: translateX(0);
 }
+
+@mixin animationSlideLeftToCenter {
+    @keyframes slideLeftToCenter {
+        0% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+
+        ;
+    }
+
+    animation: slideLeftToCenter 1s ease-in-out;
+    transform: translateX(0);
+}
+
+@mixin animationSlideTopToCenter {
+    @keyframes slideTopToCenter {
+        0% {
+            transform: translateY(-50%);
+        }
+
+        100% {
+            transform: translateY(0%);
+        }
+
+        ;
+    }
+
+    animation: slideTopToCenter 1s ease-in-out;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+// TRANSITIONS
 
 @mixin transitionSlideRight ($percent: 50%, $speed: 1s) {
     transform: translateX(-$percent);

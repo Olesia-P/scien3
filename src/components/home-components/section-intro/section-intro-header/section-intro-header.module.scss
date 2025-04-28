@@ -8,7 +8,10 @@
         padding: 1.5rem 0;
         max-width: $content-width-main;
         margin: 0 auto;
-        @include transitionSlideDown;
+
+        &.animated {
+            @include animationSlideTopToCenter;
+        }
 
         h1 {
             font-family: $font-family-logo;
@@ -59,8 +62,10 @@
 @include lowTablet {
     .container {
         .limit {
-            @include transitionSlideLeft;
 
+            &.animated {
+                @include animationSlideLeftToCenter;
+            }
 
             h1 {
                 margin: 0 0 0.3rem 0;

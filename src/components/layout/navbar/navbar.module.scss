@@ -74,10 +74,10 @@
             right: 0;
             top: 3.1rem;
             width: 15rem;
-            @include animationMobileMenuSlideLeft;
+            @include animationSlideCenterToLeft;
 
             &.opened {
-                @include animationMobileMenuSlideRight;
+                @include animationSlideCenterToRight;
             }
         }
     }
