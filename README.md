@@ -1,40 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+> I am a junior front-end developer.
 
-## Getting Started
+# Real-life project for a local business: Scien3 Cast Creations
 
-First, run the development server:
+I’ve created this website for **Scien3 Cast Creations**, which is a small-batch plastic casting company. The site is mostly static, as its purpose is to provide customers with information about company’s services and how to contact them. I made it from scratch: design, structure, deployment.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I’ve followed best coding practices: components are concise and readable, the pages are semantic, accessible and responsive.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For good SEO scores I’ve also used Static Site Generation, optimized fonts and images.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<img src="public/site_screenshot.jpg" width="350" height="189">
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Navigate the site with ease through a clean, neumorphic design enhanced by smooth animations using Intersection Observer;
+- Switch between English and Ukrainian language, your choice is stored in a cookie;
+- Copy email on click (with a ‘toast’ message);
+- Go straight to calling with one click on the number in mobile screen size.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Skills used
 
-## Learn More
+- Next.js
+- TypeScript
+- Sass/Scss
+- Redux
+- Git + Bash
+- ESLint, prettier
+- Cookies and Local Storage
 
-To learn more about Next.js, take a look at the following resources:
+## What I learned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Using Static Site Generation;
+- Deployment on server using FTP and SSH (+ domain and SSL configurations etc.);
+- Images and fonts optimization, implementing View Transitions;
+- Creating toasts’ queue;
+- Rendering modals in portals (+ focus trap);
+- SEO refinement;
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Here you can check the <a href="https://scien3.com/" target="_blank">deployed site</a>!
