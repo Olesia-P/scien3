@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import css from './service-info-block.module.scss';
-import { createHeaderTag } from '@/utils/functions';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
+import useServiceInfoBlock from './use-service-info-block';
 
 // The component has two parts - main and nested list
 
@@ -44,8 +43,13 @@ export default function ServiceInfoBlock({
   nestedListIcon,
   listWithIcon = false,
 }: ServiceInfoListProps) {
-  const MainHeaderTag = createHeaderTag(headerLevel);
-  const NestedHeaderTag = createHeaderTag(headerLevel + 1);
+  const {
+    isObserved,
+    serviceInfoBlockRef,
+    icon,
+    MainHeaderTag,
+    NestedHeaderTag,
+  } = useServiceInfoBlock(headerLevel, nestedListIcon);
 
   const displayParagraphs = (paragraphs: (string | React.JSX.Element)[]) => {
     return paragraphs?.map((element) => (
@@ -68,31 +72,6 @@ export default function ServiceInfoBlock({
     );
   };
 
-  const decideIcon = () => {
-    switch (nestedListIcon) {
-      case 'laptop':
-        return '/icons/laptop_icon.png';
-      case 'rocket':
-        return '/icons/rocket_icon.png';
-      case 'cup':
-        return '/icons/stationary_cup_icon.png';
-      case 'pouring':
-        return '/icons/pouring_icon.png';
-      case 'ball':
-        return '/icons/angled_ball_icon.png';
-      default:
-        return '/icons/rocket_icon.png';
-    }
-  };
-
-  const [isObserved, setIsObserved] = useState(false);
-
-  const serviceInfoBlockRef = useIntersectionObserver(
-    () => setIsObserved(true),
-    undefined,
-    0,
-  );
-
   return (
     <section className={css.container} ref={serviceInfoBlockRef}>
       <MainHeaderTag className={cx(css.mainHeader, isObserved && css.animated)}>
@@ -111,7 +90,7 @@ export default function ServiceInfoBlock({
                 className={css.nestedHeader}
                 style={
                   {
-                    '--icon-url': `url(${decideIcon()})`,
+                    '--icon-url': `url(${icon})`,
                   } as React.CSSProperties
                 }
               >

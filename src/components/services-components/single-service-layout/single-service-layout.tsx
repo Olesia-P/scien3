@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import cx from 'classnames';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import css from './single-service-layout.module.scss';
-import { textContactInfo } from '@/texts/text-contact-info';
-import { textSingleServiceWrapper } from '@/texts/services/text-single-service-wrapper';
-import useMediaQuery from '@/hooks/use-media-query';
-import useCopyAndToast from '@/hooks/use-copy-and-toast';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { useLanguage } from '@/hooks/use-language';
+import useSingleServiceLayout from './use-single-service-layout';
 
 type SingleServiceLayoutProps = {
   children: React.ReactNode;
@@ -31,49 +26,24 @@ export default function SingleServiceLayout({
   backgroundStyle,
   content,
 }: SingleServiceLayoutProps) {
-  const language = useLanguage();
-
-  const { email, phone, clickToCopyBtnTitle } = textContactInfo[language];
-  const { otherServicesLinkTitle, contactsHeader } =
-    textSingleServiceWrapper[language];
-
-  const decideBackgroundStyle = () => {
-    switch (backgroundStyle) {
-      case 1:
-        return css.style1;
-      case 2:
-        return css.style2;
-      case 3:
-        return css.style3;
-      case 4:
-        return css.style4;
-      default:
-        return css.style1;
-    }
-  };
-
-  const copyText = useCopyAndToast();
-
-  const isLargeScreen = useMediaQuery(1024);
-
-  const [isObserved, setIsObserved] = useState(false);
-  const singleServiceRef = useIntersectionObserver(
-    () => setIsObserved(true),
-    undefined,
-    0,
-  );
-  const [isContactsCardObserved, setIsContatsCardObserved] = useState(false);
-  const contactsCardRef = useIntersectionObserver(
-    () => setIsContatsCardObserved(true),
-    undefined,
-    0,
-  );
+  const {
+    language,
+    isObserved,
+    singleServiceRef,
+    isLargeScreen,
+    copyText,
+    contactsCardRef,
+    isContactsCardObserved,
+    backgroundStl,
+    email,
+    phone,
+    clickToCopyBtnTitle,
+    otherServicesLinkTitle,
+    contactsHeader,
+  } = useSingleServiceLayout(backgroundStyle);
 
   return (
-    <main
-      className={cx(css.container, decideBackgroundStyle())}
-      ref={singleServiceRef}
-    >
+    <main className={cx(css.container, backgroundStl)} ref={singleServiceRef}>
       <article className={css.mainContent}>
         <h1 className={cx(css.mainHeader, isObserved && css.animated)}>
           {content.main.header}

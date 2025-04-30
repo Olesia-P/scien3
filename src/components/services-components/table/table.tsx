@@ -20,7 +20,6 @@ export default function Table({
   title,
   rows,
 }: TableProps) {
-  const HeaderTag = createHeaderTag(headerSize);
   const [isObserved, setIsObserved] = useState(false);
 
   const tableRef = useIntersectionObserver<HTMLDivElement>(
@@ -28,6 +27,9 @@ export default function Table({
     undefined,
     0,
   );
+
+  const HeaderTag = createHeaderTag(headerSize);
+
   return (
     <div
       className={cx(css.container, isObserved && css.animated)}

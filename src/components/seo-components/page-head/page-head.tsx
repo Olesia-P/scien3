@@ -20,16 +20,16 @@ type PageHeadProps = {
 };
 
 export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
-  const [seo, setSeo] = useState<SeoData>(initialSeo);
   const language = useLanguage();
+
+  const [seo, setSeo] = useState<SeoData>(initialSeo);
+
+  const { title, description, link } = seo;
+  const formatLanguage = language === 'ua' ? 'uk' : language;
 
   useEffect(() => {
     setSeo(seoText[language]);
   }, [language]);
-
-  const { title, description, link } = seo;
-
-  const formatLanguage = language === 'ua' ? 'uk' : language;
 
   return (
     <Head>
