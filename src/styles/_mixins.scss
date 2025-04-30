@@ -11,6 +11,9 @@
     flex-direction: column;
 }
 
+
+
+// plactic styling
 @mixin horizontalSeparator {
     background-color: #e0e0e0;
     height: 3px;
@@ -37,6 +40,8 @@
     padding: $pad;
 }
 
+
+// other styling
 @mixin verticalBlueDecoration {
     color: $blue;
     margin: 0 1.5em;
@@ -60,6 +65,7 @@
     }
 }
 
+// buttons
 @mixin blueBackgroundRounded ($padTop: 0.4em, $padRight: 1em, $padBottom: 0.4em, $padLeft: 1em) {
     background-color: $blue;
     color: white;
@@ -73,6 +79,7 @@
     border-radius: 10px;
 }
 
+// hovers
 @mixin lightingHover {
     transition: all 0.3s ease;
 

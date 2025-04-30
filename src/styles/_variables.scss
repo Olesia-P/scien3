@@ -1,5 +1,4 @@
 //colors
-$blue-black: #141B21;
 $black: #303841;
 $grey: #3a4750;
 $blue: #00adb5;
@@ -14,9 +13,8 @@ $shadow-white-in: inset -3px -3px 4px 0 rgba(255, 255, 255, 0.7),
     inset 3px 3px 4px 0 rgba(80, 80, 80, 0.1);
 $shadow-white-in-strong: inset -3px -3px 4px 0 rgba(255, 255, 255),
     inset 3px 3px 4px 0 rgba(80, 80, 80, 0.4);
-$shadow-blue-out: -3px -3px 4px 0 rgba(255, 255, 255, 0.5), // Softer white highlight to complement the bright teal
-    3px 3px 4px 0 rgba(0, 70, 75, 0.2); // Darkened teal shadow for subtle depth
-
+$shadow-blue-out: -3px -3px 4px 0 rgba(255, 255, 255, 0.5),
+    3px 3px 4px 0 rgba(0, 70, 75, 0.2);
 $shadow-button: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 
@@ -29,17 +27,6 @@ $text-shadow-outline-2: -2px -2px 0 black,
     2px -2px 0 black,
     -2px 2px 0 black,
     2px 2px 0 black;
-// $text-shadow-blue: -2px -2px 0 $blue,
-//     2px -2px 0 $blue,
-//     -2px 2px 0 $blue,
-//     2px 2px 0 $blue;
 
 
-// $content-width-L: 1400px;
-// $content-width-S: 1200px;
 $content-width-main: 1300px;
-
-// $shadow-white-out: -3px -3px 4px 0 rgb(255, 255, 255, 0.8),
-//     3px 3px 4px 0 rgba(100, 75, 50, 0.1);
-// $shadow-white-in: inset -4px -4px 5px 0 rgb(255, 255, 255),
-//     inset 3px 3px 4px 0 rgba(100, 75, 50, 0.2);

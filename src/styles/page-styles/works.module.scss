@@ -9,7 +9,6 @@
     }
 
     background-image: url("/works_faq/scattered_forms_1792.jpeg");
-
     background-size: contain;
     @include dfc;
     @include backgroundMask($backgroundColor: $white, $maskOpacity: 30%);
@@ -27,7 +26,6 @@
             h1 {
                 text-align: center;
                 font-size: $font-size-24;
-
 
                 span {
                     @include verticalBlueDecoration;

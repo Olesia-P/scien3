@@ -55,7 +55,6 @@ $border: 2px solid $white;
                     margin: 0 auto;
                     @include lightingHover;
 
-
                     img {
                         transition: all 0.3s ease;
                         width: 3.8rem;
@@ -101,7 +100,6 @@ $border: 2px solid $white;
             }
         }
     }
-
 }
 
 @include laptop {
