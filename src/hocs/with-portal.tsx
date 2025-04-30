@@ -8,14 +8,14 @@ function withPortal<T extends object>(
   return function PortalWrapped(props: T) {
     const [isMounted, setIsMounted] = useState(false);
 
+    const { isOpen } = props as any;
+
     useEffect(() => {
       setIsMounted(true);
       return () => {
         setIsMounted(false);
       };
     }, []);
-
-    const { isOpen } = props as any;
 
     if (typeof window === 'undefined' || !isOpen || !isMounted) {
       return null;

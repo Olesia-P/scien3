@@ -9,13 +9,10 @@ export default function useMediaQuery(maxWidth: number) {
       setIsDesiredWidth(currentWindowWidth > maxWidth);
     };
 
-    // Run once to set the initial value
     resizeHandler();
 
-    // Add event listener for resize
     window.addEventListener('resize', resizeHandler);
 
-    // Cleanup the event listener
     return () => window.removeEventListener('resize', resizeHandler);
   }, [maxWidth]);
 

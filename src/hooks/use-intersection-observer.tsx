@@ -12,30 +12,30 @@ export default function useIntersectionObserver<T extends HTMLElement>(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            handleIntersection(); // what to do if element is on the screen
+            handleIntersection();
           }
           if (
             !entry.isIntersecting &&
-            typeof handleOutsideIntersection === 'function' // to execute only is you passed this function
+            typeof handleOutsideIntersection === 'function'
           ) {
-            handleOutsideIntersection(); // what to do if element escapes the screen
+            handleOutsideIntersection();
           }
         });
       },
       {
         root: null,
         rootMargin: '0px',
-        threshold: thresholdValue, // from 0 to 1, shows how many percents of the element should show to react
+        threshold: thresholdValue,
       },
     );
 
     if (ref.current) {
       observer.observe(ref.current);
     }
-    // Return the cleanup function to disconnect the observer
+
     return () => {
       observer.disconnect();
     };
   }, []);
-  return ref; // put ref to the element you want action for
+  return ref;
 }

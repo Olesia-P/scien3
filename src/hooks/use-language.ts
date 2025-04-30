@@ -10,5 +10,5 @@ export const useLanguage = (): Language => {
     return lang;
   }
 
-  return 'ua'; // fallback
+  return 'ua';
 };
