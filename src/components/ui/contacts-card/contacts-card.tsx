@@ -4,7 +4,6 @@ import css from './contacts-card.module.scss';
 import { textContactInfo } from '@/texts/text-contact-info';
 import useMediaQuery from '@/hooks/use-media-query';
 import SingleContact from './single-contact/single-contact';
-
 import useCopyAndToast from '@/hooks/use-copy-and-toast';
 import { useLanguage } from '@/hooks/use-language';
 import SocialMedia from './social-media/social-media';

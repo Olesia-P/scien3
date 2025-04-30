@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import css from './modal.module.scss';
-import { useLanguage } from '@/hooks/use-language';
-import { textModal } from '@/texts/modal/text-modal';
 import LangSwitch from '@/components/layout/navbar/lang-switch/lang-switch';
-import { useFocusTrap } from '@/hooks/use-focus-trap';
+import useModal from './use-modal';
 
 export type ModalProps = {
   isOpen: boolean;
@@ -11,17 +9,7 @@ export type ModalProps = {
 };
 
 export default function Modal({ isOpen, onClose }: ModalProps) {
-  const language = useLanguage();
-  const { mainHeader, text, button, glory } = textModal[language];
-  const modalRef = useRef<HTMLDivElement>(null);
-
-  useFocusTrap(modalRef, isOpen);
-
-  useEffect(() => {
-    if (isOpen && modalRef.current) {
-      modalRef.current.focus();
-    }
-  }, [isOpen]);
+  const { mainHeader, text, button, glory, modalRef } = useModal(isOpen);
 
   return (
     <section className={css.container}>

@@ -9,7 +9,6 @@
     .linksWrap {
         @include whiteCard($pad: 1em, $borderRad: 5px);
 
-
         .link {
             cursor: pointer;
             transition: color 0.2s linear;

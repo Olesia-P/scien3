@@ -16,11 +16,13 @@ export default function CollapsableBlock({
   text,
 }: CollapsableBlockProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const HeaderTag = createHeaderTag(headerSize);
+
   const handleClick = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const HeaderTag = createHeaderTag(headerSize);
   return (
     <article className={cx(css.container, isOpen && css.opened)}>
       <header className={css.headerWrap} onClick={handleClick}>

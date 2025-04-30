@@ -1,23 +1,11 @@
 /* eslint-disable react/jsx-no-useless-fragment */
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { FaWindowClose } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
 import css from './toast.module.scss';
-import { RootState } from '@/store/store';
-import { removeToast } from '@/store/modules/toast-slice';
+import useThisToast from './use-this-toast';
 
 export default function Toast() {
-  const { toasts } = useSelector(({ toast }: RootState) => toast);
-
-  const dispatch = useDispatch();
-
-  const closeBtnRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-  useEffect(() => {
-    if (toasts.length > 0) {
-      closeBtnRefs.current[0]?.focus();
-    }
-  }, [toasts.length]);
+  const { closeBtnRefs, handleToastClose, toasts } = useThisToast();
 
   return (
     <>
@@ -29,13 +17,13 @@ export default function Toast() {
               <button
                 type="button"
                 className={css.exitBtn}
-                onClick={() => dispatch(removeToast(toast.id))}
+                onClick={() => handleToastClose(toast.id)}
                 aria-label="Close notification"
                 ref={(element) => {
                   closeBtnRefs.current[index] = element;
                 }}
                 onKeyDown={(e) => {
-                  if (e.key === 'Escape') dispatch(removeToast(toast.id));
+                  if (e.key === 'Escape') handleToastClose(toast.id);
                 }}
               >
                 <FaWindowClose aria-hidden="true" />
