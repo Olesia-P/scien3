@@ -1,45 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import css from './section-contacts.module.scss';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { textConstactsSectionHomePage } from '@/texts/home/text-section-contacts';
-import ContactsCard from '@/components/ui/contacts-card/contacts-card';
-import { useLanguage } from '@/hooks/use-language';
-import useMediaQuery from '@/hooks/use-media-query';
+import useSectionContacts from './use-section-contacts';
+import ContactsCard from '../../ui/contacts-card/contacts-card';
 
 export default function SectionContacts() {
-  const language = useLanguage();
-
   const {
+    contactsSectionRef,
+    isObserved,
     header,
     headerCaption,
+    illustrationAlt,
     speechBubble,
-    desktopIllustrationAlt,
-    laptopIllustrationAlt,
-    mobileIllustrationAlt,
-  } = textConstactsSectionHomePage[language];
-
-  const [isObserved, setIsObserved] = useState(false);
-  const handleIntersection = () => {
-    setIsObserved(true);
-  };
-  const contactsSectionRef = useIntersectionObserver(
-    handleIntersection,
-    undefined,
-    0.1,
-  );
-
-  const isLargeScreen = useMediaQuery(1600);
-  const isLaptopScreen = useMediaQuery(768);
-  const chooseAlt = () => {
-    if (isLargeScreen) {
-      return desktopIllustrationAlt;
-    } else if (isLaptopScreen) {
-      return laptopIllustrationAlt;
-    } else {
-      return mobileIllustrationAlt;
-    }
-  };
+  } = useSectionContacts();
 
   return (
     <section className={css.container} ref={contactsSectionRef}>
@@ -73,13 +46,12 @@ export default function SectionContacts() {
           />
           <img
             src="/contacts/discussion.png"
-            alt={chooseAlt()}
+            alt={illustrationAlt}
             className={cx(css.illustration, isObserved && css.animated)}
             loading="lazy"
           />
         </picture>
 
-        {/* speech bubble img */}
         <div className={cx(css.bubbleWrap, isObserved && css.animated)}>
           <p>{speechBubble}</p>
           <img

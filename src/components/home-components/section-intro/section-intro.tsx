@@ -1,36 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import css from './section-intro.module.scss';
-import { textSectionIntro } from '@/texts/home/text-section-intro';
 import SectionIntroHeader from './section-intro-header/section-intro-header';
-import { useLanguage } from '@/hooks/use-language';
-import useMediaQuery from '@/hooks/use-media-query';
+import useSectionIntro from './use-section-intro';
 
 export default function SectionIntro() {
-  const language = useLanguage();
-
-  const { caption, ourProducts, illustrationLargeAlt, illustrationSmallAlt } =
-    textSectionIntro[language];
-
-  const [isAnimated, setIsAnimated] = useState(false);
-
-  const router = useRouter();
-
-  useEffect(() => {
-    const hasVisited = sessionStorage.getItem('hasVisitedHome');
-
-    if (!hasVisited) {
-      setIsAnimated(true);
-      sessionStorage.setItem('hasVisitedHome', 'true');
-    }
-  }, [router.pathname]);
-
-  const isLargeScreen = useMediaQuery(1024);
-  const chooseAlt = () => {
-    return isLargeScreen ? illustrationLargeAlt : illustrationSmallAlt;
-  };
+  const { caption, isAnimated, ourProducts, language, illustrationAlt } =
+    useSectionIntro();
 
   return (
     <div className={css.container}>
@@ -76,7 +53,7 @@ export default function SectionIntro() {
           />
           <img
             src="/intro/intro_scene_1400.jpg"
-            alt={chooseAlt()}
+            alt={illustrationAlt}
             className={cx(css.illustration, isAnimated && css.animated)}
             sizes="100vw"
           />

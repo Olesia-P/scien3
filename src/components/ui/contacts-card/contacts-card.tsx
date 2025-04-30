@@ -4,9 +4,10 @@ import css from './contacts-card.module.scss';
 import { textContactInfo } from '@/texts/text-contact-info';
 import useMediaQuery from '@/hooks/use-media-query';
 import SingleContact from './single-contact/single-contact';
-import SocialMedia from '@/components/ui/contacts-card/social-media/social-media';
+
 import useCopyAndToast from '@/hooks/use-copy-and-toast';
 import { useLanguage } from '@/hooks/use-language';
+import SocialMedia from './social-media/social-media';
 
 type ContactsCardProps = {
   option: 'vertical' | 'horizontal';

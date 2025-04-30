@@ -15,7 +15,6 @@
         .illustration {
             width: 100%;
             height: auto;
-
         }
 
         .listLimit {
@@ -37,7 +36,6 @@
                 flex-direction: column;
                 gap: 1em;
 
-
                 &.animated {
                     @include animationSlideLeftToCenter;
                 }
@@ -46,7 +44,6 @@
                     line-height: 1.3;
                     position: relative;
                     padding-left: 1.7em;
-
                     text-wrap: stable;
 
                     &::before {
@@ -96,11 +93,9 @@
             padding: 1rem 0;
 
             .illustration {
-
                 width: 80%;
                 align-self: center;
                 padding: 1rem;
-
             }
 
             .listLimit {
@@ -130,7 +125,6 @@
                 width: 20rem;
                 max-width: 95%;
 
-
                 &.animated {
                     @include animationSlideTopToCenter;
                 }
@@ -158,7 +152,6 @@
         }
     }
 }
-
 
 @include mobile {
     .container {

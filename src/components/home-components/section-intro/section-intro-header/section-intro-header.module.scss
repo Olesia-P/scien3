@@ -62,7 +62,6 @@
 @include lowTablet {
     .container {
         .limit {
-
             &.animated {
                 @include animationSlideLeftToCenter;
             }

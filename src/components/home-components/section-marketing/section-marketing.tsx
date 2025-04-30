@@ -1,26 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import css from './section-marketing.module.scss';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
-import { textSectionMarketing } from '@/texts/home/text-section-marketing';
 import ImageMarquee from '@/components/ui/image-marquee/image-marquee';
-import { useLanguage } from '@/hooks/use-language';
+import useSectionMarketing from './use-section-marketing';
 
 export default function SectionMarketing() {
-  const language = useLanguage();
-  const { statements } = textSectionMarketing[language];
-  const [isObserved, setIsObserved] = useState(false);
-  const handleIntersection = () => {
-    setIsObserved(true);
-  };
-
-  const marketingSectionRef = useIntersectionObserver(
-    handleIntersection,
-    undefined,
-    0.2,
-  );
-
-  const images = statements.map(({ img, webp, alt }) => ({ img, webp, alt }));
+  const { marketingSectionRef, isObserved, statements, images } =
+    useSectionMarketing();
 
   return (
     <section className={css.container} ref={marketingSectionRef}>

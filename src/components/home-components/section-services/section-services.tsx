@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import css from './section-services.module.scss';
-import { textSectionServices } from '@/texts/home/text-section-services';
 import ServicesDescription from './services-description/services-description';
-import useIntersectionObserver from '@/hooks/use-intersection-observer';
 import CardItem from './card-item/card-item';
-import { useLanguage } from '@/hooks/use-language';
+import useSectionServices from './use-section-services';
 
 export default function SectionServices() {
-  const language = useLanguage();
-  const { services, header, ourBenefitsList } = textSectionServices[language];
-  const [isCardObserved, setIsCardObserved] = useState(false);
-
-  const cardRef = useIntersectionObserver(
-    () => setIsCardObserved(true),
-    undefined,
-    0,
-  );
+  const { cardRef, services, header, ourBenefitsList, isCardObserved } =
+    useSectionServices();
 
   return (
     <section className={css.container}>

@@ -21,14 +21,16 @@ export default function CardItem({
   alt,
   text,
 }: CardItemProps) {
-  const [isCardItemObserved, setIsCardItemObserved] = useState(false);
   const language = useLanguage();
+
+  const [isCardItemObserved, setIsCardItemObserved] = useState(false);
 
   const cardItemRef = useIntersectionObserver<HTMLAnchorElement>(
     () => setIsCardItemObserved(true),
     undefined,
     0,
   );
+
   return (
     <Link
       href={`/${language}${link}`}
