@@ -20,6 +20,7 @@ export default function Faq({ initialSeo }: FaqProps) {
   const { mainHeader, questionCards } = textFaq[language];
 
   const [isObserved, setIsObserved] = useState(false);
+
   const handleIntersection = () => {
     setIsObserved(true);
   };

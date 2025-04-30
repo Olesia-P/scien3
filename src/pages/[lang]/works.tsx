@@ -21,6 +21,7 @@ export default function Works({ initialSeo }: WorksProps) {
   const { alt, images, mainHeader, caption } = textWorks[language];
 
   const [isObserved, setIsObserved] = useState(false);
+
   const handleIntersection = () => {
     setIsObserved(true);
   };

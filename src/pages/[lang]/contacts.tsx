@@ -18,12 +18,15 @@ type ContactsProps = {
 export default function Contacts({ initialSeo }: ContactsProps) {
   const language = useLanguage();
   const { mainHeader, illustrationAlt } = textContactsPage[language];
+
   const [isObserved, setIsObserved] = useState(false);
+
   const contactsPageRef = useIntersectionObserver(
     () => setIsObserved(true),
     undefined,
     0,
   );
+
   const isLargeScreen = useMediaQuery(1024);
 
   return (
