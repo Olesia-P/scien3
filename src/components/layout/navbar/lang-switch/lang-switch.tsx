@@ -1,65 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import cx from 'classnames';
-import { useRouter } from 'next/router';
 import css from './lang-switch.module.scss';
-import { textLangSwitch } from '@/texts/layout/text-lang-switch';
-import { useLanguage } from '@/hooks/use-language';
-import { setCookie } from '@/utils/cookies';
+import useLanguageSwitch from './use-language-switch';
 
 type SwitchProps = {
   fontSize: 's' | 'm' | 'l';
 };
 
 export default function LangSwitch({ fontSize }: SwitchProps) {
-  const language = useLanguage();
-  const [isSwitchedToEN, setIsSwitchedToEN] = useState(false);
-  const [isPendingGlobalLanguageChanging, setIsPendingGlobalLanguageChanging] =
-    useState(false);
-
-  const { switchToUkrainian, switchToEnglish, chosenEnglish, chosenUkrainian } =
-    textLangSwitch[language];
-
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isPendingGlobalLanguageChanging) {
-      const valueLang = isSwitchedToEN ? 'en' : 'ua';
-      setCookie('language', valueLang, 365);
-
-      const { pathname } = router;
-      const segments = pathname.split('/');
-      segments[1] = valueLang;
-      const newPathname = segments.join('/');
-
-      router.replace(
-        {
-          pathname: newPathname,
-        },
-        undefined,
-        { shallow: true },
-      );
-    }
-    setIsPendingGlobalLanguageChanging(false);
-  }, [isPendingGlobalLanguageChanging]);
-
-  useEffect(() => {
-    if (language === 'en') {
-      setIsSwitchedToEN(true);
-    } else if (language === 'ua') {
-      setIsSwitchedToEN(false);
-    }
-  }, [language]);
-
-  const toSwitch = () => {
-    setIsSwitchedToEN((prevState) => !prevState);
-    setIsPendingGlobalLanguageChanging(true);
-  };
+  const {
+    switchToUkrainian,
+    switchToEnglish,
+    chosenEnglish,
+    chosenUkrainian,
+    handleSwitch,
+    isSwitchedToEN,
+  } = useLanguageSwitch();
 
   return (
     <div className={css.container}>
       <div className={cx(css.caption, css[fontSize])}>ua</div>
       <button
-        onClick={toSwitch}
+        onClick={handleSwitch}
         role="switch"
         aria-checked={isSwitchedToEN}
         aria-label={isSwitchedToEN ? switchToUkrainian : switchToEnglish}

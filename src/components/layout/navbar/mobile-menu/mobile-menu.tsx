@@ -1,34 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { IoChevronDown } from 'react-icons/io5';
 import cx from 'classnames';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import css from './mobile.menu.module.scss';
 import LangSwitch from '../lang-switch/lang-switch';
-import { textNavbar } from '@/texts/layout/text-navbar';
-import { useLanguage } from '@/hooks/use-language';
+import useMobileMenu from './use-mobile-menu';
 
 export default function MobileMenu() {
-  const language = useLanguage();
-
-  const { navlinks, dropdownLinks } = textNavbar[language];
-  const router = useRouter();
-
-  const [isServicesBlockOpen, setIsServicesBlockOpen] = useState(false);
-
-  const handleServicesClick = (link: string) => {
-    if (!isServicesBlockOpen) {
-      setIsServicesBlockOpen(true);
-    }
-    if (isServicesBlockOpen) {
-      router.push(link);
-      setIsServicesBlockOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    setIsServicesBlockOpen(false);
-  }, [router.pathname]);
+  const {
+    navlinks,
+    dropdownLinks,
+    handleServicesClick,
+    isServicesBlockOpen,
+    language,
+  } = useMobileMenu();
 
   return (
     <div className={css.shadowWrapper}>

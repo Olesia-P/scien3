@@ -1,33 +1,14 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 import Navbar from './navbar/navbar';
-import { setCookie } from '@/utils/cookies';
+import useLayout from './use-layout';
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
 export default function Layout({ children }: LayoutProps) {
-  useEffect(() => {
-    const hasCookie = document.cookie.includes('language=');
-    if (!hasCookie) {
-      setCookie('language', 'ua', 365);
-    }
-  }, []);
+  useLayout();
 
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!('startViewTransition' in document)) return;
-
-    const originalPush = router.push;
-
-    (router as any).push = (...args: Parameters<typeof router.push>) => {
-      return (document as any).startViewTransition(() => {
-        return originalPush.apply(router, args as any);
-      });
-    };
-  }, [router]);
   return (
     <div>
       <Navbar />

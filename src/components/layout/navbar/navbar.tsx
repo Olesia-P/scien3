@@ -1,57 +1,24 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import cx from 'classnames';
-import { useRouter } from 'next/router';
 import { IoMenu } from 'react-icons/io5';
 import css from './navbar.module.scss';
 import LangSwitch from './lang-switch/lang-switch';
-import { textContactInfo } from '@/texts/text-contact-info';
-import { textNavbar } from '@/texts/layout/text-navbar';
 import MobileMenu from './mobile-menu/mobile-menu';
-import useMediaQuery from '@/hooks/use-media-query';
-import useClickOutsideClose from '@/hooks/use-outside-click-close';
 import Navlink from './navlink/navlink';
-import { useLanguage } from '@/hooks/use-language';
+import useNavbar from './use-navbar';
 
 export default function Navbar() {
-  const language = useLanguage();
-  const { navlinks } = textNavbar[language];
-  const { phone } = textContactInfo[language];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAnimated, setIsAnimated] = useState(false);
-
-  const router = useRouter();
-
-  const [refMobileMenu, refHamburger] = useClickOutsideClose<
-    HTMLDivElement,
-    HTMLButtonElement
-  >(setIsMobileMenuOpen, isMobileMenuOpen);
-
-  const isLargeScreen = useMediaQuery(1024);
-
-  useEffect(() => {
-    if (isLargeScreen) {
-      setIsMobileMenuOpen(false);
-      setIsAnimated(false);
-    }
-  }, [isLargeScreen]);
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setIsAnimated(false);
-  }, [router.pathname]);
-
-  useEffect(() => {
-    if (!isAnimated) {
-      setTimeout(() => {
-        setIsMobileMenuOpen(false);
-      }, 500);
-    }
-    if (isAnimated) {
-      setIsMobileMenuOpen(true);
-    }
-  }, [isAnimated]);
+  const {
+    navlinks,
+    phone,
+    isLargeScreen,
+    refMobileMenu,
+    refHamburger,
+    handleHamburgerClick,
+    isMobileMenuOpen,
+    isAnimated,
+  } = useNavbar();
 
   return (
     <header className={css.shadowWrapper}>
@@ -82,7 +49,7 @@ export default function Navbar() {
         <button
           type="button"
           className={css.hamburger}
-          onClick={() => setIsAnimated((prevState) => !prevState)}
+          onClick={handleHamburgerClick}
           ref={refHamburger}
           aria-label="Toggle  mobile menu"
         >
