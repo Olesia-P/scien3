@@ -31,7 +31,7 @@ For good SEO scores I’ve also used Static Site Generation, optimized fonts and
 
 - Using Static Site Generation;
 - Deployment on server using FTP and SSH (+ domain and SSL configurations etc.);
-- Images and fonts optimization, implementing View Transitions;
+- Images and fonts optimization;
 - Creating toasts’ queue;
 - Rendering modals in portals (+ focus trap);
 - SEO refinement;
