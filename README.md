@@ -2,7 +2,7 @@
 
 # Real-life project for a local business: Scien3 Cast Creations
 
-I’ve created this website for **Scien3 Cast Creations**, which is a small-batch plastic casting company. The site is mostly static, as its purpose is to provide customers with information about company’s services and how to contact them. I made it from scratch: design, structure, deployment.
+I’ve created this website for **Scien3 Cast Creations**, which is a small-batch plastic casting company. The site is mostly static, as its purpose is to provide customers with information about company’s services and how to contact them. I made it from scratch: UI, development, deployment.
 
 I’ve followed best coding practices: components are concise and readable, the pages are semantic, accessible and responsive.
 
@@ -13,6 +13,7 @@ For good SEO scores I’ve also used Static Site Generation, optimized fonts and
 ## Features
 
 - Navigate the site with ease through a clean, neumorphic design enhanced by smooth animations using Intersection Observer;
+- Learn about the company's services and contacts;
 - Switch between English and Ukrainian language, your choice is stored in a cookie;
 - Copy email on click (with a ‘toast’ message);
 - Go straight to calling with one click on the number in mobile screen size.
@@ -23,8 +24,6 @@ For good SEO scores I’ve also used Static Site Generation, optimized fonts and
 - TypeScript
 - Sass/Scss
 - Redux
-- Git + Bash
-- ESLint, prettier
 - Cookies and Local Storage
 
 ## What I learned
@@ -34,6 +33,6 @@ For good SEO scores I’ve also used Static Site Generation, optimized fonts and
 - Images and fonts optimization;
 - Creating toasts’ queue;
 - Rendering modals in portals (+ focus trap);
-- SEO refinement;
+- SEO refinement.
 
-Here you can check the <a href="https://scien3.com/" target="_blank">deployed site</a>!
+Here you can check out the <a href="https://scien3.com/" target="_blank">deployed site</a>!
