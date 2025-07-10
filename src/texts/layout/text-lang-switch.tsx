@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   switchToUkrainian: 'Перемкнути на українську мову.',
   switchToEnglish: 'Перемкнути на англійську мову.',
   chosenEnglish: 'Вибрана мова: англійська.',
@@ -13,6 +13,6 @@ const en = {
 };
 
 export const textLangSwitch = {
-  ua,
+  uk,
   en,
 };

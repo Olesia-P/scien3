@@ -1,13 +1,13 @@
 // import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// export type Language = 'en' | 'ua';
+// export type Language = 'en' | 'uk';
 
 // type LanguageState = {
 //   language: Language;
 // };
 
 // const initialState: LanguageState = {
-//   language: 'ua',
+//   language: 'uk',
 // };
 
 // export const languageSlice = createSlice({

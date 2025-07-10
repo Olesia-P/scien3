@@ -22,7 +22,7 @@ export default function useLanguageSwitch() {
 
   useEffect(() => {
     if (isPendingGlobalLanguageChanging) {
-      const valueLang = isSwitchedToEN ? 'en' : 'ua';
+      const valueLang = isSwitchedToEN ? 'en' : 'uk';
       setCookie('language', valueLang, 365);
 
       const { pathname } = router;
@@ -44,7 +44,7 @@ export default function useLanguageSwitch() {
   useEffect(() => {
     if (language === 'en') {
       setIsSwitchedToEN(true);
-    } else if (language === 'ua') {
+    } else if (language === 'uk') {
       setIsSwitchedToEN(false);
     }
   }, [language]);

@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   title: 'Дрібносерійне Лиття Пластмас у Вакуумі - Scien3 Cast Creations',
   description:
     'Ознайомтесь із нашими послугами дрібносерійного лиття пластмас у вакуумі.',
@@ -12,6 +12,6 @@ const en = {
 };
 
 export const textSeoSerialProduction = {
-  ua,
+  uk,
   en,
 };

@@ -2,8 +2,8 @@ import { GetServerSideProps } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const cookie = context.req.headers.cookie || '';
-  const match = cookie.match(/language=(ua|en)/);
-  const lang = match?.[1] || 'ua';
+  const match = cookie.match(/language=(uk|en)/);
+  const lang = match?.[1] || 'uk';
 
   return {
     redirect: {

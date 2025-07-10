@@ -1,5 +1,5 @@
 // import React from 'react';
-const ua = {
+const uk = {
   forWrapper: {
     content: {
       main: {
@@ -146,6 +146,6 @@ const en = {
 };
 
 export const textModeling3D = {
-  ua,
+  uk,
   en,
 };

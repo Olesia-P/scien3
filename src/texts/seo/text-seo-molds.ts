@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   title: 'Виготовлення Форм Для Лиття - Scien3 Cast Creations',
   description: 'Ознайомтесь із нашими послугами виготовлення форм для лиття.',
   link: '/services/molds',
@@ -10,6 +10,6 @@ const en = {
 };
 
 export const textSeoMolds = {
-  ua,
+  uk,
   en,
 };

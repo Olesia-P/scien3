@@ -5,7 +5,7 @@ export default function useLayout() {
   useEffect(() => {
     const hasCookie = document.cookie.includes('language=');
     if (!hasCookie) {
-      setCookie('language', 'ua', 365);
+      setCookie('language', 'uk', 365);
     }
   }, []);
 }

@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   caption: 'ДРІБНОСЕРІЙНЕ ЛИТТЯ З ПЛАСТИКУ У ВАКУУМІ ТА 3D-ДРУК',
   ourProducts: [
     {
@@ -63,6 +63,6 @@ const en = {
 };
 
 export const textSectionIntro = {
-  ua,
+  uk,
   en,
 };

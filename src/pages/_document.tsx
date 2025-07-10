@@ -22,7 +22,7 @@ class MyDocument extends Document<Props> {
 
     const formatLanguage = () => {
       if (typeof langFromUrl === 'string') {
-        return langFromUrl === 'ua' ? 'uk' : langFromUrl;
+        return langFromUrl;
       } else {
         return 'uk';
       }

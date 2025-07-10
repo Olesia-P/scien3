@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   header: 'Пишіть, дзвоніть та замовляйте!',
   headerCaption: 'Ми проконсультуємо та допоможемо з підбором матеріалів.',
   speechBubble: 'Ваші ідеї буде втілено!',
@@ -18,6 +18,6 @@ const en = {
 };
 
 export const textConstactsSectionHomePage = {
-  ua,
+  uk,
   en,
 };

@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   mainHeader: 'Приклади наших робіт',
   caption: 'Більше робіт в нашому',
   alt: 'Зразок продукту лиття або 3D-друку.',
@@ -159,6 +159,6 @@ const en = {
 };
 
 export const textWorks = {
-  ua,
+  uk,
   en,
 };

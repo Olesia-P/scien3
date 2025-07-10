@@ -63,7 +63,7 @@ export default function Works({ initialSeo }: WorksProps) {
 }
 
 export async function getStaticPaths() {
-  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  const paths = [{ params: { lang: 'uk' } }, { params: { lang: 'en' } }];
   return {
     paths,
     fallback: false,

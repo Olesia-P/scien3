@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   otherServicesLinkTitle: 'Інші послуги',
   contactsHeader: 'Зробіть замовлення вже сьогодні!',
 };
@@ -9,6 +9,6 @@ const en = {
 };
 
 export const textSingleServiceWrapper = {
-  ua,
+  uk,
   en,
 };

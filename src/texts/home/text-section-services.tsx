@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   services: [
     {
       name: '3D моделювання',
@@ -103,6 +103,6 @@ const en = {
 };
 
 export const textSectionServices = {
-  ua,
+  uk,
   en,
 };

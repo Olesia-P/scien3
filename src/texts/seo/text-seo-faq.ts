@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   title: 'Поширені Запитання - Scien3 Cast Creations',
   description:
     'Знайдіть відповіді на типові запитання про доставку, оплату та наші послуги в розділі поширених запитань.',
@@ -13,6 +13,6 @@ const en = {
 };
 
 export const textSeoFaq = {
-  ua,
+  uk,
   en,
 };

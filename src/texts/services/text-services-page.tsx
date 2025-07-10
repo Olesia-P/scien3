@@ -1,32 +1,32 @@
-const ua = {
+const uk = {
   header: 'Ми надаємо такі послуги:',
   leftPictureAlt: 'Ліва половина ілюстрації майстерні.',
   rightPictureAlt: 'Права половина ілюстрації майстерні.',
   services: [
     {
       name: '3D моделювання',
-      link: '/ua/services/modeling-3D',
+      link: '/uk/services/modeling-3D',
       img: '/services/bw_3d_modeling.png',
       webp: '/services/bw_3d_modeling.webp',
       alt: 'ілюстрація 3Д-моделювання',
     },
     {
       name: 'Серійне лиття',
-      link: '/ua/services/serial-production',
+      link: '/uk/services/serial-production',
       img: '/services/bw_serial_production.png',
       webp: '/services/bw_serial_production.webp',
       alt: 'ілюстрація серійного лиття пластикових продуктів',
     },
     {
       name: '3D друк',
-      link: '/ua/services/printing-3D',
+      link: '/uk/services/printing-3D',
       img: '/services/bw_3d_printer.png',
       webp: '/services/bw_3d_printer.webp',
       alt: '3Д-принтер',
     },
     {
       name: 'Форми для лиття',
-      link: '/ua/services/molds',
+      link: '/uk/services/molds',
       img: '/services/bw_silicone_mold.png',
       webp: '/services/bw_silicone_mold.webp',
       alt: 'силіконова форма',
@@ -71,6 +71,6 @@ const en = {
 };
 
 export const textServicesPage = {
-  ua,
+  uk,
   en,
 };

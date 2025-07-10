@@ -1,5 +1,5 @@
 export const setCookie = (key: string, value: string, days: number) => {
-  const validValues = ['ua', 'en'];
+  const validValues = ['uk', 'en'];
 
   if (!validValues.includes(value)) {
     // eslint-disable-next-line no-console

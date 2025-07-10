@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   title: 'Промисловий 3D-Дизайн - Scien3 Cast Creations',
   description: 'Ознайомтесь із нашими послугами 3D-дизайну.',
   link: '/services/modeling-3D',
@@ -11,6 +11,6 @@ const en = {
 };
 
 export const textSeoModeling3D = {
-  ua,
+  uk,
   en,
 };

@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   phone: {
     text: '+38(068)-987-36-00',
     title: 'Телефон:',
@@ -89,6 +89,6 @@ const en = {
 };
 
 export const textContactInfo = {
-  ua,
+  uk,
   en,
 };

@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   title: 'Про Нас - Scien3 Cast Creations',
   description:
     'Ми пропонуємо якісні послуги лиття пластику під низьким тиском та 3D друк',
@@ -13,6 +13,6 @@ const en = {
 };
 
 export const textSeoHome = {
-  ua,
+  uk,
   en,
 };

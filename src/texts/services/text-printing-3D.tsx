@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ua = {
+const uk = {
   forWrapper: {
     content: {
       main: {
@@ -351,6 +351,6 @@ const en = {
 };
 
 export const textPrinting3D = {
-  ua,
+  uk,
   en,
 };

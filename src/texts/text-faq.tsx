@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ua = {
+const uk = {
   mainHeader: 'Поширені запитання',
   questionCards: [
     {
@@ -151,6 +151,6 @@ const en = {
 };
 
 export const textFaq = {
-  ua,
+  uk,
   en,
 };

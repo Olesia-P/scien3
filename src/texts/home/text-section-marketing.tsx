@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   statements: [
     {
       question: 'Ви маєте ідею, але не знаєте, з чого почати?',
@@ -88,6 +88,6 @@ const en = {
 };
 
 export const textSectionMarketing = {
-  ua,
+  uk,
   en,
 };

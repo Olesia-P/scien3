@@ -10,7 +10,7 @@ export type SeoData = {
 };
 
 type SeoText = {
-  ua: SeoData;
+  uk: SeoData;
   en: SeoData;
 };
 
@@ -25,7 +25,6 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
   const [seo, setSeo] = useState<SeoData>(initialSeo);
 
   const { title, description, link } = seo;
-  const formatLanguage = language === 'ua' ? 'uk' : language;
 
   useEffect(() => {
     setSeo(seoText[language]);
@@ -35,10 +34,7 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link
-        rel="canonical"
-        href={`https://scien3.com/${formatLanguage}${link}`}
-      />
+      <link rel="canonical" href={`https://scien3.com/${language}${link}`} />
       <link
         rel="alternate"
         hrefLang="en"
@@ -46,7 +42,7 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
       />
       <link
         rel="alternate"
-        hrefLang="ua"
+        hrefLang="uk"
         href={`https://scien3.com/uk${link}`}
       />
       <link
@@ -55,12 +51,22 @@ export default function PageHead({ initialSeo, seoText }: PageHeadProps) {
         href={`https://scien3.com/uk${link}`}
       />
 
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+
       <meta
         property="og:image"
-        content="http://scien3.com/site_screenshot.jpg"
+        content="https://scien3.com/site_screenshot.jpg"
       />
       <meta property="og:image:width" content="350" />
       <meta property="og:image:height" content="189" />
+
+      <meta
+        property="og:url"
+        content={`https://scien3.com/${language}${link}`}
+      />
+      <meta property="og:type" content="website" />
     </Head>
   );
 }

@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   title: 'Наші Послуги - Scien3 Cast Creations',
   description: 'Ознайомтесь з нашими послугами',
   link: '/services',
@@ -11,6 +11,6 @@ const en = {
 };
 
 export const textSeoServices = {
-  ua,
+  uk,
   en,
 };

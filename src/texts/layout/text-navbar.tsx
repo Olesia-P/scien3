@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   navlinks: [
     {
       name: 'про нас',
@@ -97,6 +97,6 @@ const en = {
 };
 
 export const textNavbar = {
-  ua,
+  uk,
   en,
 };

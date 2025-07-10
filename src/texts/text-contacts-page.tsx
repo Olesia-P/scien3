@@ -1,4 +1,4 @@
-const ua = {
+const uk = {
   mainHeader: 'Контакти',
   illustrationAlt: 'Людина майструє макет будинку з пластика у майстерні.',
 };
@@ -9,6 +9,6 @@ const en = {
 };
 
 export const textContactsPage = {
-  ua,
+  uk,
   en,
 };

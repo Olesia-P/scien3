@@ -67,7 +67,7 @@ export default function Printing3D({ initialSeo }: Printing3DProps) {
 }
 
 export async function getStaticPaths() {
-  const paths = [{ params: { lang: 'ua' } }, { params: { lang: 'en' } }];
+  const paths = [{ params: { lang: 'uk' } }, { params: { lang: 'en' } }];
   return {
     paths,
     fallback: false,

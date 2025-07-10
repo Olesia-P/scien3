@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
 
-export type Language = 'ua' | 'en';
+export type Language = 'uk' | 'en';
 
 export const useLanguage = (): Language => {
   const { query } = useRouter();
   const { lang } = query;
 
-  if (lang === 'ua' || lang === 'en') {
+  if (lang === 'uk' || lang === 'en') {
     return lang;
   }
 
-  return 'ua';
+  return 'uk';
 };
