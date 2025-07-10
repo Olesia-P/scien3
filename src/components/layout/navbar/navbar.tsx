@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className={css.shadowWrapper}>
       <nav className={css.container}>
         <Link href="/" className={css.logo}>
-          <img src="/logo_3d_small.png" alt="scien3 logo 3D" />
+          <img src="/logo_3d_small.png" alt="" />
           <p>Scien3 Cast Creations</p>
         </Link>
 
