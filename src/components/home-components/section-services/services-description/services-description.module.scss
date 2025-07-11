@@ -65,18 +65,6 @@
         .descriptionList {
             li {
                 p {
-                    font-size: $font-size-14;
-                }
-            }
-        }
-    }
-}
-
-@include tablet {
-    .container {
-        .descriptionList {
-            li {
-                p {
                     font-size: $font-size-16;
                 }
             }
