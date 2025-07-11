@@ -12,7 +12,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
   const { mainHeader, text, button, glory, modalRef } = useModal(isOpen);
 
   return (
-    <section className={css.container}>
+    <section className={css.container} data-nosnippet>
       <style jsx global>{`
         body {
           overflow: hidden;
