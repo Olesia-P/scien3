@@ -32,19 +32,19 @@ const uk = {
   header: 'Виготовлення виробів із пластмас будь-якої складності',
   ourBenefitsList: [
     {
-      text: 'Пропонуємо якісні послуги лиття із пластмас під низьким тиском.',
+      text: 'Пропонуємо послуги високої якості — зробимо усе, аби ви знову захотіли звернутись до нас.',
       icon: '/icons/drop_icon.png',
     },
     {
-      text: 'Забезпечуємо повний цикл: від вашої креативної ідеї до її повного втілення та виробництва.',
+      text: 'Забезпечуємо повний цикл робіт — від вашої креативної ідеї до її втілення та виробництва.',
       icon: '/icons/arrows_icon.png',
     },
     {
-      text: 'Маємо ґрунтовний досвід та широку спеціалізацію, від дослідних зразків для вузькопрофільного застосування до комплексних розробок нових виробів.',
+      text: 'Маємо ґрунтовний досвід і широку спеціалізацію — ви можете покластися на нашу експертизу та професіоналізм.',
       icon: '/icons/medal_icon.png',
     },
     {
-      text: 'Використовуємо індивідуальний підхід до кожного замовника, врахуємо всі ваші інтереси.',
+      text: 'Застосовуємо індивідуальний підхід до кожного клієнта — врахуємо всі ваші потреби та побажання.',
       icon: '/icons/angled_ball_icon.png',
     },
   ],
@@ -84,19 +84,19 @@ const en = {
   header: 'Manufacturing of plastic products of any complexity',
   ourBenefitsList: [
     {
-      text: 'We offer high-quality low-pressure plastic casting services.',
+      text: 'We offer high-quality services — we’ll do everything to make you want to come back to us.',
       icon: '/icons/drop_icon.png',
     },
     {
-      text: 'We provide a full cycle: from your creative idea to its complete realization and production.',
+      text: 'We provide a full range of services — from your creative idea to its implementation and production.',
       icon: '/icons/arrows_icon.png',
     },
     {
-      text: 'We have extensive experience and a broad specialization, from prototype samples for niche applications to complex new product developments.',
+      text: 'We have extensive experience and a broad specialization — you can rely on our expertise and professionalism.',
       icon: '/icons/medal_icon.png',
     },
     {
-      text: 'We take an individual approach to each client, considering all your needs.',
+      text: 'We take an individual approach to every client — we’ll consider all your needs and preferences.',
       icon: '/icons/angled_ball_icon.png',
     },
   ],
