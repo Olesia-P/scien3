@@ -16,6 +16,7 @@ export default function useNavbar() {
 
   const router = useRouter();
   const isLargeScreen = useMediaQuery(1024);
+  const isLargerThanLowTablet = useMediaQuery(768);
   const [refMobileMenu, refHamburger] = useClickOutsideClose<
     HTMLDivElement,
     HTMLButtonElement
@@ -51,11 +52,11 @@ export default function useNavbar() {
   return {
     navlinks,
     phone,
-    isLargeScreen,
     refMobileMenu,
     refHamburger,
     handleHamburgerClick,
     isMobileMenuOpen,
     isAnimated,
+    isLargerThanLowTablet,
   };
 }

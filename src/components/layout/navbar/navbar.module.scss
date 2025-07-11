@@ -20,29 +20,31 @@
             flex-shrink: 0;
         }
 
-        .logo {
+        .companyNameWrap {
             height: 2.7rem;
             margin-left: 2rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
 
-            img {
-                height: 100%;
-            }
-
-            p {
+            .companyName {
                 font-family: $font-family-logo;
                 font-size: $font-size-32;
                 line-height: 1;
                 margin-top: 0.3rem;
             }
+
+            .logo {
+                height: 100%;
+            }
         }
 
-        .phoneNumber {
-            @include blueBackgroundRounded ($padLeft: 0.7em);
+        .phoneNumberFilled {
+            @include blueBackgroundRounded($padLeft: 0.7em);
             box-shadow: $shadow-white-out
         }
+
+
 
         .navLinksWrap {
             @include dfc;
@@ -71,7 +73,7 @@
 
         .mobileMenuWrap {
             position: absolute;
-            right: 0;
+            right: 0.2rem;
             top: 3.1rem;
             width: 15rem;
             @include animationSlideCenterToLeft;
@@ -90,11 +92,11 @@
             gap: 1rem;
             font-size: $font-size-14;
 
-            .logo {
+            .companyNameWrap {
                 height: 2.2rem;
                 margin-left: 0.5rem;
 
-                p {
+                .companyName {
                     font-size: $font-size-26;
                     margin-top: 0.4rem;
                 }
@@ -116,7 +118,7 @@
         .container {
             font-size: $font-size-16;
 
-            .phoneNumber {
+            .phoneNumberFilled {
                 @include blueBackgroundRounded ($padTop: 0.3em, $padRight: 0.8em, $padBottom: 0.3em, $padLeft: 0.5em)
             }
 
@@ -140,16 +142,24 @@
         .container {
             height: 4.5rem;
 
-            .logo {
-                height: 2.8rem;
+            .companyNameWrap {
+                margin-left: 0.4rem;
 
-                p {
-                    font-size: $font-size-30;
+                .logo {
+                    height: 3rem;
                 }
-            }
 
-            .phoneNumber {
-                display: none;
+                .namePhoneWrap {
+                    .companyName {
+                        font-size: $font-size-20;
+                    }
+
+                    .phoneNumberPlain {
+                        font-size: $font-size-20;
+                        color: $blue;
+                        font-weight: 600;
+                    }
+                }
             }
 
             .hamburger {

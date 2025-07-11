@@ -12,7 +12,7 @@ export default function Navbar() {
   const {
     navlinks,
     phone,
-    isLargeScreen,
+    isLargerThanLowTablet,
     refMobileMenu,
     refHamburger,
     handleHamburgerClick,
@@ -23,17 +23,28 @@ export default function Navbar() {
   return (
     <header className={css.shadowWrapper}>
       <nav className={css.container}>
-        <Link href="/" className={css.logo}>
-          <img src="/logo_3d_small.png" alt="" />
-          <p>Scien3 Cast Creations</p>
-        </Link>
-
-        {isLargeScreen ? (
-          <p className={css.phoneNumber}>{phone.text}</p>
+        {isLargerThanLowTablet ? (
+          <Link href="/" className={css.companyNameWrap}>
+            <img src="/logo_3d_small.png" alt="" className={css.logo} />
+            <p className={css.companyName}>Scien3 Cast Creations</p>
+          </Link>
         ) : (
-          <a className={css.phoneNumber} href={`tel:${phone.number}`}>
-            {phone.text}
-          </a>
+          <div className={css.companyNameWrap}>
+            <Link href="/">
+              <img src="/logo_3d_small.png" alt="" className={css.logo} />
+            </Link>
+
+            <div className={css.namePhoneWrap}>
+              <p className={css.companyName}>Scien3 Cast Creations</p>
+              <a className={css.phoneNumberPlain} href={`tel:${phone.number}`}>
+                {phone.text}
+              </a>
+            </div>
+          </div>
+        )}
+
+        {isLargerThanLowTablet && (
+          <p className={css.phoneNumberFilled}>{phone.text}</p>
         )}
 
         <ul className={css.navLinksWrap}>
