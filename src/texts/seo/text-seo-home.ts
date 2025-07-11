@@ -1,14 +1,13 @@
 const uk = {
-  title: 'Про Нас - Scien3 Cast Creations',
+  title: 'Дрібносерійне лиття пластику та 3D друк | Scien3 Cast Creations',
   description:
-    'Ми пропонуємо якісні послуги лиття пластику під низьким тиском та 3D друк',
+    'Ми спеціалізуємось на дрібносерійному литті пластику у вакуумі та з гордістю виробляємо якісний продукт. Українська компанія, заснована досвідченими майстрами.',
   link: '/',
 };
 const en = {
-  title: 'About Us - Scien3 Cast Creations',
+  title: 'Small-batch plastic casting and 3D printing | Scien3 Cast Creations',
   description:
-    'We offer high-quality low-pressure plastic casting services and 3D printing',
-
+    'We specialize in small-batch vacuum plastic casting and proudly produce quality products. Ukrainian company founded by experienced craftsmen.',
   link: '/',
 };
 

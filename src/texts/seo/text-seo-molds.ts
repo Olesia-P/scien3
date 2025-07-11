@@ -1,11 +1,14 @@
 const uk = {
-  title: 'Виготовлення Форм Для Лиття - Scien3 Cast Creations',
-  description: 'Ознайомтесь із нашими послугами виготовлення форм для лиття.',
+  title:
+    'Фирми для лиття | Силіконові та поліуретанові | Scien3 Cast Creations',
+  description:
+    'Високоякісні силіконові та поліуретанові ливарні форми для точних результатів. Підходять для лиття смоли, свічок, мила та промислового використання.',
   link: '/services/molds',
 };
 const en = {
-  title: 'Casting Molds Manufacturing - Scien3 Cast Creations',
-  description: 'Learn about our casting molds manufacturing services.',
+  title: 'Casting Molds | Silicone and Polyurethane | Scien3 Cast Creations',
+  description:
+    'High-quality silicone and polyurethane casting molds for precise results. Suitable for resin casting, candles, soap and industrial use.',
   link: '/services/molds',
 };
 

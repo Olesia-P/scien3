@@ -1,14 +1,13 @@
 const uk = {
-  title: 'Поширені Запитання - Scien3 Cast Creations',
+  title: 'Запитання | Ціни, замовлення, оплата та ін. | Scien3 Cast Creations',
   description:
-    'Знайдіть відповіді на типові запитання про доставку, оплату та наші послуги в розділі поширених запитань.',
+    'Знайдіть відповіді на типові запитання про ціни, доставку, оплату та наші послуги.',
   link: '/faq',
 };
 const en = {
-  title: 'Frequently Asked Questions - Scien3 Cast Creations',
+  title: 'FAQ | Prices, Shipping, Payment etc. | Scien3 Cast Creations',
   description:
-    'Find answers to common questions about shipping, payments, and our services in our frequently asked questions.',
-
+    'Find answers to common questions about prices, shipping, payments, and our services.',
   link: '/faq',
 };
 

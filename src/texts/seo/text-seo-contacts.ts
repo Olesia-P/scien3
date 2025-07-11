@@ -1,13 +1,13 @@
 const uk = {
-  title: 'Контакти - Scien3 Cast Creations',
+  title: "Зв'яжіться з нами | Проконсультуємо | Scien3 Cast Creations",
   description:
-    "Зв'яжіться з нами або відвідайте наш офіс. Знайдіть наш номер телефону, електронну адресу та години роботи. Ми проконсультуємо та допоможемо з будь-якими запитаннями.",
+    "Зв'яжіться з нами по номеру телефона, напишіть email або відвідайте наш офіс. Ми проконсультуємо та допоможемо з будь-якими запитаннями!",
   link: '/contacts',
 };
 const en = {
-  title: 'Contacts - Scien3 Cast Creations',
+  title: "Contact us | We'll help with questions! | Scien3 Cast Creations",
   description:
-    'Contact us or visit our office. Find our phone number, email address, and business hours. We are here to help with any questions.',
+    'Contact us by phone, email, or visit our office. We are here to help with any questions!',
 
   link: '/contacts',
 };
