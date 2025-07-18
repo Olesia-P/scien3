@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+<!-- home -->
+   <url>
+    <loc>https://scien3.com/uk</loc>
+     <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk"/>
+  </url>
+
+<!-- works -->
+   <url>
+    <loc>https://scien3.com/uk/works</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/works"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/works"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/works</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/works"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/works"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/works"/>
+  </url>
+
+<!-- faq -->
+   <url>
+    <loc>https://scien3.com/uk/faq</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/faq"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/faq</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/faq"/>
+  </url>
+
+  <!-- contacts -->
+   <url>
+    <loc>https://scien3.com/uk/contacts</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/contacts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/contacts"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/contacts</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/contacts"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/contacts"/>
+  </url>
+
+  <!-- services -->
+   <url>
+    <loc>https://scien3.com/uk/services</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/services</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services"/>
+  </url>
+
+  <!-- modeling-3D -->
+   <url>
+    <loc>https://scien3.com/uk/services/modeling-3D</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/modeling-3D"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/modeling-3D"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/modeling-3D"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/services/modeling-3D</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/modeling-3D"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/modeling-3D"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/modeling-3D"/>
+  </url>
+
+  <!-- serial-production -->
+   <url>
+    <loc>https://scien3.com/uk/services/serial-production</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/serial-production"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/serial-production"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/serial-production"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/services/serial-production</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/serial-production"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/serial-production"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/serial-production"/>
+  </url>
+
+  <!-- printing-3D -->
+   <url>
+    <loc>https://scien3.com/uk/services/printing-3D</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/printing-3D"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/printing-3D"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/printing-3D"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/services/printing-3D</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/printing-3D"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/printing-3D"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/printing-3D"/>
+  </url>
+
+  <!-- molds -->
+   <url>
+    <loc>https://scien3.com/uk/services/molds</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/molds"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/molds"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/molds"/>
+  </url>
+
+  <url>
+    <loc>https://scien3.com/en/services/molds</loc>
+    <lastmod>2025-07-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://scien3.com/uk/services/molds"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scien3.com/en/services/molds"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scien3.com/uk/services/molds"/>
+  </url>
+  </urlset>
