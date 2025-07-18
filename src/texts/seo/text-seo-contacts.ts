@@ -1,13 +1,14 @@
 const uk = {
-  title: "Зв'яжіться з нами | Проконсультуємо | Scien3 Cast Creations",
+  title:
+    "Зв'яжіться з нами | Замовити Лиття Пластику Київ | Scien3 Cast Creations",
   description:
-    "Зв'яжіться з нами по номеру телефона, напишіть email або відвідайте наш офіс. Ми проконсультуємо та допоможемо з будь-якими запитаннями!",
+    "Зв'яжіться з нами або відвідайте наш офіс. Ми проконсультуємо та допоможемо з будь-якими питаннями! Замовити сьогодні.",
   link: '/contacts',
 };
 const en = {
-  title: "Contact us | We'll help with questions! | Scien3 Cast Creations",
+  title: 'Contact us | Order Plastic Casting Kyiv | Scien3 Cast Creations',
   description:
-    'Contact us by phone, email, or visit our office. We are here to help with any questions!',
+    'Contact us or visit our office. We are here to help with any questions! Order today.',
 
   link: '/contacts',
 };
