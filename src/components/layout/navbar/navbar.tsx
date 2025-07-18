@@ -25,13 +25,13 @@ export default function Navbar() {
       <nav className={css.container}>
         {isLargerThanLowTablet ? (
           <Link href="/" className={css.companyNameWrap}>
-            <img src="/logo_3d_small.png" alt="" className={css.logo} />
+            <img src="/logo_transparent.png" alt="" className={css.logo} />
             <p className={css.companyName}>Scien3 Cast Creations</p>
           </Link>
         ) : (
           <div className={css.companyNameWrap}>
             <Link href="/">
-              <img src="/logo_3d_small.png" alt="" className={css.logo} />
+              <img src="/logo_transparent.png" alt="" className={css.logo} />
             </Link>
 
             <div className={css.namePhoneWrap}>
